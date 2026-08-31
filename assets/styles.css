@@ -191,11 +191,11 @@ p{ margin: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  height: 80px;
+  height: 60px;
 }
 
 .brand{ display: flex; align-items: center; gap: .7rem; }
-.brand-logo{ height: 50px; width: auto; display: block; flex: none; }
+.brand-logo{ height: 30px; width: auto; display: block; flex: none; }
 
 .nav{ display: flex; align-items: center; gap: 1.85rem; }
 .nav a{
@@ -950,12 +950,10 @@ form .btn{ justify-content: center; }
 }
 /* Con el logo a 65px, el menú completo ya no convive con él por debajo de
    1100px: en vez de comprimir ambos, se pasa al menú desplegable antes. */
-@media (max-width: 1100px){
-  .topbar-inner{ height: 72px; }
-  .brand-logo{ height: 42px; }
+@media (max-width: 1000px){
   .nav{
     position: fixed;
-    inset: 72px 0 auto 0;
+    inset: 60px 0 auto 0;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -989,9 +987,6 @@ form .btn{ justify-content: center; }
 }
 
 @media (max-width: 780px){
-  .topbar-inner{ height: 62px; }
-  .brand-logo{ height: 32px; }
-  .nav{ inset: 62px 0 auto 0; }
   .pillars{ grid-template-columns: 1fr; }
   .rel-grid{ grid-template-columns: 1fr; }
   .steps{ grid-template-columns: 1fr; }
