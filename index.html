@@ -1315,7 +1315,9 @@ form .btn{ justify-content: center; }
           </ul>
         </div>
 
-        <form id="contactForm" novalidate>
+        <!-- action/method son el respaldo si el JavaScript no corre: el
+             navegador envía el formulario igual, sin quedarse en la página -->
+        <form id="contactForm" action="https://formsubmit.co/contacto@moovisolutions.com" method="POST" novalidate>
           <div class="field-row">
             <div class="field">
               <label for="nombre">Nombre</label>
@@ -1480,23 +1482,34 @@ form .btn{ justify-content: center; }
       _captcha: 'false'
     };
 
+    /* Distingue "no llegué al servidor" de "el servidor me rechazó":
+       son problemas distintos y el aviso tiene que decir cuál es */
+    var sinRespuesta = true;
+
     fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(cuerpo)
     })
-      .then(function (r) { return r.json().catch(function () { return {}; }); })
+      .then(function (r) {
+        sinRespuesta = false;
+        return r.json().catch(function () { return {}; });
+      })
       .then(function (r) {
         if (r && (r.success === 'true' || r.success === true)) {
           form.reset();
           note.hidden = true;
           aviso('Listo, ' + nombre + '. Recibimos tu consulta y te respondemos a ' + email + '.', false);
-        } else {
-          throw new Error('respuesta inesperada');
+          return;
         }
+        throw new Error(r && r.message ? r.message : 'respuesta inesperada del servidor');
       })
-      .catch(function () {
-        aviso('No pudimos enviar la consulta. Escribinos directamente a ' + DESTINO + ' y te respondemos igual.', true);
+      .catch(function (err) {
+        if (window.console && console.error) console.error('[moovi] envío fallido:', err);
+        aviso(sinRespuesta
+          ? 'No pudimos conectar con el servidor de envíos. Revisá tu conexión, o escribinos a ' + DESTINO + '.'
+          : 'El envío fue rechazado: ' + err.message + '. Escribinos a ' + DESTINO + ' y te respondemos igual.',
+        true);
       })
       .then(function () {
         boton.disabled = false;
