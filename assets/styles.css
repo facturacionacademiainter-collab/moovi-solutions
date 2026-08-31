@@ -197,9 +197,10 @@ p{ margin: 0; }
 .brand{ display: flex; align-items: center; gap: .7rem; }
 .brand-logo{ height: 65px; width: auto; display: block; flex: none; }
 
-.nav{ display: flex; align-items: center; gap: 2.1rem; }
+.nav{ display: flex; align-items: center; gap: 1.85rem; }
 .nav a{
   font-family: var(--mono);
+  white-space: nowrap;
   font-size: .78rem;
   letter-spacing: .13em;
   text-transform: uppercase;
@@ -947,9 +948,11 @@ form .btn{ justify-content: center; }
   .stack-layout{ grid-template-columns: 1fr; }
   .codepanel{ max-width: 460px; }
 }
-@media (max-width: 780px){
+/* Con el logo a 65px, el menú completo ya no convive con él por debajo de
+   1100px: en vez de comprimir ambos, se pasa al menú desplegable antes. */
+@media (max-width: 1100px){
   .topbar-inner{ height: 78px; }
-  .brand-logo{ height: 50px; }
+  .brand-logo{ height: 46px; }
   .nav{
     position: fixed;
     inset: 78px 0 auto 0;
@@ -983,6 +986,12 @@ form .btn{ justify-content: center; }
   .nav-toggle[aria-expanded="true"] i:nth-child(1){ transform: translateY(6.5px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] i:nth-child(2){ opacity: 0; }
   .nav-toggle[aria-expanded="true"] i:nth-child(3){ transform: translateY(-6.5px) rotate(-45deg); }
+}
+
+@media (max-width: 780px){
+  .topbar-inner{ height: 62px; }
+  .brand-logo{ height: 32px; }
+  .nav{ inset: 62px 0 auto 0; }
   .pillars{ grid-template-columns: 1fr; }
   .rel-grid{ grid-template-columns: 1fr; }
   .steps{ grid-template-columns: 1fr; }
