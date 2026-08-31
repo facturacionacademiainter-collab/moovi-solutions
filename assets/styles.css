@@ -191,11 +191,11 @@ p{ margin: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  height: 96px;
+  height: 80px;
 }
 
 .brand{ display: flex; align-items: center; gap: .7rem; }
-.brand-logo{ height: 65px; width: auto; display: block; flex: none; }
+.brand-logo{ height: 50px; width: auto; display: block; flex: none; }
 
 .nav{ display: flex; align-items: center; gap: 1.85rem; }
 .nav a{
@@ -951,11 +951,11 @@ form .btn{ justify-content: center; }
 /* Con el logo a 65px, el menú completo ya no convive con él por debajo de
    1100px: en vez de comprimir ambos, se pasa al menú desplegable antes. */
 @media (max-width: 1100px){
-  .topbar-inner{ height: 78px; }
-  .brand-logo{ height: 46px; }
+  .topbar-inner{ height: 72px; }
+  .brand-logo{ height: 42px; }
   .nav{
     position: fixed;
-    inset: 78px 0 auto 0;
+    inset: 72px 0 auto 0;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
