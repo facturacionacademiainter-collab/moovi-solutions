@@ -1,0 +1,16 @@
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependencias / build (por si más adelante se suma tooling)
+node_modules/
+dist/
+.cache/
+*.log

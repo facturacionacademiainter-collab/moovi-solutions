@@ -1,0 +1,1679 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moovi Solutions</title>
+<meta name="description" content="Moovi Solutions — ingeniería de software e inteligencia artificial para empresas: desarrollo a medida, IA aplicada, ecommerce, apps móviles y Smart City e IoT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
+<style>
+/* ============================================================
+   MOOVI SOLUTIONS — dirección visual: sala de control de movilidad
+   Mundo único oscuro, pintado explícitamente.
+   ============================================================ */
+:root{
+  color-scheme: dark;
+
+  /* Fondo y superficies */
+  --ink:        #070A16;
+  --ink-deep:   #04060F;
+  --surface:    #0E1326;
+  --line:       #1B2540;
+  --line-soft:  #141C33;
+
+  /* Neutros sesgados hacia el acento */
+  --haze:       #8C9BC4;
+  --haze-dim:   #5F6C92;
+  --chalk:      #E8ECF8;
+
+  /* Señal */
+  --signal:     #35E0C6;
+  --signal-dim: #1B9E8B;
+  --pulse:      #6E5BFF;
+  --amber:      #FFB661;
+
+  /* Tipografía */
+  --display: 'Archivo', 'Arial Narrow', 'Helvetica Neue', Helvetica, sans-serif;
+  --body:    'IBM Plex Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono:    'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Courier New', monospace;
+
+  /* Escala */
+  --step--1: clamp(.78rem, .76rem + .1vw, .84rem);
+  --step-0:  clamp(.98rem, .95rem + .16vw, 1.08rem);
+  --step-1:  clamp(1.18rem, 1.1rem + .4vw, 1.4rem);
+  --step-2:  clamp(1.5rem, 1.3rem + .9vw, 2.05rem);
+  --step-3:  clamp(2rem, 1.6rem + 1.9vw, 3.1rem);
+  --step-4:  clamp(2.7rem, 1.9rem + 3.6vw, 5.4rem);
+
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --maxw: 1320px;
+  --ease: cubic-bezier(.22,.68,.28,1);
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--ink);
+  color: var(--chalk);
+  font-family: var(--body);
+  font-size: var(--step-0);
+  font-weight: 300;
+  line-height: 1.62;
+  letter-spacing: .004em;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Retícula de coordenadas de fondo */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(140,155,196,.075) 0 1px, transparent 1px 96px),
+    repeating-linear-gradient(0deg,  rgba(140,155,196,.055) 0 1px, transparent 1px 96px);
+  -webkit-mask-image: radial-gradient(ellipse 120% 78% at 50% 0%, #000 0%, rgba(0,0,0,.35) 55%, transparent 92%);
+          mask-image: radial-gradient(ellipse 120% 78% at 50% 0%, #000 0%, rgba(0,0,0,.35) 55%, transparent 92%);
+}
+
+img{ max-width: 100%; display: block; }
+
+::selection{ background: var(--signal); color: var(--ink-deep); }
+
+a{ color: inherit; text-decoration: none; }
+
+:focus-visible{
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Primitivos ---------- */
+.wrap{
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow{
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--signal);
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+.eyebrow::before{
+  content:"";
+  width: 26px; height: 1px;
+  background: var(--signal);
+  flex: none;
+}
+
+h1, h2, h3, .display{
+  font-family: var(--display);
+  font-variation-settings: 'wdth' 112;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+h2{ font-size: var(--step-3); }
+h3{ font-size: var(--step-1); font-variation-settings: 'wdth' 106; letter-spacing: -.01em; line-height: 1.16; }
+
+p{ margin: 0; }
+
+.lede{
+  color: var(--haze);
+  font-size: var(--step-1);
+  font-weight: 300;
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+.muted{ color: var(--haze); max-width: 66ch; }
+
+.rule{
+  height: 1px;
+  background: var(--line);
+  border: 0;
+  margin: 0;
+}
+
+/* ---------- Cabecera ---------- */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(7,10,22,.78);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid transparent;
+  transition: border-color .4s var(--ease), background .4s var(--ease);
+}
+.topbar.stuck{
+  border-bottom-color: var(--line);
+  background: rgba(4,6,15,.9);
+}
+.topbar-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 74px;
+}
+
+.brand{ display: flex; align-items: center; gap: .7rem; }
+.brand svg{ width: 30px; height: 30px; flex: none; }
+.brand-name{
+  font-family: var(--display);
+  font-variation-settings: 'wdth' 118;
+  font-weight: 800;
+  font-size: 1.02rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.brand-name span{ color: var(--signal); font-weight: 400; }
+
+.nav{ display: flex; align-items: center; gap: 2.1rem; }
+.nav a{
+  font-family: var(--mono);
+  font-size: .78rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--haze);
+  position: relative;
+  padding-block: .3rem;
+  transition: color .25s var(--ease);
+}
+.nav a::after{
+  content:"";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 1px;
+  background: var(--signal);
+  transition: width .3s var(--ease);
+}
+.nav a:hover{ color: var(--chalk); }
+.nav a:hover::after{ width: 100%; }
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--mono);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .78rem 1.35rem;
+  border: 1px solid var(--signal);
+  color: var(--ink-deep);
+  background: var(--signal);
+  cursor: pointer;
+  transition: transform .25s var(--ease), box-shadow .3s var(--ease), background .25s var(--ease);
+  white-space: nowrap;
+}
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -12px var(--signal);
+  background: #4BEBD3;
+}
+.nav .btn::after{ content: none; }
+.btn-ghost{
+  background: transparent;
+  color: var(--chalk);
+  border-color: var(--line);
+}
+.btn-ghost:hover{
+  background: transparent;
+  border-color: var(--haze-dim);
+  box-shadow: none;
+  color: var(--signal);
+}
+.nav-toggle{ display: none; }
+
+/* ---------- Héroe ---------- */
+.hero{
+  position: relative;
+  padding-block: clamp(4.5rem, 10vh, 8rem) clamp(3rem, 6vh, 5rem);
+  overflow: hidden;
+}
+#net{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: .85;
+}
+.hero .wrap{ z-index: 2; }
+.hero-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, .8fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+}
+.hero h1{
+  font-size: var(--step-4);
+  font-variation-settings: 'wdth' 116;
+  font-weight: 800;
+  margin-block: 1.5rem 1.6rem;
+  letter-spacing: -.03em;
+}
+.hero h1 em{
+  font-style: normal;
+  color: var(--signal);
+  font-variation-settings: 'wdth' 90;
+  font-weight: 300;
+}
+.hero-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9rem;
+  margin-top: 2.4rem;
+}
+.hero-side{
+  border-left: 1px solid var(--line);
+  padding-left: clamp(1.2rem, 2vw, 2rem);
+  display: grid;
+  gap: 1.6rem;
+  padding-bottom: .4rem;
+}
+.hero-side dl{ margin: 0; display: grid; gap: .3rem; }
+.hero-side dt{
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--haze-dim);
+}
+.hero-side dd{
+  margin: 0;
+  font-family: var(--display);
+  font-variation-settings: 'wdth' 104;
+  font-weight: 600;
+  font-size: 1.02rem;
+  line-height: 1.3;
+  color: var(--chalk);
+}
+
+/* Ticker de tecnologías */
+.ticker{
+  border-block: 1px solid var(--line);
+  overflow: hidden;
+  margin-top: clamp(3rem, 7vh, 5.5rem);
+  position: relative;
+  z-index: 2;
+  background: rgba(14,19,38,.55);
+}
+.ticker-track{
+  display: flex;
+  width: max-content;
+  animation: slide 46s linear infinite;
+}
+.ticker-track span{
+  font-family: var(--mono);
+  font-size: .76rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--haze-dim);
+  padding: .95rem 0;
+  margin-right: 3rem;
+  white-space: nowrap;
+}
+.ticker-track span::before{
+  content:"\25C8";
+  color: var(--signal-dim);
+  margin-right: 3rem;
+}
+@keyframes slide{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+
+/* ---------- Secciones ---------- */
+.section{
+  padding-block: clamp(4.5rem, 11vh, 8.5rem);
+  position: relative;
+}
+.section-head{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.section-head h2{ margin-top: 1.1rem; }
+
+/* Pilares de servicio */
+.pillars{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.pillar{
+  background: var(--ink);
+  padding: clamp(1.8rem, 3vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  position: relative;
+  transition: background .45s var(--ease);
+}
+.pillar::after{
+  content:"";
+  position: absolute;
+  left: 0; top: 0;
+  height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--signal), var(--pulse));
+  transition: width .6s var(--ease);
+}
+.pillar:hover{ background: var(--surface); }
+.pillar:hover::after{ width: 100%; }
+.pillar-idx{
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--haze-dim);
+}
+.pillar h3{ font-size: var(--step-2); font-variation-settings: 'wdth' 110; font-weight: 700; }
+.pillar p{ color: var(--haze); }
+.deliverables{
+  list-style: none;
+  margin: .4rem 0 0;
+  padding: 1.35rem 0 0;
+  display: grid;
+  gap: .55rem;
+  border-top: 1px solid var(--line);
+}
+.deliverables li{
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: .7rem;
+  align-items: baseline;
+  font-size: var(--step--1);
+  font-family: var(--mono);
+  color: var(--haze);
+  line-height: 1.6;
+}
+.deliverables li::before{
+  content:"\2192";
+  color: var(--signal);
+}
+
+/* Casos de uso */
+.cases{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.case{
+  background: var(--ink);
+  padding: clamp(1.6rem, 2.6vw, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: background .45s var(--ease);
+}
+.case:hover{ background: var(--surface); }
+.case-glyph{
+  width: 46px; height: 46px;
+  color: var(--signal);
+  margin-bottom: .4rem;
+  transition: transform .5s var(--ease);
+}
+.case:hover .case-glyph{ transform: translateY(-4px); }
+.case-glyph svg{ width: 100%; height: 100%; }
+.case h3{ font-size: var(--step-1); }
+.case p{ color: var(--haze); font-size: var(--step--1); line-height: 1.75; flex: 1; }
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: .4rem;
+}
+.tag{
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--haze-dim);
+  border: 1px solid var(--line);
+  padding: .3rem .55rem;
+}
+.case::before{
+  content:"";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--signal), transparent);
+  transform: scaleX(0);
+  transition: transform .7s var(--ease);
+}
+.case:hover::before{ transform: scaleX(1); }
+
+/* Proceso — es una secuencia real, por eso va numerado */
+.steps{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  counter-reset: step;
+}
+.step{
+  border-top: 1px solid var(--line);
+  padding-top: 1.4rem;
+  display: grid;
+  gap: .7rem;
+  align-content: start;
+  position: relative;
+}
+.step::before{
+  counter-increment: step;
+  content: "0" counter(step);
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .2em;
+  color: var(--signal);
+}
+.step::after{
+  content:"";
+  position: absolute;
+  top: -1px; left: 0;
+  width: 34px; height: 1px;
+  background: var(--signal);
+}
+.step h3{ font-size: 1.12rem; font-variation-settings: 'wdth' 104; }
+.step p{ color: var(--haze); font-size: var(--step--1); line-height: 1.75; }
+
+/* Stack */
+.stack-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+.stack-col h3{
+  font-family: var(--mono);
+  font-size: .74rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--haze-dim);
+  font-variation-settings: normal;
+  line-height: 1.4;
+  padding-bottom: .9rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1rem;
+}
+.stack-col ul{ list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.stack-col li{ font-size: var(--step--1); color: var(--haze); }
+.stack-col li strong{ color: var(--chalk); font-weight: 500; }
+
+/* Contacto */
+.contact{
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(120% 140% at 12% 0%, rgba(110,91,255,.14), transparent 58%),
+    radial-gradient(100% 120% at 92% 100%, rgba(53,224,198,.12), transparent 60%),
+    var(--surface);
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+}
+.contact-copy{
+  padding: clamp(1.9rem, 3.6vw, 3.4rem);
+  display: grid;
+  align-content: start;
+  gap: 1.3rem;
+  border-right: 1px solid var(--line);
+}
+.contact-copy h2{ font-size: var(--step-2); }
+.contact-list{
+  list-style: none;
+  margin: .6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .9rem;
+}
+.contact-list a, .contact-list span{
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--haze);
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  transition: color .25s var(--ease);
+}
+.contact-list a:hover{ color: var(--signal); }
+.contact-list b{
+  color: var(--haze-dim);
+  font-weight: 400;
+  min-width: 86px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: .68rem;
+}
+
+form{
+  padding: clamp(1.9rem, 3.6vw, 3.4rem);
+  display: grid;
+  gap: 1.15rem;
+  align-content: start;
+}
+.field{ display: grid; gap: .45rem; }
+.field label{
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--haze-dim);
+}
+.field input, .field select, .field textarea{
+  font-family: var(--body);
+  font-size: var(--step-0);
+  font-weight: 300;
+  color: var(--chalk);
+  background: var(--ink-deep);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: .8rem .9rem;
+  width: 100%;
+  transition: border-color .25s var(--ease), background .25s var(--ease);
+}
+.field textarea{ resize: vertical; min-height: 104px; }
+.field input::placeholder, .field textarea::placeholder{ color: var(--haze-dim); }
+.field input:focus, .field select:focus, .field textarea:focus{
+  border-color: var(--signal);
+  background: #060911;
+}
+.field-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; }
+form .btn{ justify-content: center; }
+.form-note{
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .06em;
+  color: var(--haze-dim);
+  line-height: 1.6;
+}
+.sent{
+  border: 1px solid var(--signal-dim);
+  background: rgba(53,224,198,.07);
+  padding: .9rem 1rem;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .06em;
+  color: var(--signal);
+  line-height: 1.65;
+}
+.sent[data-state="error"]{
+  border-color: var(--amber);
+  color: var(--amber);
+  background: rgba(255,182,97,.07);
+}
+[hidden]{ display: none !important; }
+
+/* Pie */
+.footer{
+  border-top: 1px solid var(--line);
+  padding-block: 2.6rem 3.2rem;
+  margin-top: clamp(3rem, 8vh, 6rem);
+}
+.footer-inner{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-links{ display: flex; flex-wrap: wrap; gap: 1.6rem; }
+.footer small, .footer a{
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .1em;
+  color: var(--haze-dim);
+  text-transform: uppercase;
+}
+.footer a:hover{ color: var(--signal); }
+
+/* ---------- Ilustraciones de línea ---------- */
+.illus{ margin: 0; }
+.illus svg{
+  display: block;
+  width: 100%;
+  height: 100px;
+  overflow: visible;
+}
+.illus .lbl{
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: .16em;
+  fill: var(--haze-dim);
+  text-transform: uppercase;
+}
+.illus .box{ fill: rgba(14,19,38,.85); stroke: var(--line); stroke-width: 1.1; }
+.illus .box-name{
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: .14em;
+  fill: var(--haze);
+}
+/* Paquetes de datos recorriendo el circuito */
+.illus .wire{ fill: none; stroke: var(--signal); stroke-width: 1.3; stroke-dasharray: 3 7; }
+.illus .wire{ animation: wire 2.6s linear infinite; }
+.illus .wire.slow{ animation-duration: 4s; stroke: var(--pulse); }
+@keyframes wire{ to{ stroke-dashoffset: -20; } }
+.illus .arrow{ fill: var(--signal); }
+
+/* Ilustración en el encabezado de cada pilar */
+.pillar > .illus{
+  margin: calc(-1 * clamp(1.8rem, 3vw, 3rem)) calc(-1 * clamp(1.8rem, 3vw, 3rem)) 0;
+  padding: 1.5rem clamp(1.8rem, 3vw, 3rem);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(80% 120% at 28% 0%, rgba(110,91,255,.12), transparent 68%),
+    rgba(14,19,38,.5);
+}
+
+/* Red de inferencia */
+.illus .edge{ stroke: var(--haze-dim); stroke-width: .8; opacity: .28; }
+.illus .edge.live{
+  stroke: var(--signal);
+  stroke-width: 1;
+  animation: spark 3.4s ease-in-out infinite;
+}
+@keyframes spark{ 0%, 100%{ opacity: .12; } 45%{ opacity: .9; } }
+.illus .neuron{ fill: var(--ink-deep); stroke: var(--haze-dim); stroke-width: 1.2; }
+.illus .neuron.on{
+  fill: rgba(53,224,198,.18);
+  stroke: var(--signal);
+  animation: breathe 3.4s ease-in-out infinite;
+}
+.illus .neuron.out{ stroke: var(--pulse); fill: rgba(110,91,255,.2); }
+@keyframes breathe{ 0%, 100%{ stroke-opacity: .45; } 45%{ stroke-opacity: 1; } }
+
+/* ---------- Panel de código en construcción ---------- */
+.codepanel{
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--ink-deep);
+  box-shadow: 0 28px 70px -48px #000;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-width: 0;
+}
+.code-bar{
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .62rem .9rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.code-dot{ width: 7px; height: 7px; border-radius: 50%; background: var(--signal); flex: none; }
+.code-file{
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: var(--chalk);
+}
+.code-lang{
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--haze-dim);
+  white-space: nowrap;
+}
+.code-body{ overflow-x: auto; padding: .85rem 0; }
+.code-lines{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: .74rem;
+  line-height: 1.8;
+  height: 12.6em;      /* alto fijo: los fragmentos cambian sin mover el layout */
+  counter-reset: cl;
+}
+.code-lines li{
+  display: grid;
+  grid-template-columns: 2.7em 1fr;
+  gap: .5rem;
+}
+.code-lines li::before{
+  counter-increment: cl;
+  content: counter(cl);
+  text-align: right;
+  padding-right: .55rem;
+  color: #2B3757;
+  border-right: 1px solid var(--line-soft);
+  font-variant-numeric: tabular-nums;
+}
+.code-lines code{
+  font: inherit;
+  white-space: pre;
+  padding-right: .9rem;
+}
+.tk-kw{ color: #9C8DFF; }
+.tk-fn{ color: var(--chalk); }
+.tk-str{ color: var(--signal); }
+.tk-num{ color: var(--amber); }
+.tk-tag{ color: #7FB2FF; }
+.tk-com{ color: #46527A; }
+.tk-pun{ color: var(--haze-dim); }
+.tk-var{ color: var(--haze); }
+.caret{
+  display: inline-block;
+  width: .5em;
+  height: 1.05em;
+  vertical-align: -.2em;
+  background: var(--signal);
+  animation: blink 1.05s steps(2, start) infinite;
+}
+@keyframes blink{ 50%{ opacity: 0; } }
+.code-status{
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  border-top: 1px solid var(--line);
+  padding: .58rem .9rem;
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--haze-dim);
+}
+.code-status .pip{
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--amber);
+  flex: none;
+  animation: pip 1s ease-in-out infinite;
+}
+.code-status[data-state="ok"]{ color: var(--signal); }
+.code-status[data-state="ok"] .pip{ background: var(--signal); animation: none; }
+@keyframes pip{ 50%{ opacity: .2; } }
+.code-status .right{ margin-left: auto; color: var(--haze-dim); }
+
+/* Stack: panel de código + columnas */
+.stack-layout{
+  display: grid;
+  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.stack-layout .stack-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+/* Revelado en scroll */
+.reveal{
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .85s var(--ease), transform .85s var(--ease);
+}
+.reveal.in{ opacity: 1; transform: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1040px){
+  .steps{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cases{ grid-template-columns: 1fr; }
+  .hero-grid{ grid-template-columns: 1fr; align-items: start; }
+  .hero-side{
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 1.8rem;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+  .contact{ grid-template-columns: 1fr; }
+  .contact-copy{ border-right: 0; border-bottom: 1px solid var(--line); }
+  .stack-layout{ grid-template-columns: 1fr; }
+  .codepanel{ max-width: 460px; }
+}
+@media (max-width: 780px){
+  .nav{
+    position: fixed;
+    inset: 74px 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--ink-deep);
+    border-bottom: 1px solid var(--line);
+    padding: .5rem var(--gutter) 1.6rem;
+    transform: translateY(-130%);
+    transition: transform .45s var(--ease);
+  }
+  .nav[data-open="true"]{ transform: none; }
+  .nav a{ padding-block: .95rem; border-bottom: 1px solid var(--line-soft); }
+  .nav .btn{ margin-top: 1.1rem; border-bottom: 0; justify-content: center; }
+  .nav-toggle{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: 0;
+    padding: .6rem 0 .6rem .6rem;
+    cursor: pointer;
+  }
+  .nav-toggle i{
+    display: block;
+    width: 24px; height: 1.5px;
+    background: var(--chalk);
+    transition: transform .3s var(--ease), opacity .3s var(--ease);
+  }
+  .nav-toggle[aria-expanded="true"] i:nth-child(1){ transform: translateY(6.5px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] i:nth-child(2){ opacity: 0; }
+  .nav-toggle[aria-expanded="true"] i:nth-child(3){ transform: translateY(-6.5px) rotate(-45deg); }
+  .pillars{ grid-template-columns: 1fr; }
+  .steps{ grid-template-columns: 1fr; }
+  .section-head{ grid-template-columns: 1fr; }
+  .hero-side{ grid-template-columns: 1fr; gap: 1.2rem; }
+  .field-row{ grid-template-columns: 1fr; }
+}
+@media (max-width: 560px){
+  .stack-layout .stack-grid{ grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *, *::before, *::after{
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .reveal{ opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top" aria-label="Moovi Solutions, inicio">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M3 25V9l7 9 6-9 6 9 7-9v16" stroke="#35E0C6" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="16" cy="27.5" r="2" fill="#6E5BFF"/>
+      </svg>
+      <span class="brand-name">Moovi <span>Solutions</span></span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <i></i><i></i><i></i>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#casos">Casos de uso</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#stack">Stack</a>
+      <a class="btn" href="#contacto">Hablemos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HÉROE ============ -->
+  <section class="hero">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Ingeniería de software · Inteligencia artificial</p>
+          <h1>Software e IA para empresas <em>en movimiento</em>.</h1>
+          <p class="lede">Diseñamos, construimos y operamos las plataformas que sostienen tu negocio: desarrollo a medida, IA aplicada, ecommerce, apps móviles y sistemas Smart City e IoT.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contacto">Agendar una reunión</a>
+            <a class="btn btn-ghost" href="#servicios">Ver qué hacemos</a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <dl>
+            <dt>Modalidad</dt>
+            <dd>Producto a medida o equipo dedicado</dd>
+          </dl>
+          <dl>
+            <dt>Despliegue</dt>
+            <dd>Cloud, on-premise e híbrido</dd>
+          </dl>
+          <dl>
+            <dt>Alcance</dt>
+            <dd>Del descubrimiento a la operación</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack">
+        <span>Python</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Flutter</span><span>Kotlin</span><span>Swift</span><span>PostgreSQL</span><span>Kubernetes</span><span>AWS</span><span>Azure</span><span>MQTT</span><span>LLMs</span><span>Computer Vision</span><span>Edge Computing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICIOS ============ -->
+  <section class="section" id="servicios">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Servicios</p>
+          <h2>Dos capacidades centrales, un mismo equipo.</h2>
+        </div>
+        <p class="muted">No entregamos demos. Construimos sistemas que entran en producción, se miden y se mantienen: arquitectura clara, código propio y documentación que tu equipo puede tomar el día uno.</p>
+      </div>
+
+      <div class="pillars reveal">
+        <article class="pillar">
+          <figure class="illus" aria-hidden="true">
+            <!-- Flujo de datos: cliente → API → base, con cola de eventos -->
+            <svg viewBox="0 0 320 100" fill="none">
+              <rect class="box" x="124" y="6" width="72" height="22" rx="1"/>
+              <text class="box-name" x="160" y="21" text-anchor="middle">EVENTOS</text>
+
+              <rect class="box" x="6"   y="52" width="72" height="32" rx="1"/>
+              <rect class="box" x="124" y="52" width="72" height="32" rx="1"/>
+              <rect class="box" x="242" y="52" width="72" height="32" rx="1"/>
+              <text class="box-name" x="42"  y="72" text-anchor="middle">CLIENTE</text>
+              <text class="box-name" x="160" y="72" text-anchor="middle">API</text>
+              <text class="box-name" x="278" y="72" text-anchor="middle">DATOS</text>
+
+              <path class="wire" d="M78 68 H124"/>
+              <path class="wire" d="M196 68 H242"/>
+              <path class="wire slow" d="M160 52 V28"/>
+
+              <path class="arrow" d="M118 68 l-7 -3.4 v6.8 z"/>
+              <path class="arrow" d="M236 68 l-7 -3.4 v6.8 z"/>
+
+              <circle cx="42" cy="94" r="1.6" fill="#5F6C92"/>
+              <circle cx="160" cy="94" r="1.6" fill="#5F6C92"/>
+              <circle cx="278" cy="94" r="1.6" fill="#5F6C92"/>
+            </svg>
+          </figure>
+          <p class="pillar-idx">Servicio A</p>
+          <h3>Desarrollo de Software</h3>
+          <p>Plataformas web, sistemas internos e integraciones a medida. Tomamos procesos que hoy viven en planillas, correos y software heredado, y los convertimos en producto: rápido, auditable y preparado para crecer.</p>
+          <ul class="deliverables">
+            <li><span>Aplicaciones web y portales de cliente</span></li>
+            <li><span>Sistemas de gestión y back-office a medida</span></li>
+            <li><span>APIs, microservicios e integraciones (ERP, CRM, pagos)</span></li>
+            <li><span>Modernización de sistemas heredados</span></li>
+            <li><span>Infraestructura, CI/CD y observabilidad</span></li>
+          </ul>
+        </article>
+
+        <article class="pillar">
+          <figure class="illus" aria-hidden="true">
+            <!-- Red de inferencia: datos → modelo → decisión -->
+            <svg viewBox="0 0 320 100" fill="none">
+              <g class="edges" stroke-linecap="round">
+                <line class="edge" x1="44" y1="22" x2="160" y2="12"/>
+                <line class="edge live" style="animation-delay:0s"    x1="44" y1="22" x2="160" y2="34"/>
+                <line class="edge" x1="44" y1="22" x2="160" y2="56"/>
+                <line class="edge" x1="44" y1="22" x2="160" y2="78"/>
+                <line class="edge" x1="44" y1="44" x2="160" y2="12"/>
+                <line class="edge" x1="44" y1="44" x2="160" y2="34"/>
+                <line class="edge live" style="animation-delay:.5s"   x1="44" y1="44" x2="160" y2="56"/>
+                <line class="edge" x1="44" y1="44" x2="160" y2="78"/>
+                <line class="edge" x1="44" y1="66" x2="160" y2="12"/>
+                <line class="edge live" style="animation-delay:1.1s"  x1="44" y1="66" x2="160" y2="34"/>
+                <line class="edge" x1="44" y1="66" x2="160" y2="56"/>
+                <line class="edge" x1="44" y1="66" x2="160" y2="78"/>
+
+                <line class="edge" x1="160" y1="12" x2="276" y2="34"/>
+                <line class="edge" x1="160" y1="12" x2="276" y2="56"/>
+                <line class="edge live" style="animation-delay:1.5s"  x1="160" y1="34" x2="276" y2="34"/>
+                <line class="edge" x1="160" y1="34" x2="276" y2="56"/>
+                <line class="edge" x1="160" y1="56" x2="276" y2="34"/>
+                <line class="edge live" style="animation-delay:1.9s"  x1="160" y1="56" x2="276" y2="56"/>
+                <line class="edge" x1="160" y1="78" x2="276" y2="34"/>
+                <line class="edge" x1="160" y1="78" x2="276" y2="56"/>
+              </g>
+
+              <circle class="neuron" cx="44" cy="22" r="5"/>
+              <circle class="neuron" cx="44" cy="44" r="5"/>
+              <circle class="neuron" cx="44" cy="66" r="5"/>
+
+              <circle class="neuron" cx="160" cy="12" r="5"/>
+              <circle class="neuron on" style="animation-delay:.3s" cx="160" cy="34" r="5"/>
+              <circle class="neuron on" style="animation-delay:1.2s" cx="160" cy="56" r="5"/>
+              <circle class="neuron" cx="160" cy="78" r="5"/>
+
+              <circle class="neuron out" cx="276" cy="34" r="5"/>
+              <circle class="neuron out" cx="276" cy="56" r="5"/>
+
+              <text class="lbl" x="44"  y="97" text-anchor="middle">DATOS</text>
+              <text class="lbl" x="160" y="97" text-anchor="middle">MODELO</text>
+              <text class="lbl" x="276" y="97" text-anchor="middle">DECISIÓN</text>
+            </svg>
+          </figure>
+          <p class="pillar-idx">Servicio B</p>
+          <h3>Soluciones de IA</h3>
+          <p>Inteligencia artificial aplicada a un problema concreto de negocio, con métricas definidas antes de escribir la primera línea de código. Desde asistentes sobre tu propia documentación hasta visión por computadora en planta.</p>
+          <ul class="deliverables">
+            <li><span>Agentes y asistentes sobre datos propios (RAG)</span></li>
+            <li><span>Automatización de procesos documentales</span></li>
+            <li><span>Modelos predictivos y detección de anomalías</span></li>
+            <li><span>Visión por computadora e inspección automática</span></li>
+            <li><span>Evaluación, monitoreo y gobierno de modelos</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ CASOS DE USO ============ -->
+  <section class="section" id="casos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Soluciones por caso de uso</p>
+          <h2>Tres frentes donde ya sabemos el camino.</h2>
+        </div>
+        <p class="muted">Cuando el problema es conocido, el proyecto no arranca de cero. Estas tres líneas tienen arquitectura de referencia, componentes reutilizables y un plan de puesta en marcha probado.</p>
+      </div>
+
+      <div class="cases reveal">
+        <article class="case">
+          <div class="case-glyph" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M6 10h5l5 21h21l4-15H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="19" cy="39" r="3" stroke="currentColor" stroke-width="2"/>
+              <circle cx="34" cy="39" r="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M27 12v9M22.5 16.5h9" stroke="#6E5BFF" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Ecommerce</h3>
+          <p>Tiendas y marketplaces que soportan catálogos grandes y picos de tráfico reales. Checkout optimizado, stock sincronizado con tu ERP, medios de pago locales y motores de recomendación que suben el ticket promedio.</p>
+          <div class="tags">
+            <span class="tag">Headless</span><span class="tag">Pagos</span><span class="tag">Logística</span><span class="tag">Recomendación</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-glyph" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="14" y="5" width="20" height="38" rx="3.5" stroke="currentColor" stroke-width="2"/>
+              <path d="M21 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="37" r="1.8" fill="currentColor"/>
+              <path d="M19 26l4-5 4 6 4-9" stroke="#6E5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Apps Móviles</h3>
+          <p>Aplicaciones iOS y Android para clientes, personal en calle u operarios en planta. Funcionamiento offline, sincronización confiable, notificaciones y publicación en tiendas gestionada de punta a punta.</p>
+          <div class="tags">
+            <span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Offline-first</span><span class="tag">Geolocalización</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-glyph" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M7 42V22l9-6 9 6v20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M25 42V15l8-5 8 5v27" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M12 28h4M12 34h4M31 23h4M31 30h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="33" cy="5.5" r="2.2" fill="#6E5BFF"/>
+              <path d="M28.5 4a6 6 0 019 0" stroke="#6E5BFF" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Smart City e IoT</h3>
+          <p>Redes de sensores, telemetría y tableros de control para municipios, servicios públicos e industria. Ingesta de datos en tiempo real, alertas por umbral, mantenimiento predictivo y gemelos digitales del territorio.</p>
+          <div class="tags">
+            <span class="tag">Telemetría</span><span class="tag">MQTT / LoRa</span><span class="tag">Edge</span><span class="tag">Tableros</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ PROCESO ============ -->
+  <section class="section" id="proceso">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Cómo trabajamos</p>
+          <h2>Cuatro etapas, sin sorpresas en el medio.</h2>
+        </div>
+        <p class="muted">Cada etapa termina en algo que podés ver y aprobar. Si algo no cierra, se corrige ahí y no tres meses después.</p>
+      </div>
+
+      <div class="steps reveal">
+        <article class="step">
+          <h3>Descubrimiento</h3>
+          <p>Entendemos el proceso real, hablamos con quien lo ejecuta y definimos qué métrica tiene que moverse. Salís con alcance, riesgos y estimación.</p>
+        </article>
+        <article class="step">
+          <h3>Arquitectura</h3>
+          <p>Modelo de datos, integraciones, seguridad y plan de despliegue. Prototipo navegable antes de construir, para validar el flujo completo.</p>
+        </article>
+        <article class="step">
+          <h3>Construcción</h3>
+          <p>Ciclos cortos con entregas demostrables, pruebas automatizadas y un ambiente de staging abierto a tu equipo desde la primera semana.</p>
+        </article>
+        <article class="step">
+          <h3>Operación</h3>
+          <p>Puesta en producción, monitoreo, acuerdos de servicio y transferencia de conocimiento. Evolucionamos el producto o lo entregamos documentado.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ STACK ============ -->
+  <section class="section" id="stack">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Stack tecnológico</p>
+          <h2>Herramientas elegidas por el problema, no por moda.</h2>
+        </div>
+        <p class="muted">Trabajamos sobre tecnologías maduras y sostenidas por comunidades grandes, para que tu producto siga siendo mantenible cuando el equipo cambie.</p>
+      </div>
+
+      <div class="stack-layout reveal">
+
+        <figure class="codepanel" id="codepanel" aria-hidden="true">
+          <div class="code-bar">
+            <span class="code-dot"></span>
+            <span class="code-file" id="codeFile">ingesta.py</span>
+            <span class="code-lang" id="codeLang">Python · FastAPI</span>
+          </div>
+          <div class="code-body">
+            <ol class="code-lines" id="codeLines"></ol>
+          </div>
+          <div class="code-status" id="codeStatus">
+            <span class="pip"></span>
+            <span id="codeState">compilando</span>
+            <span class="right" id="codeTask">Ingesta de telemetría</span>
+          </div>
+        </figure>
+
+        <div class="stack-grid">
+        <div class="stack-col">
+          <h3>Producto y front</h3>
+          <ul>
+            <li><strong>React</strong> · Next.js · Astro</li>
+            <li><strong>TypeScript</strong></li>
+            <li><strong>Flutter</strong> · Kotlin · Swift</li>
+            <li>Design systems y accesibilidad</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Back y datos</h3>
+          <ul>
+            <li><strong>Python</strong> · FastAPI · Django</li>
+            <li><strong>Node.js</strong> · NestJS</li>
+            <li><strong>PostgreSQL</strong> · Redis · TimescaleDB</li>
+            <li>Kafka · RabbitMQ · ETL</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Inteligencia artificial</h3>
+          <ul>
+            <li><strong>LLMs</strong> y agentes con RAG</li>
+            <li>PyTorch · scikit-learn</li>
+            <li>Bases vectoriales y embeddings</li>
+            <li>Visión por computadora · OCR</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Infraestructura e IoT</h3>
+          <ul>
+            <li><strong>AWS</strong> · Azure · Google Cloud</li>
+            <li>Docker · Kubernetes · Terraform</li>
+            <li>MQTT · LoRaWAN · Modbus</li>
+            <li>Grafana · Prometheus</li>
+          </ul>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="section" id="contacto">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div class="contact-copy">
+          <p class="eyebrow">Contacto</p>
+          <h2>Contanos qué necesitás resolver.</h2>
+          <p class="muted">Respondemos con una primera lectura del problema y, si tiene sentido avanzar, una propuesta de alcance en pocos días. Sin costo y sin compromiso.</p>
+          <ul class="contact-list">
+            <li><a href="mailto:hola@moovisolutions.com"><b>Email</b> hola@moovisolutions.com</a></li>
+            <li><a href="tel:+540000000000"><b>Teléfono</b> +54 000 000 0000</a></li>
+            <li><span><b>Horario</b> Lun a Vie · 9 a 18 h (GMT-3)</span></li>
+          </ul>
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa</label>
+              <input id="empresa" name="empresa" type="text" placeholder="Organización" autocomplete="organization">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="nombre@empresa.com" autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="interes">Tema de interés</label>
+            <select id="interes" name="interes">
+              <option>Desarrollo de Software</option>
+              <option>Soluciones de IA</option>
+              <option>Ecommerce</option>
+              <option>Apps Móviles</option>
+              <option>Smart City e IoT</option>
+              <option>Todavía no lo tengo definido</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="mensaje">Qué necesitás resolver</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Contanos el proceso, el problema o la idea. Con dos o tres párrafos alcanza."></textarea>
+          </div>
+
+          <button class="btn" type="submit">Enviar consulta</button>
+          <p class="form-note" id="formNote">Al enviar se abre tu cliente de correo con el mensaje ya redactado.</p>
+          <p class="sent" id="formSent" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <small>© <span id="year">2026</span> Moovi Solutions · Todos los derechos reservados</small>
+    <nav class="footer-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#casos">Casos de uso</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Año en curso ---- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---- Barra superior ---- */
+  var topbar = document.getElementById('topbar');
+  function onScroll() { topbar.classList.toggle('stuck', window.scrollY > 12); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---- Menú móvil ---- */
+  var toggle = document.getElementById('navToggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+    nav.setAttribute('data-open', String(!open));
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menú');
+      nav.setAttribute('data-open', 'false');
+    }
+  });
+
+  /* ---- Ticker: se duplica para que el bucle sea continuo ---- */
+  var track = document.getElementById('tickerTrack');
+  track.innerHTML += track.innerHTML;
+
+  /* ---- Revelado en scroll ---- */
+  var items = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(items, function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+  }
+
+  /* ---- Formulario: compone el correo ---- */
+  var form = document.getElementById('contactForm');
+  var sent = document.getElementById('formSent');
+  var note = document.getElementById('formNote');
+  var DESTINO = 'hola@moovisolutions.com';
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    var nombre = String(data.get('nombre') || '').trim();
+    var email = String(data.get('email') || '').trim();
+    var mensaje = String(data.get('mensaje') || '').trim();
+    var empresa = String(data.get('empresa') || '').trim();
+    var interes = String(data.get('interes') || '');
+
+    sent.hidden = false;
+
+    if (!nombre || !email || !mensaje) {
+      sent.setAttribute('data-state', 'error');
+      sent.textContent = 'Faltan datos: completá nombre, email y el detalle de la consulta.';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      sent.setAttribute('data-state', 'error');
+      sent.textContent = 'Revisá el email: no parece una dirección válida.';
+      return;
+    }
+
+    var cuerpo = 'Nombre: ' + nombre + '\n'
+      + 'Empresa: ' + (empresa || '-') + '\n'
+      + 'Email: ' + email + '\n'
+      + 'Interés: ' + interes + '\n\n'
+      + mensaje;
+
+    window.location.href = 'mailto:' + DESTINO
+      + '?subject=' + encodeURIComponent('Consulta desde el sitio - ' + interes)
+      + '&body=' + encodeURIComponent(cuerpo);
+
+    note.hidden = true;
+    sent.removeAttribute('data-state');
+    sent.textContent = 'Listo, ' + nombre + '. Se abre tu cliente de correo con el mensaje redactado. Si no se abre, escribinos a ' + DESTINO + '.';
+  });
+
+  /* ---- Panel de código: software escribiéndose ---- */
+  var SNIPPETS = [
+    {
+      file: 'ingesta.py',
+      lang: 'Python · FastAPI',
+      task: 'Ingesta de telemetría',
+      lines: [
+        [['@app', 'tk-kw'], ['.post(', 'tk-pun'], ['"/telemetria"', 'tk-str'], [')', 'tk-pun']],
+        [['async def ', 'tk-kw'], ['ingesta', 'tk-fn'], ['(lote: ', 'tk-pun'], ['list', 'tk-var'], ['[Lectura]):', 'tk-pun']],
+        [['    await ', 'tk-kw'], ['bus.publicar', 'tk-fn'], ['(', 'tk-pun'], ['"sensores"', 'tk-str'], [', lote)', 'tk-pun']],
+        [['    alertas', 'tk-var'], [' = ', 'tk-pun'], ['detectar_anomalias', 'tk-fn'], ['(lote)', 'tk-pun']],
+        [['    if ', 'tk-kw'], ['alertas', 'tk-var'], [':', 'tk-pun']],
+        [['        await ', 'tk-kw'], ['notificar', 'tk-fn'], ['(alertas)', 'tk-pun']],
+        [['    return ', 'tk-kw'], ['{', 'tk-pun'], ['"ok"', 'tk-str'], [': ', 'tk-pun'], ['True', 'tk-num'], [', ', 'tk-pun'], ['"n"', 'tk-str'], [': ', 'tk-pun'], ['len', 'tk-fn'], ['(lote)}', 'tk-pun']]
+      ]
+    },
+    {
+      file: 'Carrito.tsx',
+      lang: 'TypeScript · React',
+      task: 'Checkout de ecommerce',
+      lines: [
+        [['export function ', 'tk-kw'], ['Carrito', 'tk-fn'], ['({ items }: ', 'tk-pun'], ['Props', 'tk-tag'], [') {', 'tk-pun']],
+        [['  const ', 'tk-kw'], ['total', 'tk-var'], [' = items.', 'tk-pun'], ['reduce', 'tk-fn'], ['(', 'tk-pun']],
+        [['    (acc, i) ', 'tk-var'], ['=> ', 'tk-kw'], ['acc + i.precio * i.cantidad,', 'tk-var']],
+        [['    0', 'tk-num']],
+        [['  );', 'tk-pun']],
+        [['  return ', 'tk-kw'], ['<Resumen', 'tk-tag'], [' total', 'tk-var'], ['={total} ', 'tk-pun'], ['/>', 'tk-tag'], [';', 'tk-pun']],
+        [['}', 'tk-pun']]
+      ]
+    },
+    {
+      file: 'asistente.py',
+      lang: 'Python · LLM',
+      task: 'Asistente sobre datos propios',
+      lines: [
+        [['# recupera contexto de tus documentos', 'tk-com']],
+        [['docs', 'tk-var'], [' = indice.', 'tk-pun'], ['buscar', 'tk-fn'], ['(pregunta, k=', 'tk-pun'], ['6', 'tk-num'], [')', 'tk-pun']],
+        [['contexto', 'tk-var'], [' = ', 'tk-pun'], ['unir', 'tk-fn'], ['(d.texto ', 'tk-pun'], ['for', 'tk-kw'], [' d ', 'tk-pun'], ['in', 'tk-kw'], [' docs)', 'tk-pun']],
+        [['respuesta', 'tk-var'], [' = modelo.', 'tk-pun'], ['responder', 'tk-fn'], ['(', 'tk-pun']],
+        [['    pregunta, contexto=contexto', 'tk-var']],
+        [[')', 'tk-pun']],
+        [['registrar', 'tk-fn'], ['(pregunta, respuesta, docs)', 'tk-pun']]
+      ]
+    }
+  ];
+
+  (function codePanel() {
+    var panel = document.getElementById('codepanel');
+    var elLines = document.getElementById('codeLines');
+    if (!panel || !elLines) return;
+
+    var elFile = document.getElementById('codeFile');
+    var elLang = document.getElementById('codeLang');
+    var elTask = document.getElementById('codeTask');
+    var elState = document.getElementById('codeState');
+    var elStatus = document.getElementById('codeStatus');
+
+    var caret = document.createElement('span');
+    caret.className = 'caret';
+
+    var index = 0;
+    var timer = null;
+    var onScreen = true;
+
+    if ('IntersectionObserver' in window) {
+      onScreen = false;
+      new IntersectionObserver(function (entries) {
+        onScreen = entries[0].isIntersecting;
+      }, { threshold: 0.15 }).observe(panel);
+    }
+
+    function newLine() {
+      var li = document.createElement('li');
+      var code = document.createElement('code');
+      li.appendChild(code);
+      elLines.appendChild(li);
+      return code;
+    }
+
+    function header(snip) {
+      elFile.textContent = snip.file;
+      elLang.textContent = snip.lang;
+      elTask.textContent = snip.task;
+    }
+
+    function renderStatic(snip) {
+      elLines.innerHTML = '';
+      snip.lines.forEach(function (line) {
+        var code = newLine();
+        line.forEach(function (tk) {
+          var s = document.createElement('span');
+          s.className = tk[1];
+          s.textContent = tk[0];
+          code.appendChild(s);
+        });
+      });
+    }
+
+    function type(snip, onDone) {
+      elLines.innerHTML = '';
+      elStatus.removeAttribute('data-state');
+      elState.textContent = 'compilando';
+
+      var li = 0, ti = 0, ci = 0;
+      var code = null, span = null, cls = null;
+
+      function step() {
+        if (!onScreen || document.hidden) { timer = window.setTimeout(step, 350); return; }
+
+        if (code === null) {
+          code = newLine();
+          code.appendChild(caret);
+          span = null;
+          cls = null;
+        }
+
+        var line = snip.lines[li];
+        var tok = line[ti];
+
+        if (cls !== tok[1]) {
+          span = document.createElement('span');
+          span.className = tok[1];
+          code.insertBefore(span, caret);
+          cls = tok[1];
+        }
+        span.textContent += tok[0].charAt(ci);
+        ci++;
+
+        var delay = 20 + Math.random() * 26;
+
+        if (ci >= tok[0].length) { ci = 0; ti++; }
+        if (ti >= line.length) { ti = 0; li++; code = null; delay = 160; }
+
+        if (li >= snip.lines.length) {
+          elStatus.setAttribute('data-state', 'ok');
+          elState.textContent = 'listo';
+          timer = window.setTimeout(onDone, 2600);
+          return;
+        }
+        timer = window.setTimeout(step, delay);
+      }
+
+      step();
+    }
+
+    function cycle() {
+      var snip = SNIPPETS[index];
+      header(snip);
+      type(snip, function () {
+        index = (index + 1) % SNIPPETS.length;
+        cycle();
+      });
+    }
+
+    if (reduced) {
+      header(SNIPPETS[0]);
+      renderStatic(SNIPPETS[0]);
+      elStatus.setAttribute('data-state', 'ok');
+      elState.textContent = 'listo';
+    } else {
+      cycle();
+    }
+  })();
+
+  /* ---- Héroe: red de nodos en movimiento ---- */
+  var canvas = document.getElementById('net');
+  var ctx = canvas.getContext && canvas.getContext('2d');
+  if (!ctx) return;
+
+  var nodes = [];
+  var w = 0, h = 0, dpr = 1, raf = null;
+
+  function size() {
+    var rect = canvas.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = rect.width;
+    h = rect.height;
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    seed();
+  }
+
+  function seed() {
+    var count = Math.round(Math.min(78, Math.max(24, (w * h) / 17000)));
+    nodes = [];
+    for (var i = 0; i < count; i++) {
+      nodes.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.28,
+        vy: (Math.random() - 0.5) * 0.28,
+        r: Math.random() * 1.4 + 0.7,
+        hot: Math.random() < 0.18
+      });
+    }
+  }
+
+  function draw(animate) {
+    ctx.clearRect(0, 0, w, h);
+
+    var i, a, b, n;
+    if (animate) {
+      for (i = 0; i < nodes.length; i++) {
+        n = nodes[i];
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < -20) n.x = w + 20;
+        if (n.x > w + 20) n.x = -20;
+        if (n.y < -20) n.y = h + 20;
+        if (n.y > h + 20) n.y = -20;
+      }
+    }
+
+    for (a = 0; a < nodes.length; a++) {
+      for (b = a + 1; b < nodes.length; b++) {
+        var dx = nodes[a].x - nodes[b].x;
+        var dy = nodes[a].y - nodes[b].y;
+        var d2 = dx * dx + dy * dy;
+        if (d2 < 24000) {
+          ctx.strokeStyle = 'rgba(53,224,198,' + ((1 - d2 / 24000) * 0.28).toFixed(3) + ')';
+          ctx.lineWidth = 0.6;
+          ctx.beginPath();
+          ctx.moveTo(nodes[a].x, nodes[a].y);
+          ctx.lineTo(nodes[b].x, nodes[b].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    for (i = 0; i < nodes.length; i++) {
+      n = nodes[i];
+      ctx.fillStyle = n.hot ? 'rgba(110,91,255,.85)' : 'rgba(53,224,198,.6)';
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    if (animate) raf = window.requestAnimationFrame(function () { draw(true); });
+  }
+
+  function start() {
+    if (raf) window.cancelAnimationFrame(raf);
+    size();
+    draw(!reduced);
+  }
+
+  var resizeTimer = null;
+  window.addEventListener('resize', function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(start, 180);
+  });
+
+  start();
+})();
+</script>
+</body>
+</html>
