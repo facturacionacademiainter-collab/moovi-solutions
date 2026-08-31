@@ -191,11 +191,11 @@ p{ margin: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  height: 74px;
+  height: 96px;
 }
 
 .brand{ display: flex; align-items: center; gap: .7rem; }
-.brand-logo{ height: 32px; width: auto; display: block; flex: none; }
+.brand-logo{ height: 65px; width: auto; display: block; flex: none; }
 
 .nav{ display: flex; align-items: center; gap: 2.1rem; }
 .nav a{
@@ -948,9 +948,11 @@ form .btn{ justify-content: center; }
   .codepanel{ max-width: 460px; }
 }
 @media (max-width: 780px){
+  .topbar-inner{ height: 78px; }
+  .brand-logo{ height: 50px; }
   .nav{
     position: fixed;
-    inset: 74px 0 auto 0;
+    inset: 78px 0 auto 0;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
