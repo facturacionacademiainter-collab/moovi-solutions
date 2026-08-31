@@ -195,16 +195,7 @@ p{ margin: 0; }
 }
 
 .brand{ display: flex; align-items: center; gap: .7rem; }
-.brand svg{ width: 30px; height: 30px; flex: none; }
-.brand-name{
-  font-family: var(--display);
-  font-variation-settings: 'wdth' 118;
-  font-weight: 800;
-  font-size: 1.02rem;
-  letter-spacing: .03em;
-  text-transform: uppercase;
-}
-.brand-name span{ color: var(--signal); font-weight: 400; }
+.brand-logo{ height: 32px; width: auto; display: block; flex: none; }
 
 .nav{ display: flex; align-items: center; gap: 2.1rem; }
 .nav a{
@@ -251,6 +242,8 @@ p{ margin: 0; }
   background: #0B8676;
 }
 .nav .btn::after{ content: none; }
+/* .nav a le gana a .btn por especificidad: el boton perdia su color propio */
+.nav .btn, .nav .btn:hover{ color: var(--ink-deep); }
 .btn:disabled{
   opacity: .55;
   cursor: progress;
