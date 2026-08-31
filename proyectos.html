@@ -85,6 +85,16 @@
         <p>CollectIQ cambia el criterio de orden. Para cada caso estima <strong>probabilidad de pago por tramos</strong> —a 5, 10, 15, 20, 30 y más de 30 días—, <strong>recupero esperado</strong> neto del costo de gestionarlo, y una <strong>prioridad</strong> que combina mora, monto y probabilidad. Sobre eso propone la próxima mejor acción para cada caso.</p>
         <p>La cartera entra desde Excel, CSV o sincronización con el CRM, y el sistema sugiere automáticamente cómo mapear las columnas del archivo a su modelo de datos, que es donde suele morir la mitad de estos proyectos.</p>
       </div>
+
+      <figure class="shot shot-band reveal">
+        <img src="assets/img/collectiq-tablero-ejecutivo.png"
+             width="1522" height="337" loading="lazy" decoding="async"
+             alt="Tablero ejecutivo de CollectIQ: una franja con la variación de recupero, contactabilidad, promesas incumplidas y mora, y debajo seis indicadores con su porcentaje y tendencia, entre ellos roll rate y first payment default.">
+        <figcaption>
+          <b>Indicadores</b>
+          Regularización, cumplimiento de promesas, roll rate, primer pago impago. Los números que dicen cómo está la cartera, pero no a quién llamar hoy.
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -135,53 +145,16 @@
         <article class="rel-card"><h3>Multiorganización con marca propia</h3></article>
         <article class="rel-card"><h3>API pública documentada</h3></article>
       </div>
-    </div>
-  </section>
 
-  <hr class="rule">
-
-  <!-- ============ CAPTURAS ============ -->
-  <section class="section" id="pantallas">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <p class="eyebrow">La plataforma</p>
-          <h2>Cómo se ve en uso.</h2>
-        </div>
-        <p class="muted">Tres vistas del producto en funcionamiento, sobre datos de una cartera real anonimizada.</p>
-      </div>
-
-      <div class="shots reveal">
-        <figure class="shot wide">
-          <img src="assets/img/collectiq-tablero-ejecutivo.png"
-               width="1522" height="337" loading="lazy" decoding="async"
-               alt="Tablero ejecutivo de CollectIQ con la variación de recupero, contactabilidad, promesas incumplidas y mora, seguida de seis indicadores: regularización, cumplimiento de promesas, recupero en monto, renovación post-regularización, roll rate y first payment default.">
-          <figcaption>
-            <b>Tablero ejecutivo</b>
-            Los indicadores que definen la salud de la cartera, con su variación y su tendencia. La franja superior resume en una línea si el mes va bien o mal.
-          </figcaption>
-        </figure>
-
-        <figure class="shot">
-          <img src="assets/img/collectiq-capa-inteligencia.png"
-               width="1472" height="606" loading="lazy" decoding="async"
-               alt="Capa de inteligencia de CollectIQ mostrando riesgo detectado, mejor oportunidad, predicción del próximo mes y alerta crítica activa, seguidas de una lista de acciones sugeridas por la IA priorizadas por impacto económico.">
-          <figcaption>
-            <b>Capa de inteligencia</b>
-            El motor no se limita a informar: detecta el riesgo, señala la mejor oportunidad y propone acciones ordenadas por impacto económico y confianza del modelo. Cada una se puede abrir para ver en qué se basa.
-          </figcaption>
-        </figure>
-
-        <figure class="shot">
-          <img src="assets/img/collectiq-navegacion.png"
-               width="352" height="431" loading="lazy" decoding="async"
-               alt="Menú lateral de CollectIQ con la sección Indicadores desplegada: Ejecutivo, Operativo, Segmentación, Canales y horarios, Modelo predictivo y Cartera de clientes; debajo, Inteligencia IA y Plataforma.">
-          <figcaption>
-            <b>Navegación</b>
-            Tres niveles: los indicadores del día a día, la capa de inteligencia y la administración de la plataforma. Cada perfil entra por donde le corresponde.
-          </figcaption>
-        </figure>
-      </div>
+      <figure class="shot shot-band shot-mid reveal">
+        <img src="assets/img/collectiq-capa-inteligencia.png"
+             width="1472" height="606" loading="lazy" decoding="async"
+             alt="Capa de inteligencia de CollectIQ: tarjetas de riesgo detectado, mejor oportunidad, predicción del próximo mes y alerta crítica con el monto en juego; debajo, acciones sugeridas por la IA ordenadas por prioridad alta y media, cada una con enlace al detalle.">
+        <figcaption>
+          <b>Acciones sugeridas</b>
+          El motor no informa: recomienda. Cada acción viene priorizada por impacto económico y confianza del modelo, y se abre para ver en qué se basa.
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -198,10 +171,22 @@
         <p class="muted">La decisión de diseño que más condiciona el futuro de un producto como este.</p>
       </div>
 
-      <div class="prose reveal">
+      <div class="split reveal">
+        <div class="prose">
         <p>Toda la lógica de cálculo está en una capa propia, desacoplada de React. Ningún componente de la interfaz tiene fórmulas adentro: cuando una pantalla necesita una probabilidad o una recomendación, se la pide al motor. El motor expone un contrato estable —qué función se llama y qué forma tiene lo que devuelve—, y detrás de ese contrato la implementación puede cambiar por completo.</p>
         <p>Eso significa que <strong>un modelo entrenado puede reemplazar cualquiera de los cálculos actuales sin tocar una sola línea de interfaz</strong>. Hoy las estimaciones son fórmulas de referencia, documentadas y con pruebas; el día que haya volumen de datos suficiente para entrenar, se sustituye lo que hay adentro y la plataforma no se entera.</p>
         <p>La misma capa se comparte entre el front y las funciones de servidor, así que un cálculo nunca da dos resultados distintos según dónde se ejecute.</p>
+        </div>
+
+        <figure class="shot">
+          <img src="assets/img/collectiq-navegacion.png"
+               width="352" height="431" loading="lazy" decoding="async"
+               alt="Menú lateral de CollectIQ con la sección Indicadores desplegada mostrando Ejecutivo, Operativo, Segmentación, Canales y horarios, Modelo predictivo y Cartera de clientes; debajo las secciones Inteligencia IA y Plataforma.">
+          <figcaption>
+            <b>Tres niveles</b>
+            Esa separación se ve en el propio menú: indicadores, inteligencia y plataforma son capas distintas, no pestañas de lo mismo.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>

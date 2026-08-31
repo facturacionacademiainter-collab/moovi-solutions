@@ -1066,22 +1066,14 @@ form .btn{ justify-content: center; }
 .contact.solo .contact-copy{ border-right: 0; border-bottom: 0; }
 .band-gap{ margin-top: 1.5rem; }
 
-/* ---------- Capturas del producto ---------- */
-.shots{
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
-  gap: clamp(1rem, 2vw, 1.5rem);
-  align-items: start;
-}
+
+/* ---------- Capturas dentro del contenido ---------- */
 .shot{
   margin: 0;
   border: 1px solid var(--line);
   background: var(--paper-2);
-  display: grid;
-  gap: 0;
   overflow: hidden;
 }
-.shot.wide{ grid-column: 1 / -1; }
 .shot img{
   display: block;
   width: 100%;
@@ -1090,22 +1082,32 @@ form .btn{ justify-content: center; }
 }
 .shot figcaption{
   border-top: 1px solid var(--line);
-  padding: .8rem 1rem;
+  padding: .72rem 1rem;
   font-family: var(--mono);
-  font-size: .7rem;
-  letter-spacing: .09em;
-  line-height: 1.6;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  line-height: 1.65;
   color: var(--haze);
 }
 .shot figcaption b{
-  display: block;
   color: var(--chalk);
   font-weight: 500;
-  letter-spacing: .13em;
   text-transform: uppercase;
-  font-size: .68rem;
-  margin-bottom: .3rem;
+  letter-spacing: .13em;
+  margin-right: .5rem;
+}
+/* Ancho contenido: una captura no tiene que gritar más que el texto */
+.shot-band{ margin-top: clamp(1.8rem, 3.5vw, 2.8rem); }
+.shot-mid{ max-width: 760px; }
+
+/* Texto con una captura angosta al costado */
+.split{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 252px);
+  gap: clamp(1.6rem, 3.5vw, 3rem);
+  align-items: start;
 }
 @media (max-width: 860px){
-  .shots{ grid-template-columns: 1fr; }
+  .split{ grid-template-columns: 1fr; }
+  .split .shot{ max-width: 300px; }
 }
