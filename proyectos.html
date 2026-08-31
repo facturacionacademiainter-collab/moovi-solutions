@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyectos — Moovi Solutions</title>
+<meta name="description" content="Proyectos de Moovi Solutions. CollectIQ: plataforma de inteligencia para cobranzas que estima probabilidad de pago, recupero esperado y prioriza la gestión de la cartera.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html" aria-label="Moovi Solutions, inicio">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M3 25V9l7 9 6-9 6 9 7-9v16" stroke="#0D9B87" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="16" cy="27.5" r="2" fill="#5A45F0"/>
+      </svg>
+      <span class="brand-name">Moovi <span>Solutions</span></span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <i></i><i></i><i></i>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#casos">Casos de uso</a>
+      <a href="index.html#proceso">Proceso</a>
+      <a href="index.html#stack">Stack</a>
+      <a href="proyectos.html" aria-current="page">Proyectos</a>
+      <a class="btn" href="index.html#contacto">Hablemos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ ENCABEZADO DE PÁGINA ============ -->
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Proyectos</p>
+      <h1>CollectIQ</h1>
+      <p class="lede">Plataforma de inteligencia para cobranzas. Toma la cartera en mora de una organización, estima qué casos van a pagar y en qué plazo, y ordena la gestión diaria por recupero esperado en vez de por antigüedad de la deuda.</p>
+
+      <dl class="spec">
+        <div>
+          <dt>Tipo</dt>
+          <dd>Plataforma SaaS multiorganización</dd>
+        </div>
+        <div>
+          <dt>Dominio</dt>
+          <dd>Cobranzas y recupero de cartera</dd>
+        </div>
+        <div>
+          <dt>Rol</dt>
+          <dd>Producto propio, de la arquitectura a la operación</dd>
+        </div>
+        <div>
+          <dt>Núcleo técnico</dt>
+          <dd>React · Supabase · Motor de decisión propio</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ QUÉ RESUELVE ============ -->
+  <section class="section" id="problema">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">El problema</p>
+          <h2>Gestionar una cartera por intuición cuesta plata.</h2>
+        </div>
+        <p class="muted">La pregunta de todos los días en un equipo de cobranzas no es a quién le debe más, sino a quién conviene llamar hoy.</p>
+      </div>
+
+      <div class="prose reveal">
+        <p>En la mayoría de las operaciones, la cartera se ordena por monto o por días de mora, y la decisión de a quién contactar queda en la experiencia de cada gestor. El resultado es conocido: se invierte el mismo esfuerzo en casos que iban a pagar solos y en casos irrecuperables, mientras los que dependían de una gestión oportuna se enfrían.</p>
+        <p>CollectIQ cambia el criterio de orden. Para cada caso estima <strong>probabilidad de pago por tramos</strong> —a 5, 10, 15, 20, 30 y más de 30 días—, <strong>recupero esperado</strong> neto del costo de gestionarlo, y una <strong>prioridad</strong> que combina mora, monto y probabilidad. Sobre eso propone la próxima mejor acción para cada caso.</p>
+        <p>La cartera entra desde Excel, CSV o sincronización con el CRM, y el sistema sugiere automáticamente cómo mapear las columnas del archivo a su modelo de datos, que es donde suele morir la mitad de estos proyectos.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ CAPACIDADES ============ -->
+  <section class="section" id="capacidades">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Capacidades</p>
+          <h2>Qué hace la plataforma.</h2>
+        </div>
+        <p class="muted">Cada módulo se apoya en el mismo motor de decisión, de modo que todas las pantallas responden con el mismo criterio.</p>
+      </div>
+
+      <div class="cases reveal">
+        <article class="case">
+          <h3>Motor de decisión</h3>
+          <p>Probabilidad de pago, recupero esperado, score de riesgo, probabilidad de contacto efectivo, días estimados hasta el pago y prioridad de gestión. Siete interfaces que cualquier pantalla consulta, ninguna calcula por su cuenta.</p>
+          <div class="tags">
+            <span class="tag">Scoring</span><span class="tag">Priorización</span><span class="tag">Next best action</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <h3>Simulación y escenarios</h3>
+          <p>Un gemelo digital de la cartera permite probar estrategias antes de ejecutarlas: qué pasa si se cambia el criterio de contacto, si se refinancia un segmento o si se mueve el objetivo del mes. Incluye pronóstico contra objetivos y backtesting.</p>
+          <div class="tags">
+            <span class="tag">Digital twin</span><span class="tag">What-if</span><span class="tag">Forecast</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <h3>Copiloto con IA</h3>
+          <p>Preguntas sobre la cartera en lenguaje natural, respondidas con datos reales de la organización. Cada respuesta viene con un panel de evidencia que muestra de dónde salió cada número, para que la recomendación se pueda auditar en vez de creerle.</p>
+          <div class="tags">
+            <span class="tag">Claude</span><span class="tag">Evidencia</span><span class="tag">Explicabilidad</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="rel-grid band-gap reveal">
+        <article class="rel-card"><h3>Alertas y detección de anomalías</h3></article>
+        <article class="rel-card"><h3>Tableros ejecutivo y operativo</h3></article>
+        <article class="rel-card"><h3>Segmentación de cartera</h3></article>
+        <article class="rel-card"><h3>Análisis de fugas de recupero</h3></article>
+        <article class="rel-card"><h3>Multiorganización con marca propia</h3></article>
+        <article class="rel-card"><h3>API pública documentada</h3></article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ ARQUITECTURA ============ -->
+  <section class="section" id="arquitectura">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Decisión de arquitectura</p>
+          <h2>La inteligencia vive fuera de la interfaz.</h2>
+        </div>
+        <p class="muted">La decisión de diseño que más condiciona el futuro de un producto como este.</p>
+      </div>
+
+      <div class="prose reveal">
+        <p>Toda la lógica de cálculo está en una capa propia, desacoplada de React. Ningún componente de la interfaz tiene fórmulas adentro: cuando una pantalla necesita una probabilidad o una recomendación, se la pide al motor. El motor expone un contrato estable —qué función se llama y qué forma tiene lo que devuelve—, y detrás de ese contrato la implementación puede cambiar por completo.</p>
+        <p>Eso significa que <strong>un modelo entrenado puede reemplazar cualquiera de los cálculos actuales sin tocar una sola línea de interfaz</strong>. Hoy las estimaciones son fórmulas de referencia, documentadas y con pruebas; el día que haya volumen de datos suficiente para entrenar, se sustituye lo que hay adentro y la plataforma no se entera.</p>
+        <p>La misma capa se comparte entre el front y las funciones de servidor, así que un cálculo nunca da dos resultados distintos según dónde se ejecute.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ STACK ============ -->
+  <section class="section" id="stack-proyecto">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Stack</p>
+          <h2>Con qué está construido.</h2>
+        </div>
+        <p class="muted">Infraestructura administrada y dependencias acotadas, para que el equipo dedique el tiempo al dominio y no a sostener servidores.</p>
+      </div>
+
+      <div class="stack-grid reveal">
+        <div class="stack-col">
+          <h3>Interfaz</h3>
+          <ul>
+            <li><strong>React 19</strong> con Vite</li>
+            <li>Recharts para visualización</li>
+            <li>Sistema de componentes propio</li>
+            <li>Vitest para pruebas</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Datos y backend</h3>
+          <ul>
+            <li><strong>Supabase</strong> sobre PostgreSQL</li>
+            <li>Edge Functions en Deno</li>
+            <li>Tareas programadas con pg-cron</li>
+            <li>Ingesta de Excel y CSV</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Inteligencia</h3>
+          <ul>
+            <li><strong>Claude</strong> para el copiloto</li>
+            <li>Motor de decisión propio</li>
+            <li>Registro e interfaz de modelos</li>
+            <li>Backtesting sobre histórico</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Operación</h3>
+          <ul>
+            <li>Despliegue continuo en <strong>Netlify</strong></li>
+            <li>Claves de API por organización</li>
+            <li>Control de acceso por datos</li>
+            <li>Límites de uso por cliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CIERRE ============ -->
+  <section class="section" id="cierre">
+    <div class="wrap">
+      <div class="contact solo reveal">
+        <div class="contact-copy">
+          <p class="eyebrow">¿Tenés un proyecto así?</p>
+          <h2>Construimos productos, no demostraciones.</h2>
+          <p class="muted">CollectIQ es un producto propio, y el mismo equipo y los mismos criterios se aplican al software que construimos para terceros. Si tenés un problema de datos y decisiones en tu operación, contanos de qué se trata.</p>
+          <div class="hero-actions">
+            <a class="btn" href="index.html#contacto">Hablemos de tu proyecto</a>
+            <a class="btn btn-ghost" href="index.html#servicios">Ver qué hacemos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <small>© <span id="year">2026</span> Moovi Solutions · Todos los derechos reservados</small>
+    <nav class="footer-links">
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#casos">Casos de uso</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
