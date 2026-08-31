@@ -1065,3 +1065,47 @@ form .btn{ justify-content: center; }
 .contact.solo{ grid-template-columns: 1fr; }
 .contact.solo .contact-copy{ border-right: 0; border-bottom: 0; }
 .band-gap{ margin-top: 1.5rem; }
+
+/* ---------- Capturas del producto ---------- */
+.shots{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: start;
+}
+.shot{
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+}
+.shot.wide{ grid-column: 1 / -1; }
+.shot img{
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--mist);
+}
+.shot figcaption{
+  border-top: 1px solid var(--line);
+  padding: .8rem 1rem;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .09em;
+  line-height: 1.6;
+  color: var(--haze);
+}
+.shot figcaption b{
+  display: block;
+  color: var(--chalk);
+  font-weight: 500;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  font-size: .68rem;
+  margin-bottom: .3rem;
+}
+@media (max-width: 860px){
+  .shots{ grid-template-columns: 1fr; }
+}
