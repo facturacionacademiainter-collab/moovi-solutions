@@ -1505,10 +1505,11 @@ form .btn{ justify-content: center; }
         throw new Error(r && r.message ? r.message : 'respuesta inesperada del servidor');
       })
       .catch(function (err) {
+        /* El motivo técnico va a la consola, no a la pantalla del visitante */
         if (window.console && console.error) console.error('[moovi] envío fallido:', err);
         aviso(sinRespuesta
           ? 'No pudimos conectar con el servidor de envíos. Revisá tu conexión, o escribinos a ' + DESTINO + '.'
-          : 'El envío fue rechazado: ' + err.message + '. Escribinos a ' + DESTINO + ' y te respondemos igual.',
+          : 'No pudimos procesar el envío. Escribinos a ' + DESTINO + ' y te respondemos igual.',
         true);
       })
       .then(function () {
