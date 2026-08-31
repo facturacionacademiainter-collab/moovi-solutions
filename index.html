@@ -261,6 +261,13 @@ p{ margin: 0; }
   background: #0B8676;
 }
 .nav .btn::after{ content: none; }
+.btn:disabled{
+  opacity: .55;
+  cursor: progress;
+  transform: none;
+  box-shadow: none;
+  background: var(--signal);
+}
 .btn-ghost{
   background: transparent;
   color: var(--chalk);
@@ -1304,9 +1311,7 @@ form .btn{ justify-content: center; }
           <h2>Contanos qué necesitás resolver.</h2>
           <p class="muted">Respondemos con una primera lectura del problema y, si tiene sentido avanzar, una propuesta de alcance en pocos días. Sin costo y sin compromiso.</p>
           <ul class="contact-list">
-            <li><a href="mailto:hola@moovisolutions.com"><b>Email</b> hola@moovisolutions.com</a></li>
-            <li><a href="tel:+540000000000"><b>Teléfono</b> +54 000 000 0000</a></li>
-            <li><span><b>Horario</b> Lun a Vie · 9 a 18 h (GMT-3)</span></li>
+            <li><a href="mailto:contacto@moovisolutions.com"><b>Email</b> contacto@moovisolutions.com</a></li>
           </ul>
         </div>
 
@@ -1344,8 +1349,11 @@ form .btn{ justify-content: center; }
             <textarea id="mensaje" name="mensaje" placeholder="Contanos el proceso, el problema o la idea. Con dos o tres párrafos alcanza."></textarea>
           </div>
 
-          <button class="btn" type="submit">Enviar consulta</button>
-          <p class="form-note" id="formNote">Al enviar se abre tu cliente de correo con el mensaje ya redactado.</p>
+          <!-- Trampa antispam: invisible para personas, la completan los bots -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+
+          <button class="btn" type="submit" id="formSubmit">Enviar consulta</button>
+          <p class="form-note" id="formNote">Te respondemos al email que dejes. No compartimos tus datos con nadie.</p>
           <p class="sent" id="formSent" hidden></p>
         </form>
       </div>
@@ -1417,14 +1425,28 @@ form .btn{ justify-content: center; }
     Array.prototype.forEach.call(items, function (el) { io.observe(el); });
   }
 
-  /* ---- Formulario: compone el correo ---- */
+  /* ---- Formulario: envía la consulta a contacto@moovisolutions.com ----
+     El envío pasa por FormSubmit, que reenvía el contenido por correo.
+     Es necesario porque GitHub Pages solo sirve archivos: no puede
+     procesar un POST ni mandar mails por sí mismo. */
+  var DESTINO = 'contacto@moovisolutions.com';
+  var ENDPOINT = 'https://formsubmit.co/ajax/' + DESTINO;
+
   var form = document.getElementById('contactForm');
   var sent = document.getElementById('formSent');
   var note = document.getElementById('formNote');
-  var DESTINO = 'hola@moovisolutions.com';
+  var boton = document.getElementById('formSubmit');
+
+  function aviso(texto, esError) {
+    sent.hidden = false;
+    sent.textContent = texto;
+    if (esError) sent.setAttribute('data-state', 'error');
+    else sent.removeAttribute('data-state');
+  }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+
     var data = new FormData(form);
     var nombre = String(data.get('nombre') || '').trim();
     var email = String(data.get('email') || '').trim();
@@ -1432,32 +1454,54 @@ form .btn{ justify-content: center; }
     var empresa = String(data.get('empresa') || '').trim();
     var interes = String(data.get('interes') || '');
 
-    sent.hidden = false;
+    if (String(data.get('_honey') || '')) return;   /* bot */
 
     if (!nombre || !email || !mensaje) {
-      sent.setAttribute('data-state', 'error');
-      sent.textContent = 'Faltan datos: completá nombre, email y el detalle de la consulta.';
+      aviso('Faltan datos: completá nombre, email y el detalle de la consulta.', true);
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      sent.setAttribute('data-state', 'error');
-      sent.textContent = 'Revisá el email: no parece una dirección válida.';
+      aviso('Revisá el email: no parece una dirección válida.', true);
       return;
     }
 
-    var cuerpo = 'Nombre: ' + nombre + '\n'
-      + 'Empresa: ' + (empresa || '-') + '\n'
-      + 'Email: ' + email + '\n'
-      + 'Interés: ' + interes + '\n\n'
-      + mensaje;
+    boton.disabled = true;
+    boton.textContent = 'Enviando…';
+    aviso('Enviando tu consulta…', false);
 
-    window.location.href = 'mailto:' + DESTINO
-      + '?subject=' + encodeURIComponent('Consulta desde el sitio - ' + interes)
-      + '&body=' + encodeURIComponent(cuerpo);
+    var cuerpo = {
+      Nombre: nombre,
+      Empresa: empresa || '-',
+      Email: email,
+      'Tema de interés': interes,
+      Consulta: mensaje,
+      _subject: 'Consulta desde el sitio - ' + interes,
+      _template: 'table',
+      _captcha: 'false'
+    };
 
-    note.hidden = true;
-    sent.removeAttribute('data-state');
-    sent.textContent = 'Listo, ' + nombre + '. Se abre tu cliente de correo con el mensaje redactado. Si no se abre, escribinos a ' + DESTINO + '.';
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(cuerpo)
+    })
+      .then(function (r) { return r.json().catch(function () { return {}; }); })
+      .then(function (r) {
+        if (r && (r.success === 'true' || r.success === true)) {
+          form.reset();
+          note.hidden = true;
+          aviso('Listo, ' + nombre + '. Recibimos tu consulta y te respondemos a ' + email + '.', false);
+        } else {
+          throw new Error('respuesta inesperada');
+        }
+      })
+      .catch(function () {
+        aviso('No pudimos enviar la consulta. Escribinos directamente a ' + DESTINO + ' y te respondemos igual.', true);
+      })
+      .then(function () {
+        boton.disabled = false;
+        boton.textContent = 'Enviar consulta';
+      });
   });
 
   /* ---- Panel de código: software escribiéndose ---- */
