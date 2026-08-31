@@ -43,14 +43,15 @@
   --haze:       var(--text-2);
   --haze-dim:   var(--text-3);
 
-  /* Tarjetas: pizarra intermedia entre el papel y el panel de código */
-  --card:        #39425E;
-  --card-2:      #434D6D;
-  --card-line:   #4C5675;
-  --card-text:   #F2F4FA;
-  --card-text-2: #C3CADC;
-  --card-text-3: #A6AFC6;
-  --card-violet: #9C8DFF;
+  /* Tarjetas: gris claro, un escalón por debajo del papel del fondo */
+  --card:        #DCE1EA;
+  --card-2:      #D2D8E4;
+  --card-line:   #C3CAD8;
+  --card-text:   #131A2E;
+  --card-text-2: #4E5771;
+  --card-text-3: #6B7490;
+  --card-violet: #5A45F0;
+  --card-accent: #0D9B87;
 
   /* Panel de código: isla oscura deliberada sobre el papel */
   --code-bg:    #0B1020;
@@ -414,7 +415,7 @@ p{ margin: 0; }
   position: absolute;
   left: 0; top: 0;
   height: 2px; width: 0;
-  background: linear-gradient(90deg, var(--signal-lit), var(--card-violet));
+  background: linear-gradient(90deg, var(--card-accent), var(--card-violet));
   transition: width .6s var(--ease);
 }
 .pillar:hover{ background: var(--card-2); }
@@ -434,7 +435,7 @@ p{ margin: 0; }
   padding: 1.35rem 0 0;
   display: grid;
   gap: .55rem;
-  border-top: 1px solid rgba(255,255,255,.15);
+  border-top: 1px solid var(--card-line);
 }
 .deliverables li{
   display: grid;
@@ -448,7 +449,7 @@ p{ margin: 0; }
 }
 .deliverables li::before{
   content:"\2192";
-  color: var(--signal-lit);
+  color: var(--card-accent);
 }
 
 /* Casos de uso */
@@ -473,7 +474,7 @@ p{ margin: 0; }
 .case:hover{ background: var(--card-2); }
 .case-glyph{
   width: 46px; height: 46px;
-  color: var(--signal-lit);
+  color: var(--card-accent);
   margin-bottom: .4rem;
   transition: transform .5s var(--ease);
 }
@@ -493,7 +494,7 @@ p{ margin: 0; }
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--card-text-3);
-  border: 1px solid rgba(255,255,255,.2);
+  border: 1px solid var(--card-line);
   padding: .3rem .55rem;
 }
 .case::before{
@@ -501,7 +502,7 @@ p{ margin: 0; }
   position: absolute;
   inset: auto 0 0 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--signal-lit), transparent);
+  background: linear-gradient(90deg, transparent, var(--card-accent), transparent);
   transform: scaleX(0);
   transition: transform .7s var(--ease);
 }
@@ -721,24 +722,24 @@ form .btn{ justify-content: center; }
 .pillar > .illus{
   margin: calc(-1 * clamp(1.8rem, 3vw, 3rem)) calc(-1 * clamp(1.8rem, 3vw, 3rem)) 0;
   padding: 1.5rem clamp(1.8rem, 3vw, 3rem);
-  border-bottom: 1px solid rgba(255,255,255,.13);
+  border-bottom: 1px solid var(--card-line);
   background:
-    radial-gradient(80% 120% at 28% 0%, rgba(156,141,255,.2), transparent 68%),
-    rgba(0,0,0,.16);
+    radial-gradient(80% 120% at 28% 0%, rgba(90,69,240,.07), transparent 68%),
+    rgba(255,255,255,.55);
 }
 
 /* Las ilustraciones viven sobre pizarra: se reencuadran para ese fondo */
-.pillar .illus .box{ fill: rgba(255,255,255,.05); stroke: rgba(255,255,255,.26); }
+.pillar .illus .box{ fill: #FFFFFF; stroke: var(--card-line); }
 .pillar .illus .box-name{ fill: var(--card-text-2); }
 .pillar .illus .lbl{ fill: var(--card-text-3); }
-.pillar .illus .wire{ stroke: var(--signal-lit); }
+.pillar .illus .wire{ stroke: var(--card-accent); }
 .pillar .illus .wire.slow{ stroke: var(--card-violet); }
-.pillar .illus .arrow{ fill: var(--signal-lit); }
-.pillar .illus .edge{ stroke: var(--card-text-3); opacity: .3; }
-.pillar .illus .edge.live{ stroke: var(--signal-lit); }
-.pillar .illus .neuron{ fill: rgba(0,0,0,.28); stroke: rgba(255,255,255,.32); }
-.pillar .illus .neuron.on{ fill: rgba(53,224,198,.16); stroke: var(--signal-lit); }
-.pillar .illus .neuron.out{ fill: rgba(156,141,255,.22); stroke: var(--card-violet); }
+.pillar .illus .arrow{ fill: var(--card-accent); }
+.pillar .illus .edge{ stroke: var(--card-text-3); opacity: .45; }
+.pillar .illus .edge.live{ stroke: var(--card-accent); }
+.pillar .illus .neuron{ fill: #FFFFFF; stroke: #A8B1C4; }
+.pillar .illus .neuron.on{ fill: rgba(13,155,135,.14); stroke: var(--card-accent); }
+.pillar .illus .neuron.out{ fill: rgba(90,69,240,.14); stroke: var(--card-violet); }
 
 /* Red de inferencia */
 .illus .edge{ stroke: var(--haze-dim); stroke-width: .8; opacity: .4; }
@@ -1051,9 +1052,9 @@ form .btn{ justify-content: center; }
               <path class="arrow" d="M118 68 l-7 -3.4 v6.8 z"/>
               <path class="arrow" d="M236 68 l-7 -3.4 v6.8 z"/>
 
-              <circle cx="42" cy="94" r="1.6" fill="#A6AFC6"/>
-              <circle cx="160" cy="94" r="1.6" fill="#A6AFC6"/>
-              <circle cx="278" cy="94" r="1.6" fill="#A6AFC6"/>
+              <circle cx="42" cy="94" r="1.6" fill="#8A93AB"/>
+              <circle cx="160" cy="94" r="1.6" fill="#8A93AB"/>
+              <circle cx="278" cy="94" r="1.6" fill="#8A93AB"/>
             </svg>
           </figure>
           <p class="pillar-idx">Servicio A</p>
@@ -1148,7 +1149,7 @@ form .btn{ justify-content: center; }
               <path d="M6 10h5l5 21h21l4-15H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <circle cx="19" cy="39" r="3" stroke="currentColor" stroke-width="2"/>
               <circle cx="34" cy="39" r="3" stroke="currentColor" stroke-width="2"/>
-              <path d="M27 12v9M22.5 16.5h9" stroke="#9C8DFF" stroke-width="2" stroke-linecap="round"/>
+              <path d="M27 12v9M22.5 16.5h9" stroke="#5A45F0" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>Ecommerce</h3>
@@ -1164,7 +1165,7 @@ form .btn{ justify-content: center; }
               <rect x="14" y="5" width="20" height="38" rx="3.5" stroke="currentColor" stroke-width="2"/>
               <path d="M21 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               <circle cx="24" cy="37" r="1.8" fill="currentColor"/>
-              <path d="M19 26l4-5 4 6 4-9" stroke="#9C8DFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19 26l4-5 4 6 4-9" stroke="#5A45F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <h3>Apps Móviles</h3>
@@ -1180,8 +1181,8 @@ form .btn{ justify-content: center; }
               <path d="M7 42V22l9-6 9 6v20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
               <path d="M25 42V15l8-5 8 5v27" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
               <path d="M12 28h4M12 34h4M31 23h4M31 30h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="33" cy="5.5" r="2.2" fill="#9C8DFF"/>
-              <path d="M28.5 4a6 6 0 019 0" stroke="#9C8DFF" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="33" cy="5.5" r="2.2" fill="#5A45F0"/>
+              <path d="M28.5 4a6 6 0 019 0" stroke="#5A45F0" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>Smart City e IoT</h3>
