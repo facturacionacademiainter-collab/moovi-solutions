@@ -14,25 +14,42 @@
    Mundo único oscuro, pintado explícitamente.
    ============================================================ */
 :root{
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* Fondo y superficies */
-  --ink:        #070A16;
-  --ink-deep:   #04060F;
-  --surface:    #0E1326;
-  --line:       #1B2540;
-  --line-soft:  #141C33;
+  /* Papel perlado y superficies */
+  --paper:      #F5F7FA;
+  --paper-2:    #FFFFFF;
+  --mist:       #EBEEF5;
+  --line:       #DBE0EC;
+  --line-soft:  #E8EBF3;
 
   /* Neutros sesgados hacia el acento */
-  --haze:       #8C9BC4;
-  --haze-dim:   #5F6C92;
-  --chalk:      #E8ECF8;
+  --text:       #131A2E;
+  --text-2:     #59637F;
+  --text-3:     #6F7893;
 
-  /* Señal */
-  --signal:     #35E0C6;
-  --signal-dim: #1B9E8B;
-  --pulse:      #6E5BFF;
-  --amber:      #FFB661;
+  /* Señal: el aqua se oscurece para tener contraste sobre papel */
+  --signal:     #0D9B87;
+  --signal-dim: #0A8271;
+  --signal-lit: #35E0C6;
+  --pulse:      #5A45F0;
+  --amber:      #B4720C;
+
+  /* Alias semánticos: los componentes siguen leyendo estos nombres */
+  --ink:        var(--paper);
+  --ink-deep:   var(--paper-2);
+  --surface:    var(--mist);
+  --chalk:      var(--text);
+  --haze:       var(--text-2);
+  --haze-dim:   var(--text-3);
+
+  /* Panel de código: isla oscura deliberada sobre el papel */
+  --code-bg:    #0B1020;
+  --code-bar:   #151D36;
+  --code-line:  #242E4E;
+  --code-text:  #E7EBF7;
+  --code-dim:   #7F89AB;
+  --code-num:   #333F66;
 
   /* Tipografía */
   --display: 'Archivo', 'Arial Narrow', 'Helvetica Neue', Helvetica, sans-serif;
@@ -77,8 +94,8 @@ body::before{
   pointer-events: none;
   z-index: 0;
   background-image:
-    repeating-linear-gradient(90deg, rgba(140,155,196,.075) 0 1px, transparent 1px 96px),
-    repeating-linear-gradient(0deg,  rgba(140,155,196,.055) 0 1px, transparent 1px 96px);
+    repeating-linear-gradient(90deg, rgba(19,26,46,.055) 0 1px, transparent 1px 96px),
+    repeating-linear-gradient(0deg,  rgba(19,26,46,.04)  0 1px, transparent 1px 96px);
   -webkit-mask-image: radial-gradient(ellipse 120% 78% at 50% 0%, #000 0%, rgba(0,0,0,.35) 55%, transparent 92%);
           mask-image: radial-gradient(ellipse 120% 78% at 50% 0%, #000 0%, rgba(0,0,0,.35) 55%, transparent 92%);
 }
@@ -160,7 +177,7 @@ p{ margin: 0; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(7,10,22,.78);
+  background: rgba(245,247,250,.82);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid transparent;
@@ -168,7 +185,7 @@ p{ margin: 0; }
 }
 .topbar.stuck{
   border-bottom-color: var(--line);
-  background: rgba(4,6,15,.9);
+  background: rgba(255,255,255,.92);
 }
 .topbar-inner{
   display: flex;
@@ -232,7 +249,7 @@ p{ margin: 0; }
 .btn:hover{
   transform: translateY(-2px);
   box-shadow: 0 10px 30px -12px var(--signal);
-  background: #4BEBD3;
+  background: #0B8676;
 }
 .nav .btn::after{ content: none; }
 .btn-ghost{
@@ -320,7 +337,7 @@ p{ margin: 0; }
   margin-top: clamp(3rem, 7vh, 5.5rem);
   position: relative;
   z-index: 2;
-  background: rgba(14,19,38,.55);
+  background: rgba(255,255,255,.62);
 }
 .ticker-track{
   display: flex;
@@ -367,7 +384,7 @@ p{ margin: 0; }
   border: 1px solid var(--line);
 }
 .pillar{
-  background: var(--ink);
+  background: var(--paper-2);
   padding: clamp(1.8rem, 3vw, 3rem);
   display: flex;
   flex-direction: column;
@@ -426,7 +443,7 @@ p{ margin: 0; }
   border: 1px solid var(--line);
 }
 .case{
-  background: var(--ink);
+  background: var(--paper-2);
   padding: clamp(1.6rem, 2.6vw, 2.4rem);
   display: flex;
   flex-direction: column;
@@ -532,9 +549,9 @@ p{ margin: 0; }
 .contact{
   border: 1px solid var(--line);
   background:
-    radial-gradient(120% 140% at 12% 0%, rgba(110,91,255,.14), transparent 58%),
-    radial-gradient(100% 120% at 92% 100%, rgba(53,224,198,.12), transparent 60%),
-    var(--surface);
+    radial-gradient(120% 140% at 12% 0%, rgba(90,69,240,.07), transparent 58%),
+    radial-gradient(100% 120% at 92% 100%, rgba(13,155,135,.07), transparent 60%),
+    var(--paper-2);
   display: grid;
   grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
 }
@@ -591,7 +608,7 @@ form{
   font-size: var(--step-0);
   font-weight: 300;
   color: var(--chalk);
-  background: var(--ink-deep);
+  background: var(--mist);
   border: 1px solid var(--line);
   border-radius: 0;
   padding: .8rem .9rem;
@@ -602,7 +619,7 @@ form{
 .field input::placeholder, .field textarea::placeholder{ color: var(--haze-dim); }
 .field input:focus, .field select:focus, .field textarea:focus{
   border-color: var(--signal);
-  background: #060911;
+  background: var(--paper-2);
 }
 .field-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; }
 form .btn{ justify-content: center; }
@@ -615,7 +632,7 @@ form .btn{ justify-content: center; }
 }
 .sent{
   border: 1px solid var(--signal-dim);
-  background: rgba(53,224,198,.07);
+  background: rgba(13,155,135,.07);
   padding: .9rem 1rem;
   font-family: var(--mono);
   font-size: .74rem;
@@ -626,7 +643,7 @@ form .btn{ justify-content: center; }
 .sent[data-state="error"]{
   border-color: var(--amber);
   color: var(--amber);
-  background: rgba(255,182,97,.07);
+  background: rgba(180,114,12,.07);
 }
 [hidden]{ display: none !important; }
 
@@ -668,7 +685,7 @@ form .btn{ justify-content: center; }
   fill: var(--haze-dim);
   text-transform: uppercase;
 }
-.illus .box{ fill: rgba(14,19,38,.85); stroke: var(--line); stroke-width: 1.1; }
+.illus .box{ fill: var(--paper-2); stroke: var(--line); stroke-width: 1.1; }
 .illus .box-name{
   font-family: var(--mono);
   font-size: 8px;
@@ -688,12 +705,12 @@ form .btn{ justify-content: center; }
   padding: 1.5rem clamp(1.8rem, 3vw, 3rem);
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(80% 120% at 28% 0%, rgba(110,91,255,.12), transparent 68%),
-    rgba(14,19,38,.5);
+    radial-gradient(80% 120% at 28% 0%, rgba(90,69,240,.07), transparent 68%),
+    rgba(235,238,245,.8);
 }
 
 /* Red de inferencia */
-.illus .edge{ stroke: var(--haze-dim); stroke-width: .8; opacity: .28; }
+.illus .edge{ stroke: var(--haze-dim); stroke-width: .8; opacity: .4; }
 .illus .edge.live{
   stroke: var(--signal);
   stroke-width: 1;
@@ -702,19 +719,19 @@ form .btn{ justify-content: center; }
 @keyframes spark{ 0%, 100%{ opacity: .12; } 45%{ opacity: .9; } }
 .illus .neuron{ fill: var(--ink-deep); stroke: var(--haze-dim); stroke-width: 1.2; }
 .illus .neuron.on{
-  fill: rgba(53,224,198,.18);
+  fill: rgba(13,155,135,.14);
   stroke: var(--signal);
   animation: breathe 3.4s ease-in-out infinite;
 }
-.illus .neuron.out{ stroke: var(--pulse); fill: rgba(110,91,255,.2); }
+.illus .neuron.out{ stroke: var(--pulse); fill: rgba(90,69,240,.14); }
 @keyframes breathe{ 0%, 100%{ stroke-opacity: .45; } 45%{ stroke-opacity: 1; } }
 
 /* ---------- Panel de código en construcción ---------- */
 .codepanel{
   margin: 0;
-  border: 1px solid var(--line);
-  background: var(--ink-deep);
-  box-shadow: 0 28px 70px -48px #000;
+  border: 1px solid var(--code-line);
+  background: var(--code-bg);
+  box-shadow: 0 28px 70px -46px rgba(19,26,46,.45);
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-width: 0;
@@ -724,15 +741,15 @@ form .btn{ justify-content: center; }
   align-items: center;
   gap: .6rem;
   padding: .62rem .9rem;
-  border-bottom: 1px solid var(--line);
-  background: var(--surface);
+  border-bottom: 1px solid var(--code-line);
+  background: var(--code-bar);
 }
-.code-dot{ width: 7px; height: 7px; border-radius: 50%; background: var(--signal); flex: none; }
+.code-dot{ width: 7px; height: 7px; border-radius: 50%; background: var(--signal-lit); flex: none; }
 .code-file{
   font-family: var(--mono);
   font-size: .72rem;
   letter-spacing: .06em;
-  color: var(--chalk);
+  color: var(--code-text);
 }
 .code-lang{
   margin-left: auto;
@@ -740,7 +757,7 @@ form .btn{ justify-content: center; }
   font-size: .64rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--haze-dim);
+  color: var(--code-dim);
   white-space: nowrap;
 }
 .code-body{ overflow-x: auto; padding: .85rem 0; }
@@ -764,8 +781,8 @@ form .btn{ justify-content: center; }
   content: counter(cl);
   text-align: right;
   padding-right: .55rem;
-  color: #2B3757;
-  border-right: 1px solid var(--line-soft);
+  color: var(--code-num);
+  border-right: 1px solid var(--code-line);
   font-variant-numeric: tabular-nums;
 }
 .code-lines code{
@@ -774,19 +791,19 @@ form .btn{ justify-content: center; }
   padding-right: .9rem;
 }
 .tk-kw{ color: #9C8DFF; }
-.tk-fn{ color: var(--chalk); }
-.tk-str{ color: var(--signal); }
-.tk-num{ color: var(--amber); }
+.tk-fn{ color: var(--code-text); }
+.tk-str{ color: var(--signal-lit); }
+.tk-num{ color: #FFB661; }
 .tk-tag{ color: #7FB2FF; }
 .tk-com{ color: #46527A; }
-.tk-pun{ color: var(--haze-dim); }
-.tk-var{ color: var(--haze); }
+.tk-pun{ color: var(--code-dim); }
+.tk-var{ color: #B9C2DC; }
 .caret{
   display: inline-block;
   width: .5em;
   height: 1.05em;
   vertical-align: -.2em;
-  background: var(--signal);
+  background: var(--signal-lit);
   animation: blink 1.05s steps(2, start) infinite;
 }
 @keyframes blink{ 50%{ opacity: 0; } }
@@ -794,25 +811,25 @@ form .btn{ justify-content: center; }
   display: flex;
   align-items: center;
   gap: .55rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--code-line);
   padding: .58rem .9rem;
   font-family: var(--mono);
   font-size: .64rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--haze-dim);
+  color: var(--code-dim);
 }
 .code-status .pip{
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--amber);
+  background: #FFB661;
   flex: none;
   animation: pip 1s ease-in-out infinite;
 }
-.code-status[data-state="ok"]{ color: var(--signal); }
-.code-status[data-state="ok"] .pip{ background: var(--signal); animation: none; }
+.code-status[data-state="ok"]{ color: var(--signal-lit); }
+.code-status[data-state="ok"] .pip{ background: var(--signal-lit); animation: none; }
 @keyframes pip{ 50%{ opacity: .2; } }
-.code-status .right{ margin-left: auto; color: var(--haze-dim); }
+.code-status .right{ margin-left: auto; color: var(--code-dim); }
 
 /* Stack: panel de código + columnas */
 .stack-layout{
@@ -909,8 +926,8 @@ form .btn{ justify-content: center; }
   <div class="wrap topbar-inner">
     <a class="brand" href="#top" aria-label="Moovi Solutions, inicio">
       <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M3 25V9l7 9 6-9 6 9 7-9v16" stroke="#35E0C6" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
-        <circle cx="16" cy="27.5" r="2" fill="#6E5BFF"/>
+        <path d="M3 25V9l7 9 6-9 6 9 7-9v16" stroke="#0D9B87" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="16" cy="27.5" r="2" fill="#5A45F0"/>
       </svg>
       <span class="brand-name">Moovi <span>Solutions</span></span>
     </a>
@@ -1003,9 +1020,9 @@ form .btn{ justify-content: center; }
               <path class="arrow" d="M118 68 l-7 -3.4 v6.8 z"/>
               <path class="arrow" d="M236 68 l-7 -3.4 v6.8 z"/>
 
-              <circle cx="42" cy="94" r="1.6" fill="#5F6C92"/>
-              <circle cx="160" cy="94" r="1.6" fill="#5F6C92"/>
-              <circle cx="278" cy="94" r="1.6" fill="#5F6C92"/>
+              <circle cx="42" cy="94" r="1.6" fill="#9AA3B8"/>
+              <circle cx="160" cy="94" r="1.6" fill="#9AA3B8"/>
+              <circle cx="278" cy="94" r="1.6" fill="#9AA3B8"/>
             </svg>
           </figure>
           <p class="pillar-idx">Servicio A</p>
@@ -1100,7 +1117,7 @@ form .btn{ justify-content: center; }
               <path d="M6 10h5l5 21h21l4-15H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <circle cx="19" cy="39" r="3" stroke="currentColor" stroke-width="2"/>
               <circle cx="34" cy="39" r="3" stroke="currentColor" stroke-width="2"/>
-              <path d="M27 12v9M22.5 16.5h9" stroke="#6E5BFF" stroke-width="2" stroke-linecap="round"/>
+              <path d="M27 12v9M22.5 16.5h9" stroke="#5A45F0" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>Ecommerce</h3>
@@ -1116,7 +1133,7 @@ form .btn{ justify-content: center; }
               <rect x="14" y="5" width="20" height="38" rx="3.5" stroke="currentColor" stroke-width="2"/>
               <path d="M21 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               <circle cx="24" cy="37" r="1.8" fill="currentColor"/>
-              <path d="M19 26l4-5 4 6 4-9" stroke="#6E5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19 26l4-5 4 6 4-9" stroke="#5A45F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <h3>Apps Móviles</h3>
@@ -1132,8 +1149,8 @@ form .btn{ justify-content: center; }
               <path d="M7 42V22l9-6 9 6v20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
               <path d="M25 42V15l8-5 8 5v27" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
               <path d="M12 28h4M12 34h4M31 23h4M31 30h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="33" cy="5.5" r="2.2" fill="#6E5BFF"/>
-              <path d="M28.5 4a6 6 0 019 0" stroke="#6E5BFF" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="33" cy="5.5" r="2.2" fill="#5A45F0"/>
+              <path d="M28.5 4a6 6 0 019 0" stroke="#5A45F0" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>Smart City e IoT</h3>
@@ -1639,7 +1656,7 @@ form .btn{ justify-content: center; }
         var dy = nodes[a].y - nodes[b].y;
         var d2 = dx * dx + dy * dy;
         if (d2 < 24000) {
-          ctx.strokeStyle = 'rgba(53,224,198,' + ((1 - d2 / 24000) * 0.28).toFixed(3) + ')';
+          ctx.strokeStyle = 'rgba(13,155,135,' + ((1 - d2 / 24000) * 0.3).toFixed(3) + ')';
           ctx.lineWidth = 0.6;
           ctx.beginPath();
           ctx.moveTo(nodes[a].x, nodes[a].y);
@@ -1651,7 +1668,7 @@ form .btn{ justify-content: center; }
 
     for (i = 0; i < nodes.length; i++) {
       n = nodes[i];
-      ctx.fillStyle = n.hot ? 'rgba(110,91,255,.85)' : 'rgba(53,224,198,.6)';
+      ctx.fillStyle = n.hot ? 'rgba(90,69,240,.7)' : 'rgba(13,155,135,.55)';
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
       ctx.fill();
