@@ -195,7 +195,7 @@ p{ margin: 0; }
 }
 
 .brand{ display: flex; align-items: center; gap: .7rem; }
-.brand-logo{ height: 30px; width: auto; display: block; flex: none; }
+.brand-logo{ height: 22px; width: auto; display: block; flex: none; }
 
 .nav{ display: flex; align-items: center; gap: 1.85rem; }
 .nav a{
