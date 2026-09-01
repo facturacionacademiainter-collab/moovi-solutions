@@ -263,6 +263,74 @@ p{ margin: 0; }
   box-shadow: none;
   color: var(--signal);
 }
+/* ---------- Solapa desplegable del menú ---------- */
+.has-menu{ position: relative; display: flex; align-items: center; }
+.chev{
+  display: inline-block;
+  width: 5px; height: 5px;
+  margin-left: .5rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .3s var(--ease);
+}
+.has-menu:hover .chev, .has-menu:focus-within .chev{ transform: translateY(0) rotate(225deg); }
+
+.submenu{
+  position: absolute;
+  top: 100%; left: 50%;
+  margin-top: 14px;
+  transform: translate(-50%, 8px);
+  min-width: 244px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  box-shadow: 0 26px 54px -32px rgba(19,26,46,.5);
+  padding: .4rem;
+  z-index: 60;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s;
+}
+/* Puente invisible: cruzar el hueco hacia el panel no cancela el hover */
+.submenu::before{ content:""; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
+.has-menu:hover .submenu,
+.has-menu:focus-within .submenu{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.nav .submenu-card{
+  display: grid;
+  gap: .3rem;
+  padding: .85rem .9rem;
+  font-family: var(--body);
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--chalk);
+  transition: background .25s var(--ease);
+}
+.nav .submenu-card::after{ content: none; }
+.nav .submenu-card:hover{ background: var(--mist); color: var(--chalk); }
+.submenu-logo{ height: 26px; width: auto; display: block; margin-bottom: .3rem; }
+.submenu-name{
+  font-family: var(--display);
+  font-variation-settings: "wdth" 106;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -.01em;
+  color: var(--chalk);
+}
+.submenu-desc{
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--haze-dim);
+}
+
 .nav-toggle{ display: none; }
 
 /* ---------- Héroe ---------- */
@@ -984,6 +1052,26 @@ form .btn{ justify-content: center; }
   .nav-toggle[aria-expanded="true"] i:nth-child(1){ transform: translateY(6.5px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] i:nth-child(2){ opacity: 0; }
   .nav-toggle[aria-expanded="true"] i:nth-child(3){ transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* En el desplegable no hay hover: la solapa se muestra anidada */
+  .has-menu{ display: block; }
+  .chev{ display: none; }
+  .submenu{
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0 0 .4rem 1.1rem;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  .submenu::before{ content: none; }
+  .nav .submenu-card{ padding: .7rem 0; border-bottom: 1px solid var(--line-soft); }
+  .nav .submenu-card:hover{ background: transparent; }
 }
 
 @media (max-width: 780px){
