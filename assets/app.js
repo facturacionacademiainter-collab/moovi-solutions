@@ -8,6 +8,36 @@
      de actuar: lo que no está, simplemente no se inicializa. */
   function $(id) { return document.getElementById(id); }
 
+  /* ---- Capa futurista: aurora de fondo y barra de progreso ----
+     Se insertan desde acá para no repetir el marcado en cada página. */
+  var aurora = document.createElement('div');
+  aurora.className = 'aurora';
+  aurora.setAttribute('aria-hidden', 'true');
+  aurora.innerHTML = '<i></i><i></i><i></i><i></i>';
+  document.body.insertBefore(aurora, document.body.firstChild);
+
+  var barra = document.createElement('div');
+  barra.className = 'scroll-progress';
+  barra.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(barra);
+
+  var progreso = function () {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    barra.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+  };
+  progreso();
+  window.addEventListener('scroll', progreso, { passive: true });
+  window.addEventListener('resize', progreso);
+
+  /* ---- Tarjetas: luz que sigue al cursor ---- */
+  document.addEventListener('pointermove', function (e) {
+    var card = e.target.closest ? e.target.closest('.pillar, .case, .rel-card, .folio-card') : null;
+    if (!card) return;
+    var r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }, { passive: true });
+
   /* ---- Año en curso ---- */
   var year = $('year');
   if (year) year.textContent = new Date().getFullYear();
@@ -42,6 +72,48 @@
   /* ---- Ticker: se duplica para que el bucle sea continuo ---- */
   var track = $('tickerTrack');
   if (track) track.innerHTML += track.innerHTML;
+
+  /* ---- Tarjetas: posición dentro de su rejilla ----
+     Cada tarjeta recibe su lugar como variable CSS: --i escalona la
+     entrada y desfasa la flotación del ícono, y --col escalona por
+     columna las del portafolio, que se revelan de a una. */
+  var rejillas = document.querySelectorAll('.pillars, .cases, .rel-grid, .folio, .ind-grid, .ind-pills, .mdl-grid, .mdl-list');
+  Array.prototype.forEach.call(rejillas, function (grid) {
+    Array.prototype.forEach.call(grid.children, function (card, i) {
+      card.style.setProperty('--i', i);
+      card.style.setProperty('--col', i % 3);
+    });
+  });
+
+  /* ---- Industrias: contadores que suben al entrar en pantalla ----
+     El HTML ya trae el número final, así que sin JavaScript (o con
+     movimiento reducido) se lee igual; acá solo se anima desde cero. */
+  var contadores = document.querySelectorAll('[data-count]');
+  if (contadores.length && !reduced && 'IntersectionObserver' in window) {
+    var contar = function (el) {
+      var fin = parseInt(el.getAttribute('data-count'), 10);
+      var inicio = null;
+      var paso = function (t) {
+        if (inicio === null) inicio = t;
+        var p = Math.min(1, (t - inicio) / 1400);
+        el.textContent = Math.round(fin * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) window.requestAnimationFrame(paso);
+      };
+      window.requestAnimationFrame(paso);
+    };
+    var ioCuenta = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          contar(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    Array.prototype.forEach.call(contadores, function (el) {
+      el.textContent = '0';
+      ioCuenta.observe(el);
+    });
+  }
 
   /* ---- Revelado en scroll ----
      El umbral de 0.12 pide que se vea el 12% del elemento. Un bloque más
@@ -150,12 +222,15 @@
     /* Esc y close() nativo pasan por acá */
     dlg.addEventListener('close', limpiar);
 
-    /* Cualquier punto de la tarjeta abre la ficha */
+    /* El botón "Ver proyecto" y cualquier punto de la tarjeta abren la ficha */
     document.addEventListener('click', function (e) {
-      var boton = e.target.closest ? e.target.closest('.folio-open') : null;
-      if (boton) {
+      if (!e.target.closest) return;
+      var boton = e.target.closest('.folio-open');
+      var tarjeta = boton ? null : e.target.closest('.folio-card');
+      var slug = boton ? boton.getAttribute('data-proj') : (tarjeta && tarjeta.getAttribute('data-brand'));
+      if (slug) {
         e.preventDefault();
-        abrir(boton.getAttribute('data-proj'));
+        abrir(slug);
       }
     });
 
@@ -196,7 +271,11 @@
       Array.prototype.forEach.call(chips, function (chip) {
         chip.setAttribute('aria-pressed', String(chip.getAttribute('data-fam') === fam));
       });
-      if (cuenta) cuenta.textContent = visibles === 1 ? '1 proyecto' : visibles + ' proyectos';
+      /* Con "Todos" se muestra la cifra redonda de la marca, no el conteo exacto */
+      if (cuenta) {
+        cuenta.textContent = fam === 'all' ? 'Más de 20 proyectos'
+          : (visibles === 1 ? '1 proyecto' : visibles + ' proyectos');
+      }
       if (vacio) vacio.hidden = visibles > 0;
     };
 
@@ -467,6 +546,10 @@
   var ctx = canvas.getContext && canvas.getContext('2d');
   if (!ctx) return;
 
+  /* La mitad de los nodos va en el turquesa de la marca; el resto se
+     reparte entre cian, azul, violeta y magenta. Cada línea toma el
+     color del nodo del que sale. */
+  var PALETA = ['34,211,238', '13,139,255', '167,139,250', '244,114,182'];
   var nodes = [];
   var w = 0, h = 0, dpr = 1, raf = null;
 
@@ -488,10 +571,10 @@
       nodes.push({
         x: Math.random() * w,
         y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.28,
-        vy: (Math.random() - 0.5) * 0.28,
+        vx: (Math.random() - 0.5) * 1.1,
+        vy: (Math.random() - 0.5) * 1.1,
         r: Math.random() * 1.4 + 0.7,
-        hot: Math.random() < 0.18
+        rgb: Math.random() < 0.5 ? '52,207,190' : PALETA[Math.floor(Math.random() * PALETA.length)]
       });
     }
   }
@@ -518,7 +601,7 @@
         var dy = nodes[a].y - nodes[b].y;
         var d2 = dx * dx + dy * dy;
         if (d2 < 24000) {
-          ctx.strokeStyle = 'rgba(52,207,190,' + ((1 - d2 / 24000) * 0.42).toFixed(3) + ')';
+          ctx.strokeStyle = 'rgba(' + nodes[a].rgb + ',' + ((1 - d2 / 24000) * 0.42).toFixed(3) + ')';
           ctx.lineWidth = 0.6;
           ctx.beginPath();
           ctx.moveTo(nodes[a].x, nodes[a].y);
@@ -530,7 +613,7 @@
 
     for (i = 0; i < nodes.length; i++) {
       n = nodes[i];
-      ctx.fillStyle = n.hot ? 'rgba(167,139,250,.85)' : 'rgba(52,207,190,.7)';
+      ctx.fillStyle = 'rgba(' + n.rgb + ',.8)';
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
       ctx.fill();
