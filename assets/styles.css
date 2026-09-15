@@ -1,28 +1,31 @@
 /* ============================================================
    MOOVI SOLUTIONS — dirección visual: sala de control de movilidad
-   Mundo único oscuro, pintado explícitamente.
+   Mundo oscuro, pintado explícitamente. Las superficies no son grises
+   planos: son vidrio sobre un fondo casi negro, y el color entra por
+   los acentos y por los halos, no por el relleno.
    ============================================================ */
 :root{
-  color-scheme: light;
+  color-scheme: dark;
 
-  /* Papel perlado y superficies */
-  --paper:      #F5F7FA;
-  --paper-2:    #FFFFFF;
-  --mist:       #EBEEF5;
-  --line:       #DBE0EC;
-  --line-soft:  #E8EBF3;
+  /* Fondo y superficies. Cada escalón sube un poco desde el negro. */
+  --paper:      #05080F;
+  --paper-2:    #0A101E;
+  --mist:       #101828;
+  --line:       rgba(255,255,255,.11);
+  --line-soft:  rgba(255,255,255,.06);
 
   /* Neutros sesgados hacia el acento */
-  --text:       #131A2E;
-  --text-2:     #59637F;
-  --text-3:     #6F7893;
+  --text:       #EEF2FB;
+  --text-2:     #A3AFC7;
+  --text-3:     #79859F;
 
-  /* Señal: el aqua se oscurece para tener contraste sobre papel */
-  --signal:     #0D9B87;
-  --signal-dim: #0A8271;
-  --signal-lit: #35E0C6;
-  --pulse:      #5A45F0;
-  --amber:      #B4720C;
+  /* Señal: sobre fondo oscuro el turquesa va pleno, sin oscurecer */
+  --signal:     #34CFBE;
+  --signal-dim: #23A897;
+  --signal-lit: #5CE9D8;
+  --pulse:      #A78BFA;
+  --azure:      #0D8BFF;
+  --amber:      #F0A73C;
 
   /* Alias semánticos: los componentes siguen leyendo estos nombres */
   --ink:        var(--paper);
@@ -32,15 +35,15 @@
   --haze:       var(--text-2);
   --haze-dim:   var(--text-3);
 
-  /* Tarjetas: gris claro, un escalón por debajo del papel del fondo */
-  --card:        #DCE1EA;
-  --card-2:      #D2D8E4;
-  --card-line:   #C3CAD8;
-  --card-text:   #131A2E;
-  --card-text-2: #4E5771;
-  --card-text-3: #6B7490;
-  --card-violet: #5A45F0;
-  --card-accent: #0D9B87;
+  /* Tarjetas: vidrio, un escalón por encima del fondo */
+  --card:        #0D1424;
+  --card-2:      #111A2E;
+  --card-line:   rgba(255,255,255,.10);
+  --card-text:   #EEF2FB;
+  --card-text-2: #A3AFC7;
+  --card-text-3: #79859F;
+  --card-violet: #A78BFA;
+  --card-accent: #34CFBE;
 
   /* Panel de código: isla oscura deliberada sobre el papel */
   --code-bg:    #0B1020;
@@ -93,8 +96,8 @@ body::before{
   pointer-events: none;
   z-index: 0;
   background-image:
-    repeating-linear-gradient(90deg, rgba(19,26,46,.055) 0 1px, transparent 1px 96px),
-    repeating-linear-gradient(0deg,  rgba(19,26,46,.04)  0 1px, transparent 1px 96px);
+    repeating-linear-gradient(90deg, rgba(52,207,190,.055) 0 1px, transparent 1px 96px),
+    repeating-linear-gradient(0deg,  rgba(52,207,190,.04)  0 1px, transparent 1px 96px);
   -webkit-mask-image: radial-gradient(ellipse 120% 78% at 50% 0%, #000 0%, rgba(0,0,0,.35) 55%, transparent 92%);
           mask-image: radial-gradient(ellipse 120% 78% at 50% 0%, #000 0%, rgba(0,0,0,.35) 55%, transparent 92%);
 }
@@ -176,15 +179,15 @@ p{ margin: 0; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(245,247,250,.82);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  background: rgba(5,8,15,.72);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
   border-bottom: 1px solid transparent;
   transition: border-color .4s var(--ease), background .4s var(--ease);
 }
 .topbar.stuck{
   border-bottom-color: var(--line);
-  background: rgba(255,255,255,.92);
+  background: rgba(5,8,15,.92);
 }
 .topbar-inner{
   display: flex;
@@ -240,7 +243,7 @@ p{ margin: 0; }
 .btn:hover{
   transform: translateY(-2px);
   box-shadow: 0 10px 30px -12px var(--signal);
-  background: #0B8676;
+  background: var(--signal-lit);
 }
 .nav .btn::after{ content: none; }
 /* .nav a le gana a .btn por especificidad: el boton perdia su color propio */
@@ -284,7 +287,7 @@ p{ margin: 0; }
   min-width: 244px;
   background: var(--paper-2);
   border: 1px solid var(--line);
-  box-shadow: 0 26px 54px -32px rgba(19,26,46,.5);
+  box-shadow: 0 26px 54px -26px rgba(0,0,0,.8);
   padding: .4rem;
   z-index: 60;
   opacity: 0;
@@ -405,7 +408,7 @@ p{ margin: 0; }
   margin-top: clamp(3rem, 7vh, 5.5rem);
   position: relative;
   z-index: 2;
-  background: rgba(255,255,255,.62);
+  background: rgba(255,255,255,.03);
 }
 .ticker-track{
   display: flex;
@@ -456,27 +459,29 @@ p{ margin: 0; }
   --c-line:     var(--card-line);
   --c-accent:   var(--card-accent);
   --c-violet:   var(--card-violet);
-  --c-band:     var(--c-band);
-  --c-fill:     #FFFFFF;
-  --c-on:       rgba(13,155,135,.14);
-  --c-out:      rgba(90,69,240,.14);
+  --c-band:     rgba(255,255,255,.04);
+  --c-fill:     rgba(255,255,255,.06);
+  --c-on:       rgba(52,207,190,.16);
+  --c-out:      rgba(167,139,250,.18);
   background: var(--c-bg);
   color: var(--c-fg);
   transition: background .45s var(--ease), color .45s var(--ease);
 }
+/* Sobre fondo oscuro la tarjeta ya no se invierte: se levanta. El vidrio
+   se aclara, el acento se enciende y el borde toma color. */
 .pillar:hover, .case:hover, .rel-card:hover,
 .pillar:focus-within, .case:focus-within, .rel-card:focus-within{
-  --c-bg:       #1A2236;
-  --c-fg:       #F2F4FA;
-  --c-fg-2:     #BFC7DC;
-  --c-fg-3:     #9AA4BE;
-  --c-line:     rgba(255,255,255,.17);
+  --c-bg:       #16213A;
+  --c-fg:       #FFFFFF;
+  --c-fg-2:     #C9D3E6;
+  --c-fg-3:     #9BA7C0;
+  --c-line:     rgba(92,233,216,.28);
   --c-accent:   var(--signal-lit);
-  --c-violet:   #9C8DFF;
-  --c-band:     rgba(255,255,255,.05);
-  --c-fill:     rgba(255,255,255,.07);
-  --c-on:       rgba(53,224,198,.18);
-  --c-out:      rgba(156,141,255,.24);
+  --c-violet:   #C4B5FD;
+  --c-band:     rgba(255,255,255,.07);
+  --c-fill:     rgba(255,255,255,.10);
+  --c-on:       rgba(92,233,216,.22);
+  --c-out:      rgba(196,181,253,.26);
 }
 /* Las ilustraciones acompañan el cambio en vez de saltar */
 .pillar .illus rect, .pillar .illus path, .pillar .illus circle,
@@ -766,7 +771,7 @@ form .btn{ justify-content: center; }
 }
 .sent{
   border: 1px solid var(--signal-dim);
-  background: rgba(13,155,135,.07);
+  background: rgba(52,207,190,.10);
   padding: .9rem 1rem;
   font-family: var(--mono);
   font-size: .74rem;
@@ -881,7 +886,7 @@ form .btn{ justify-content: center; }
   margin: 0;
   border: 1px solid var(--code-line);
   background: var(--code-bg);
-  box-shadow: 0 28px 70px -46px rgba(19,26,46,.45);
+  box-shadow: 0 28px 70px -40px rgba(52,207,190,.28);
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-width: 0;
@@ -1209,7 +1214,7 @@ form .btn{ justify-content: center; }
    ============================================================ */
 .folio-band{
   position: relative;
-  background: #070B16;
+  background: var(--paper-2);
   color: #E7EBF7;
   overflow: hidden;
   isolation: isolate;
@@ -1316,13 +1321,13 @@ form .btn{ justify-content: center; }
   display: flex;
   flex-direction: column;
   gap: .8rem;
-  background: #0B1020;
+  background: var(--card);
   color: var(--c-fg);
   transition: background .45s var(--ease);
 }
 .folio-card:hover,
 .folio-card:focus-within{
-  background: #111A33;
+  background: var(--card-2);
   --c-fg-2: #C9D0E4;
   --c-line: rgba(53,224,198,.28);
 }
@@ -1471,27 +1476,27 @@ form .btn{ justify-content: center; }
 /* ---------- Colores de marca ----------
    Elegidos para leerse sobre el fondo oscuro y para no repetirse entre
    proyectos vecinos de la rejilla. */
-.folio-card[data-brand="kognia"]    { --brand:#6366F1; --brand-2:#A855F7; }
-.folio-card[data-brand="arbitrium"] { --brand:#FBBF24; --brand-2:#B45309; }
-.folio-card[data-brand="replica"]   { --brand:#22D3EE; --brand-2:#0E7490; }
-.folio-card[data-brand="indicio"]   { --brand:#E11D48; --brand-2:#881337; }
-.folio-card[data-brand="telar"]     { --brand:#8B5CF6; --brand-2:#5B21B6; }
-.folio-card[data-brand="solvenz"]   { --brand:#2563EB; --brand-2:#1E3A8A; }
-.folio-card[data-brand="collectiq"] { --brand:#14B8A6; --brand-2:#0F766E; }
-.folio-card[data-brand="umbral"]    { --brand:#38BDF8; --brand-2:#0369A1; }
-.folio-card[data-brand="veritas"]   { --brand:#EF4444; --brand-2:#991B1B; }
-.folio-card[data-brand="mercurio"]  { --brand:#F97316; --brand-2:#C2410C; }
-.folio-card[data-brand="brujula"]   { --brand:#A3E635; --brand-2:#4D7C0F; }
-.folio-card[data-brand="hilo"]      { --brand:#22C55E; --brand-2:#15803D; }
-.folio-card[data-brand="timpano"]   { --brand:#D946EF; --brand-2:#86198F; }
-.folio-card[data-brand="mirador"]   { --brand:#0EA5E9; --brand-2:#075985; }
-.folio-card[data-brand="codice"]    { --brand:#D97706; --brand-2:#78350F; }
-.folio-card[data-brand="clausula"]  { --brand:#7C3AED; --brand-2:#4C1D95; }
-.folio-card[data-brand="agora"]     { --brand:#0D9488; --brand-2:#115E59; }
-.folio-card[data-brand="ventanilla"]{ --brand:#FB7185; --brand-2:#BE123C; }
-.folio-card[data-brand="surco"]     { --brand:#84CC16; --brand-2:#3F6212; }
-.folio-card[data-brand="cantera"]   { --brand:#A8A29E; --brand-2:#57534E; }
-.folio-card[data-brand="preceptor"] { --brand:#EC4899; --brand-2:#9D174D; }
+[data-brand="kognia"]      { --brand:#6366F1; --brand-2:#A855F7; --brand-lt:#7375F2; }
+[data-brand="arbitrium"]   { --brand:#FBBF24; --brand-2:#B45309; --brand-lt:#FBBF24; }
+[data-brand="replica"]     { --brand:#22D3EE; --brand-2:#0E7490; --brand-lt:#22D3EE; }
+[data-brand="indicio"]     { --brand:#E11D48; --brand-2:#881337; --brand-lt:#E63F63; }
+[data-brand="telar"]       { --brand:#8B5CF6; --brand-2:#5B21B6; --brand-lt:#9164F6; }
+[data-brand="solvenz"]     { --brand:#2563EB; --brand-2:#1E3A8A; --brand-lt:#467AEE; }
+[data-brand="collectiq"]   { --brand:#14B8A6; --brand-2:#0F766E; --brand-lt:#14B8A6; }
+[data-brand="umbral"]      { --brand:#38BDF8; --brand-2:#0369A1; --brand-lt:#38BDF8; }
+[data-brand="veritas"]     { --brand:#EF4444; --brand-2:#991B1B; --brand-lt:#EF4444; }
+[data-brand="mercurio"]    { --brand:#F97316; --brand-2:#C2410C; --brand-lt:#F97316; }
+[data-brand="brujula"]     { --brand:#A3E635; --brand-2:#4D7C0F; --brand-lt:#A3E635; }
+[data-brand="hilo"]        { --brand:#22C55E; --brand-2:#15803D; --brand-lt:#22C55E; }
+[data-brand="timpano"]     { --brand:#D946EF; --brand-2:#86198F; --brand-lt:#D946EF; }
+[data-brand="mirador"]     { --brand:#0EA5E9; --brand-2:#075985; --brand-lt:#0EA5E9; }
+[data-brand="codice"]      { --brand:#D97706; --brand-2:#78350F; --brand-lt:#D97706; }
+[data-brand="clausula"]    { --brand:#7C3AED; --brand-2:#4C1D95; --brand-lt:#9661F1; }
+[data-brand="agora"]       { --brand:#0D9488; --brand-2:#115E59; --brand-lt:#0D9488; }
+[data-brand="ventanilla"]  { --brand:#FB7185; --brand-2:#BE123C; --brand-lt:#FB7185; }
+[data-brand="surco"]       { --brand:#84CC16; --brand-2:#3F6212; --brand-lt:#84CC16; }
+[data-brand="cantera"]     { --brand:#A8A29E; --brand-2:#57534E; --brand-lt:#A8A29E; }
+[data-brand="preceptor"]   { --brand:#EC4899; --brand-2:#9D174D; --brand-lt:#EC4899; }
 
 /* ---------- Texto ---------- */
 .folio-rubro{
@@ -1589,4 +1594,244 @@ form .btn{ justify-content: center; }
 @media (max-width: 780px){
   .folio{ grid-template-columns: 1fr; }
   .folio-count{ margin-left: 0; width: 100%; }
+}
+
+/* ---------- Tarjeta clicable ---------- */
+.sr-only{
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.folio-more{
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--brand-lt, var(--signal-lit));
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-top: .2rem;
+  transition: gap .35s var(--ease);
+}
+.folio-more::after{ content: "→"; }
+.folio-card:hover .folio-more{ gap: .8rem; }
+
+/* El botón cubre la tarjeta entera: se toca en cualquier parte, pero el
+   foco de teclado y el lector de pantalla siguen viendo un solo control. */
+.folio-open{
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  width: 100%; height: 100%;
+  margin: 0; padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.folio-open:focus-visible{
+  outline: 2px solid var(--signal-lit);
+  outline-offset: -5px;
+}
+
+/* ---------- Ficha de proyecto ---------- */
+.pdlg{
+  width: min(1000px, 94vw);
+  max-width: none;
+  max-height: 90vh;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.14);
+  background: var(--paper-2);
+  color: #E7EBF7;
+  overflow: hidden;
+}
+.pdlg::backdrop{
+  background: rgba(3,6,13,.86);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.pdlg-body{
+  max-height: 90vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.pdlg-close{
+  position: absolute;
+  top: 12px; right: 12px;
+  z-index: 6;
+  width: 40px; height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #E7EBF7;
+  background: rgba(9,14,28,.86);
+  border: 1px solid rgba(255,255,255,.18);
+  cursor: pointer;
+  transition: background .3s var(--ease), border-color .3s var(--ease);
+}
+.pdlg-close:hover{ background: #1A2340; border-color: var(--brand, #FFFFFF); }
+
+/* El logo de la tarjeta encabeza la ficha, más bajo que en la rejilla */
+.pdlg-body .folio-viz{
+  aspect-ratio: auto;
+  height: clamp(96px, 16vw, 132px);
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  margin: 0;
+}
+
+.pd{
+  display: block;
+  padding: clamp(1.5rem, 4vw, 2.8rem);
+}
+.pd-rubro{
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #8B95B2;
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  margin: 0 0 .8rem;
+}
+.pd-rubro .em{ font-size: .95rem; letter-spacing: 0; }
+.pd h2{
+  font-size: clamp(1.9rem, 1.4rem + 2vw, 2.9rem);
+  color: #F4F6FC;
+  margin: 0;
+}
+.pd-lede{
+  color: #AEB7CE;
+  font-size: var(--step-0);
+  line-height: 1.6;
+  max-width: 62ch;
+  margin: .9rem 0 0;
+}
+
+.pd-spec{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.1);
+  margin: clamp(1.6rem, 3vw, 2.2rem) 0 0;
+}
+.pd-spec > div{
+  background: #0C1224;
+  padding: .95rem 1.1rem;
+  display: grid;
+  gap: .35rem;
+  align-content: start;
+}
+.pd-spec dt{
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #7C87A5;
+}
+.pd-spec dd{
+  margin: 0;
+  font-family: var(--display);
+  font-variation-settings: 'wdth' 104;
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1.35;
+  color: #E7EBF7;
+}
+
+.pd-sec{ margin-top: clamp(2rem, 4vw, 2.9rem); }
+.pd-sec h3{
+  font-size: 1.28rem;
+  color: #F4F6FC;
+  padding-bottom: .7rem;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  margin-bottom: 1.15rem;
+}
+.pd-sec > p{
+  color: #AEB7CE;
+  font-size: var(--step--1);
+  line-height: 1.8;
+  max-width: 72ch;
+}
+.pd-sec > p + p{ margin-top: .9rem; }
+
+.pd-caps{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.1);
+}
+.pd-cap{
+  background: #0C1224;
+  padding: 1.15rem 1.25rem;
+}
+.pd-cap h4{
+  font-family: var(--display);
+  font-variation-settings: 'wdth' 104;
+  font-weight: 600;
+  font-size: .98rem;
+  line-height: 1.25;
+  color: var(--brand-lt, var(--signal-lit));
+  margin: 0 0 .55rem;
+}
+.pd-cap p{
+  color: #AEB7CE;
+  font-size: .82rem;
+  line-height: 1.72;
+}
+
+.pd-stack{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.1rem, 2.4vw, 2rem);
+}
+.pd-stack h4{
+  font-family: var(--mono);
+  font-size: .66rem;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--brand-lt, var(--signal-lit));
+  margin: 0 0 .75rem;
+  padding-bottom: .55rem;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.pd-stack ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .5rem;
+}
+.pd-stack li{
+  color: #AEB7CE;
+  font-size: .81rem;
+  line-height: 1.5;
+  padding-left: .9rem;
+  position: relative;
+}
+.pd-stack li::before{
+  content: "";
+  position: absolute;
+  left: 0; top: .52em;
+  width: 4px; height: 4px;
+  background: var(--brand-lt, var(--signal-lit));
+}
+
+.pd-foot{ margin-top: clamp(2rem, 4vw, 2.8rem); }
+
+@media (max-width: 860px){
+  .pd-caps{ grid-template-columns: 1fr; }
+  .pd-stack{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px){
+  .pd-stack{ grid-template-columns: 1fr; }
 }

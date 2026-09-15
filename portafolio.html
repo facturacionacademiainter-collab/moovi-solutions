@@ -119,6 +119,8 @@
           <p class="folio-desc">Un sistema operativo de agentes para adentro de la empresa. Cada área publica sus capacidades —consultar el ERP, generar un informe, abrir un ticket— en un registro central, y un enrutador decide qué agente y qué herramientas resuelven cada pedido de un empleado. La memoria organizacional hereda los permisos del directorio corporativo: un agente nunca devuelve un dato que la persona que pregunta no podría ver por sí misma.</p>
           <p class="folio-core"><b>La parte difícil</b>Orquestación jerárquica con presupuesto de cómputo por tarea, escalamiento automático a un humano cuando la confianza cae por debajo del umbral, y una traza de auditoría reproducible de cada llamada a herramienta.</p>
           <div class="tags"><span class="tag">Agentes</span><span class="tag">RAG con permisos</span><span class="tag">Orquestación</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="kognia"><span class="sr-only">Ver la ficha de Kognia</span></button>
         </article>
 
         <!-- ARBITRIUM — marca suelta dorada: el camino que se elige -->
@@ -140,6 +142,8 @@
           <p class="folio-desc">Un motor que no informa: decide. Para cada cliente combina el historial, las señales del momento y las restricciones del negocio, y devuelve una única acción recomendada con su justificación y su impacto esperado. Las reglas duras —lo que la empresa no puede hacer por contrato o por norma— se declaran aparte del modelo, así el negocio las cambia sin tocar la inteligencia.</p>
           <p class="folio-core"><b>La parte difícil</b>Árbol de políticas versionado sobre bandits contextuales, con experimentación continua y capacidad de revertir una política entera a la versión anterior en caliente, sin desplegar.</p>
           <div class="tags"><span class="tag">Next best action</span><span class="tag">Bandits</span><span class="tag">Políticas</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="arbitrium"><span class="sr-only">Ver la ficha de Arbitrium</span></button>
         </article>
 
         <!-- RÉPLICA — dos cuerpos idénticos desplazados, cian -->
@@ -159,6 +163,8 @@
           <p class="folio-desc">Una copia viva del negocio donde se puede probar el futuro antes de que ocurra. Toma la operación real —clientes, stock, cartera, capacidad instalada— y permite correr escenarios: qué pasa si sube el costo un veinte por ciento, si se cae un proveedor, si se duplica la demanda en tres semanas. Cada corrida devuelve el rango de resultados posibles, no un número único, y señala qué variable fue la que más movió la aguja.</p>
           <p class="folio-core"><b>La parte difícil</b>Simulación de eventos discretos acoplada a Monte Carlo, calibrada contra el histórico con un backtesting que avisa solo cuando el gemelo empieza a desviarse de la realidad.</p>
           <div class="tags"><span class="tag">Digital twin</span><span class="tag">Monte Carlo</span><span class="tag">What-if</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="replica"><span class="sr-only">Ver la ficha de Réplica</span></button>
         </article>
 
         <!-- INDICIO — medallón carmesí: la lupa sobre el grafo de vínculos -->
@@ -184,6 +190,8 @@
           <p class="folio-desc">Para cuando hay que entender miles de documentos, correos, actas y planillas que nadie tiene tiempo de leer. Ingesta el corpus completo, extrae entidades —personas, empresas, cuentas, fechas, montos— y arma un grafo de relaciones donde aparecen los vínculos que en la lectura lineal quedan invisibles. Después redacta el informe, con cada afirmación enlazada al documento y a la página exacta de donde salió.</p>
           <p class="folio-core"><b>La parte difícil</b>Resolución de entidades difusa: reconocer que la misma persona escrita de seis formas distintas en seis fuentes distintas es una sola. Y un generador de informes que se niega a afirmar algo sin cita verificable.</p>
           <div class="tags"><span class="tag">Grafo</span><span class="tag">Entidades</span><span class="tag">Informes citados</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="indicio"><span class="sr-only">Ver la ficha de Indicio</span></button>
         </article>
 
         <!-- TELAR — pastilla violeta: los hilos que se cruzan -->
@@ -205,6 +213,8 @@
           <p class="folio-desc">Une sistemas que nunca fueron pensados para hablarse: el ERP viejo, la API del proveedor, la base de producción, la casilla de correo y la persona que aprueba. Los procesos se dibujan como flujos y se ejecutan con garantías reales: si un paso falla a mitad de camino, el motor sabe reintentar sin duplicar y deshacer lo que ya había hecho.</p>
           <p class="folio-core"><b>La parte difícil</b>Ejecución durable con estado persistido paso a paso, idempotencia por clave de operación y compensación transaccional al estilo saga, para procesos que cruzan cuatro sistemas que no comparten ninguna transacción.</p>
           <div class="tags"><span class="tag">Workflows durables</span><span class="tag">Sagas</span><span class="tag">Integraciones</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="telar"><span class="sr-only">Ver la ficha de Telar</span></button>
         </article>
 
         <!-- ══════════ FINANZAS Y RIESGO ══════════ -->
@@ -226,6 +236,8 @@
           <p class="folio-desc">Analiza la cartera completa de una entidad y proyecta el flujo de caja a dieciocho meses con bandas de confianza, no con una línea optimista. Calcula scoring por cliente, estima la mora con curvas de supervivencia —que responden no solo si un caso va a caer, sino cuándo— y permite correr pruebas de estrés: qué pasa con el capital si la mora sube tres puntos.</p>
           <p class="folio-core"><b>La parte difícil</b>Modelos de tiempo hasta evento con explicabilidad por variable, y un simulador de estrés que propaga el shock desde el cliente individual hasta el estado de resultados consolidado.</p>
           <div class="tags"><span class="tag">Scoring</span><span class="tag">Supervivencia</span><span class="tag">Stress testing</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="solvenz"><span class="sr-only">Ver la ficha de Solvenz</span></button>
         </article>
 
         <!-- COLLECTIQ — pastilla turquesa, ciclo de recupero. Wordmark a dos tonos -->
@@ -249,7 +261,8 @@
           <p class="folio-desc">Toma la cartera en mora de una organización, estima qué casos van a pagar y en qué plazo, y ordena la gestión diaria por recupero esperado en lugar de por antigüedad de la deuda. La pregunta que responde no es a quién le debe más, sino a quién conviene llamar hoy. La cartera entra desde Excel, CSV o sincronización con el CRM, y el sistema propone solo cómo mapear cada columna.</p>
           <p class="folio-core"><b>La parte difícil</b>Toda la lógica vive en una capa de decisión desacoplada de la interfaz: ninguna pantalla calcula nada por su cuenta, así un modelo entrenado puede reemplazar cualquier estimación sin tocar una línea de front.</p>
           <div class="tags"><span class="tag">Priorización</span><span class="tag">Digital twin</span><span class="tag">Copiloto</span></div>
-          <a class="folio-link" href="proyectos.html">Ver el proyecto completo →</a>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="collectiq"><span class="sr-only">Ver la ficha de CollectIQ</span></button>
         </article>
 
         <!-- UMBRAL — el arco de entrada, celeste macizo -->
@@ -269,6 +282,8 @@
           <p class="folio-desc">El camino completo desde que alguien quiere abrir una cuenta hasta que opera: verificación de identidad con prueba de vida, validación contra padrones y listas restrictivas, análisis de la documentación que sube y scoring de la operación en tiempo real. Los casos limpios pasan solos; los dudosos van a una bandeja de revisión con el expediente ya armado.</p>
           <p class="folio-core"><b>La parte difícil</b>Un motor de reglas de riesgo configurable por producto que decide en menos de un segundo, con modo sombra: la regla nueva corre contra el tráfico real sin aplicarse, para medir su impacto antes de activarla.</p>
           <div class="tags"><span class="tag">KYC</span><span class="tag">Prueba de vida</span><span class="tag">Tiempo real</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="umbral"><span class="sr-only">Ver la ficha de Umbral</span></button>
         </article>
 
         <!-- VERITAS — medallón rojo: el ojo que audita -->
@@ -291,6 +306,8 @@
           <p class="folio-desc">Audita el cien por ciento de las operaciones en lugar de una muestra. Aprende cómo se comporta normalmente cada proceso —quién aprueba qué, en qué horarios, por qué montos— y marca lo que se sale del patrón: un proveedor que comparte cuenta bancaria con un empleado, una serie de facturas cortadas justo por debajo del límite de autorización, un usuario que aprueba lo que él mismo cargó.</p>
           <p class="folio-core"><b>La parte difícil</b>Detección no supervisada combinada con reglas forenses duras, más un análisis de segregación de funciones que corre sobre el grafo de permisos real del ERP y no sobre el organigrama declarado.</p>
           <div class="tags"><span class="tag">Anomalías</span><span class="tag">Fraude</span><span class="tag">Auditoría continua</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="veritas"><span class="sr-only">Ver la ficha de Veritas</span></button>
         </article>
 
         <!-- ══════════ COMERCIAL ══════════ -->
@@ -313,6 +330,8 @@
           <p class="folio-desc">Una capa comercial sobre la tienda que atiende como atendería un buen vendedor: entiende lo que la persona busca aunque lo escriba mal, arma la recomendación mirando el catálogo real y el stock disponible, y no ofrece lo que no puede entregar. Cuando alguien abandona el carrito, decide si conviene contactarlo, por qué canal y con qué incentivo —o si conviene no gastar el descuento.</p>
           <p class="folio-core"><b>La parte difícil</b>Búsqueda semántica sobre el catálogo con reordenamiento por margen y disponibilidad, y un modelo de elasticidad que calcula el descuento mínimo que todavía recupera la venta.</p>
           <div class="tags"><span class="tag">Búsqueda semántica</span><span class="tag">Recomendación</span><span class="tag">Elasticidad</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="mercurio"><span class="sr-only">Ver la ficha de Mercurio</span></button>
         </article>
 
         <!-- BRÚJULA — medallón lima con la aguja marcando el norte -->
@@ -335,6 +354,8 @@
           <p class="folio-desc">Ordena el pipeline por probabilidad real de cierre en lugar de por el optimismo del vendedor. Puntúa cada lead con las señales que históricamente predijeron una venta, detecta las oportunidades que se están enfriando antes de que se pierdan, y arma el pronóstico del trimestre como un rango de escenarios. También redacta la propuesta comercial a partir de lo que se conversó.</p>
           <p class="folio-core"><b>La parte difícil</b>Un modelo de cierre calibrado por segmento y ciclo de venta, con un forecast jerárquico que cuadra hacia arriba: lo que proyecta cada vendedor, cada equipo y la compañía no pueden contradecirse.</p>
           <div class="tags"><span class="tag">Lead scoring</span><span class="tag">Forecast</span><span class="tag">Propuestas</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="brujula"><span class="sr-only">Ver la ficha de Brújula</span></button>
         </article>
 
         <!-- HILO — pastilla verde, la burbuja de conversación -->
@@ -356,6 +377,8 @@
           <p class="folio-desc">Un agente que atiende en WhatsApp de punta a punta: responde, cotiza con precios reales del sistema, toma el pedido, agenda y, cuando el caso lo excede, deriva a una persona con el resumen de la conversación ya escrito. Sostiene el contexto entre mensajes separados por días y entiende cuando el cliente cambia de tema a mitad de camino.</p>
           <p class="folio-core"><b>La parte difícil</b>Una máquina de estados conversacional sobre memoria de largo plazo, con herramientas conectadas al ERP para cotizar y reservar stock de verdad, y un umbral de confianza que define cuándo el agente deja de responder y llama al humano.</p>
           <div class="tags"><span class="tag">WhatsApp API</span><span class="tag">Agentes</span><span class="tag">Handoff</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="hilo"><span class="sr-only">Ver la ficha de Hilo</span></button>
         </article>
 
         <!-- TÍMPANO — la onda fucsia que se expande desde la fuente -->
@@ -376,6 +399,8 @@
           <p class="folio-desc">Escucha la llamada mientras ocurre y le sugiere al operador qué decir, qué dato mirar y qué riesgo evitar, sin que tenga que buscar nada. Cuando la llamada termina, deja el resumen y la gestión cargada sola. Después audita el cien por ciento de las conversaciones contra la grilla de calidad, en lugar de las cinco que llegaba a escuchar un supervisor.</p>
           <p class="folio-core"><b>La parte difícil</b>Transcripción en streaming con separación de hablantes y latencia por debajo del segundo, más un evaluador de calidad calibrado contra las auditorías humanas históricas para que puntúe con el criterio del equipo y no con uno propio.</p>
           <div class="tags"><span class="tag">Transcripción</span><span class="tag">Copiloto</span><span class="tag">QA automático</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="timpano"><span class="sr-only">Ver la ficha de Tímpano</span></button>
         </article>
 
         <!-- ══════════ DATOS Y DOCUMENTOS ══════════ -->
@@ -400,6 +425,8 @@
           <p class="folio-desc">Un tablero no debería obligar a adivinar por qué cayó un número. Mirador detecta el desvío, lo descompone por dimensión hasta encontrar dónde se originó —qué sucursal, qué producto, qué semana— y lo escribe en castellano. Además responde preguntas en lenguaje natural traduciéndolas a consultas sobre el modelo de datos, y muestra la consulta que ejecutó.</p>
           <p class="folio-core"><b>La parte difícil</b>Análisis automático de causa raíz por descomposición dimensional, y un traductor de lenguaje natural a consultas acotado por una capa semántica: el modelo no puede inventar una métrica que no existe porque solo ve las que están definidas.</p>
           <div class="tags"><span class="tag">Causa raíz</span><span class="tag">Capa semántica</span><span class="tag">Narrativa</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="mirador"><span class="sr-only">Ver la ficha de Mirador</span></button>
         </article>
 
         <!-- CÓDICE — el documento macizo en bronce -->
@@ -420,6 +447,8 @@
           <p class="folio-desc">Convierte pilas de contratos, facturas, balances y expedientes en datos consultables. Lee el documento tal como está —escaneado, torcido, con sellos y firmas encima—, ubica cada dato en la página y extrae la información estructurada. Cuando el documento no es claro, no adivina: marca el campo como dudoso y lo manda a revisión humana con el recorte de la imagen.</p>
           <p class="folio-core"><b>La parte difícil</b>Segmentación de la estructura visual con modelos de visión y extracción con coordenadas de origen para cada campo, de modo que todo dato se pueda señalar en la página original. El umbral de confianza por campo decide qué pasa solo y qué va a revisión.</p>
           <div class="tags"><span class="tag">Visión</span><span class="tag">Extracción</span><span class="tag">Human-in-the-loop</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="codice"><span class="sr-only">Ver la ficha de Códice</span></button>
         </article>
 
         <!-- CLÁUSULA — medallón violeta: la balanza del criterio -->
@@ -442,6 +471,8 @@
           <p class="folio-desc">Lee un contrato y lo compara contra la política de la empresa: qué cláusulas faltan, cuáles están redactadas en contra, qué plazos y penalidades quedaron fuera de lo aceptable. Marca cada hallazgo sobre el texto original y propone la redacción alternativa. También arma documentos nuevos desde la biblioteca de cláusulas ya aprobadas.</p>
           <p class="folio-core"><b>La parte difícil</b>Segmentación por cláusula y comparación semántica contra un manual de criterios versionado, con desviaciones graduadas por riesgo y trazabilidad de qué versión de la política se aplicó en cada revisión.</p>
           <div class="tags"><span class="tag">Playbook</span><span class="tag">Comparación semántica</span><span class="tag">Redacción</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="clausula"><span class="sr-only">Ver la ficha de Cláusula</span></button>
         </article>
 
         <!-- ══════════ SECTOR PÚBLICO Y AGRO ══════════ -->
@@ -466,6 +497,8 @@
           <p class="folio-desc">El vecino reclama por donde quiera —WhatsApp, web, teléfono, mostrador— y el sistema lo entiende, lo ubica en el mapa, lo clasifica y lo deriva al área que corresponde, sin que nadie transcriba nada. Agrupa los reclamos repetidos del mismo problema en un solo caso y avisa cuando se resuelve. Puertas adentro, mueve el expediente por el circuito administrativo con sus plazos y sus firmas.</p>
           <p class="folio-core"><b>La parte difícil</b>Clasificación y geocodificación del reclamo escrito en texto libre, y deduplicación en espacio y tiempo para no abrir cien expedientes por el mismo bache. Todo sobre un motor de expedientes con firma digital y control de vencimientos.</p>
           <div class="tags"><span class="tag">Reclamos</span><span class="tag">Geocodificación</span><span class="tag">Expedientes</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="agora"><span class="sr-only">Ver la ficha de Ágora</span></button>
         </article>
 
         <!-- VENTANILLA — pastilla rosa: el mostrador de atención -->
@@ -488,6 +521,8 @@
           <p class="folio-desc">Ordena la parte administrativa que se come el día: el turno que se pide, el documento que hay que adjuntar, el trámite que queda trabado esperando una firma. Asigna turnos según la duración real de cada práctica y no según una grilla fija, anticipa quién va a faltar para sobre-asignar con criterio, y persigue por su cuenta la documentación que falta.</p>
           <p class="folio-core"><b>La parte difícil</b>Optimización de agenda con restricciones cruzadas —profesionales, salas, equipamiento, tiempos reales— y un modelo de ausentismo que ajusta el sobre-turno por franja horaria: llenar la agenda sin generar sala de espera.</p>
           <div class="tags"><span class="tag">Optimización</span><span class="tag">Ausentismo</span><span class="tag">Trámites</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="ventanilla"><span class="sr-only">Ver la ficha de Ventanilla</span></button>
         </article>
 
         <!-- SURCO — los surcos del lote bajo el sol, en verde campo -->
@@ -509,6 +544,8 @@
           <p class="folio-desc">Cruza lo que pasa en el campo con lo que pasa en la cuenta corriente del productor. Sigue el estado de los lotes por imagen satelital, estima el rinde y lo compara con el histórico de la zona, y usa eso como insumo para evaluar crédito y anticipar la capacidad de pago de la campaña. El riesgo climático deja de ser una intuición y pasa a ser una variable del modelo.</p>
           <p class="folio-core"><b>La parte difícil</b>Series de índices de vegetación por lote a partir de imágenes satelitales, ligadas al modelo de riesgo crediticio junto con el precio del commodity y el pronóstico climático de la zona.</p>
           <div class="tags"><span class="tag">Satelital</span><span class="tag">Riesgo climático</span><span class="tag">Crédito agro</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="surco"><span class="sr-only">Ver la ficha de Surco</span></button>
         </article>
 
         <!-- ══════════ PERSONAS ══════════ -->
@@ -532,6 +569,8 @@
           <p class="folio-desc">Ordena la búsqueda desde el aviso hasta el ingreso. Lee los CV entendiendo trayectorias y no palabras clave, los compara contra lo que el puesto realmente necesita, y explica por qué ubicó a cada candidato donde lo ubicó. En la entrevista le sugiere al entrevistador qué falta indagar; después arma el plan de onboarding de la persona que entra.</p>
           <p class="folio-core"><b>La parte difícil</b>Matching por competencias con la evidencia extraída del propio CV, y una auditoría de sesgo que corre sobre los resultados del ranking. La decisión final siempre es de una persona: el sistema ordena y justifica, nunca descarta solo.</p>
           <div class="tags"><span class="tag">Matching</span><span class="tag">Auditoría de sesgo</span><span class="tag">Onboarding</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="cantera"><span class="sr-only">Ver la ficha de Cantera</span></button>
         </article>
 
         <!-- PRECEPTOR — pastilla rosa fuerte: el libro abierto -->
@@ -553,6 +592,8 @@
           <p class="folio-desc">Acompaña al estudiante donde está: cuando se traba, detecta qué concepto previo le falta y le da el ejercicio que corresponde a ese hueco, en vez del siguiente de la lista. Del lado del docente, corrige producciones abiertas contra la rúbrica, deja escrita la devolución y le muestra al curso entero dónde están los temas que no se entendieron.</p>
           <p class="folio-core"><b>La parte difícil</b>Un modelo del conocimiento del estudiante que estima el dominio de cada concepto y cómo se olvida con el tiempo, montado sobre un grafo de prerrequisitos que define qué se puede enseñar después de qué.</p>
           <div class="tags"><span class="tag">Trazado de conocimiento</span><span class="tag">Rúbricas</span><span class="tag">Analítica</span></div>
+          <span class="folio-more" aria-hidden="true">Ver la ficha completa</span>
+          <button class="folio-open" type="button" data-proj="preceptor"><span class="sr-only">Ver la ficha de Preceptor</span></button>
         </article>
 
       </div>
@@ -577,6 +618,821 @@
       </div>
     </div>
   </section>
+  <!-- ============ FICHA DE PROYECTO ============
+       El diálogo se llena al vuelo con la ficha del proyecto que se tocó.
+       Vive vacío en el HTML y se completa clonando el contenido de
+       #projData, para que todo el texto siga estando en la página
+       aunque el visitante no toque ninguna tarjeta. -->
+  <dialog class="pdlg" id="projDialog" aria-label="Ficha del proyecto">
+    <button class="pdlg-close" type="button" id="projClose" aria-label="Cerrar la ficha">&#215;</button>
+    <div class="pdlg-body" id="projBody"></div>
+  </dialog>
+
+  <!-- ============ FICHAS DETALLADAS ============
+       Ocultas hasta que se abren. Cada una lleva data-proj con el mismo
+       identificador que data-brand de su tarjeta. -->
+  <div id="projData" hidden>
+
+    <article class="pd" data-proj="kognia">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🤖</span> IA empresarial</p>
+      <h2>Kognia</h2>
+      <p class="pd-lede">Un sistema operativo de agentes para adentro de la empresa: capacidades registradas en un solo lugar, un enrutador que decide quién resuelve cada pedido y permisos heredados del directorio corporativo.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma interna multiárea</dd></div>
+        <div><dt>Dominio</dt><dd>Operación y conocimiento corporativo</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube privada u on-premise</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Registro de capacidades y orquestador jerárquico</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>En la mayoría de las empresas la IA entra por veinte puertas distintas. Un área contrata un asistente, otra arma su propio bot, una tercera pega llamadas a un modelo adentro de una planilla. A los seis meses hay diez herramientas que no se hablan, ninguna sabe quién es el que pregunta, y nadie puede decir qué datos vio cada una.</p>
+        <p>El problema de fondo no es el modelo: es el gobierno. Quién puede preguntar qué, con qué datos se responde, qué acciones puede ejecutar un agente sin que las apruebe una persona, y cómo se reconstruye después lo que pasó. Kognia existe para que eso esté resuelto una vez, en un lugar, en vez de veinte veces mal.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Registro de capacidades</h4><p>Cada área publica lo que su sistema sabe hacer: consultar saldos, emitir un remito, abrir un ticket, buscar en el repositorio legal. Cada capacidad declara qué datos toca, qué permisos exige y si su efecto se puede deshacer.</p></div>
+          <div class="pd-cap"><h4>Enrutador de pedidos</h4><p>Cuando alguien pregunta algo, el orquestador descompone el pedido, elige qué agentes intervienen y en qué orden, y les da un presupuesto de cómputo. Si el plan incluye una acción irreversible, se frena y pide aprobación humana.</p></div>
+          <div class="pd-cap"><h4>Memoria con permisos</h4><p>El índice de conocimiento guarda, junto a cada fragmento, quién puede leerlo. La búsqueda filtra por la identidad de quien pregunta antes de recuperar, no después: un dato que no te corresponde nunca entra en el contexto.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>La orquestación está separada de los agentes, y los agentes de las herramientas. Un agente no sabe cómo se conecta al ERP: pide una capacidad por su nombre y el registro resuelve la conexión, el permiso y el reintento. Eso permite cambiar de proveedor de modelo, o reemplazar la integración de un sistema entero, sin tocar la lógica de ningún agente. Cada ejecución queda guardada como un árbol de llamadas con sus entradas, sus salidas y su costo, así que una respuesta de hace tres meses se puede reconstruir tal como se produjo.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Orquestación</h4><ul><li>Registro de capacidades propio</li><li>Planificador jerárquico</li><li>Presupuesto de cómputo por tarea</li><li>Cola de aprobaciones humanas</li></ul></div>
+          <div><h4>Modelos</h4><ul><li>Claude para razonar y planificar</li><li>Embeddings para recuperación</li><li>Enrutado por costo y complejidad</li></ul></div>
+          <div><h4>Datos</h4><ul><li>PostgreSQL con pgvector</li><li>Filtrado por identidad al recuperar</li><li>Conectores a ERP, CRM y repositorios</li></ul></div>
+          <div><h4>Gobierno</h4><ul><li>Identidad federada (SSO)</li><li>Traza de auditoría por llamada</li><li>Límites de uso por área</li><li>Evaluación continua de respuestas</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="arbitrium">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🧠</span> Sistemas de decisión</p>
+      <h2>Arbitrium</h2>
+      <p class="pd-lede">Un motor que recibe el estado de un cliente y devuelve una sola acción recomendada, con su justificación y su impacto esperado.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Motor de decisión embebible</dd></div>
+        <div><dt>Dominio</dt><dd>Contacto y tratamiento de clientes</dd></div>
+        <div><dt>Despliegue</dt><dd>API en nube o dentro de la red del cliente</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Políticas versionadas sobre bandits contextuales</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Las empresas acumulan modelos que predicen: probabilidad de compra, de baja, de mora. Pero un número no es una decisión. Entre «este cliente tiene 62% de probabilidad de darse de baja» y «llamalo el martes ofreciéndole el plan B» hay un salto que casi siempre termina resolviendo una reunión mensual y una planilla de reglas que nadie se anima a tocar.</p>
+        <p>Ahí se pierde el valor. Las reglas envejecen, nadie mide si la acción sirvió, y cuando alguien propone cambiar el criterio no hay forma de saber qué va a pasar salvo probándolo con clientes reales. Arbitrium convierte ese salto en una pieza de software: una política explícita, versionada, medida y reversible.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Catálogo de acciones</h4><p>Cada acción posible se declara con su costo, su capacidad disponible —cuántas llamadas entran en un día— y sus restricciones: a quién no se le puede ofrecer, cuántas veces por mes, qué requiere aprobación.</p></div>
+          <div class="pd-cap"><h4>Política aprendida</h4><p>Sobre el histórico, el motor aprende qué acción funciona mejor para cada tipo de caso, y sigue aprendiendo en producción reservando una fracción del tráfico para explorar alternativas. No optimiza la predicción: optimiza el resultado.</p></div>
+          <div class="pd-cap"><h4>Explicación y control</h4><p>Cada recomendación viene con las señales que más pesaron y el resultado esperado. Las reglas duras del negocio viven fuera del modelo, en un archivo que el área puede leer y cambiar sin pedirle nada a sistemas.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>La política es un artefacto versionado, como el código: se despliega, se mide y se revierte. Cada versión guarda con qué datos se entrenó y qué resultados obtuvo, y dos versiones pueden convivir repartiéndose el tráfico mientras se comparan. Cuando una anda peor, volver atrás es un cambio de puntero y no un redespliegue, porque la anterior sigue cargada.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Decisión</h4><ul><li>Bandits contextuales</li><li>Restricciones declarativas</li><li>Catálogo de acciones versionado</li></ul></div>
+          <div><h4>Modelos</h4><ul><li>Gradient boosting para estimar</li><li>Calibración por segmento</li><li>Reentrenamiento programado</li></ul></div>
+          <div><h4>Servicio</h4><ul><li>API con respuesta bajo 100 ms</li><li>Caché de rasgos</li><li>Registro de cada decisión servida</li></ul></div>
+          <div><h4>Medición</h4><ul><li>Experimentos A/B continuos</li><li>Backtesting contra histórico</li><li>Tablero de impacto por política</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="replica">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🧪</span> Simuladores</p>
+      <h2>Réplica</h2>
+      <p class="pd-lede">Un gemelo digital de la operación donde se prueban escenarios antes de ejecutarlos, y cada corrida devuelve un rango de resultados en vez de un número único.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Simulador de operación</dd></div>
+        <div><dt>Dominio</dt><dd>Planificación y análisis de riesgo</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Eventos discretos y Monte Carlo calibrado</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Las decisiones grandes —abrir un depósito, cambiar la política de stock, tomar un crédito para financiar la campaña— se toman con una planilla que proyecta una línea. La planilla no sabe de colas, ni de variabilidad, ni de lo que pasa cuando dos cosas salen mal la misma semana.</p>
+        <p>El resultado es que el plan funciona en el papel y falla en la realidad por razones que nadie modeló: el proveedor que demora, el pico que satura la capacidad, la correlación entre dos variables que se miraban por separado. Réplica pone esa variabilidad adentro del modelo, que es donde tiene que estar.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Gemelo calibrado</h4><p>La operación se modela como un sistema de recursos, colas y eventos: pedidos que llegan, capacidad que se ocupa, tiempos que varían. Los parámetros no se inventan: se estiman del histórico real de la empresa.</p></div>
+          <div class="pd-cap"><h4>Escenarios</h4><p>Sobre ese gemelo se corren miles de repeticiones cambiando lo que se quiera probar. La salida no es un número sino una distribución: el caso típico, el malo y el muy malo, cada uno con su probabilidad.</p></div>
+          <div class="pd-cap"><h4>Qué movió la aguja</h4><p>Un análisis de sensibilidad ordena las variables por cuánto explican la diferencia entre escenarios, para saber dónde conviene invertir en reducir incertidumbre y dónde no vale la pena.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El gemelo se revalida solo. Cada semana compara lo que simuló contra lo que efectivamente pasó y, si la desviación supera el margen, avisa en vez de seguir entregando resultados lindos y falsos. Esa es la diferencia entre un simulador que se usa durante años y uno que se abandona a los tres meses.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Simulación</h4><ul><li>Eventos discretos</li><li>Monte Carlo</li><li>Muestreo por importancia para colas largas</li></ul></div>
+          <div><h4>Cómputo</h4><ul><li>Corridas paralelas</li><li>Resultados cacheados por escenario</li><li>Semilla fija para reproducir</li></ul></div>
+          <div><h4>Calibración</h4><ul><li>Ajuste de distribuciones sobre histórico</li><li>Backtesting semanal</li><li>Alerta de deriva</li></ul></div>
+          <div><h4>Interfaz</h4><ul><li>Editor de escenarios</li><li>Comparador lado a lado</li><li>Exportación a planilla</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="indicio">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🕵️</span> Investigación</p>
+      <h2>Indicio</h2>
+      <p class="pd-lede">Ingesta un corpus completo de documentos, extrae entidades y vínculos, y redacta el informe con cada afirmación enlazada a su fuente exacta.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma de análisis documental</dd></div>
+        <div><dt>Dominio</dt><dd>Investigación, compliance y due diligence</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube privada u on-premise</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Grafo de conocimiento con resolución de entidades</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Una investigación seria arranca con una caja de material: expedientes, correos, actas, extractos, planillas. Leer eso lleva semanas y, aun leyéndolo todo, la conexión que importa suele estar entre dos documentos que nadie miró juntos.</p>
+        <p>Las herramientas de búsqueda no ayudan, porque buscan palabras y no personas. «Juan P. Gómez», «Gómez, J.», «JP Gómez» y un CUIT suelto son la misma persona, y ninguna búsqueda de texto lo sabe. Indicio resuelve primero quién es quién, y recién después deja preguntar.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Ingesta y normalización</h4><p>Entra cualquier formato: PDF escaneado, correo, planilla, audio transcripto. Todo queda guardado con su texto, su origen y su página, para que después se pueda citar.</p></div>
+          <div class="pd-cap"><h4>Entidades y vínculos</h4><p>Se extraen personas, empresas, cuentas, domicilios, fechas y montos, y se unifican las variantes de escritura en una sola entidad. Sobre eso se arma el grafo: quién aparece con quién, en qué documento y con qué rol.</p></div>
+          <div class="pd-cap"><h4>Informe citado</h4><p>Las preguntas se responden sobre el grafo y el corpus, y cada afirmación del informe lleva el enlace al documento y a la página. Si no hay fuente verificable, no se afirma.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>La resolución de entidades es el corazón del sistema y es probabilística: cada fusión de dos nombres en una sola entidad guarda su puntaje y su motivo, y el analista puede deshacerla. Un sistema que fusiona en silencio es peligroso en una investigación; uno que muestra por qué fusionó es una herramienta.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Ingesta</h4><ul><li>OCR con reconocimiento de layout</li><li>Normalización de formatos</li><li>Deduplicación de documentos</li></ul></div>
+          <div><h4>Extracción</h4><ul><li>Reconocimiento de entidades</li><li>Resolución difusa con puntaje</li><li>Extracción de relaciones</li></ul></div>
+          <div><h4>Grafo</h4><ul><li>Base de grafos</li><li>Consultas por camino y vecindad</li><li>Detección de comunidades</li></ul></div>
+          <div><h4>Informe</h4><ul><li>Generación con cita obligatoria</li><li>Anexo de fuentes</li><li>Control de versiones del informe</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="telar">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">⚙️</span> Automatización</p>
+      <h2>Telar</h2>
+      <p class="pd-lede">Orquesta procesos que cruzan varios sistemas con garantías reales: reintenta sin duplicar y deshace lo ya hecho cuando un paso falla.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Motor de procesos</dd></div>
+        <div><dt>Dominio</dt><dd>Integración entre sistemas</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube o dentro de la red del cliente</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Ejecución durable con compensación</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Un proceso administrativo típico toca cuatro sistemas: se carga en el ERP, se avisa por correo, se actualiza el CRM y alguien aprueba. Cuando se automatiza con scripts sueltos, funciona hasta el día que el tercer paso falla. Ahí quedan dos sistemas actualizados y dos no, y alguien tiene que arreglarlo a mano sin saber bien qué llegó a pasar.</p>
+        <p>Ese es el problema difícil de la automatización: no conectar sistemas, sino sostener la consistencia cuando algo se corta en el medio. Ninguno de esos sistemas comparte una transacción con los otros, así que la consistencia hay que construirla.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Flujos declarados</h4><p>El proceso se define como una secuencia de pasos con sus condiciones, sus esperas y sus aprobaciones humanas. Se lee como el procedimiento que ya existía en papel, no como código.</p></div>
+          <div class="pd-cap"><h4>Ejecución durable</h4><p>El estado se guarda después de cada paso. Si el proceso se cae, se reanuda donde estaba; si un paso se reintenta, la clave de operación evita que se ejecute dos veces.</p></div>
+          <div class="pd-cap"><h4>Compensación</h4><p>Cada paso puede declarar cómo se deshace. Cuando el proceso falla más adelante, el motor ejecuta las compensaciones en orden inverso hasta dejar todo como estaba antes de empezar.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El motor no confía en que las integraciones sean confiables: asume que van a fallar. Toda llamada externa es idempotente por clave, tiene tiempo límite y política de reintento con espera creciente, y todo efecto tiene su reverso declarado. Eso convierte «el proceso se cortó» de una emergencia en un evento previsto.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Motor</h4><ul><li>Estado persistido por paso</li><li>Idempotencia por clave de operación</li><li>Sagas con compensación</li></ul></div>
+          <div><h4>Integraciones</h4><ul><li>Conectores REST y SOAP</li><li>Lectura de casillas de correo</li><li>Colas de mensajes y archivos por SFTP</li></ul></div>
+          <div><h4>Operación</h4><ul><li>Reintento con espera creciente</li><li>Cola de casos trabados</li><li>Alertas por proceso</li></ul></div>
+          <div><h4>Visibilidad</h4><ul><li>Traza paso a paso</li><li>Tiempos por etapa</li><li>Tablero de cuellos de botella</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="solvenz">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">💰</span> Finanzas</p>
+      <h2>Solvenz</h2>
+      <p class="pd-lede">Proyecta el flujo de caja con bandas de confianza, estima cuándo va a caer cada caso en mora y propaga shocks desde el cliente hasta el estado de resultados.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Motor de riesgo financiero</dd></div>
+        <div><dt>Dominio</dt><dd>Cartera crediticia y tesorería</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube privada</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Modelos de tiempo hasta evento y simulador de estrés</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>La proyección de caja de la mayoría de las empresas es una línea: lo que se espera cobrar, mes a mes, suponiendo que todo sale como siempre. No dice cuánto puede desviarse ni qué pasa si se desvía, que es justamente lo que hay que saber para decidir.</p>
+        <p>Y la mora se mira como un semáforo: al día, 30, 60, 90. Ese semáforo dice dónde está el caso hoy, no hacia dónde va. Dos clientes con la misma mora pueden tener destinos completamente distintos, y tratarlos igual cuesta plata de los dos lados.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Scoring con horizonte</h4><p>En vez de «¿va a caer?», el modelo responde «¿cuándo?». Las curvas de supervivencia dan la probabilidad de caer a 30, 60 y 90 días, que es lo que permite anticipar en lugar de reaccionar.</p></div>
+          <div class="pd-cap"><h4>Caja con bandas</h4><p>La proyección combina lo comprometido, lo estimado y la variabilidad histórica de cada segmento. Devuelve un rango con su probabilidad, no una promesa de un solo número.</p></div>
+          <div class="pd-cap"><h4>Pruebas de estrés</h4><p>Se define el shock —la mora sube tres puntos, un sector se cae, la tasa cambia— y el motor lo propaga desde cada cliente hasta el resultado consolidado.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>Cada estimación es explicable por variable: no alcanza con dar un puntaje si el comité de crédito no puede ver por qué. Los modelos devuelven la contribución de cada factor a cada caso, y esa contribución viaja junto al número a todas las pantallas y a todos los informes, para que la discusión sea sobre el criterio y no sobre si hay que creerle a la máquina.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Modelos</h4><ul><li>Supervivencia (Cox y árboles sobre tiempo hasta evento)</li><li>Calibración por segmento</li><li>Explicabilidad por variable</li></ul></div>
+          <div><h4>Simulación</h4><ul><li>Propagación de shocks</li><li>Escenarios guardados</li><li>Comparación contra el plan</li></ul></div>
+          <div><h4>Datos</h4><ul><li>Cartera desde el core</li><li>Histórico de pagos</li><li>Datos externos de comportamiento</li></ul></div>
+          <div><h4>Entrega</h4><ul><li>Tablero de tesorería</li><li>Informes para comité</li><li>API para el core bancario</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="collectiq">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📞</span> Cobranzas</p>
+      <h2>CollectIQ</h2>
+      <p class="pd-lede">Ordena la gestión diaria de la cartera por recupero esperado en lugar de por antigüedad de la deuda.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma SaaS multiorganización</dd></div>
+        <div><dt>Dominio</dt><dd>Cobranzas y recupero de cartera</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube, con marca propia por organización</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>React · Supabase · Motor de decisión propio</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>En la mayoría de las operaciones la cartera se ordena por monto o por días de mora, y a quién contactar queda librado a la experiencia de cada gestor. Se invierte el mismo esfuerzo en casos que iban a pagar solos y en casos irrecuperables, mientras los que dependían de una gestión oportuna se enfrían.</p>
+        <p>La pregunta de todos los días no es a quién le debe más, sino a quién conviene llamar hoy. Responderla bien exige estimar tres cosas a la vez: si va a pagar, cuándo, y cuánto cuesta conseguirlo.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Motor de decisión</h4><p>Probabilidad de pago por tramos, recupero esperado neto del costo de gestión, score de riesgo, probabilidad de contacto efectivo y prioridad. Siete interfaces que toda pantalla consulta y ninguna calcula por su cuenta.</p></div>
+          <div class="pd-cap"><h4>Simulación de estrategias</h4><p>Un gemelo de la cartera permite probar cambios antes de aplicarlos: otro criterio de contacto, una refinanciación por segmento, un objetivo distinto para el mes. Incluye pronóstico y backtesting.</p></div>
+          <div class="pd-cap"><h4>Copiloto con evidencia</h4><p>Preguntas en lenguaje natural sobre la cartera real, respondidas con un panel que muestra de dónde salió cada número, para que la recomendación se pueda auditar en vez de creerle.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>Toda la lógica de cálculo vive en una capa desacoplada de la interfaz, detrás de un contrato estable. Ningún componente tiene fórmulas adentro: cuando una pantalla necesita una probabilidad, se la pide al motor. Hoy las estimaciones son fórmulas de referencia documentadas y con pruebas; el día que haya volumen para entrenar, se reemplaza la implementación y la plataforma no se entera.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Interfaz</h4><ul><li>React 19 con Vite</li><li>Recharts para visualización</li><li>Sistema de componentes propio</li><li>Vitest para pruebas</li></ul></div>
+          <div><h4>Datos</h4><ul><li>Supabase sobre PostgreSQL</li><li>Edge Functions en Deno</li><li>Tareas programadas con pg-cron</li><li>Ingesta de Excel y CSV</li></ul></div>
+          <div><h4>Inteligencia</h4><ul><li>Claude para el copiloto</li><li>Motor de decisión propio</li><li>Registro e interfaz de modelos</li><li>Backtesting sobre histórico</li></ul></div>
+          <div><h4>Operación</h4><ul><li>Despliegue continuo</li><li>Claves de API por organización</li><li>Control de acceso por datos</li></ul></div>
+        </div>
+      </section>
+      <div class="pd-foot"><a class="btn" href="proyectos.html">Ver la página completa de CollectIQ</a></div>
+    </article>
+
+    <article class="pd" data-proj="umbral">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🏦</span> Fintech</p>
+      <h2>Umbral</h2>
+      <p class="pd-lede">El camino completo desde que alguien quiere abrir una cuenta hasta que opera, con decisión de riesgo en menos de un segundo.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Infraestructura de onboarding</dd></div>
+        <div><dt>Dominio</dt><dd>Servicios financieros regulados</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube con residencia de datos configurable</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Motor de reglas con modo sombra</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>El onboarding es donde una fintech pierde a la mitad de la gente que quiso ser cliente. Cada paso que se agrega para reducir fraude agrega abandono, y cada paso que se saca para reducir abandono agrega fraude. Es un balance que hay que medir, no intuir.</p>
+        <p>El problema es que las reglas de riesgo suelen estar escritas en el código, y cambiarlas requiere un despliegue y un acto de fe. Nadie sabe qué va a pasar hasta que ya pasó, así que en la práctica nadie las toca y quedan congeladas años.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Verificación de identidad</h4><p>Documento, prueba de vida, comparación biométrica y validación contra padrones y listas restrictivas. Lo que se puede resolver solo, se resuelve solo.</p></div>
+          <div class="pd-cap"><h4>Decisión de riesgo</h4><p>Un motor de reglas combinable por producto evalúa señales del dispositivo, del comportamiento y del historial, y decide aprobar, rechazar o derivar a revisión en menos de un segundo.</p></div>
+          <div class="pd-cap"><h4>Bandeja de revisión</h4><p>El caso dudoso llega a un analista con todo armado: los documentos, las señales que lo marcaron y los casos parecidos que ya se resolvieron antes.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El modo sombra es lo que hace que el sistema se pueda mejorar. Una regla nueva se activa «en sombra»: corre contra el tráfico real, registra qué habría decidido, pero no decide. Después de unos días se compara contra lo que efectivamente pasó y recién ahí se activa de verdad. Cambiar la política de riesgo deja de ser una apuesta.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Identidad</h4><ul><li>Lectura de documento</li><li>Prueba de vida</li><li>Comparación biométrica</li><li>Padrones y listas restrictivas</li></ul></div>
+          <div><h4>Decisión</h4><ul><li>Motor de reglas versionado</li><li>Modo sombra</li><li>Señales de dispositivo y comportamiento</li></ul></div>
+          <div><h4>Servicio</h4><ul><li>Respuesta bajo un segundo</li><li>Colas para lo asíncrono</li><li>Reintentos ante caída de proveedor</li></ul></div>
+          <div><h4>Cumplimiento</h4><ul><li>Traza completa por caso</li><li>Retención configurable</li><li>Informes para el regulador</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="veritas">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🔍</span> Auditoría</p>
+      <h2>Veritas</h2>
+      <p class="pd-lede">Audita el cien por ciento de las operaciones aprendiendo el comportamiento normal de cada proceso y marcando lo que se sale del patrón.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma de auditoría continua</dd></div>
+        <div><dt>Dominio</dt><dd>Control interno y prevención de fraude</dd></div>
+        <div><dt>Despliegue</dt><dd>Dentro de la red del cliente</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Detección no supervisada y reglas forenses</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>La auditoría tradicional mira una muestra, y la mira después de que pasó. Si el fraude está en el 2% que nadie revisó, se descubre el año que viene o no se descubre nunca.</p>
+        <p>Además, el fraude que importa casi nunca es una operación rara aislada: es un patrón. Facturas cortadas sistemáticamente por debajo del límite de autorización, un proveedor que comparte datos bancarios con un empleado, aprobaciones que siempre ocurren fuera de horario. Eso solo se ve mirando todo junto.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Perfil de normalidad</h4><p>El sistema aprende, por proceso y por usuario, qué es normal: montos, horarios, frecuencias, quién aprueba a quién. No hay que configurarle umbrales a mano.</p></div>
+          <div class="pd-cap"><h4>Reglas forenses</h4><p>Junto al modelo corren reglas duras que codifican los esquemas conocidos: fraccionamiento de compras, proveedores duplicados, coincidencia de cuentas bancarias, autorización sobre lo propio.</p></div>
+          <div class="pd-cap"><h4>Segregación de funciones</h4><p>Se analiza el grafo de permisos real del ERP, no el organigrama declarado, para encontrar quién puede cerrar un circuito completo sin que intervenga nadie más.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>Los hallazgos se priorizan por riesgo económico y por confianza, y cada uno se abre para ver exactamente qué operaciones lo componen. Un sistema de detección que inunda de alertas se apaga a la semana: el trabajo fino está en que lo que llega al auditor sea poco y sea bueno.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Detección</h4><ul><li>Isolation forest y autoencoders</li><li>Reglas forenses parametrizables</li><li>Análisis del grafo de permisos</li></ul></div>
+          <div><h4>Datos</h4><ul><li>Lectura del ERP en solo lectura</li><li>Maestros de proveedores y empleados</li><li>Histórico de aprobaciones</li></ul></div>
+          <div><h4>Flujo</h4><ul><li>Cola de hallazgos priorizada</li><li>Estado y descargo por caso</li><li>Cierre con evidencia</li></ul></div>
+          <div><h4>Operación</h4><ul><li>Corridas programadas</li><li>Alertas por severidad</li><li>Informe periódico para el comité</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="mercurio">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🛒</span> E-commerce</p>
+      <h2>Mercurio</h2>
+      <p class="pd-lede">Una capa comercial sobre la tienda que entiende lo que la persona busca, recomienda mirando stock y margen, y decide cuánto descuento merece cada carrito abandonado.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Capa de inteligencia comercial</dd></div>
+        <div><dt>Dominio</dt><dd>Comercio electrónico</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube, sobre la tienda existente</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Búsqueda semántica y modelo de elasticidad</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>El buscador de la mayoría de las tiendas falla justo cuando más importa: cuando la persona escribe como habla y no como está cargado el catálogo. «Zapatillas para correr en tierra» no encuentra nada si el producto dice «calzado trail running».</p>
+        <p>Y la recuperación de carritos suele ser un cupón fijo para todo el mundo. A la mitad se le regala margen que igual iba a comprar, y a la otra mitad el cupón no le alcanza para decidirse. Es plata que se pierde en las dos direcciones al mismo tiempo.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Búsqueda que entiende</h4><p>El catálogo se indexa por significado, no por palabras. La consulta se interpreta, se filtra por lo que hay en stock y se ordena combinando relevancia, disponibilidad y margen.</p></div>
+          <div class="pd-cap"><h4>Vendedor conversacional</h4><p>Un agente atiende dudas con los datos reales del producto, arma combinaciones y no ofrece lo que no puede entregar, porque consulta el stock antes de recomendar.</p></div>
+          <div class="pd-cap"><h4>Recuperación con criterio</h4><p>Para cada carrito abandonado se estima la probabilidad de compra sin intervención y la sensibilidad al precio. De ahí sale si conviene contactar, por qué canal y con qué incentivo mínimo.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El reordenamiento por margen es el punto delicado: si se exagera, la tienda empieza a recomendar lo que le conviene y no lo que sirve, y el cliente lo nota enseguida. Por eso el peso del margen está acotado por política y se mide contra la conversión, de modo que optimizar el corto plazo no pueda romper el largo.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Búsqueda</h4><ul><li>Embeddings del catálogo</li><li>Filtros por stock y atributos</li><li>Reordenamiento por margen acotado</li></ul></div>
+          <div><h4>Conversación</h4><ul><li>Agente con datos del catálogo</li><li>Integración con stock y precios</li></ul></div>
+          <div><h4>Precio</h4><ul><li>Elasticidad por segmento</li><li>Descuento mínimo efectivo</li><li>Tope por política comercial</li></ul></div>
+          <div><h4>Integración</h4><ul><li>Shopify, VTEX, WooCommerce o API propia</li><li>Eventos de navegación</li><li>Sincronización de stock</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="brujula">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📈</span> Ventas</p>
+      <h2>Brújula</h2>
+      <p class="pd-lede">Ordena el pipeline por probabilidad real de cierre, avisa qué oportunidades se enfrían y arma el pronóstico como un rango de escenarios.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Capa de inteligencia sobre el CRM</dd></div>
+        <div><dt>Dominio</dt><dd>Ventas de ciclo largo</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Modelo de cierre calibrado y forecast jerárquico</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>El pronóstico de ventas de casi todas las empresas es la suma de lo que cada vendedor cree. Esa suma tiene un sesgo conocido y sistemático: optimista a principio de trimestre, pesimista sobre el final, y siempre con las mismas oportunidades que «cierran el mes que viene» desde hace cinco meses.</p>
+        <p>El costo no es solo el pronóstico errado. Es que el equipo dedica el tiempo a las oportunidades equivocadas, porque la única señal disponible es la etapa que el vendedor cargó a mano.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Scoring de cierre</h4><p>El modelo aprende de los negocios ganados y perdidos qué señales predijeron de verdad el resultado: ritmo de actividad, cantidad de interlocutores, tiempo en cada etapa, tamaño relativo.</p></div>
+          <div class="pd-cap"><h4>Detección de enfriamiento</h4><p>Una oportunidad que era buena y dejó de tener movimiento se marca antes de perderse, con el motivo detectado y la acción sugerida para reactivarla.</p></div>
+          <div class="pd-cap"><h4>Pronóstico con rango</h4><p>El forecast se arma por segmento y se consolida hacia arriba, de modo que vendedor, equipo y compañía no puedan contradecirse. Devuelve escenario conservador, esperado y optimista.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El modelo se calibra por segmento y por ciclo de venta. Un negocio de treinta días y uno de nueve meses no se parecen en nada, y un modelo único los promedia mal a los dos. Además la calibración se revisa cada trimestre contra lo efectivamente cerrado: un scoring que no se recalibra se degrada solo y en silencio.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Modelos</h4><ul><li>Clasificación de cierre</li><li>Calibración por segmento</li><li>Supervivencia para tiempo hasta cierre</li></ul></div>
+          <div><h4>Pronóstico</h4><ul><li>Agregación jerárquica coherente</li><li>Intervalos por escenario</li><li>Comparación contra objetivo</li></ul></div>
+          <div><h4>Integración</h4><ul><li>Salesforce, HubSpot, Pipedrive o CRM propio</li><li>Actividad de correo y calendario</li></ul></div>
+          <div><h4>Asistencia</h4><ul><li>Redacción de propuestas</li><li>Resumen de cuenta</li><li>Próximos pasos sugeridos</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="hilo">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📱</span> WhatsApp</p>
+      <h2>Hilo</h2>
+      <p class="pd-lede">Un agente que atiende en WhatsApp de punta a punta, cotiza con datos reales del sistema y deriva a una persona cuando el caso lo excede.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma de atención conversacional</dd></div>
+        <div><dt>Dominio</dt><dd>Atención y venta por mensajería</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Máquina de estados sobre memoria de largo plazo</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Los bots de WhatsApp fracasan por dos motivos opuestos. Los de menú son tan rígidos que la gente escribe «hola, quiero hablar con una persona» en el segundo mensaje. Los puramente generativos son tan libres que prometen precios que no existen y plazos que nadie puede cumplir.</p>
+        <p>Lo que hace falta está en el medio: libertad para entender cualquier cosa que le escriban, y disciplina para que toda afirmación sobre precio, stock o plazo salga del sistema y no del modelo.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Conversación con estado</h4><p>El agente sabe en qué punto del proceso está cada conversación —consultando, cotizando, cerrando, agendando— y puede volver atrás cuando el cliente cambia de tema, sin perder lo ya recolectado.</p></div>
+          <div class="pd-cap"><h4>Herramientas conectadas</h4><p>Cotizar, consultar stock, reservar un turno o generar el pedido son llamadas al ERP. El modelo decide cuándo usarlas; los datos siempre salen del sistema.</p></div>
+          <div class="pd-cap"><h4>Derivación limpia</h4><p>Cuando la confianza baja, el caso es sensible o el cliente lo pide, la conversación pasa a una persona con el resumen ya escrito y el historial completo a la vista.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>La memoria de largo plazo es lo que separa un bot de un agente. Una conversación de WhatsApp puede retomarse tres días después con un «che, y al final?», y el sistema tiene que saber de qué está hablando. Cada conversación guarda su estado, sus datos recolectados y un resumen que se actualiza solo, así el contexto no depende de releer cien mensajes cada vez.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Canal</h4><ul><li>WhatsApp Business API</li><li>Plantillas aprobadas</li><li>Ventana de 24 horas gestionada</li></ul></div>
+          <div><h4>Agente</h4><ul><li>Claude con herramientas</li><li>Máquina de estados conversacional</li><li>Umbral de confianza para derivar</li></ul></div>
+          <div><h4>Memoria</h4><ul><li>Estado por conversación</li><li>Resumen incremental</li><li>Historial consultable</li></ul></div>
+          <div><h4>Integración</h4><ul><li>ERP para precios y stock</li><li>Agenda y CRM</li><li>Pasarela de pago</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="timpano">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🎧</span> Call centers</p>
+      <h2>Tímpano</h2>
+      <p class="pd-lede">Asiste al operador durante la llamada, deja la gestión cargada al terminar y audita el cien por ciento de las conversaciones contra la grilla de calidad.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Capa de asistencia y calidad</dd></div>
+        <div><dt>Dominio</dt><dd>Centros de contacto</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube o dentro de la red</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Transcripción en streaming y evaluador calibrado</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Un operador nuevo tarda meses en ser bueno, y lo que lo frena no es la actitud sino la cantidad de cosas que tiene que saber al mismo tiempo: dónde está el dato, qué puede ofrecer, qué no puede decir. Mientras busca, el cliente espera.</p>
+        <p>Del otro lado, la calidad se mide escuchando cinco llamadas por mes por operador. Con esa muestra no se detecta un problema sistemático hasta que ya costó caro, y la devolución al operador llega tarde y sin contexto.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Copiloto en vivo</h4><p>La llamada se transcribe mientras ocurre. El sistema reconoce de qué se está hablando y muestra el dato, el guion sugerido o la advertencia de cumplimiento, sin que el operador busque nada.</p></div>
+          <div class="pd-cap"><h4>Cierre automático</h4><p>Al cortar, el resumen, la tipificación y la gestión quedan cargados. El operador revisa y confirma en vez de escribir, que es donde se va el tiempo entre llamada y llamada.</p></div>
+          <div class="pd-cap"><h4>Calidad sobre el total</h4><p>Cada conversación se evalúa contra la grilla real del equipo: saludo, identificación, escucha, cumplimiento, cierre. Los desvíos se agrupan por causa, no se listan por llamada suelta.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El evaluador se calibra contra las auditorías humanas históricas del propio equipo. Si puntúa con un criterio propio, los supervisores dejan de creerle en dos semanas. Se mide la concordancia con el auditor humano y se ajusta hasta que coincidan; recién ahí se escala al total de las llamadas.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Audio</h4><ul><li>Transcripción en streaming</li><li>Separación de hablantes</li><li>Latencia por debajo del segundo</li></ul></div>
+          <div><h4>Asistencia</h4><ul><li>Recuperación sobre la base de conocimiento</li><li>Detección de intención</li><li>Alertas de cumplimiento</li></ul></div>
+          <div><h4>Calidad</h4><ul><li>Evaluador calibrado contra auditoría humana</li><li>Agrupamiento por causa</li><li>Tablero por operador y equipo</li></ul></div>
+          <div><h4>Integración</h4><ul><li>Telefonía y grabador</li><li>CRM para la gestión</li><li>Base de conocimiento</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="mirador">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📊</span> Business Intelligence</p>
+      <h2>Mirador</h2>
+      <p class="pd-lede">Detecta el desvío, lo descompone por dimensión hasta encontrar dónde se originó y lo explica en castellano, mostrando la consulta que ejecutó.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Capa analítica sobre el almacén de datos</dd></div>
+        <div><dt>Dominio</dt><dd>Reporting y análisis de negocio</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Causa raíz dimensional sobre capa semántica</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Un tablero muestra que las ventas cayeron 8%. Ahí empieza el trabajo real, y lo hace una persona: filtrar por región, por producto, por canal, por semana, hasta encontrar de dónde salió la caída. Eso lleva medio día y lo repite todos los meses la misma gente.</p>
+        <p>La otra mitad del problema es que los números no cierran entre áreas. Comercial y finanzas dicen «ingresos» y miden cosas distintas, porque cada tablero tiene su propia definición escondida adentro de una consulta que nadie revisa.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Causa raíz automática</h4><p>Cuando una métrica se desvía, el sistema la descompone por todas sus dimensiones y busca la combinación que más explica la diferencia. Devuelve «la caída está en el canal mayorista de la región centro, semana 3», no un gráfico más.</p></div>
+          <div class="pd-cap"><h4>Preguntas en castellano</h4><p>Se pregunta en lenguaje natural y el sistema traduce a una consulta sobre el modelo de datos. Muestra la consulta que ejecutó, así el resultado se puede verificar y no hay que creerle.</p></div>
+          <div class="pd-cap"><h4>Narrativa del período</h4><p>Cada tablero puede generar el texto que resume qué pasó, qué cambió respecto del período anterior y qué merece atención esta semana.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>La capa semántica es lo que impide que el modelo invente. Las métricas, sus dimensiones y sus reglas de cálculo están definidas en un solo lugar, y el traductor de lenguaje natural solo puede componer sobre lo que existe ahí. No puede inventar una métrica que no está definida, y «ingresos» significa lo mismo en toda la empresa.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Datos</h4><ul><li>BigQuery, Snowflake o PostgreSQL</li><li>Modelado dimensional</li><li>Actualización incremental</li></ul></div>
+          <div><h4>Semántica</h4><ul><li>Definición única de métricas</li><li>Linaje de datos</li><li>Control de acceso por fila</li></ul></div>
+          <div><h4>Análisis</h4><ul><li>Descomposición dimensional</li><li>Detección de desvíos</li><li>Comparación contra plan</li></ul></div>
+          <div><h4>Interfaz</h4><ul><li>Tableros propios</li><li>Pregunta en lenguaje natural</li><li>Exportación y suscripciones</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="codice">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📄</span> Documentos</p>
+      <h2>Códice</h2>
+      <p class="pd-lede">Convierte documentos en datos estructurados, ubicando cada campo en su página y mandando a revisión humana solo lo que no queda claro.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma de procesamiento documental</dd></div>
+        <div><dt>Dominio</dt><dd>Back office, finanzas, legal y seguros</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube o dentro de la red</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Visión de layout con confianza por campo</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>La carga manual de documentos es el cuello de botella silencioso de casi toda operación administrativa. Alguien lee una factura y tipea seis campos en un sistema, cientos de veces por día, con la tasa de error que eso implica.</p>
+        <p>Los lectores automáticos existen hace años y sin embargo se sigue cargando a mano, porque fallan justo con los documentos reales: escaneados torcidos, con un sello encima del número, con el proveedor que cambió el formato sin avisarle a nadie.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Lectura del documento real</h4><p>Se detecta la estructura visual —bloques, tablas, encabezados— y se lee sobre eso, no sobre un texto plano. Funciona con escaneos, fotos de teléfono y PDF nativos.</p></div>
+          <div class="pd-cap"><h4>Extracción ubicada</h4><p>Cada campo extraído guarda las coordenadas de dónde salió, así todo dato se puede señalar sobre la imagen original. Eso es lo que hace auditable la carga.</p></div>
+          <div class="pd-cap"><h4>Revisión donde hace falta</h4><p>Cada campo trae su confianza. Los que superan el umbral pasan solos; los que no, van a una cola de revisión con el recorte de la imagen al lado del valor propuesto.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El umbral de confianza se fija por campo y por tipo de documento, no global. Equivocar el número de factura y equivocar el domicilio no cuestan lo mismo, así que no tienen por qué exigir la misma certeza. Ajustar esos umbrales es la palanca que decide cuánto se automatiza y cuánto se revisa, y queda en manos del cliente.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Visión</h4><ul><li>Segmentación de layout</li><li>OCR sobre bloques</li><li>Enderezado y limpieza de escaneos</li></ul></div>
+          <div><h4>Extracción</h4><ul><li>Modelos por tipo de documento</li><li>Coordenadas por campo</li><li>Validación cruzada de totales</li></ul></div>
+          <div><h4>Flujo</h4><ul><li>Cola de revisión</li><li>Atajos de teclado para el revisor</li><li>Aprendizaje de las correcciones</li></ul></div>
+          <div><h4>Salida</h4><ul><li>API y webhooks</li><li>Carga directa al ERP</li><li>Exportación a planilla</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="clausula">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">⚖️</span> Legal</p>
+      <h2>Cláusula</h2>
+      <p class="pd-lede">Compara un contrato contra el manual de criterios de la empresa, marca las desviaciones sobre el texto y propone la redacción alternativa.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Asistente de revisión contractual</dd></div>
+        <div><dt>Dominio</dt><dd>Legal corporativo</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube privada</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Comparación semántica contra playbook versionado</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Un equipo legal chico revisa contratos que llegan más rápido de lo que se pueden leer. La presión es siempre la misma: el área comercial quiere firmar hoy, y el riesgo de dejar pasar una cláusula se descubre dos años después, cuando ya no se puede hacer nada.</p>
+        <p>Además el criterio vive en la cabeza de las personas. Cuando se va alguien del equipo, se va también el estándar de qué se acepta y qué no, y cada revisión empieza a depender de quién la hizo.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Segmentación por cláusula</h4><p>El contrato se parte en cláusulas reconociendo su tipo: confidencialidad, responsabilidad, rescisión, propiedad intelectual, penalidades, ley aplicable.</p></div>
+          <div class="pd-cap"><h4>Comparación contra criterio</h4><p>Cada cláusula se compara con lo que la empresa definió como aceptable. Se marcan las faltantes, las desviadas y las redactadas en contra, graduadas por nivel de riesgo.</p></div>
+          <div class="pd-cap"><h4>Redacción propuesta</h4><p>Para cada hallazgo se ofrece la alternativa de la biblioteca aprobada, lista para pegar o para llevar a la negociación con el fundamento a mano.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El manual de criterios está versionado y cada revisión guarda con qué versión se hizo. Eso importa más de lo que parece: cuando dentro de dos años alguien pregunte por qué se aceptó esa cláusula, la respuesta es «porque en marzo de 2026 la política decía esto», y está el documento que lo prueba.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Comprensión</h4><ul><li>Segmentación por cláusula</li><li>Clasificación por tipo</li><li>Comparación semántica</li></ul></div>
+          <div><h4>Criterio</h4><ul><li>Playbook versionado</li><li>Graduación de riesgo</li><li>Biblioteca de cláusulas aprobadas</li></ul></div>
+          <div><h4>Trabajo</h4><ul><li>Marcado sobre el texto original</li><li>Exportación con control de cambios</li><li>Historial por contrato</li></ul></div>
+          <div><h4>Integración</h4><ul><li>Repositorio documental</li><li>Firma electrónica</li><li>Flujo de aprobación</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="agora">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🏢</span> Municipios</p>
+      <h2>Ágora</h2>
+      <p class="pd-lede">Toma el reclamo del vecino por cualquier canal, lo ubica, lo clasifica, lo agrupa con los repetidos y lo mueve por el circuito administrativo.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma de gestión municipal</dd></div>
+        <div><dt>Dominio</dt><dd>Gobierno local</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube o infraestructura del municipio</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Clasificación y geocodificación sobre motor de expedientes</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Un municipio recibe el mismo reclamo por cinco canales distintos y lo carga cinco veces, o no lo carga. El vecino que avisó del bache no se entera de nada hasta que alguien pasa a arreglarlo, si es que pasa.</p>
+        <p>Puertas adentro, el expediente se mueve en papel o en un sistema que no controla plazos. Nadie sabe cuánto tarda cada área ni dónde se traba, así que tampoco se puede mejorar: no hay número que discutir.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Entrada unificada</h4><p>WhatsApp, web, teléfono y mostrador entran al mismo lugar. El texto libre se clasifica por tipo de reclamo y se geocodifica, incluso cuando la dirección viene escrita como la dice la gente y no como figura en el catastro.</p></div>
+          <div class="pd-cap"><h4>Agrupación de repetidos</h4><p>Reclamos del mismo problema, en el mismo lugar y período, se unen en un solo caso. Diez vecinos que avisan del mismo bache generan un expediente, no diez.</p></div>
+          <div class="pd-cap"><h4>Expediente con plazos</h4><p>El caso avanza por el circuito administrativo con sus pases, sus firmas y sus vencimientos. Al cerrarse, el vecino recibe el aviso por el mismo canal donde reclamó.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>La deduplicación en espacio y tiempo es lo que hace utilizable al sistema. Sin eso la bandeja se llena de duplicados y el equipo vuelve a la planilla en un mes. El criterio de agrupamiento es configurable por tipo de reclamo: un bache y un corte de luz no tienen el mismo radio ni la misma ventana de tiempo.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Entrada</h4><ul><li>WhatsApp Business API</li><li>Formulario web y mostrador</li><li>Teléfono con transcripción</li></ul></div>
+          <div><h4>Inteligencia</h4><ul><li>Clasificación de texto libre</li><li>Geocodificación tolerante</li><li>Agrupamiento espacio-temporal</li></ul></div>
+          <div><h4>Expedientes</h4><ul><li>Circuito configurable</li><li>Firma digital</li><li>Control de vencimientos y pases</li></ul></div>
+          <div><h4>Transparencia</h4><ul><li>Mapa público de reclamos</li><li>Aviso al vecino</li><li>Tablero de tiempos por área</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="ventanilla">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🏥</span> Administración</p>
+      <h2>Ventanilla</h2>
+      <p class="pd-lede">Asigna turnos por duración real, anticipa el ausentismo para sobre-asignar con criterio y persigue sola la documentación que falta.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma administrativa</dd></div>
+        <div><dt>Dominio</dt><dd>Salud, educación y administración pública</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Optimización con restricciones y modelo de ausentismo</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>La agenda de casi toda organización que atiende gente está armada sobre una grilla fija: turnos de veinte minutos, todos iguales. Pero las prácticas no duran todas lo mismo, así que la mitad del día se atrasa y la otra mitad tiene huecos que nadie usa.</p>
+        <p>Y después está el ausentismo. Si no se sobre-asigna, se pierde capacidad todos los días; si se sobre-asigna parejo, se llena la sala de espera. La decisión correcta depende de la franja, del tipo de práctica y del perfil de la persona, y nadie tiene tiempo de calcular eso a mano.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Agenda optimizada</h4><p>Los turnos se asignan respetando las restricciones reales: qué profesional, qué sala, qué equipamiento, y cuánto dura de verdad esa práctica según el histórico.</p></div>
+          <div class="pd-cap"><h4>Sobre-turno con criterio</h4><p>Un modelo estima la probabilidad de ausencia por franja y por perfil, y ajusta el sobre-turno para llenar la agenda sin generar espera.</p></div>
+          <div class="pd-cap"><h4>Documentación al día</h4><p>El sistema sabe qué documento falta para cada trámite y lo pide solo, por el canal donde la persona efectivamente responde. El trámite deja de frenarse esperando un adjunto.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>La duración de cada práctica no se declara: se mide. El sistema aprende del histórico cuánto tarda de verdad cada tipo de atención con cada profesional, y esa duración real es la que entra en la optimización. Ahí está la diferencia entre una agenda que funciona y una que se atrasa todos los días desde las diez de la mañana.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Optimización</h4><ul><li>Programación con restricciones</li><li>Recursos, salas y equipamiento</li><li>Duración aprendida del histórico</li></ul></div>
+          <div><h4>Modelos</h4><ul><li>Probabilidad de ausencia por franja</li><li>Perfil de la persona</li><li>Ajuste dinámico del sobre-turno</li></ul></div>
+          <div><h4>Documentos</h4><ul><li>Checklist por trámite</li><li>Recordatorios por WhatsApp y correo</li><li>Carga desde el teléfono</li></ul></div>
+          <div><h4>Integración</h4><ul><li>Historia clínica o sistema de gestión</li><li>Facturación</li><li>Calendario de profesionales</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="surco">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🌾</span> Agro</p>
+      <h2>Surco</h2>
+      <p class="pd-lede">Cruza el estado satelital de los lotes con la cuenta corriente del productor para evaluar crédito y anticipar la capacidad de pago de la campaña.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma de análisis agro-financiero</dd></div>
+        <div><dt>Dominio</dt><dd>Cooperativas, acopios y financiamiento agropecuario</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Índices satelitales por lote y modelo de riesgo</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Quien financia al productor —la cooperativa, el acopio, el banco— decide con el balance del año pasado y con la relación personal. Los dos son información vieja o subjetiva frente a una actividad donde el resultado se define por lo que está pasando en el lote esta campaña.</p>
+        <p>Y el riesgo climático se trata como un imponderable: se sabe que existe, no se mide, y aparece en la conversación recién cuando ya hubo una seca y la cartera está en problemas.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Seguimiento satelital</h4><p>Cada lote se sigue con imágenes periódicas. Los índices de vegetación arman la curva de la campaña y se comparan contra el histórico del propio lote y contra el de la zona.</p></div>
+          <div class="pd-cap"><h4>Estimación de rinde</h4><p>De esa curva, más el clima y el tipo de cultivo, sale una estimación de rinde con su rango, que se actualiza a medida que la campaña avanza.</p></div>
+          <div class="pd-cap"><h4>Riesgo y capacidad de pago</h4><p>El rinde estimado, el precio del commodity y la deuda vigente arman la proyección de qué va a poder pagar cada productor y en qué momento del año.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El modelo de crédito toma el dato satelital como una variable más, no como un oráculo. Un índice de vegetación bajo puede ser seca, puede ser una siembra tardía o puede ser una nube mal filtrada. Por eso la señal entra junto con el clima de la zona, el histórico del lote y el comportamiento de pago, y el peso de cada fuente está medido y no supuesto.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Satelital</h4><ul><li>Imágenes Sentinel y Landsat</li><li>Índices de vegetación por lote</li><li>Filtrado de nubes</li></ul></div>
+          <div><h4>Geo</h4><ul><li>Lotes georreferenciados</li><li>Cruce con catastro</li><li>Series históricas por zona</li></ul></div>
+          <div><h4>Modelos</h4><ul><li>Estimación de rinde con rango</li><li>Riesgo climático</li><li>Scoring crediticio agro</li></ul></div>
+          <div><h4>Integración</h4><ul><li>Sistema de la cooperativa o acopio</li><li>Cuenta corriente del productor</li><li>Precios de mercado</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="cantera">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">👨‍💼</span> RRHH</p>
+      <h2>Cantera</h2>
+      <p class="pd-lede">Lee los CV entendiendo trayectorias, los ordena contra lo que el puesto necesita y explica por qué ubicó a cada candidato donde lo ubicó.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma de selección y desarrollo</dd></div>
+        <div><dt>Dominio</dt><dd>Recursos humanos</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Matching por competencias con auditoría de sesgo</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Una búsqueda mediana recibe doscientos CV y se revisan treinta. Los filtros por palabra clave descartan gente buena porque escribió «análisis de datos» donde el aviso decía «data analytics», y dejan pasar gente que puso las palabras correctas sin haber hecho nunca el trabajo.</p>
+        <p>Y cuando se automatiza el filtrado aparece un problema más serio: el modelo aprende del histórico de contrataciones, y si ese histórico tiene sesgo, lo reproduce y lo escala. Automatizar sin medir eso es empeorar el problema con más velocidad.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Lectura de trayectoria</h4><p>El CV se entiende como una historia: qué hizo, por cuánto tiempo, con qué responsabilidad creciente. No se buscan palabras, se identifican competencias con la evidencia que las respalda.</p></div>
+          <div class="pd-cap"><h4>Orden explicado</h4><p>Los candidatos se ordenan contra los requisitos reales del puesto, y cada posición viene con qué cumple, qué no, y de dónde salió esa conclusión dentro del CV.</p></div>
+          <div class="pd-cap"><h4>Acompañamiento del proceso</h4><p>Guía de entrevista con lo que falta indagar de ese candidato en particular, evaluación estructurada y plan de onboarding para quien finalmente entra.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El sistema ordena y justifica, nunca descarta solo. La decisión de bajar a alguien de la lista es siempre de una persona, y hay una razón de diseño detrás: es lo que permite auditar. Sobre cada búsqueda corre un análisis que compara la composición de los rankings contra la del universo de postulantes y avisa cuando se desvía.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Comprensión</h4><ul><li>Lectura de CV en cualquier formato</li><li>Competencias con evidencia</li><li>Normalización de títulos y empresas</li></ul></div>
+          <div><h4>Matching</h4><ul><li>Requisitos estructurados del puesto</li><li>Puntaje explicado por competencia</li><li>Comparación contra el equipo actual</li></ul></div>
+          <div><h4>Equidad</h4><ul><li>Auditoría de sesgo por búsqueda</li><li>Campos sensibles excluidos del modelo</li><li>Registro de decisiones humanas</li></ul></div>
+          <div><h4>Proceso</h4><ul><li>Guía de entrevista</li><li>Evaluación estructurada</li><li>Plan de onboarding</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="preceptor">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🎓</span> Educación</p>
+      <h2>Preceptor</h2>
+      <p class="pd-lede">Detecta qué concepto previo le falta al estudiante cuando se traba y le da el ejercicio de ese hueco, no el siguiente de la lista.</p>
+      <dl class="pd-spec">
+        <div><dt>Tipo</dt><dd>Plataforma educativa adaptativa</dd></div>
+        <div><dt>Dominio</dt><dd>Educación media, superior y capacitación corporativa</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>Modelo de conocimiento sobre grafo de prerrequisitos</dd></div>
+      </dl>
+      <section class="pd-sec">
+        <h3>El problema</h3>
+        <p>Cuando un estudiante se traba con un tema, el problema casi nunca está en ese tema. Está tres pasos atrás, en algo que quedó flojo y que nadie detectó porque la clase siguió avanzando igual.</p>
+        <p>Un docente con treinta alumnos no puede rastrear eso caso por caso. Y las plataformas que prometen «aprendizaje personalizado» en general solo cambian el orden de los ejercicios, sin tener ningún modelo real de qué sabe cada uno.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Cómo funciona</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Modelo del estudiante</h4><p>Por cada concepto se estima el grado de dominio y cómo se va olvidando con el tiempo. Ese modelo se actualiza con cada respuesta, no con cada evaluación.</p></div>
+          <div class="pd-cap"><h4>El ejercicio que corresponde</h4><p>Cuando alguien falla, el grafo de prerrequisitos permite retroceder hasta el concepto flojo que lo explica y trabajar ahí. Después se vuelve al tema original.</p></div>
+          <div class="pd-cap"><h4>Corrección y devolución</h4><p>Las producciones abiertas se corrigen contra la rúbrica con devolución escrita, y el docente ve el mapa del curso: qué temas quedaron flojos y en cuántos alumnos.</p></div>
+        </div>
+      </section>
+      <section class="pd-sec">
+        <h3>Decisión de arquitectura</h3>
+        <p>El grafo de prerrequisitos es contenido, no código: lo arma y lo mantiene el equipo pedagógico, no el equipo técnico. Esa separación es la que permite que la misma plataforma sirva para matemática de secundaria y para capacitación de cumplimiento normativo sin reescribir nada.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Modelo</h4><ul><li>Trazado de conocimiento por concepto</li><li>Curva de olvido</li><li>Estimación bayesiana del dominio</li></ul></div>
+          <div><h4>Contenido</h4><ul><li>Grafo de prerrequisitos editable</li><li>Banco de ejercicios etiquetado</li><li>Rúbricas por consigna</li></ul></div>
+          <div><h4>Corrección</h4><ul><li>Evaluación de respuestas abiertas</li><li>Devolución escrita</li><li>Revisión docente</li></ul></div>
+          <div><h4>Analítica</h4><ul><li>Mapa de dominio por curso</li><li>Alertas de rezago</li><li>Informes para dirección</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+  </div>
 </main>
 
 <footer class="footer">

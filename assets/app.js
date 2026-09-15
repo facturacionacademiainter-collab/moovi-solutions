@@ -79,6 +79,101 @@
     });
   }
 
+  /* ---- Portafolio: ficha del proyecto ----
+     Tocar una tarjeta abre su ficha completa. El contenido vive en el
+     HTML dentro de #projData, así que está en la página aunque nadie
+     toque nada; el diálogo solo lo clona y lo muestra.
+     La ficha abierta queda en la dirección (#p-kognia), de modo que se
+     puede compartir el enlace y el botón atrás la cierra. */
+  var dlg = $('projDialog');
+  var dlgBody = $('projBody');
+  var dlgClose = $('projClose');
+  var fichas = $('projData');
+
+  if (dlg && dlgBody && fichas) {
+    var abierta = null;
+    var saltarHistorial = false;
+
+    var pintar = function (slug) {
+      var ficha = fichas.querySelector('[data-proj="' + slug + '"]');
+      if (!ficha) return false;
+
+      dlgBody.innerHTML = '';
+
+      /* El logo de la tarjeta encabeza la ficha: se clona en vez de
+         repetirlo en el HTML, así existe una sola copia de cada marca. */
+      var tarjeta = document.querySelector('.folio-card[data-brand="' + slug + '"]');
+      var viz = tarjeta && tarjeta.querySelector('.folio-viz');
+      if (viz) dlgBody.appendChild(viz.cloneNode(true));
+
+      var copia = ficha.cloneNode(true);
+      copia.removeAttribute('hidden');
+      dlgBody.appendChild(copia);
+
+      dlg.setAttribute('data-brand', slug);
+      return true;
+    };
+
+    var limpiar = function () {
+      abierta = null;
+      document.documentElement.style.overflow = '';
+      if (!saltarHistorial && location.hash.indexOf('#p-') === 0) {
+        history.pushState(null, '', location.pathname);
+      }
+      saltarHistorial = false;
+    };
+
+    var abrir = function (slug, conHistorial) {
+      if (!pintar(slug)) return;
+      abierta = slug;
+      if (typeof dlg.showModal === 'function') {
+        if (!dlg.open) dlg.showModal();
+      } else {
+        dlg.setAttribute('open', '');
+      }
+      dlgBody.scrollTop = 0;
+      document.documentElement.style.overflow = 'hidden';
+      if (conHistorial !== false) history.pushState(null, '', '#p-' + slug);
+    };
+
+    var cerrar = function (conHistorial) {
+      if (!abierta) return;
+      saltarHistorial = (conHistorial === false);
+      if (dlg.open && typeof dlg.close === 'function') {
+        dlg.close();          /* dispara el evento close, que limpia */
+      } else {
+        dlg.removeAttribute('open');
+        limpiar();
+      }
+    };
+
+    /* Esc y close() nativo pasan por acá */
+    dlg.addEventListener('close', limpiar);
+
+    /* Cualquier punto de la tarjeta abre la ficha */
+    document.addEventListener('click', function (e) {
+      var boton = e.target.closest ? e.target.closest('.folio-open') : null;
+      if (boton) {
+        e.preventDefault();
+        abrir(boton.getAttribute('data-proj'));
+      }
+    });
+
+    if (dlgClose) dlgClose.addEventListener('click', function () { cerrar(); });
+
+    /* Clic sobre el fondo oscuro */
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) cerrar(); });
+
+    /* Enlace directo al cargar, y botón atrás del navegador */
+    var desdeDireccion = function () {
+      var h = location.hash;
+      if (h.indexOf('#p-') === 0) abrir(h.slice(3), false);
+      else if (abierta) cerrar(false);
+    };
+    window.addEventListener('popstate', desdeDireccion);
+    desdeDireccion();
+  }
+
   /* ---- Portafolio: filtro por familia ----
      Las tarjetas traen su familia en data-fam y se ocultan con el
      atributo hidden, así el filtro no depende de ninguna clase de estilo.
@@ -423,7 +518,7 @@
         var dy = nodes[a].y - nodes[b].y;
         var d2 = dx * dx + dy * dy;
         if (d2 < 24000) {
-          ctx.strokeStyle = 'rgba(13,155,135,' + ((1 - d2 / 24000) * 0.3).toFixed(3) + ')';
+          ctx.strokeStyle = 'rgba(52,207,190,' + ((1 - d2 / 24000) * 0.42).toFixed(3) + ')';
           ctx.lineWidth = 0.6;
           ctx.beginPath();
           ctx.moveTo(nodes[a].x, nodes[a].y);
@@ -435,7 +530,7 @@
 
     for (i = 0; i < nodes.length; i++) {
       n = nodes[i];
-      ctx.fillStyle = n.hot ? 'rgba(90,69,240,.7)' : 'rgba(13,155,135,.55)';
+      ctx.fillStyle = n.hot ? 'rgba(167,139,250,.85)' : 'rgba(52,207,190,.7)';
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
       ctx.fill();
