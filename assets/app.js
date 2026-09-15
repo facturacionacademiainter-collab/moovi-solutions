@@ -43,20 +43,40 @@
   var track = $('tickerTrack');
   if (track) track.innerHTML += track.innerHTML;
 
-  /* ---- Revelado en scroll ---- */
+  /* ---- Revelado en scroll ----
+     El umbral de 0.12 pide que se vea el 12% del elemento. Un bloque más
+     alto que la ventana nunca llega a mostrar esa proporción de sí mismo:
+     si se lo observa con ese umbral no aparece nunca y queda invisible.
+     Por eso cada elemento elige su umbral según lo que realmente puede
+     llegar a mostrar. */
   var items = document.querySelectorAll('.reveal');
+
+  function marcar(el) { el.classList.add('in'); }
+
   if (reduced || !('IntersectionObserver' in window)) {
-    Array.prototype.forEach.call(items, function (el) { el.classList.add('in'); });
+    Array.prototype.forEach.call(items, marcar);
   } else {
-    var io = new IntersectionObserver(function (entries) {
+    var opciones = { threshold: 0.12, rootMargin: '0px 0px -8% 0px' };
+
+    var alVer = function (entries, obs) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
+          marcar(entry.target);
+          obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+    };
+
+    var ioNormal = new IntersectionObserver(alVer, opciones);
+    /* Para los bloques altos alcanza con que asome: umbral 0 */
+    var ioAlto = new IntersectionObserver(alVer, { threshold: 0, rootMargin: opciones.rootMargin });
+
+    Array.prototype.forEach.call(items, function (el) {
+      var visibleMax = window.innerHeight * 0.92;   /* lo que deja ver el rootMargin */
+      var alto = el.offsetHeight;
+      var alcanza = alto > 0 && (visibleMax / alto) >= 0.16;  /* margen sobre el 0.12 */
+      (alcanza ? ioNormal : ioAlto).observe(el);
+    });
   }
 
   /* ---- Portafolio: filtro por familia ----
