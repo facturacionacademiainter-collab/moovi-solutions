@@ -59,6 +59,38 @@
     Array.prototype.forEach.call(items, function (el) { io.observe(el); });
   }
 
+  /* ---- Portafolio: filtro por familia ----
+     Las tarjetas traen su familia en data-fam y se ocultan con el
+     atributo hidden, así el filtro no depende de ninguna clase de estilo.
+     Solo existe en portafolio.html; en el resto de las páginas no hace nada. */
+  var folioBar = $('folioBar');
+  var folio = $('folio');
+  if (folioBar && folio) {
+    var chips = folioBar.querySelectorAll('.chip');
+    var tarjetas = folio.querySelectorAll('.folio-card');
+    var cuenta = $('folioCount');
+    var vacio = $('folioEmpty');
+
+    var filtrar = function (fam) {
+      var visibles = 0;
+      Array.prototype.forEach.call(tarjetas, function (card) {
+        var ok = fam === 'all' || card.getAttribute('data-fam') === fam;
+        card.hidden = !ok;
+        if (ok) visibles++;
+      });
+      Array.prototype.forEach.call(chips, function (chip) {
+        chip.setAttribute('aria-pressed', String(chip.getAttribute('data-fam') === fam));
+      });
+      if (cuenta) cuenta.textContent = visibles === 1 ? '1 proyecto' : visibles + ' proyectos';
+      if (vacio) vacio.hidden = visibles > 0;
+    };
+
+    folioBar.addEventListener('click', function (e) {
+      var chip = e.target.closest ? e.target.closest('.chip') : null;
+      if (chip && folioBar.contains(chip)) filtrar(chip.getAttribute('data-fam'));
+    });
+  }
+
   /* ---- Formulario: envía la consulta a contacto@moovisolutions.com ----
      El envío pasa por FormSubmit, que reenvía el contenido por correo.
      Es necesario porque GitHub Pages solo sirve archivos: no puede

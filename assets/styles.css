@@ -1198,3 +1198,395 @@ form .btn{ justify-content: center; }
   .split{ grid-template-columns: 1fr; }
   .split .shot{ max-width: 300px; }
 }
+
+
+/* ============================================================
+   PORTAFOLIO — banda oscura
+   El resto del sitio es papel claro. El portafolio invierte el
+   mundo a propósito: es el corazón de la página y se separa por
+   color, no por una línea. Las tarjetas dejan de heredar la
+   paleta clara de .case y definen la suya.
+   ============================================================ */
+.folio-band{
+  position: relative;
+  background: #070B16;
+  color: #E7EBF7;
+  overflow: hidden;
+  isolation: isolate;
+  padding-block: clamp(4rem, 9vw, 7.5rem);
+}
+
+/* Retícula de coordenadas, más marcada que la del cuerpo claro */
+.folio-band::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(53,224,198,.07) 0 1px, transparent 1px 74px),
+    repeating-linear-gradient(0deg,  rgba(53,224,198,.05) 0 1px, transparent 1px 74px);
+  -webkit-mask-image: radial-gradient(ellipse 110% 65% at 50% 0%, #000 0%, rgba(0,0,0,.4) 55%, transparent 88%);
+          mask-image: radial-gradient(ellipse 110% 65% at 50% 0%, #000 0%, rgba(0,0,0,.4) 55%, transparent 88%);
+}
+
+/* Dos halos que se cruzan arriba: el aqua de la marca y el violeta */
+.folio-band::after{
+  content:"";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  inset: -18% -12% auto -12%;
+  height: 62%;
+  background:
+    radial-gradient(ellipse 46% 62% at 22% 0%, rgba(90,69,240,.30), transparent 68%),
+    radial-gradient(ellipse 42% 56% at 76% 6%, rgba(13,155,135,.28), transparent 70%);
+}
+.folio-band > .wrap{ z-index: 1; }
+
+/* Los primitivos del sitio, repintados para fondo oscuro */
+.folio-band h2{ color: #F4F6FC; }
+.folio-band .muted{ color: #9AA4BE; }
+.folio-band .eyebrow{ color: var(--signal-lit); }
+.folio-band .eyebrow::before{ background: var(--signal-lit); }
+
+/* ---------- Barra de filtros ---------- */
+.folio-bar{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+  margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
+}
+.chip{
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .06em;
+  color: #9AA4BE;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.13);
+  padding: .5rem .78rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color .3s var(--ease), border-color .3s var(--ease),
+              background .3s var(--ease), box-shadow .3s var(--ease);
+}
+.chip:hover{
+  color: #F2F4FA;
+  border-color: rgba(53,224,198,.45);
+  background: rgba(53,224,198,.07);
+}
+.chip[aria-pressed="true"]{
+  color: #06121A;
+  background: var(--signal-lit);
+  border-color: var(--signal-lit);
+  box-shadow: 0 0 22px -6px var(--signal-lit);
+}
+.chip .chip-em{ margin-right: .38rem; font-size: .84rem; }
+
+.folio-count{
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #6F7893;
+  margin-left: auto;
+}
+
+/* ---------- Rejilla ---------- */
+.folio{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.11);
+}
+
+/* ---------- Tarjeta ---------- */
+.folio-card{
+  --c-fg:     #F2F4FA;
+  --c-fg-2:   #AEB7CE;
+  --c-fg-3:   #7C87A5;
+  --c-line:   rgba(255,255,255,.12);
+  --c-accent: var(--signal-lit);
+
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.3rem, 2.1vw, 1.8rem);
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  background: #0B1020;
+  color: var(--c-fg);
+  transition: background .45s var(--ease);
+}
+.folio-card:hover,
+.folio-card:focus-within{
+  background: #111A33;
+  --c-fg-2: #C9D0E4;
+  --c-line: rgba(53,224,198,.28);
+}
+
+/* Barrido de luz que cruza la tarjeta al pasar el mouse */
+.folio-card::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(53,224,198,.16), transparent 70%);
+  opacity: 0;
+  transition: opacity .55s var(--ease);
+}
+.folio-card:hover::before,
+.folio-card:focus-within::before{ opacity: 1; }
+.folio-card > *{ position: relative; z-index: 1; }
+
+/* ---------- Identidad de marca de cada proyecto ----------
+   Cada producto tiene su logo: un símbolo propio y un wordmark con su
+   propio tratamiento tipográfico, sobre su color de marca. No comparten
+   estilo a propósito: veintiún productos distintos se ven como veintiuna
+   marcas distintas, que es lo que pasaría si fueran de dueños distintos.
+
+   El símbolo viene en tres formatos, como en el mundo real:
+     .folio-tile        pastilla redondeada con el glifo en blanco
+     .folio-tile.round  medallón circular
+     .folio-free        marca suelta, sin contenedor, en color de marca   */
+.folio-viz{
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 20 / 7;
+  border: 1px solid rgba(255,255,255,.09);
+  background: linear-gradient(#070C18, #0A1020);
+  overflow: hidden;
+  margin-bottom: .25rem;
+  transition: border-color .45s var(--ease);
+}
+/* Halo del color de la marca detrás del logo */
+.folio-viz::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 58% 115% at 50% 50%, var(--brand), transparent 70%);
+  opacity: .14;
+  transition: opacity .45s var(--ease);
+}
+.folio-card:hover .folio-viz{ border-color: rgba(255,255,255,.2); }
+.folio-card:hover .folio-viz::before{ opacity: .24; }
+
+.folio-logo{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .68rem;
+  transition: transform .5s var(--ease);
+}
+.folio-card:hover .folio-logo{ transform: scale(1.045); }
+
+/* Pastilla y medallón */
+.folio-tile{
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(142deg, var(--brand), var(--brand-2));
+  box-shadow: 0 8px 22px -8px var(--brand), inset 0 1px 0 rgba(255,255,255,.28);
+}
+.folio-tile.round{ border-radius: 50%; }
+.folio-glyph{ width: 25px; height: 25px; display: block; }
+
+/* Marca suelta */
+.folio-free{ width: 44px; height: 44px; flex: none; display: block; }
+
+/* Trazos del glifo en blanco sobre la pastilla */
+.folio-glyph .g{
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.folio-glyph .gf{ fill: #FFFFFF; stroke: none; }
+.folio-glyph .gd{ fill: none; stroke: rgba(255,255,255,.6); stroke-width: 1.2; }
+
+/* Trazos de la marca suelta, en color de marca */
+.folio-free .m{
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.folio-free .mf{ fill: var(--brand); stroke: none; }
+.folio-free .m2f{ fill: var(--brand-2); stroke: none; }
+.folio-free .mw{
+  fill: none;
+  stroke: rgba(255,255,255,.94);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Wordmarks ----------
+   Cada marca eligió su tratamiento: unas van compactas y pesadas, otras
+   abiertas en versalitas, otras en minúscula. Archivo es variable, así
+   que el ancho y el peso cambian de verdad, no por simulación. */
+.folio-word{
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-variation-settings: 'wdth' 100;
+  letter-spacing: -.022em;
+  line-height: 1;
+  color: #F4F6FC;
+  white-space: nowrap;
+}
+/* Versalitas abiertas: autoridad, criterio, norma */
+.folio-word.caps{
+  text-transform: uppercase;
+  font-size: .98rem;
+  font-weight: 600;
+  font-variation-settings: 'wdth' 118;
+  letter-spacing: .15em;
+}
+/* Minúscula: producto cercano, conversacional */
+.folio-word.low{
+  text-transform: lowercase;
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
+/* Ligera y ancha: producto técnico, de precisión */
+.folio-word.thin{
+  font-weight: 400;
+  font-size: 1.24rem;
+  font-variation-settings: 'wdth' 120;
+  letter-spacing: .015em;
+}
+/* Segunda mitad del nombre en el color de la marca */
+.folio-word em{ font-style: normal; color: var(--brand); }
+
+/* ---------- Colores de marca ----------
+   Elegidos para leerse sobre el fondo oscuro y para no repetirse entre
+   proyectos vecinos de la rejilla. */
+.folio-card[data-brand="kognia"]    { --brand:#6366F1; --brand-2:#A855F7; }
+.folio-card[data-brand="arbitrium"] { --brand:#FBBF24; --brand-2:#B45309; }
+.folio-card[data-brand="replica"]   { --brand:#22D3EE; --brand-2:#0E7490; }
+.folio-card[data-brand="indicio"]   { --brand:#E11D48; --brand-2:#881337; }
+.folio-card[data-brand="telar"]     { --brand:#8B5CF6; --brand-2:#5B21B6; }
+.folio-card[data-brand="solvenz"]   { --brand:#2563EB; --brand-2:#1E3A8A; }
+.folio-card[data-brand="collectiq"] { --brand:#14B8A6; --brand-2:#0F766E; }
+.folio-card[data-brand="umbral"]    { --brand:#38BDF8; --brand-2:#0369A1; }
+.folio-card[data-brand="veritas"]   { --brand:#EF4444; --brand-2:#991B1B; }
+.folio-card[data-brand="mercurio"]  { --brand:#F97316; --brand-2:#C2410C; }
+.folio-card[data-brand="brujula"]   { --brand:#A3E635; --brand-2:#4D7C0F; }
+.folio-card[data-brand="hilo"]      { --brand:#22C55E; --brand-2:#15803D; }
+.folio-card[data-brand="timpano"]   { --brand:#D946EF; --brand-2:#86198F; }
+.folio-card[data-brand="mirador"]   { --brand:#0EA5E9; --brand-2:#075985; }
+.folio-card[data-brand="codice"]    { --brand:#D97706; --brand-2:#78350F; }
+.folio-card[data-brand="clausula"]  { --brand:#7C3AED; --brand-2:#4C1D95; }
+.folio-card[data-brand="agora"]     { --brand:#0D9488; --brand-2:#115E59; }
+.folio-card[data-brand="ventanilla"]{ --brand:#FB7185; --brand-2:#BE123C; }
+.folio-card[data-brand="surco"]     { --brand:#84CC16; --brand-2:#3F6212; }
+.folio-card[data-brand="cantera"]   { --brand:#A8A29E; --brand-2:#57534E; }
+.folio-card[data-brand="preceptor"] { --brand:#EC4899; --brand-2:#9D174D; }
+
+/* ---------- Texto ---------- */
+.folio-rubro{
+  font-family: var(--mono);
+  font-size: .67rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-fg-3);
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  margin: 0;
+}
+.folio-rubro .em{ font-size: .95rem; letter-spacing: 0; }
+
+.folio-card h3{
+  font-size: var(--step-1);
+  font-variation-settings: 'wdth' 104;
+  line-height: 1.12;
+  margin: 0;
+}
+.folio-kind{
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .05em;
+  color: var(--c-accent);
+  margin: -.5rem 0 0;
+}
+.folio-desc{
+  color: var(--c-fg-2);
+  font-size: var(--step--1);
+  line-height: 1.75;
+  margin: 0;
+  flex: 1;
+}
+
+/* El detalle técnico: lo que hace difícil al proyecto */
+.folio-core{
+  border-top: 1px solid var(--c-line);
+  padding-top: .8rem;
+  font-size: .8rem;
+  line-height: 1.62;
+  color: var(--c-fg-2);
+  margin: 0;
+  transition: border-color .45s var(--ease);
+}
+.folio-core b{
+  display: block;
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  font-weight: 500;
+  margin-bottom: .35rem;
+}
+
+/* Etiquetas: la versión oscura de .tag */
+.folio-card .tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: .1rem;
+}
+.folio-card .tag{
+  color: var(--c-fg-3);
+  border-color: var(--c-line);
+}
+
+.folio-link{
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .05em;
+  color: var(--c-accent);
+  border-bottom: 1px solid currentColor;
+  align-self: start;
+  padding-bottom: 2px;
+  transition: color .3s var(--ease);
+}
+.folio-link:hover{ color: #FFFFFF; }
+
+.folio-card[hidden]{ display: none !important; }
+
+.folio-empty{
+  border: 1px solid rgba(255,255,255,.11);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  color: #9AA4BE;
+  font-size: var(--step--1);
+}
+
+@media (max-width: 1040px){
+  .folio{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 780px){
+  .folio{ grid-template-columns: 1fr; }
+  .folio-count{ margin-left: 0; width: 100%; }
+}
