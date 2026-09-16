@@ -31,7 +31,7 @@
 
   /* ---- Tarjetas: luz que sigue al cursor ---- */
   document.addEventListener('pointermove', function (e) {
-    var card = e.target.closest ? e.target.closest('.pillar, .case, .rel-card, .folio-card') : null;
+    var card = e.target.closest ? e.target.closest('.pillar, .case, .rel-card, .folio-card, .offer') : null;
     if (!card) return;
     var r = card.getBoundingClientRect();
     card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
@@ -77,7 +77,7 @@
      Cada tarjeta recibe su lugar como variable CSS: --i escalona la
      entrada y desfasa la flotación del ícono, y --col escalona por
      columna las del portafolio, que se revelan de a una. */
-  var rejillas = document.querySelectorAll('.pillars, .cases, .rel-grid, .folio, .ind-grid, .ind-pills, .mdl-grid, .mdl-list');
+  var rejillas = document.querySelectorAll('.pillars, .offers, .cases, .rel-grid, .folio, .ind-grid, .ind-pills, .mdl-grid, .mdl-list');
   Array.prototype.forEach.call(rejillas, function (grid) {
     Array.prototype.forEach.call(grid.children, function (card, i) {
       card.style.setProperty('--i', i);
@@ -549,7 +549,7 @@
   /* La mitad de los nodos va en el turquesa de la marca; el resto se
      reparte entre cian, azul, violeta y magenta. Cada línea toma el
      color del nodo del que sale. */
-  var PALETA = ['34,211,238', '13,139,255', '167,139,250', '244,114,182'];
+  var PALETA = ['8,147,181', '27,111,224', '124,92,230', '212,63,141'];
   var nodes = [];
   var w = 0, h = 0, dpr = 1, raf = null;
 
@@ -574,7 +574,7 @@
         vx: (Math.random() - 0.5) * 1.1,
         vy: (Math.random() - 0.5) * 1.1,
         r: Math.random() * 1.4 + 0.7,
-        rgb: Math.random() < 0.5 ? '52,207,190' : PALETA[Math.floor(Math.random() * PALETA.length)]
+        rgb: Math.random() < 0.5 ? '14,159,142' : PALETA[Math.floor(Math.random() * PALETA.length)]
       });
     }
   }

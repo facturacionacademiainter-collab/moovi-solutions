@@ -25,11 +25,10 @@
 
     <nav class="nav" id="nav">
       <a href="#servicios">Servicios</a>
-      <a href="#casos">Casos de uso</a>
+      <a href="#casos">Soluciones</a>
       <a href="industrias.html">Industrias</a>
       <a href="modelos.html">Modelos</a>
       <a href="#proceso">Proceso</a>
-      <a href="#stack">Stack</a>
       <a href="portafolio.html">Casos de éxito</a>
       <a class="btn" href="#contacto">Contactanos</a>
     </nav>
@@ -72,7 +71,9 @@
 
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track" id="tickerTrack">
-        <span>Python</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Flutter</span><span>Kotlin</span><span>Swift</span><span>PostgreSQL</span><span>Kubernetes</span><span>AWS</span><span>Azure</span><span>MQTT</span><span>LLMs</span><span>Computer Vision</span><span>Edge Computing</span>
+        <!-- La lista va dos veces para que la cinta cubra pantallas anchas sin huecos -->
+        <span>Python</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Flutter</span><span>PostgreSQL</span><span>AWS</span><span>Azure</span>
+        <span>Python</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Flutter</span><span>PostgreSQL</span><span>AWS</span><span>Azure</span>
       </div>
     </div>
   </section>
@@ -80,108 +81,145 @@
   <!-- ============ SERVICIOS ============ -->
   <section class="section" id="servicios">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <p class="eyebrow">Servicios</p>
-          <h2>Dos capacidades centrales, un mismo equipo.</h2>
-        </div>
-        <p class="muted">No entregamos demos. Construimos sistemas que entran en producción, se miden y se mantienen: arquitectura clara, código propio y documentación que tu equipo puede tomar el día uno.</p>
+      <div class="offers-head reveal">
+        <p class="eyebrow">Servicios</p>
+        <h2>Soluciones de software para <em>cada necesidad y presupuesto.</em></h2>
+        <p class="lede">En Moovi queremos que el buen software esté al alcance de cualquier empresa. Elegí el camino que mejor encaja con tu negocio.</p>
       </div>
 
-      <div class="pillars reveal">
-        <article class="pillar">
-          <figure class="illus" aria-hidden="true">
-            <!-- Flujo de datos: cliente → API → base, con cola de eventos -->
-            <svg viewBox="0 0 320 100" fill="none">
-              <rect class="box" x="124" y="6" width="72" height="22" rx="1"/>
-              <text class="box-name" x="160" y="21" text-anchor="middle">EVENTOS</text>
-
-              <rect class="box" x="6"   y="52" width="72" height="32" rx="1"/>
-              <rect class="box" x="124" y="52" width="72" height="32" rx="1"/>
-              <rect class="box" x="242" y="52" width="72" height="32" rx="1"/>
-              <text class="box-name" x="42"  y="72" text-anchor="middle">CLIENTE</text>
-              <text class="box-name" x="160" y="72" text-anchor="middle">API</text>
-              <text class="box-name" x="278" y="72" text-anchor="middle">DATOS</text>
-
-              <path class="wire" d="M78 68 H124"/>
-              <path class="wire" d="M196 68 H242"/>
-              <path class="wire slow" d="M160 52 V28"/>
-
-              <path class="arrow" d="M118 68 l-7 -3.4 v6.8 z"/>
-              <path class="arrow" d="M236 68 l-7 -3.4 v6.8 z"/>
-
-              <circle class="dot" cx="42" cy="94" r="1.6"/>
-              <circle class="dot" cx="160" cy="94" r="1.6"/>
-              <circle class="dot" cx="278" cy="94" r="1.6"/>
+      <div class="offers reveal">
+        <!-- 1 · A medida -->
+        <article class="offer" data-offer="custom">
+          <header class="offer-head">
+            <span class="offer-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5M13.5 5l-3 14"/></svg>
+            </span>
+            <h3>Software <span>A medida</span></h3>
+          </header>
+          <p class="offer-desc">Construimos la solución desde cero, pensada alrededor de tus procesos, tus objetivos y la manera en que trabaja tu equipo.</p>
+          <p class="offer-key"><span><strong>Libertad total para crecer:</strong> el sistema escala al mismo ritmo que tu empresa.</span></p>
+          <ul class="offer-meters">
+            <li><span>Presupuesto</span><i style="--v:.6" role="img" aria-label="Medio-alto"></i></li>
+            <li><span>Tiempo</span><i style="--v:.7" role="img" aria-label="Medio-alto"></i></li>
+            <li><span>Personalización</span><i style="--v:1" role="img" aria-label="Total"></i></li>
+          </ul>
+          <figure class="offer-art" aria-hidden="true">
+            <svg viewBox="0 0 320 190">
+              <g class="dots"><circle cx="30" cy="80" r="1.6"/><circle cx="42" cy="80" r="1.6"/><circle cx="54" cy="80" r="1.6"/><circle cx="30" cy="92" r="1.6"/><circle cx="42" cy="92" r="1.6"/><circle cx="54" cy="92" r="1.6"/><circle cx="30" cy="104" r="1.6"/><circle cx="42" cy="104" r="1.6"/><circle cx="54" cy="104" r="1.6"/><circle cx="30" cy="116" r="1.6"/><circle cx="42" cy="116" r="1.6"/><circle cx="54" cy="116" r="1.6"/></g>
+              <g class="laptop">
+                <rect class="frame" x="62" y="14" width="196" height="128" rx="9"/>
+                <rect class="screen" x="69" y="21" width="182" height="114" rx="3"/>
+                <rect class="side" x="69" y="21" width="14" height="114"/>
+                <circle class="side-dot" cx="76" cy="32" r="2.2"/><circle class="side-dot" cx="76" cy="44" r="2.2"/><circle class="side-dot" cx="76" cy="56" r="2.2"/>
+                <rect class="w" x="90" y="28" width="46" height="22" rx="2"/><rect class="w" x="140" y="28" width="46" height="22" rx="2"/><rect class="w" x="190" y="28" width="54" height="22" rx="2"/>
+                <path class="line" d="M194 45 l8 -5 8 3 8 -8 8 2 8 -6"/>
+                <rect class="w" x="90" y="55" width="54" height="40" rx="2"/>
+                <circle class="donut-t" cx="108" cy="75" r="10"/><circle class="donut" cx="108" cy="75" r="10" pathLength="100" stroke-dasharray="68 100"/>
+                <rect class="w" x="148" y="55" width="96" height="40" rx="2"/>
+                <path class="line strong" d="M154 88 l14 -8 12 4 14 -12 12 3 14 -14 12 -2"/>
+                <rect class="w" x="90" y="100" width="100" height="30" rx="2"/>
+                <g class="bars"><rect x="98" y="116" width="5" height="10"/><rect x="107" y="110" width="5" height="16"/><rect x="116" y="113" width="5" height="13"/><rect x="125" y="106" width="5" height="20"/><rect x="134" y="111" width="5" height="15"/><rect x="143" y="104" width="5" height="22"/><rect x="152" y="109" width="5" height="17"/><rect x="161" y="102" width="5" height="24"/><rect x="170" y="108" width="5" height="18"/></g>
+                <rect class="w" x="194" y="100" width="50" height="30" rx="2"/>
+                <rect class="soft" x="200" y="108" width="36" height="3" rx="1.5"/><rect class="soft" x="200" y="115" width="28" height="3" rx="1.5"/><rect class="soft" x="200" y="122" width="32" height="3" rx="1.5"/>
+                <path class="base" d="M40 142 H280 L270 156 H50 Z"/>
+                <rect class="notch" x="140" y="142" width="40" height="4" rx="2"/>
+              </g>
+              <g class="float">
+                <path class="link" d="M258 70 C 272 60, 272 44, 262 34"/>
+                <rect class="badge" x="258" y="10" width="34" height="30" rx="8"/>
+                <path class="badge-g" d="M270 20 l-5 5 5 5 M280 20 l5 5 -5 5"/>
+              </g>
             </svg>
           </figure>
-          <p class="pillar-idx">Servicio A</p>
-          <h3>Desarrollo de Software</h3>
-          <p>Plataformas web, sistemas internos e integraciones a medida. Tomamos procesos que hoy viven en planillas, correos y software heredado, y los convertimos en producto: rápido, auditable y preparado para crecer.</p>
-          <ul class="deliverables">
-            <li><span>Aplicaciones web y portales de cliente</span></li>
-            <li><span>Sistemas de gestión y back-office a medida</span></li>
-            <li><span>APIs, microservicios e integraciones (ERP, CRM, pagos)</span></li>
-            <li><span>Modernización de sistemas heredados</span></li>
-            <li><span>Infraestructura, CI/CD y observabilidad</span></li>
-          </ul>
         </article>
 
-        <article class="pillar">
-          <figure class="illus" aria-hidden="true">
-            <!-- Red de inferencia: datos → modelo → decisión -->
-            <svg viewBox="0 0 320 100" fill="none">
-              <g class="edges" stroke-linecap="round">
-                <line class="edge" x1="44" y1="22" x2="160" y2="12"/>
-                <line class="edge live" style="animation-delay:0s"    x1="44" y1="22" x2="160" y2="34"/>
-                <line class="edge" x1="44" y1="22" x2="160" y2="56"/>
-                <line class="edge" x1="44" y1="22" x2="160" y2="78"/>
-                <line class="edge" x1="44" y1="44" x2="160" y2="12"/>
-                <line class="edge" x1="44" y1="44" x2="160" y2="34"/>
-                <line class="edge live" style="animation-delay:.5s"   x1="44" y1="44" x2="160" y2="56"/>
-                <line class="edge" x1="44" y1="44" x2="160" y2="78"/>
-                <line class="edge" x1="44" y1="66" x2="160" y2="12"/>
-                <line class="edge live" style="animation-delay:1.1s"  x1="44" y1="66" x2="160" y2="34"/>
-                <line class="edge" x1="44" y1="66" x2="160" y2="56"/>
-                <line class="edge" x1="44" y1="66" x2="160" y2="78"/>
-
-                <line class="edge" x1="160" y1="12" x2="276" y2="34"/>
-                <line class="edge" x1="160" y1="12" x2="276" y2="56"/>
-                <line class="edge live" style="animation-delay:1.5s"  x1="160" y1="34" x2="276" y2="34"/>
-                <line class="edge" x1="160" y1="34" x2="276" y2="56"/>
-                <line class="edge" x1="160" y1="56" x2="276" y2="34"/>
-                <line class="edge live" style="animation-delay:1.9s"  x1="160" y1="56" x2="276" y2="56"/>
-                <line class="edge" x1="160" y1="78" x2="276" y2="34"/>
-                <line class="edge" x1="160" y1="78" x2="276" y2="56"/>
+        <!-- 2 · Híbrido -->
+        <article class="offer" data-offer="hybrid">
+          <header class="offer-head">
+            <span class="offer-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="8" height="8" rx="2.2"/><rect x="12.5" y="12.5" width="8" height="8" rx="2.2"/><path d="M11.5 7.5h3a2 2 0 0 1 2 2v3M12.5 16.5h-3a2 2 0 0 1-2-2v-3"/></svg>
+            </span>
+            <h3>Software <span>Híbrido</span></h3>
+          </header>
+          <p class="offer-desc">Partimos de una plataforma propia ya construida como base y la ajustamos a lo que tu negocio necesita puntualmente.</p>
+          <p class="offer-key"><span><strong>El equilibrio justo</strong> entre inversión, plazo de entrega y la flexibilidad que buscás.</span></p>
+          <ul class="offer-meters">
+            <li><span>Presupuesto</span><i style="--v:.4" role="img" aria-label="Medio"></i></li>
+            <li><span>Tiempo</span><i style="--v:.4" role="img" aria-label="Medio"></i></li>
+            <li><span>Personalización</span><i style="--v:.6" role="img" aria-label="Media-alta"></i></li>
+          </ul>
+          <figure class="offer-art" aria-hidden="true">
+            <svg viewBox="0 0 320 190">
+              <g class="dots"><circle cx="30" cy="86" r="1.6"/><circle cx="42" cy="86" r="1.6"/><circle cx="54" cy="86" r="1.6"/><circle cx="30" cy="98" r="1.6"/><circle cx="42" cy="98" r="1.6"/><circle cx="54" cy="98" r="1.6"/><circle cx="30" cy="110" r="1.6"/><circle cx="42" cy="110" r="1.6"/><circle cx="54" cy="110" r="1.6"/></g>
+              <g class="laptop">
+                <rect class="frame" x="62" y="14" width="196" height="128" rx="9"/>
+                <rect class="screen" x="69" y="21" width="182" height="114" rx="3"/>
+                <rect class="side" x="69" y="21" width="14" height="114"/>
+                <circle class="side-dot" cx="76" cy="32" r="2.2"/><circle class="side-dot" cx="76" cy="44" r="2.2"/><circle class="side-dot" cx="76" cy="56" r="2.2"/>
+                <rect class="soft" x="90" y="28" width="60" height="4" rx="2"/>
+                <rect class="w" x="90" y="38" width="120" height="52" rx="2"/>
+                <g class="bars"><rect x="98" y="72" width="7" height="12"/><rect x="109" y="66" width="7" height="18"/><rect x="120" y="69" width="7" height="15"/><rect x="131" y="60" width="7" height="24"/><rect x="142" y="63" width="7" height="21"/><rect x="153" y="56" width="7" height="28"/><rect x="164" y="59" width="7" height="25"/><rect x="175" y="52" width="7" height="32"/><rect x="186" y="48" width="7" height="36"/><rect x="197" y="50" width="7" height="34"/></g>
+                <rect class="w" x="214" y="38" width="30" height="52" rx="2"/>
+                <circle class="donut-t" cx="229" cy="54" r="8"/><circle class="donut" cx="229" cy="54" r="8" pathLength="100" stroke-dasharray="72 100"/>
+                <rect class="soft" x="219" y="70" width="20" height="3" rx="1.5"/><rect class="soft" x="219" y="77" width="14" height="3" rx="1.5"/>
+                <rect class="w" x="90" y="96" width="74" height="34" rx="2"/><rect class="w" x="168" y="96" width="76" height="34" rx="2"/>
+                <rect class="soft" x="96" y="104" width="50" height="3" rx="1.5"/><rect class="soft" x="96" y="111" width="40" height="3" rx="1.5"/><rect class="soft" x="96" y="118" width="46" height="3" rx="1.5"/>
+                <path class="line strong" d="M174 122 l12 -6 10 3 12 -10 10 2 12 -8"/>
+                <path class="base" d="M40 142 H280 L270 156 H50 Z"/>
+                <rect class="notch" x="140" y="142" width="40" height="4" rx="2"/>
               </g>
-
-              <circle class="neuron" cx="44" cy="22" r="5"/>
-              <circle class="neuron" cx="44" cy="44" r="5"/>
-              <circle class="neuron" cx="44" cy="66" r="5"/>
-
-              <circle class="neuron" cx="160" cy="12" r="5"/>
-              <circle class="neuron on" style="animation-delay:.3s" cx="160" cy="34" r="5"/>
-              <circle class="neuron on" style="animation-delay:1.2s" cx="160" cy="56" r="5"/>
-              <circle class="neuron" cx="160" cy="78" r="5"/>
-
-              <circle class="neuron out" cx="276" cy="34" r="5"/>
-              <circle class="neuron out" cx="276" cy="56" r="5"/>
-
-              <text class="lbl" x="44"  y="97" text-anchor="middle">DATOS</text>
-              <text class="lbl" x="160" y="97" text-anchor="middle">MODELO</text>
-              <text class="lbl" x="276" y="97" text-anchor="middle">DECISIÓN</text>
+              <g class="float">
+                <path class="badge" d="M252 64 h11 a6 6 0 1 1 12 0 h11 v11 a6 6 0 1 1 0 12 v11 h-34 z"/>
+                <g class="gear-wrap"><rect class="badge" x="276" y="104" width="26" height="26" rx="7"/><circle class="badge-g" cx="289" cy="117" r="4.5"/></g>
+              </g>
             </svg>
           </figure>
-          <p class="pillar-idx">Servicio B</p>
-          <h3>Soluciones de IA</h3>
-          <p>Inteligencia artificial aplicada a un problema concreto de negocio, con métricas definidas antes de escribir la primera línea de código. Desde asistentes sobre tu propia documentación hasta visión por computadora en planta.</p>
-          <ul class="deliverables">
-            <li><span>Agentes y asistentes sobre datos propios (RAG)</span></li>
-            <li><span>Automatización de procesos documentales</span></li>
-            <li><span>Modelos predictivos y detección de anomalías</span></li>
-            <li><span>Visión por computadora e inspección automática</span></li>
-            <li><span>Evaluación, monitoreo y gobierno de modelos</span></li>
+        </article>
+
+        <!-- 3 · Prediseñado -->
+        <article class="offer" data-offer="ready">
+          <header class="offer-head">
+            <span class="offer-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/><path d="M14.5 16.2l1.6 1.6 3-3.2"/></svg>
+            </span>
+            <h3>Software <span>Prediseñado</span></h3>
+          </header>
+          <p class="offer-desc">Soluciones propias listas para usar, probadas en producción y afinadas para distintos rubros y tipos de negocio.</p>
+          <p class="offer-key"><span><strong>Puesta en marcha ágil y menor costo,</strong> con funciones que ya están validadas.</span></p>
+          <ul class="offer-meters">
+            <li><span>Presupuesto</span><i style="--v:.12" role="img" aria-label="Bajo"></i></li>
+            <li><span>Tiempo</span><i style="--v:.12" role="img" aria-label="Bajo"></i></li>
+            <li><span>Personalización</span><i style="--v:.12" role="img" aria-label="Baja"></i></li>
           </ul>
+          <figure class="offer-art" aria-hidden="true">
+            <svg viewBox="0 0 320 190">
+              <g class="dots"><circle cx="30" cy="92" r="1.6"/><circle cx="42" cy="92" r="1.6"/><circle cx="54" cy="92" r="1.6"/><circle cx="30" cy="104" r="1.6"/><circle cx="42" cy="104" r="1.6"/><circle cx="54" cy="104" r="1.6"/><circle cx="30" cy="116" r="1.6"/><circle cx="42" cy="116" r="1.6"/><circle cx="54" cy="116" r="1.6"/></g>
+              <g class="laptop">
+                <rect class="frame" x="62" y="14" width="196" height="128" rx="9"/>
+                <rect class="screen" x="69" y="21" width="182" height="114" rx="3"/>
+                <rect class="side" x="69" y="21" width="14" height="114"/>
+                <circle class="side-dot" cx="76" cy="32" r="2.2"/><circle class="side-dot" cx="76" cy="44" r="2.2"/><circle class="side-dot" cx="76" cy="56" r="2.2"/>
+                <rect class="w" x="90" y="28" width="46" height="20" rx="2"/><rect class="w" x="140" y="28" width="46" height="20" rx="2"/><rect class="w" x="190" y="28" width="54" height="20" rx="2"/>
+                <rect class="soft" x="96" y="35" width="26" height="3" rx="1.5"/><rect class="soft" x="146" y="35" width="30" height="3" rx="1.5"/>
+                <path class="line" d="M196 42 l8 -4 8 2 8 -7 8 3 8 -5"/>
+                <rect class="w" x="90" y="53" width="60" height="42" rx="2"/>
+                <circle class="donut-t" cx="120" cy="74" r="12"/><circle class="donut" cx="120" cy="74" r="12" pathLength="100" stroke-dasharray="58 100"/>
+                <rect class="w" x="154" y="53" width="90" height="42" rx="2"/>
+                <path class="line strong" d="M160 88 l12 -4 12 -10 12 6 12 -12 12 -2 12 -10"/>
+                <rect class="w" x="90" y="100" width="154" height="30" rx="2"/>
+                <g class="bars"><rect x="98" y="114" width="6" height="11"/><rect x="108" y="109" width="6" height="16"/><rect x="118" y="112" width="6" height="13"/><rect x="128" y="106" width="6" height="19"/><rect x="138" y="110" width="6" height="15"/></g>
+                <rect class="soft" x="160" y="108" width="76" height="3" rx="1.5"/><rect class="soft" x="160" y="115" width="60" height="3" rx="1.5"/><rect class="soft" x="160" y="122" width="68" height="3" rx="1.5"/>
+                <path class="base" d="M40 142 H280 L270 156 H50 Z"/>
+                <rect class="notch" x="140" y="142" width="40" height="4" rx="2"/>
+              </g>
+              <g class="float rocket">
+                <path class="link" d="M258 96 C 268 86, 272 74, 278 62"/>
+                <path class="badge-g" d="M286 30 c 8 4 10 14 6 24 l-8 4 -6 -6 4 -8 c 1 -8 2 -12 4 -14 z"/>
+                <circle class="badge-g" cx="286" cy="42" r="2.4"/>
+                <path class="badge-g" d="M280 52 l-6 2 2 -7 M290 56 l-2 6 7 -2"/>
+              </g>
+            </svg>
+          </figure>
         </article>
       </div>
     </div>
@@ -189,89 +227,55 @@
 
   <hr class="rule">
 
-  <!-- ============ CASOS DE USO ============ -->
+  <!-- ============ SOLUCIONES ============ -->
   <section class="section" id="casos">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <p class="eyebrow">Soluciones por caso de uso</p>
-          <h2>Tres frentes donde ya sabemos el camino.</h2>
-        </div>
-        <p class="muted">Cuando el problema es conocido, el proyecto no arranca de cero. Estas tres líneas tienen arquitectura de referencia, componentes reutilizables y un plan de puesta en marcha probado.</p>
+      <div class="offers-head reveal">
+        <p class="eyebrow">Lo que construimos</p>
+        <h2>Soluciones</h2>
+        <p class="lede">Sistemas de IA y software diseñados para funcionar en operaciones reales.</p>
       </div>
 
-      <div class="cases reveal">
+      <div class="cases sol-grid reveal">
         <article class="case">
           <div class="case-glyph" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none">
-              <path d="M6 10h5l5 21h21l4-15H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="19" cy="39" r="3" stroke="currentColor" stroke-width="2"/>
-              <circle cx="34" cy="39" r="3" stroke="currentColor" stroke-width="2"/>
-              <path class="ac-s" d="M27 12v9M22.5 16.5h9" stroke="#5A45F0" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l8.5 4.5L12 12.5 3.5 8z"/><path d="M3.5 12L12 16.5 20.5 12"/><path class="ac-s" d="M3.5 16L12 20.5 20.5 16"/></svg>
           </div>
-          <h3>Ecommerce</h3>
-          <p>Tiendas y marketplaces que soportan catálogos grandes y picos de tráfico reales. Checkout optimizado, stock sincronizado con tu ERP, medios de pago locales y motores de recomendación que suben el ticket promedio.</p>
-          <div class="tags">
-            <span class="tag">Headless</span><span class="tag">Pagos</span><span class="tag">Logística</span><span class="tag">Recomendación</span>
-          </div>
+          <h3>Desarrollo de software a medida</h3>
+          <p>Plataformas escalables y sistemas internos construidos para soportar el crecimiento.</p>
         </article>
 
         <article class="case">
           <div class="case-glyph" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none">
-              <rect x="14" y="5" width="20" height="38" rx="3.5" stroke="currentColor" stroke-width="2"/>
-              <path d="M21 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="24" cy="37" r="1.8" fill="currentColor"/>
-              <path class="ac-s" d="M19 26l4-5 4 6 4-9" stroke="#5A45F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h14a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-7l-4.5 3.5v-3.5H5A1.5 1.5 0 0 1 3.5 15V6A1.5 1.5 0 0 1 5 4.5z"/><path class="ac-s" d="M8 9.5h8M8 12.5h5"/></svg>
           </div>
-          <h3>Apps Móviles</h3>
-          <p>Aplicaciones iOS y Android para clientes, personal en calle u operarios en planta. Funcionamiento offline, sincronización confiable, notificaciones y publicación en tiendas gestionada de punta a punta.</p>
-          <div class="tags">
-            <span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Offline-first</span><span class="tag">Geolocalización</span>
-          </div>
+          <h3>Automatización de procesos IA</h3>
+          <p>Flujos de trabajo automatizados que eliminan tareas manuales y mejoran la eficiencia operativa.</p>
         </article>
 
         <article class="case">
           <div class="case-glyph" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none">
-              <path d="M7 42V22l9-6 9 6v20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M25 42V15l8-5 8 5v27" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M12 28h4M12 34h4M31 23h4M31 30h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <circle class="ac-f" cx="33" cy="5.5" r="2.2" fill="#5A45F0"/>
-              <path class="ac-s" d="M28.5 4a6 6 0 019 0" stroke="#5A45F0" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.5l2.5-6 4 12 2.5-6H21"/></svg>
           </div>
-          <h3>Smart City e IoT</h3>
-          <p>Redes de sensores, telemetría y tableros de control para municipios, servicios públicos e industria. Ingesta de datos en tiempo real, alertas por umbral, mantenimiento predictivo y gemelos digitales del territorio.</p>
-          <div class="tags">
-            <span class="tag">Telemetría</span><span class="tag">MQTT / LoRa</span><span class="tag">Edge</span><span class="tag">Tableros</span>
-          </div>
+          <h3>Asistentes IA y copilots</h3>
+          <p>Sistemas conversacionales conectados a tus datos, herramientas y procesos internos.</p>
         </article>
-      </div>
-    </div>
-  </section>
 
-  <hr class="rule">
+        <article class="case">
+          <div class="case-glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle class="ac-s" cx="12" cy="12" r="3"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg>
+          </div>
+          <h3>Flujos de datos IA</h3>
+          <p>Pipelines de datos en tiempo real que convierten información fragmentada en insights accionables.</p>
+        </article>
 
-  <!-- ============ SOLUCIONES RELACIONADAS ============ -->
-  <section class="section section-tight" id="relacionadas">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <p class="eyebrow">Soluciones relacionadas</p>
-        </div>
-        <p class="muted">Variantes de desarrollo a medida sobre las que ya tenemos arquitectura y componentes construidos.</p>
-      </div>
-
-      <div class="rel-grid reveal">
-        <article class="rel-card"><h3>Desarrollo de CRM a medida</h3></article>
-        <article class="rel-card"><h3>Desarrollo de ERP a medida</h3></article>
-        <article class="rel-card"><h3>Sistema de gestión a medida</h3></article>
-        <article class="rel-card"><h3>Software de gestión para PyME</h3></article>
-        <article class="rel-card"><h3>Desarrollo de aplicaciones web a medida</h3></article>
-        <article class="rel-card"><h3>Software de facturación a medida</h3></article>
+        <article class="case">
+          <div class="case-glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="12" rx="1.8"/><path d="M9 20.5h6M12 16.5v4"/><path class="ac-s" d="M7 9h3M7 12h6"/></svg>
+          </div>
+          <h3>Sistemas IA personalizados</h3>
+          <p>Soluciones de IA diseñadas en torno a tus sistemas, flujos de trabajo y lógica de negocio.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -310,76 +314,61 @@
     </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- ============ STACK ============ -->
-  <section class="section" id="stack">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <p class="eyebrow">Stack tecnológico</p>
-          <h2>Herramientas elegidas por el problema, no por moda.</h2>
-        </div>
-        <p class="muted">Trabajamos sobre tecnologías maduras y sostenidas por comunidades grandes, para que tu producto siga siendo mantenible cuando el equipo cambie.</p>
-      </div>
-
-      <div class="stack-layout reveal">
-
-        <figure class="codepanel" id="codepanel" aria-hidden="true">
-          <div class="code-bar">
-            <span class="code-dot"></span>
-            <span class="code-file" id="codeFile">ingesta.py</span>
-            <span class="code-lang" id="codeLang">Python · FastAPI</span>
-          </div>
-          <div class="code-body">
-            <ol class="code-lines" id="codeLines"></ol>
-          </div>
-          <div class="code-status" id="codeStatus">
-            <span class="pip"></span>
-            <span id="codeState">compilando</span>
-            <span class="right" id="codeTask">Ingesta de telemetría</span>
-          </div>
-        </figure>
-
-        <div class="stack-grid">
-        <div class="stack-col">
-          <h3>Producto y front</h3>
-          <ul>
-            <li><strong>React</strong> · Next.js · Astro</li>
-            <li><strong>TypeScript</strong></li>
-            <li><strong>Flutter</strong> · Kotlin · Swift</li>
-            <li>Design systems y accesibilidad</li>
-          </ul>
-        </div>
-        <div class="stack-col">
-          <h3>Back y datos</h3>
-          <ul>
-            <li><strong>Python</strong> · FastAPI · Django</li>
-            <li><strong>Node.js</strong> · NestJS</li>
-            <li><strong>PostgreSQL</strong> · Redis · TimescaleDB</li>
-            <li>Kafka · RabbitMQ · ETL</li>
-          </ul>
-        </div>
-        <div class="stack-col">
-          <h3>Inteligencia artificial</h3>
-          <ul>
-            <li><strong>LLMs</strong> y agentes con RAG</li>
-            <li>PyTorch · scikit-learn</li>
-            <li>Bases vectoriales y embeddings</li>
-            <li>Visión por computadora · OCR</li>
-          </ul>
-        </div>
-        <div class="stack-col">
-          <h3>Infraestructura e IoT</h3>
-          <ul>
-            <li><strong>AWS</strong> · Azure · Google Cloud</li>
-            <li>Docker · Kubernetes · Terraform</li>
-            <li>MQTT · LoRaWAN · Modbus</li>
-            <li>Grafana · Prometheus</li>
-          </ul>
-        </div>
-        </div>
-
+  <!-- ============ PROYECTOS (cinta de logos) ============ -->
+  <section class="logos-band" aria-labelledby="logos-title">
+    <div class="wrap logos-head reveal">
+      <p class="eyebrow" id="logos-title">Proyectos que construimos</p>
+      <a class="logos-more" href="portafolio.html">Ver todos los casos</a>
+    </div>
+    <div class="logo-ticker">
+      <!-- La lista va dos veces para que el bucle sea continuo; la copia es solo visual -->
+      <div class="logo-track">
+        <ul class="logo-set">
+          <li><a class="logo-chip" data-brand="kognia" href="portafolio.html#p-kognia" aria-label="Ver proyecto: Kognia"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M12 12V5.6M12 12l5.5 3.2M12 12l-5.5 3.2"/><circle class="gf" cx="12" cy="12" r="2.7"/><circle class="gf" cx="12" cy="4.6" r="2.1"/><circle class="gf" cx="18.4" cy="16.3" r="2.1"/><circle class="gf" cx="5.6" cy="16.3" r="2.1"/></svg></span><span class="folio-word">Kognia</span></span></a></li>
+          <li><a class="logo-chip" data-brand="arbitrium" href="portafolio.html#p-arbitrium" aria-label="Ver proyecto: Arbitrium"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="m2f" d="M21 26.5L30.5 39H39L29.5 26.5z" opacity=".45"/><path class="mf" d="M5 21h16v6H5z"/><path class="mf" d="M21 21.5L30.5 9H39L29.5 21.5z"/><circle class="mf" cx="40.5" cy="12" r="5.5"/></svg><span class="folio-word caps">Arbitrium</span></span></a></li>
+          <li><a class="logo-chip" data-brand="replica" href="portafolio.html#p-replica" aria-label="Ver proyecto: Réplica"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><rect class="m2f" x="5" y="5" width="26" height="26" rx="6" opacity=".5"/><rect class="mf" x="17" y="17" width="26" height="26" rx="6"/></svg><span class="folio-word">Réplica</span></span></a></li>
+          <li><a class="logo-chip" data-brand="indicio" href="portafolio.html#p-indicio" aria-label="Ver proyecto: Indicio"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><circle class="g" cx="10.4" cy="10.4" r="6.6"/><path class="g" d="M15.3 15.3L21 21"/><path class="gd" d="M8.2 8.6l4.5-.6M12.7 8l-2.4 4.9M10.3 12.9L8.2 8.6"/><circle class="gf" cx="8.2" cy="8.6" r="1.25"/><circle class="gf" cx="12.7" cy="8" r="1.25"/><circle class="gf" cx="10.3" cy="12.9" r="1.25"/></svg></span><span class="folio-word caps">Indicio</span></span></a></li>
+          <li><a class="logo-chip" data-brand="telar" href="portafolio.html#p-telar" aria-label="Ver proyecto: Telar"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M3.5 9h4.2M11.8 9h8.7M3.5 15h8.7M16.3 15h4.2"/><path class="g" d="M9.8 3.5v3.4M9.8 11.1v9.4M18.2 3.5v9.4M18.2 17.1v3.4"/></svg></span><span class="folio-word low">Telar</span></span></a></li>
+          <li><a class="logo-chip" data-brand="solvenz" href="portafolio.html#p-solvenz" aria-label="Ver proyecto: Solvenz"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M24 3l18 6v15.5C42 35.8 34 43.2 24 46 14 43.2 6 35.8 6 24.5V9z"/><path class="mw" d="M15.5 25l6.5 6.5L33 18"/></svg><span class="folio-word">Solvenz</span></span></a></li>
+          <li><a class="logo-chip" data-brand="collectiq" href="portafolio.html#p-collectiq" aria-label="Ver proyecto: CollectIQ"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M19.8 12a7.8 7.8 0 1 1-2.3-5.5"/><path class="g" d="M20.2 4v4h-4"/><path class="g" d="M8.6 13.4L12 10l3.4 3.4"/><path class="g" d="M12 10.6v6.6"/></svg></span><span class="folio-word">Collect<em>IQ</em></span></span></a></li>
+          <li><a class="logo-chip" data-brand="umbral" href="portafolio.html#p-umbral" aria-label="Ver proyecto: Umbral"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M5 43V22a19 19 0 0 1 38 0v21h-9.5V22a9.5 9.5 0 0 0-19 0v21z"/><circle class="m2f" cx="24" cy="30" r="5"/></svg><span class="folio-word thin">Umbral</span></span></a></li>
+          <li><a class="logo-chip" data-brand="veritas" href="portafolio.html#p-veritas" aria-label="Ver proyecto: Veritas"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M2.5 12S6 6.2 12 6.2 21.5 12 21.5 12 18 17.8 12 17.8 2.5 12 2.5 12z"/><circle class="g" cx="12" cy="12" r="3.3"/><circle class="gf" cx="12" cy="12" r="1.5"/></svg></span><span class="folio-word caps">Veritas</span></span></a></li>
+          <li><a class="logo-chip" data-brand="mercurio" href="portafolio.html#p-mercurio" aria-label="Ver proyecto: Mercurio"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="m" d="M17 17v-4.5a7 7 0 0 1 14 0V17"/><path class="mf" d="M7 15h34l3 29H4z"/><path class="mw" d="M24 24.5v11M18.5 30h11"/></svg><span class="folio-word">Mercurio</span></span></a></li>
+          <li><a class="logo-chip" data-brand="brujula" href="portafolio.html#p-brujula" aria-label="Ver proyecto: Brújula"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><circle class="g" cx="12" cy="12" r="8.6"/><path class="gf" d="M16.4 7.6l-2.9 5.9-5.9 2.9 2.9-5.9z"/><circle class="gf" cx="12" cy="12" r="1.1"/></svg></span><span class="folio-word">Brújula</span></span></a></li>
+          <li><a class="logo-chip" data-brand="hilo" href="portafolio.html#p-hilo" aria-label="Ver proyecto: Hilo"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M21 11.4c0 4.7-4 8.5-9 8.5-1.2 0-2.4-.2-3.5-.6L3 21l1.7-4.3A8.2 8.2 0 0 1 3 11.4C3 6.7 7 3 12 3s9 3.7 9 8.4z"/><path class="g" d="M8.4 10.2h7.2M8.4 13.8h4.6"/></svg></span><span class="folio-word low">Hilo</span></span></a></li>
+          <li><a class="logo-chip" data-brand="timpano" href="portafolio.html#p-timpano" aria-label="Ver proyecto: Tímpano"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><circle class="mf" cx="12" cy="24" r="6.5"/><path class="m" d="M23 14.5a13.5 13.5 0 0 1 0 19"/><path class="m" d="M32 6.5a25 25 0 0 1 0 35" opacity=".55"/></svg><span class="folio-word thin">Tímpano</span></span></a></li>
+          <li><a class="logo-chip" data-brand="mirador" href="portafolio.html#p-mirador" aria-label="Ver proyecto: Mirador"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M7.6 20.5V10L12 3.5 16.4 10v10.5"/><path class="g" d="M4.5 20.5h15"/><path class="g" d="M10.1 17.5v-3M12 17.5v-5.4M13.9 17.5v-2"/></svg></span><span class="folio-word">Mirador</span></span></a></li>
+          <li><a class="logo-chip" data-brand="codice" href="portafolio.html#p-codice" aria-label="Ver proyecto: Códice"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M7 3h21l13 13v29H7z"/><path class="m2f" d="M28 3l13 13H28z"/><path class="mw" d="M15 25h18M15 33h18M15 17h8"/></svg><span class="folio-word thin">Códice</span></span></a></li>
+          <li><a class="logo-chip" data-brand="clausula" href="portafolio.html#p-clausula" aria-label="Ver proyecto: Cláusula"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M12 5.5v15M8 20.5h8M4 8.5h16"/><path class="g" d="M4 8.5L1.6 13.8h4.8zM20 8.5l-2.4 5.3h4.8z"/><circle class="gf" cx="12" cy="4.4" r="1.7"/></svg></span><span class="folio-word caps">Cláusula</span></span></a></li>
+          <li><a class="logo-chip" data-brand="agora" href="portafolio.html#p-agora" aria-label="Ver proyecto: Ágora"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M3 9.2L12 4l9 5.2"/><path class="g" d="M6.2 12.2v7.2M10.1 12.2v7.2M13.9 12.2v7.2M17.8 12.2v7.2"/><path class="g" d="M3.6 20.6h16.8"/></svg></span><span class="folio-word caps">Ágora</span></span></a></li>
+          <li><a class="logo-chip" data-brand="ventanilla" href="portafolio.html#p-ventanilla" aria-label="Ver proyecto: Ventanilla"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M4 3.8h16v13.4H4z"/><path class="g" d="M1.8 20.2h20.4M4 17.2h16"/><path class="g" d="M8.4 8h7.2M8.4 12.2h4.6"/></svg></span><span class="folio-word">Ventanilla</span></span></a></li>
+          <li><a class="logo-chip" data-brand="surco" href="portafolio.html#p-surco" aria-label="Ver proyecto: Surco"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M3 40.5c10.5-9.5 31.5-9.5 42 0V45H3z"/><path class="mf" d="M7 31c9.5-7.5 24.5-7.5 34 0v4.5c-9.5-7.5-24.5-7.5-34 0z" opacity=".7"/><path class="mf" d="M11.5 22c7-5.5 18-5.5 25 0v4.5c-7-5.5-18-5.5-25 0z" opacity=".45"/><circle class="mf" cx="24" cy="9" r="5.5"/></svg><span class="folio-word low">Surco</span></span></a></li>
+          <li><a class="logo-chip" data-brand="cantera" href="portafolio.html#p-cantera" aria-label="Ver proyecto: Cantera"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M3 38h42v7H3z"/><path class="mf" d="M8.5 28h31v7h-31z" opacity=".72"/><path class="mf" d="M14.5 18h19v7h-19z" opacity=".48"/><circle class="mf" cx="24" cy="8.5" r="5.5"/></svg><span class="folio-word">Cantera</span></span></a></li>
+          <li><a class="logo-chip" data-brand="preceptor" href="portafolio.html#p-preceptor" aria-label="Ver proyecto: Preceptor"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M2.8 5.2c3.4-1.3 5.9-1.3 9.2 1 3.3-2.3 5.8-2.3 9.2-1v13.7c-3.4-1.3-5.9-1.3-9.2 1-3.3-2.3-5.8-2.3-9.2-1z"/><path class="g" d="M12 6.2v13.7"/></svg></span><span class="folio-word thin">Preceptor</span></span></a></li>
+        </ul>
+        <ul class="logo-set" aria-hidden="true">
+          <li><a class="logo-chip" data-brand="kognia" href="portafolio.html#p-kognia" tabindex="-1"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M12 12V5.6M12 12l5.5 3.2M12 12l-5.5 3.2"/><circle class="gf" cx="12" cy="12" r="2.7"/><circle class="gf" cx="12" cy="4.6" r="2.1"/><circle class="gf" cx="18.4" cy="16.3" r="2.1"/><circle class="gf" cx="5.6" cy="16.3" r="2.1"/></svg></span><span class="folio-word">Kognia</span></span></a></li>
+          <li><a class="logo-chip" data-brand="arbitrium" href="portafolio.html#p-arbitrium" tabindex="-1"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="m2f" d="M21 26.5L30.5 39H39L29.5 26.5z" opacity=".45"/><path class="mf" d="M5 21h16v6H5z"/><path class="mf" d="M21 21.5L30.5 9H39L29.5 21.5z"/><circle class="mf" cx="40.5" cy="12" r="5.5"/></svg><span class="folio-word caps">Arbitrium</span></span></a></li>
+          <li><a class="logo-chip" data-brand="replica" href="portafolio.html#p-replica" tabindex="-1"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><rect class="m2f" x="5" y="5" width="26" height="26" rx="6" opacity=".5"/><rect class="mf" x="17" y="17" width="26" height="26" rx="6"/></svg><span class="folio-word">Réplica</span></span></a></li>
+          <li><a class="logo-chip" data-brand="indicio" href="portafolio.html#p-indicio" tabindex="-1"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><circle class="g" cx="10.4" cy="10.4" r="6.6"/><path class="g" d="M15.3 15.3L21 21"/><path class="gd" d="M8.2 8.6l4.5-.6M12.7 8l-2.4 4.9M10.3 12.9L8.2 8.6"/><circle class="gf" cx="8.2" cy="8.6" r="1.25"/><circle class="gf" cx="12.7" cy="8" r="1.25"/><circle class="gf" cx="10.3" cy="12.9" r="1.25"/></svg></span><span class="folio-word caps">Indicio</span></span></a></li>
+          <li><a class="logo-chip" data-brand="telar" href="portafolio.html#p-telar" tabindex="-1"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M3.5 9h4.2M11.8 9h8.7M3.5 15h8.7M16.3 15h4.2"/><path class="g" d="M9.8 3.5v3.4M9.8 11.1v9.4M18.2 3.5v9.4M18.2 17.1v3.4"/></svg></span><span class="folio-word low">Telar</span></span></a></li>
+          <li><a class="logo-chip" data-brand="solvenz" href="portafolio.html#p-solvenz" tabindex="-1"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M24 3l18 6v15.5C42 35.8 34 43.2 24 46 14 43.2 6 35.8 6 24.5V9z"/><path class="mw" d="M15.5 25l6.5 6.5L33 18"/></svg><span class="folio-word">Solvenz</span></span></a></li>
+          <li><a class="logo-chip" data-brand="collectiq" href="portafolio.html#p-collectiq" tabindex="-1"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M19.8 12a7.8 7.8 0 1 1-2.3-5.5"/><path class="g" d="M20.2 4v4h-4"/><path class="g" d="M8.6 13.4L12 10l3.4 3.4"/><path class="g" d="M12 10.6v6.6"/></svg></span><span class="folio-word">Collect<em>IQ</em></span></span></a></li>
+          <li><a class="logo-chip" data-brand="umbral" href="portafolio.html#p-umbral" tabindex="-1"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M5 43V22a19 19 0 0 1 38 0v21h-9.5V22a9.5 9.5 0 0 0-19 0v21z"/><circle class="m2f" cx="24" cy="30" r="5"/></svg><span class="folio-word thin">Umbral</span></span></a></li>
+          <li><a class="logo-chip" data-brand="veritas" href="portafolio.html#p-veritas" tabindex="-1"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M2.5 12S6 6.2 12 6.2 21.5 12 21.5 12 18 17.8 12 17.8 2.5 12 2.5 12z"/><circle class="g" cx="12" cy="12" r="3.3"/><circle class="gf" cx="12" cy="12" r="1.5"/></svg></span><span class="folio-word caps">Veritas</span></span></a></li>
+          <li><a class="logo-chip" data-brand="mercurio" href="portafolio.html#p-mercurio" tabindex="-1"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="m" d="M17 17v-4.5a7 7 0 0 1 14 0V17"/><path class="mf" d="M7 15h34l3 29H4z"/><path class="mw" d="M24 24.5v11M18.5 30h11"/></svg><span class="folio-word">Mercurio</span></span></a></li>
+          <li><a class="logo-chip" data-brand="brujula" href="portafolio.html#p-brujula" tabindex="-1"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><circle class="g" cx="12" cy="12" r="8.6"/><path class="gf" d="M16.4 7.6l-2.9 5.9-5.9 2.9 2.9-5.9z"/><circle class="gf" cx="12" cy="12" r="1.1"/></svg></span><span class="folio-word">Brújula</span></span></a></li>
+          <li><a class="logo-chip" data-brand="hilo" href="portafolio.html#p-hilo" tabindex="-1"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M21 11.4c0 4.7-4 8.5-9 8.5-1.2 0-2.4-.2-3.5-.6L3 21l1.7-4.3A8.2 8.2 0 0 1 3 11.4C3 6.7 7 3 12 3s9 3.7 9 8.4z"/><path class="g" d="M8.4 10.2h7.2M8.4 13.8h4.6"/></svg></span><span class="folio-word low">Hilo</span></span></a></li>
+          <li><a class="logo-chip" data-brand="timpano" href="portafolio.html#p-timpano" tabindex="-1"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><circle class="mf" cx="12" cy="24" r="6.5"/><path class="m" d="M23 14.5a13.5 13.5 0 0 1 0 19"/><path class="m" d="M32 6.5a25 25 0 0 1 0 35" opacity=".55"/></svg><span class="folio-word thin">Tímpano</span></span></a></li>
+          <li><a class="logo-chip" data-brand="mirador" href="portafolio.html#p-mirador" tabindex="-1"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M7.6 20.5V10L12 3.5 16.4 10v10.5"/><path class="g" d="M4.5 20.5h15"/><path class="g" d="M10.1 17.5v-3M12 17.5v-5.4M13.9 17.5v-2"/></svg></span><span class="folio-word">Mirador</span></span></a></li>
+          <li><a class="logo-chip" data-brand="codice" href="portafolio.html#p-codice" tabindex="-1"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M7 3h21l13 13v29H7z"/><path class="m2f" d="M28 3l13 13H28z"/><path class="mw" d="M15 25h18M15 33h18M15 17h8"/></svg><span class="folio-word thin">Códice</span></span></a></li>
+          <li><a class="logo-chip" data-brand="clausula" href="portafolio.html#p-clausula" tabindex="-1"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M12 5.5v15M8 20.5h8M4 8.5h16"/><path class="g" d="M4 8.5L1.6 13.8h4.8zM20 8.5l-2.4 5.3h4.8z"/><circle class="gf" cx="12" cy="4.4" r="1.7"/></svg></span><span class="folio-word caps">Cláusula</span></span></a></li>
+          <li><a class="logo-chip" data-brand="agora" href="portafolio.html#p-agora" tabindex="-1"><span class="folio-logo"><span class="folio-tile round"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M3 9.2L12 4l9 5.2"/><path class="g" d="M6.2 12.2v7.2M10.1 12.2v7.2M13.9 12.2v7.2M17.8 12.2v7.2"/><path class="g" d="M3.6 20.6h16.8"/></svg></span><span class="folio-word caps">Ágora</span></span></a></li>
+          <li><a class="logo-chip" data-brand="ventanilla" href="portafolio.html#p-ventanilla" tabindex="-1"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M4 3.8h16v13.4H4z"/><path class="g" d="M1.8 20.2h20.4M4 17.2h16"/><path class="g" d="M8.4 8h7.2M8.4 12.2h4.6"/></svg></span><span class="folio-word">Ventanilla</span></span></a></li>
+          <li><a class="logo-chip" data-brand="surco" href="portafolio.html#p-surco" tabindex="-1"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M3 40.5c10.5-9.5 31.5-9.5 42 0V45H3z"/><path class="mf" d="M7 31c9.5-7.5 24.5-7.5 34 0v4.5c-9.5-7.5-24.5-7.5-34 0z" opacity=".7"/><path class="mf" d="M11.5 22c7-5.5 18-5.5 25 0v4.5c-7-5.5-18-5.5-25 0z" opacity=".45"/><circle class="mf" cx="24" cy="9" r="5.5"/></svg><span class="folio-word low">Surco</span></span></a></li>
+          <li><a class="logo-chip" data-brand="cantera" href="portafolio.html#p-cantera" tabindex="-1"><span class="folio-logo"><svg class="folio-free" viewBox="0 0 48 48"><path class="mf" d="M3 38h42v7H3z"/><path class="mf" d="M8.5 28h31v7h-31z" opacity=".72"/><path class="mf" d="M14.5 18h19v7h-19z" opacity=".48"/><circle class="mf" cx="24" cy="8.5" r="5.5"/></svg><span class="folio-word">Cantera</span></span></a></li>
+          <li><a class="logo-chip" data-brand="preceptor" href="portafolio.html#p-preceptor" tabindex="-1"><span class="folio-logo"><span class="folio-tile"><svg class="folio-glyph" viewBox="0 0 24 24"><path class="g" d="M2.8 5.2c3.4-1.3 5.9-1.3 9.2 1 3.3-2.3 5.8-2.3 9.2-1v13.7c-3.4-1.3-5.9-1.3-9.2 1-3.3-2.3-5.8-2.3-9.2-1z"/><path class="g" d="M12 6.2v13.7"/></svg></span><span class="folio-word thin">Preceptor</span></span></a></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -450,7 +439,7 @@
     <small>© <span id="year">2026</span> Moovi Solutions · Todos los derechos reservados</small>
     <nav class="footer-links">
       <a href="#servicios">Servicios</a>
-      <a href="#casos">Casos de uso</a>
+      <a href="#casos">Soluciones</a>
       <a href="industrias.html">Industrias</a>
       <a href="modelos.html">Modelos</a>
       <a href="#proceso">Proceso</a>
