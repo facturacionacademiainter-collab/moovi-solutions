@@ -17,13 +17,13 @@ Es un sitio estático de un solo archivo: no necesita build, ni dependencias, ni
 
 ## Desarrollo
 
-No hay proceso de build. Editá `index.html` y recargá el navegador.
+No hay proceso de build. El sitio vive en `ar/` (se publica en `moovisolutions.com/ar/`). Editá `ar/index.html` y recargá el navegador. Los `.html` de la raíz solo redirigen a `/ar/`, para que las direcciones viejas sigan funcionando.
 
 Para verlo servido por HTTP (recomendado si vas a probar el formulario o compartirlo en la red local):
 
 ```bash
 python -m http.server 8000
-# luego abrir http://localhost:8000
+# luego abrir http://localhost:8000/ar/
 ```
 
 ## Estructura del archivo
