@@ -14,6 +14,7 @@ Es un sitio estático de un solo archivo: no necesita build, ni dependencias, ni
 | Proceso | Descubrimiento → Arquitectura → Construcción → Operación |
 | Stack | Tecnologías, con panel de código que se escribe solo |
 | Contacto | Formulario que compone el mail con `mailto:` |
+| Video con IA | Página propia (`ar/video-ia.html`): producción de video generativo con Higgsfield AI. El estudio animado es SVG + CSS; `app.js` solo escribe el código de tiempo. Los enlaces con `?interes=video` preseleccionan el tema en el formulario |
 
 ## Desarrollo
 

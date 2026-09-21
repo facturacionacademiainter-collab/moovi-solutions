@@ -115,6 +115,47 @@
     });
   }
 
+  /* ---- Estudio de video: código de tiempo y plano en curso ----
+     Los planos y el cabezal se mueven solos con CSS. Acá se lee el
+     tiempo de la animación del cabezal para que el código de tiempo y
+     el número de plano digan exactamente lo que se ve en pantalla. */
+  var estudios = document.querySelectorAll('.vs');
+  if (!reduced) Array.prototype.forEach.call(estudios, function (vs) {
+    var cabezal = vs.querySelector('.vs-head');
+    var tc = vs.querySelector('.vs-tc');
+    var plano = vs.querySelector('.vs-n');
+    if (!cabezal || !tc || !plano || !cabezal.getAnimations) return;
+
+    var visible = true;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+      }).observe(vs);
+    }
+
+    var dos = function (n) { return (n < 10 ? '0' : '') + n; };
+
+    window.setInterval(function () {
+      if (!visible || document.hidden) return;
+      var anim = cabezal.getAnimations()[0];
+      if (!anim || anim.currentTime === null) return;
+      var ciclo = anim.effect.getComputedTiming().duration;
+      var ms = anim.currentTime % ciclo;
+      tc.textContent = '00:00:' + dos(Math.floor(ms / 1000)) + ':' + dos(Math.floor((ms % 1000) * 24 / 1000));
+      plano.textContent = Math.min(3, Math.floor(ms / (ciclo / 3)) + 1);
+    }, 80);
+  });
+
+  /* ---- Formulario: tema elegido desde otra página ----
+     Los enlaces "Pedir una propuesta" llegan con ?interes=video; se
+     preselecciona la opción que tenga ese data-param. */
+  var interes = $('interes');
+  var pedido = /[?&]interes=([\w-]+)/.exec(location.search);
+  if (interes && pedido) {
+    var opcion = interes.querySelector('option[data-param="' + pedido[1] + '"]');
+    if (opcion) opcion.selected = true;
+  }
+
   /* ---- Revelado en scroll ----
      El umbral de 0.12 pide que se vea el 12% del elemento. Un bloque más
      alto que la ventana nunca llega a mostrar esa proporción de sí mismo:
