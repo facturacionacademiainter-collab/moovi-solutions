@@ -18,7 +18,7 @@ Es un sitio estático de un solo archivo: no necesita build, ni dependencias, ni
 
 ## Desarrollo
 
-No hay proceso de build. El sitio vive en `ar/` (se publica en `moovisolutions.com/ar/`). Editá `ar/index.html` y recargá el navegador. Los `.html` de la raíz solo redirigen a `/ar/`, para que las direcciones viejas sigan funcionando.
+No hay proceso de build. El sitio vive en `ar/` (se publica en `zelira.com.ar/ar/`). Editá `ar/index.html` y recargá el navegador. Los `.html` de la raíz solo redirigen a `/ar/`, para que las direcciones viejas sigan funcionando.
 
 Para verlo servido por HTTP (recomendado si vas a probar el formulario o compartirlo en la red local):
 
