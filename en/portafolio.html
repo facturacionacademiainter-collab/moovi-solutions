@@ -217,10 +217,10 @@
                   <path class="g" d="M12 10.6v6.6"/>
                 </svg>
               </span>
-              <span class="folio-word">Collect<em>IQ</em></span>
+              <span class="folio-word">Flux<em>Collect</em></span>
             </div>
           </div>
-          <button class="folio-open" type="button" data-proj="collectiq" aria-label="View project: CollectIQ">View project</button>
+          <button class="folio-open" type="button" data-proj="collectiq" aria-label="View project: Flux Collect">View project</button>
         </article>
 
         <!-- UMBRAL — el arco de entrada, celeste macizo -->
@@ -472,7 +472,7 @@
           <p class="muted">None of these projects started from a software idea. Each one started from a decision someone made by hand every day that could be made better with data. If your operation has one of those, tell us about it.</p>
           <div class="hero-actions">
             <a class="btn" href="./#contacto">Let's talk about your project</a>
-            <a class="btn btn-ghost" href="proyectos.html">See CollectIQ in detail</a>
+            <a class="btn btn-ghost" href="proyectos.html">See Flux Collect in detail</a>
           </div>
         </div>
       </div>
@@ -927,19 +927,19 @@
 
     <article class="pd" data-proj="collectiq">
       <p class="pd-rubro"><span class="em" aria-hidden="true">📞</span> Collections</p>
-      <h2>CollectIQ</h2>
-      <p class="pd-lede">Prioritizes the day-to-day work on the portfolio by expected recovery instead of by debt age.</p>
+      <h2>Flux Collect</h2>
+      <p class="pd-lede">AI-powered collections intelligence: it shows who to contact today, how and through which channel, with each customer’s payment probability in plain view.</p>
       <dl class="pd-spec">
-        <div><dt>Type</dt><dd>Multi-organization SaaS platform</dd></div>
-        <div><dt>Domain</dt><dd>Collections and portfolio recovery</dd></div>
-        <div><dt>Deployment</dt><dd>Cloud, white-labeled per organization</dd></div>
-        <div><dt>Technical core</dt><dd>React · Supabase · In-house decision engine</dd></div>
+        <div><dt>Type</dt><dd>Multi-tenant B2B SaaS platform</dd></div>
+        <div><dt>Built for</dt><dd>Lenders, fintechs and credit unions</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud, one instance with isolated organizations</dd></div>
+        <div><dt>Technical core</dt><dd>React · Node.js · Supabase · Claude</dd></div>
       </dl>
       <section class="pd-sec pd-mock"><!-- mock -->
         <h3>Product view</h3>
-        <div class="mock" role="img" aria-label="Illustrative view of CollectIQ with sample data: case, days past due, payment prob., AI action, best channel.">
+        <div class="mock" role="img" aria-label="Illustrative view of Flux Collect with sample data: case, days past due, payment prob., AI action, best channel.">
           <div class="mock-bar" aria-hidden="true">
-            <span class="mock-brand"><i class="mock-dot"></i><span>Collect<em>IQ</em></span></span>
+            <span class="mock-brand"><i class="mock-dot"></i><span>Flux<em>Collect</em></span></span>
             <span class="mock-crumb">Portfolio / Prioritization</span>
             <span class="mock-tag">Sample data</span>
           </div>
@@ -956,31 +956,28 @@
       </section>
       <section class="pd-sec">
         <h3>The problem</h3>
-        <p>In most operations the portfolio is sorted by amount or by days past due, and who to contact is left to each agent's experience. The same effort goes into cases that were going to pay on their own and into unrecoverable ones, while the ones that depended on timely follow-up go cold.</p>
-        <p>The everyday question isn't who owes the most, but who is worth calling today. Answering it well means estimating three things at once: whether they'll pay, when, and what it costs to get there.</p>
+        <p>Lenders, fintechs and credit unions manage their delinquent portfolio without real-time visibility. Data is scattered across the CRM, spreadsheets and the core system, and who to contact, how and when is decided more by gut feeling than by a model.</p>
+        <p>The cost shows up at month-end: the same effort goes into accounts that would have paid anyway and into unrecoverable ones, while the accounts that needed timely follow-up go cold.</p>
       </section>
       <section class="pd-sec">
-        <h3>How it works</h3>
+        <h3>What we built</h3>
         <div class="pd-caps">
-          <div class="pd-cap"><h4>Decision engine</h4><p>Payment probability by time bucket, expected recovery net of collection cost, risk score, probability of effective contact and priority. Seven interfaces that every screen queries and none computes on its own.</p></div>
-          <div class="pd-cap"><h4>Strategy simulation</h4><p>A twin of the portfolio lets you test changes before applying them: a different contact criterion, refinancing by segment, a different target for the month. Includes forecasting and backtesting.</p></div>
-          <div class="pd-cap"><h4>Evidence-backed copilot</h4><p>Natural-language questions about the real portfolio, answered with a panel that shows where each number came from, so the recommendation can be audited instead of taken on faith.</p></div>
+          <div class="pd-cap"><h4>Payment probability and next action</h4><p>For every customer it estimates the probability of payment at 5, 10, 15 and 20 days, and suggests what to do (contact, negotiate, escalate or wait) and which channel is most likely to get a response.</p></div>
+          <div class="pd-cap"><h4>21 collections KPIs</h4><p>Executive dashboards with roll rate, first payment default, cure rate, promise-to-pay compliance and effectiveness by campaign and message type, defined on the real functional spec of a fintech in the industry.</p></div>
+          <div class="pd-cap"><h4>AI Copilot</h4><p>A conversational assistant built on Anthropic’s Claude that remembers the conversation and knows which dashboard is open: it understands your filters, campaigns and promises to pay, and suggests the next questions.</p></div>
+          <div class="pd-cap"><h4>HubSpot and Salesforce</h4><p>OAuth connection, automatic field discovery, a screen to map them and real data sync. Tested end to end with hundreds of real fields and records.</p></div>
+          <div class="pd-cap"><h4>Portfolio upload</h4><p>Excel or CSV upload with validations and business rules applied before any record enters the system.</p></div>
+          <div class="pd-cap"><h4>Organizations and permissions</h4><p>One instance for many organizations, isolated at the database level with PostgreSQL RLS. Six roles with granular permissions: Super Admin, Administrator, Manager, Supervisor, Analyst and Read-only.</p></div>
         </div>
       </section>
-      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
-           que se puedan mostrar, borrar esta sección entera. -->
       <section class="pd-sec pd-result">
-        <h3>Outcome</h3>
-        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <h3>Proven capability</h3>
+        <p>Flux Collect is Zelira’s own product and it is up and running. We don’t show client results: these figures describe what the platform does today.</p>
         <dl class="cs-kpis">
-          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
-          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
-          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div><dt>Collections KPIs</dt><dd>21</dd><small>in executive dashboards</small></div>
+          <div><dt>Access roles</dt><dd>6</dd><small>with granular permissions per organization</small></div>
+          <div><dt>Integrated CRMs</dt><dd>2</dd><small>HubSpot and Salesforce, via OAuth</small></div>
         </dl>
-        <blockquote class="cs-quote todo">
-          <p>Client testimonial, verbatim and with permission.</p>
-          <footer>Full name · Title · Company</footer>
-        </blockquote>
       </section>
       <section class="pd-sec">
         <h3>Architecture decision</h3>
@@ -989,13 +986,13 @@
       <section class="pd-sec">
         <h3>Stack</h3>
         <div class="pd-stack">
-          <div><h4>Interface</h4><ul><li>React 19 with Vite</li><li>Recharts for visualization</li><li>In-house component system</li><li>Vitest for testing</li></ul></div>
-          <div><h4>Data</h4><ul><li>Supabase on PostgreSQL</li><li>Edge Functions on Deno</li><li>Scheduled jobs with pg-cron</li><li>Excel and CSV ingestion</li></ul></div>
-          <div><h4>Intelligence</h4><ul><li>Claude for the copilot</li><li>In-house decision engine</li><li>Model registry and interface</li><li>Backtesting on historical data</li></ul></div>
-          <div><h4>Operations</h4><ul><li>Continuous deployment</li><li>API keys per organization</li><li>Data-level access control</li></ul></div>
+          <div><h4>Interface</h4><ul><li>React</li><li>Executive dashboards</li><li>Built-in AI Copilot</li></ul></div>
+          <div><h4>Backend and data</h4><ul><li>Node.js</li><li>PostgreSQL on Supabase</li><li>Supabase Auth and Edge Functions</li><li>Per-organization isolation with RLS</li></ul></div>
+          <div><h4>Intelligence</h4><ul><li>Anthropic API (Claude)</li><li>Payment probability at 5, 10, 15 and 20 days</li><li>Suggested next action and channel</li></ul></div>
+          <div><h4>Integrations</h4><ul><li>OAuth 2.0 with HubSpot</li><li>OAuth 2.0 with Salesforce</li><li>Excel and CSV import</li></ul></div>
         </div>
       </section>
-      <div class="pd-foot"><a class="btn" href="proyectos.html">See the full CollectIQ page</a></div>
+      <div class="pd-foot"><a class="btn" href="proyectos.html">See the full product page</a></div>
     </article>
 
     <article class="pd" data-proj="umbral">
@@ -2019,7 +2016,7 @@
       <a href="modelos.html">Models</a>
       <a href="video-ia.html">AI Visual Studio</a>
       <a href="portafolio.html">Case studies</a>
-      <a href="proyectos.html">CollectIQ</a>
+      <a href="proyectos.html">Flux Collect</a>
       <a href="./#contacto">Contact</a>
     </nav>
   </div>

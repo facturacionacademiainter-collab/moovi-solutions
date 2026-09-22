@@ -217,10 +217,10 @@
                   <path class="g" d="M12 10.6v6.6"/>
                 </svg>
               </span>
-              <span class="folio-word">Collect<em>IQ</em></span>
+              <span class="folio-word">Flux<em>Collect</em></span>
             </div>
           </div>
-          <button class="folio-open" type="button" data-proj="collectiq" aria-label="Ver proyecto: CollectIQ">Ver proyecto</button>
+          <button class="folio-open" type="button" data-proj="collectiq" aria-label="Ver proyecto: Flux Collect">Ver proyecto</button>
         </article>
 
         <!-- UMBRAL — el arco de entrada, celeste macizo -->
@@ -472,7 +472,7 @@
           <p class="muted">Ninguno de estos proyectos arrancó de una idea de software: arrancó de una decisión que alguien tomaba a mano todos los días y que se podía tomar mejor con datos. Si en tu operación hay una de esas, contanos de qué se trata.</p>
           <div class="hero-actions">
             <a class="btn" href="./#contacto">Hablemos de tu proyecto</a>
-            <a class="btn btn-ghost" href="proyectos.html">Ver CollectIQ en detalle</a>
+            <a class="btn btn-ghost" href="proyectos.html">Ver Flux Collect en detalle</a>
           </div>
         </div>
       </div>
@@ -927,19 +927,19 @@
 
     <article class="pd" data-proj="collectiq">
       <p class="pd-rubro"><span class="em" aria-hidden="true">📞</span> Cobranzas</p>
-      <h2>CollectIQ</h2>
-      <p class="pd-lede">Ordena la gestión diaria de la cartera por recupero esperado en lugar de por antigüedad de la deuda.</p>
+      <h2>Flux Collect</h2>
+      <p class="pd-lede">Inteligencia de cobranza con IA: muestra a quién contactar hoy, cómo y por qué canal, con la probabilidad de pago de cada cliente a la vista.</p>
       <dl class="pd-spec">
-        <div><dt>Tipo</dt><dd>Plataforma SaaS multiorganización</dd></div>
-        <div><dt>Dominio</dt><dd>Cobranzas y recupero de cartera</dd></div>
-        <div><dt>Despliegue</dt><dd>Nube, con marca propia por organización</dd></div>
-        <div><dt>Núcleo técnico</dt><dd>React · Supabase · Motor de decisión propio</dd></div>
+        <div><dt>Tipo</dt><dd>Plataforma SaaS B2B multi-organización</dd></div>
+        <div><dt>Para</dt><dd>Financieras, fintechs y mutuales</dd></div>
+        <div><dt>Despliegue</dt><dd>Nube, una instancia con organizaciones aisladas</dd></div>
+        <div><dt>Núcleo técnico</dt><dd>React · Node.js · Supabase · Claude</dd></div>
       </dl>
       <section class="pd-sec pd-mock"><!-- mock -->
         <h3>Vista del producto</h3>
-        <div class="mock" role="img" aria-label="Vista ilustrativa de CollectIQ con datos de ejemplo: caso, mora, prob. de pago, acción ia, canal óptimo.">
+        <div class="mock" role="img" aria-label="Vista ilustrativa de Flux Collect con datos de ejemplo: caso, mora, prob. de pago, acción ia, canal óptimo.">
           <div class="mock-bar" aria-hidden="true">
-            <span class="mock-brand"><i class="mock-dot"></i><span>Collect<em>IQ</em></span></span>
+            <span class="mock-brand"><i class="mock-dot"></i><span>Flux<em>Collect</em></span></span>
             <span class="mock-crumb">Cartera / Priorización</span>
             <span class="mock-tag">Datos de ejemplo</span>
           </div>
@@ -956,31 +956,28 @@
       </section>
       <section class="pd-sec">
         <h3>El problema</h3>
-        <p>En la mayoría de las operaciones la cartera se ordena por monto o por días de mora, y a quién contactar queda librado a la experiencia de cada gestor. Se invierte el mismo esfuerzo en casos que iban a pagar solos y en casos irrecuperables, mientras los que dependían de una gestión oportuna se enfrían.</p>
-        <p>La pregunta de todos los días no es a quién le debe más, sino a quién conviene llamar hoy. Responderla bien exige estimar tres cosas a la vez: si va a pagar, cuándo, y cuánto cuesta conseguirlo.</p>
+        <p>Financieras, fintechs y mutuales gestionan su cartera en mora sin visibilidad en tiempo real. Los datos están repartidos entre el CRM, planillas y el sistema central, y a quién contactar, cómo y cuándo se decide más por intuición que con un modelo.</p>
+        <p>El costo se ve a fin de mes: el mismo esfuerzo va a casos que iban a pagar solos y a casos irrecuperables, mientras los que dependían de una gestión a tiempo se enfrían.</p>
       </section>
       <section class="pd-sec">
-        <h3>Cómo funciona</h3>
+        <h3>Qué construimos</h3>
         <div class="pd-caps">
-          <div class="pd-cap"><h4>Motor de decisión</h4><p>Probabilidad de pago por tramos, recupero esperado neto del costo de gestión, score de riesgo, probabilidad de contacto efectivo y prioridad. Siete interfaces que toda pantalla consulta y ninguna calcula por su cuenta.</p></div>
-          <div class="pd-cap"><h4>Simulación de estrategias</h4><p>Un gemelo de la cartera permite probar cambios antes de aplicarlos: otro criterio de contacto, una refinanciación por segmento, un objetivo distinto para el mes. Incluye pronóstico y backtesting.</p></div>
-          <div class="pd-cap"><h4>Copiloto con evidencia</h4><p>Preguntas en lenguaje natural sobre la cartera real, respondidas con un panel que muestra de dónde salió cada número, para que la recomendación se pueda auditar en vez de creerle.</p></div>
+          <div class="pd-cap"><h4>Probabilidad de pago y próxima acción</h4><p>Para cada cliente calcula la probabilidad de pago a 5, 10, 15 y 20 días, y sugiere qué hacer (contactar, negociar, derivar o esperar) y por qué canal hay más chances de respuesta.</p></div>
+          <div class="pd-cap"><h4>21 KPIs de cobranza</h4><p>Tableros ejecutivos con roll rate, first payment default, tasa de regularización, cumplimiento de promesas de pago y efectividad por campaña y por tipo de mensaje, definidos sobre el documento funcional real de una fintech del sector.</p></div>
+          <div class="pd-cap"><h4>AI Copilot</h4><p>Un asistente conversacional sobre Claude, de Anthropic, que recuerda la conversación y conoce el tablero abierto: entiende los filtros, las campañas y las promesas de pago de tu cartera, y propone las próximas preguntas.</p></div>
+          <div class="pd-cap"><h4>HubSpot y Salesforce</h4><p>Conexión por OAuth, detección automática de campos, pantalla para mapearlos y sincronización real de datos. Probado de punta a punta con cientos de campos y registros reales.</p></div>
+          <div class="pd-cap"><h4>Carga de cartera</h4><p>Subida por Excel o CSV con validaciones y reglas de negocio antes de que un dato entre al sistema.</p></div>
+          <div class="pd-cap"><h4>Organizaciones y permisos</h4><p>Una sola instancia para muchas organizaciones, aisladas en la base de datos con RLS de PostgreSQL. Seis roles con permisos granulares: Super Admin, Administrador, Gerente, Supervisor, Analista y Solo lectura.</p></div>
         </div>
       </section>
-      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
-           que se puedan mostrar, borrar esta sección entera. -->
       <section class="pd-sec pd-result">
-        <h3>Resultado</h3>
-        <p class="todo">Cliente: nombre y rubro, o «cliente bajo NDA». Una línea con el cambio medible y su período.</p>
+        <h3>Capacidad demostrada</h3>
+        <p>Flux Collect es un producto propio de Zelira y está en funcionamiento. No mostramos resultados de clientes: estas cifras describen lo que la plataforma hace hoy.</p>
         <dl class="cs-kpis">
-          <div class="todo"><dt>Métrica 1</dt><dd>—</dd><small>valor, unidad y período</small></div>
-          <div class="todo"><dt>Métrica 2</dt><dd>—</dd><small>valor, unidad y período</small></div>
-          <div class="todo"><dt>Métrica 3</dt><dd>—</dd><small>valor, unidad y período</small></div>
+          <div><dt>KPIs de cobranza</dt><dd>21</dd><small>en tableros ejecutivos</small></div>
+          <div><dt>Roles de acceso</dt><dd>6</dd><small>con permisos granulares por organización</small></div>
+          <div><dt>CRMs integrados</dt><dd>2</dd><small>HubSpot y Salesforce, por OAuth</small></div>
         </dl>
-        <blockquote class="cs-quote todo">
-          <p>Testimonio del cliente, textual y con permiso.</p>
-          <footer>Nombre Apellido · Cargo · Empresa</footer>
-        </blockquote>
       </section>
       <section class="pd-sec">
         <h3>Decisión de arquitectura</h3>
@@ -989,13 +986,13 @@
       <section class="pd-sec">
         <h3>Stack</h3>
         <div class="pd-stack">
-          <div><h4>Interfaz</h4><ul><li>React 19 con Vite</li><li>Recharts para visualización</li><li>Sistema de componentes propio</li><li>Vitest para pruebas</li></ul></div>
-          <div><h4>Datos</h4><ul><li>Supabase sobre PostgreSQL</li><li>Edge Functions en Deno</li><li>Tareas programadas con pg-cron</li><li>Ingesta de Excel y CSV</li></ul></div>
-          <div><h4>Inteligencia</h4><ul><li>Claude para el copiloto</li><li>Motor de decisión propio</li><li>Registro e interfaz de modelos</li><li>Backtesting sobre histórico</li></ul></div>
-          <div><h4>Operación</h4><ul><li>Despliegue continuo</li><li>Claves de API por organización</li><li>Control de acceso por datos</li></ul></div>
+          <div><h4>Interfaz</h4><ul><li>React</li><li>Tableros ejecutivos</li><li>AI Copilot integrado</li></ul></div>
+          <div><h4>Backend y datos</h4><ul><li>Node.js</li><li>PostgreSQL en Supabase</li><li>Supabase Auth y Edge Functions</li><li>Aislamiento por organización con RLS</li></ul></div>
+          <div><h4>Inteligencia</h4><ul><li>API de Anthropic (Claude)</li><li>Probabilidad de pago a 5, 10, 15 y 20 días</li><li>Próxima acción y canal sugeridos</li></ul></div>
+          <div><h4>Integraciones</h4><ul><li>OAuth 2.0 con HubSpot</li><li>OAuth 2.0 con Salesforce</li><li>Importación de Excel y CSV</li></ul></div>
         </div>
       </section>
-      <div class="pd-foot"><a class="btn" href="proyectos.html">Ver la página completa de CollectIQ</a></div>
+      <div class="pd-foot"><a class="btn" href="proyectos.html">Ver la página completa del producto</a></div>
     </article>
 
     <article class="pd" data-proj="umbral">
@@ -2019,7 +2016,7 @@
       <a href="modelos.html">Modelos</a>
       <a href="video-ia.html">AI Visual Studio</a>
       <a href="portafolio.html">Casos de éxito</a>
-      <a href="proyectos.html">CollectIQ</a>
+      <a href="proyectos.html">Flux Collect</a>
       <a href="./#contacto">Contacto</a>
     </nav>
   </div>
