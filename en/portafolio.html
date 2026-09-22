@@ -1,0 +1,2030 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case studies — Moovi Solutions</title>
+<meta name="description" content="Moovi Solutions case studies: over 20 companies already trust our software. Platforms built on applied AI, data and decision-making across finance, collections, fintech, auditing, retail, the public sector, agribusiness, HR, education and legal.">
+<link rel="alternate" hreflang="es" href="https://zelira.com.ar/ar/portafolio.html">
+<link rel="alternate" hreflang="en" href="https://zelira.com.ar/en/portafolio.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
+<link rel="icon" href="../ar/assets/img/icono.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../ar/assets/styles.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="./" aria-label="Moovi Solutions, home">
+      <img class="brand-logo" src="../ar/assets/img/logo.svg" width="167" height="22" alt="Moovi Solutions">
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <i></i><i></i><i></i>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="industrias.html">Industries</a>
+      <a href="modelos.html">Models</a>
+      <a href="portafolio.html" aria-current="page">Case studies</a>
+      <a href="video-ia.html">AI Visual Studio<span class="nav-badge">New</span></a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="../ar/portafolio.html" lang="es" hreflang="es">ES</a>
+        <a href="portafolio.html" lang="en" aria-current="true">EN</a>
+      </div>
+      <a class="btn" href="./#contacto">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ ENCABEZADO DE PÁGINA ============ -->
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Case studies</p>
+      <!-- TODO(verificar): "Más de 20 empresas" y "más de 20 proyectos en producción"
+           tienen que poder respaldarse; si no, cambiar por una cifra comprobable. -->
+      <h1>Over 20 companies already trust our software.</h1>
+      <p class="lede">Each of these projects solves a different problem, but they all share the same idea: the intelligence doesn't live on the screen. It lives in a dedicated engine that makes decisions, can be audited and can be replaced without breaking the product.</p>
+
+      <dl class="spec">
+        <div>
+          <dt>Projects</dt>
+          <dd>Over 20 projects in production</dd>
+        </div>
+        <div>
+          <dt>Industries</dt>
+          <dd>Finance, retail, public sector, healthcare, agribusiness</dd>
+        </div>
+        <div>
+          <dt>Approach</dt>
+          <dd>Built in-house, from architecture to operations</dd>
+        </div>
+        <div>
+          <dt>Common core</dt>
+          <dd>Applied AI on operational data</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ REJILLA DE PROYECTOS ============
+       Banda oscura deliberada: el portafolio es el corazón de la página
+       y se separa del resto por color, no por una línea.
+
+       Cada tarjeta abre con el logo de su producto: símbolo propio,
+       color propio y wordmark con su propio tratamiento tipográfico.
+       Son SVG, no imágenes: pesan nada y escalan a cualquier pantalla. -->
+  <section class="section folio-band" id="proyectos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">What we build</p>
+          <h2>Completed projects</h2>
+        </div>
+        <p class="muted">Filter by family to see the projects in a given area. Tap any project to see its full profile: what the product solves and what the technically hard part is, which is usually what decides whether a project like this succeeds or dies halfway.</p>
+      </div>
+
+      <!-- Filtros por familia -->
+      <div class="folio-bar reveal" id="folioBar" role="group" aria-label="Filter projects by family">
+        <button class="chip" type="button" data-fam="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-fam="ia" aria-pressed="false"><span class="chip-em" aria-hidden="true">🤖</span>AI & decision</button>
+        <button class="chip" type="button" data-fam="fin" aria-pressed="false"><span class="chip-em" aria-hidden="true">💰</span>Finance & risk</button>
+        <button class="chip" type="button" data-fam="com" aria-pressed="false"><span class="chip-em" aria-hidden="true">🛒</span>Sales & retail</button>
+        <button class="chip" type="button" data-fam="dat" aria-pressed="false"><span class="chip-em" aria-hidden="true">📊</span>Data & documents</button>
+        <button class="chip" type="button" data-fam="pub" aria-pressed="false"><span class="chip-em" aria-hidden="true">🏢</span>Public sector & agro</button>
+        <button class="chip" type="button" data-fam="per" aria-pressed="false"><span class="chip-em" aria-hidden="true">👨‍💼</span>People</button>
+        <p class="folio-count" id="folioCount" role="status">Over 20 projects</p>
+      </div>
+
+      <div class="folio" id="folio">
+
+        <!-- ══════════ IA Y DECISIÓN ══════════ -->
+
+        <!-- KOGNIA — pastilla índigo, núcleo con tres agentes orbitando -->
+        <article class="folio-card reveal" data-fam="ia" data-brand="kognia">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M12 12V5.6M12 12l5.5 3.2M12 12l-5.5 3.2"/>
+                  <circle class="gf" cx="12" cy="12" r="2.7"/>
+                  <circle class="gf" cx="12" cy="4.6" r="2.1"/>
+                  <circle class="gf" cx="18.4" cy="16.3" r="2.1"/>
+                  <circle class="gf" cx="5.6" cy="16.3" r="2.1"/>
+                </svg>
+              </span>
+              <span class="folio-word">Kognia</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="kognia" aria-label="View project: Kognia">View project</button>
+        </article>
+
+        <!-- ARBITRIUM — marca suelta dorada: el camino que se elige -->
+        <article class="folio-card reveal" data-fam="ia" data-brand="arbitrium">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <svg class="folio-free" viewBox="0 0 48 48">
+                <path class="m2f" d="M21 26.5L30.5 39H39L29.5 26.5z" opacity=".45"/>
+                <path class="mf" d="M5 21h16v6H5z"/>
+                <path class="mf" d="M21 21.5L30.5 9H39L29.5 21.5z"/>
+                <circle class="mf" cx="40.5" cy="12" r="5.5"/>
+              </svg>
+              <span class="folio-word caps">Arbitrium</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="arbitrium" aria-label="View project: Arbitrium">View project</button>
+        </article>
+
+        <!-- RÉPLICA — dos cuerpos idénticos desplazados, cian -->
+        <article class="folio-card reveal" data-fam="ia" data-brand="replica">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <svg class="folio-free" viewBox="0 0 48 48">
+                <rect class="m2f" x="5" y="5" width="26" height="26" rx="6" opacity=".5"/>
+                <rect class="mf" x="17" y="17" width="26" height="26" rx="6"/>
+              </svg>
+              <span class="folio-word">Réplica</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="replica" aria-label="View project: Réplica">View project</button>
+        </article>
+
+        <!-- INDICIO — medallón carmesí: la lupa sobre el grafo de vínculos -->
+        <article class="folio-card reveal" data-fam="ia" data-brand="indicio">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile round">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <circle class="g" cx="10.4" cy="10.4" r="6.6"/>
+                  <path class="g" d="M15.3 15.3L21 21"/>
+                  <path class="gd" d="M8.2 8.6l4.5-.6M12.7 8l-2.4 4.9M10.3 12.9L8.2 8.6"/>
+                  <circle class="gf" cx="8.2" cy="8.6" r="1.25"/>
+                  <circle class="gf" cx="12.7" cy="8" r="1.25"/>
+                  <circle class="gf" cx="10.3" cy="12.9" r="1.25"/>
+                </svg>
+              </span>
+              <span class="folio-word caps">Indicio</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="indicio" aria-label="View project: Indicio">View project</button>
+        </article>
+
+        <!-- TELAR — pastilla violeta: los hilos que se cruzan -->
+        <article class="folio-card reveal" data-fam="ia" data-brand="telar">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M3.5 9h4.2M11.8 9h8.7M3.5 15h8.7M16.3 15h4.2"/>
+                  <path class="g" d="M9.8 3.5v3.4M9.8 11.1v9.4M18.2 3.5v9.4M18.2 17.1v3.4"/>
+                </svg>
+              </span>
+              <span class="folio-word low">Telar</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="telar" aria-label="View project: Telar">View project</button>
+        </article>
+
+        <!-- ══════════ FINANZAS Y RIESGO ══════════ -->
+
+        <!-- SOLVENZ — escudo azul macizo con la validación adentro -->
+        <article class="folio-card reveal" data-fam="fin" data-brand="solvenz">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <svg class="folio-free" viewBox="0 0 48 48">
+                <path class="mf" d="M24 3l18 6v15.5C42 35.8 34 43.2 24 46 14 43.2 6 35.8 6 24.5V9z"/>
+                <path class="mw" d="M15.5 25l6.5 6.5L33 18"/>
+              </svg>
+              <span class="folio-word">Solvenz</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="solvenz" aria-label="View project: Solvenz">View project</button>
+        </article>
+
+        <!-- COLLECTIQ — pastilla turquesa, ciclo de recupero. Wordmark a dos tonos -->
+        <article class="folio-card reveal" data-fam="fin" data-brand="collectiq">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M19.8 12a7.8 7.8 0 1 1-2.3-5.5"/>
+                  <path class="g" d="M20.2 4v4h-4"/>
+                  <path class="g" d="M8.6 13.4L12 10l3.4 3.4"/>
+                  <path class="g" d="M12 10.6v6.6"/>
+                </svg>
+              </span>
+              <span class="folio-word">Collect<em>IQ</em></span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="collectiq" aria-label="View project: CollectIQ">View project</button>
+        </article>
+
+        <!-- UMBRAL — el arco de entrada, celeste macizo -->
+        <article class="folio-card reveal" data-fam="fin" data-brand="umbral">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <svg class="folio-free" viewBox="0 0 48 48">
+                <path class="mf" d="M5 43V22a19 19 0 0 1 38 0v21h-9.5V22a9.5 9.5 0 0 0-19 0v21z"/>
+                <circle class="m2f" cx="24" cy="30" r="5"/>
+              </svg>
+              <span class="folio-word thin">Umbral</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="umbral" aria-label="View project: Umbral">View project</button>
+        </article>
+
+        <!-- VERITAS — medallón rojo: el ojo que audita -->
+        <article class="folio-card reveal" data-fam="fin" data-brand="veritas">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile round">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M2.5 12S6 6.2 12 6.2 21.5 12 21.5 12 18 17.8 12 17.8 2.5 12 2.5 12z"/>
+                  <circle class="g" cx="12" cy="12" r="3.3"/>
+                  <circle class="gf" cx="12" cy="12" r="1.5"/>
+                </svg>
+              </span>
+              <span class="folio-word caps">Veritas</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="veritas" aria-label="View project: Veritas">View project</button>
+        </article>
+
+        <!-- ══════════ COMERCIAL ══════════ -->
+
+        <!-- MERCURIO — la bolsa naranja maciza -->
+        <article class="folio-card reveal" data-fam="com" data-brand="mercurio">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <svg class="folio-free" viewBox="0 0 48 48">
+                <path class="m" d="M17 17v-4.5a7 7 0 0 1 14 0V17"/>
+                <path class="mf" d="M7 15h34l3 29H4z"/>
+                <path class="mw" d="M24 24.5v11M18.5 30h11"/>
+              </svg>
+              <span class="folio-word">Mercurio</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="mercurio" aria-label="View project: Mercurio">View project</button>
+        </article>
+
+        <!-- BRÚJULA — medallón lima con la aguja marcando el norte -->
+        <article class="folio-card reveal" data-fam="com" data-brand="brujula">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile round">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <circle class="g" cx="12" cy="12" r="8.6"/>
+                  <path class="gf" d="M16.4 7.6l-2.9 5.9-5.9 2.9 2.9-5.9z"/>
+                  <circle class="gf" cx="12" cy="12" r="1.1"/>
+                </svg>
+              </span>
+              <span class="folio-word">Brújula</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="brujula" aria-label="View project: Brújula">View project</button>
+        </article>
+
+        <!-- HILO — pastilla verde, la burbuja de conversación -->
+        <article class="folio-card reveal" data-fam="com" data-brand="hilo">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M21 11.4c0 4.7-4 8.5-9 8.5-1.2 0-2.4-.2-3.5-.6L3 21l1.7-4.3A8.2 8.2 0 0 1 3 11.4C3 6.7 7 3 12 3s9 3.7 9 8.4z"/>
+                  <path class="g" d="M8.4 10.2h7.2M8.4 13.8h4.6"/>
+                </svg>
+              </span>
+              <span class="folio-word low">Hilo</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="hilo" aria-label="View project: Hilo">View project</button>
+        </article>
+
+        <!-- TÍMPANO — la onda fucsia que se expande desde la fuente -->
+        <article class="folio-card reveal" data-fam="com" data-brand="timpano">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <svg class="folio-free" viewBox="0 0 48 48">
+                <circle class="mf" cx="12" cy="24" r="6.5"/>
+                <path class="m" d="M23 14.5a13.5 13.5 0 0 1 0 19"/>
+                <path class="m" d="M32 6.5a25 25 0 0 1 0 35" opacity=".55"/>
+              </svg>
+              <span class="folio-word thin">Tímpano</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="timpano" aria-label="View project: Tímpano">View project</button>
+        </article>
+
+        <!-- ══════════ DATOS Y DOCUMENTOS ══════════ -->
+
+        <!-- MIRADOR — pastilla azur: la torre de observación -->
+        <article class="folio-card reveal" data-fam="dat" data-brand="mirador">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M7.6 20.5V10L12 3.5 16.4 10v10.5"/>
+                  <path class="g" d="M4.5 20.5h15"/>
+                  <path class="g" d="M10.1 17.5v-3M12 17.5v-5.4M13.9 17.5v-2"/>
+                </svg>
+              </span>
+              <span class="folio-word">Mirador</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="mirador" aria-label="View project: Mirador">View project</button>
+        </article>
+
+        <!-- CÓDICE — el documento macizo en bronce -->
+        <article class="folio-card reveal" data-fam="dat" data-brand="codice">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <svg class="folio-free" viewBox="0 0 48 48">
+                <path class="mf" d="M7 3h21l13 13v29H7z"/>
+                <path class="m2f" d="M28 3l13 13H28z"/>
+                <path class="mw" d="M15 25h18M15 33h18M15 17h8"/>
+              </svg>
+              <span class="folio-word thin">Códice</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="codice" aria-label="View project: Códice">View project</button>
+        </article>
+
+        <!-- CLÁUSULA — medallón violeta: la balanza del criterio -->
+        <article class="folio-card reveal" data-fam="dat" data-brand="clausula">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile round">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M12 5.5v15M8 20.5h8M4 8.5h16"/>
+                  <path class="g" d="M4 8.5L1.6 13.8h4.8zM20 8.5l-2.4 5.3h4.8z"/>
+                  <circle class="gf" cx="12" cy="4.4" r="1.7"/>
+                </svg>
+              </span>
+              <span class="folio-word caps">Cláusula</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="clausula" aria-label="View project: Cláusula">View project</button>
+        </article>
+
+        <!-- ══════════ SECTOR PÚBLICO Y AGRO ══════════ -->
+
+        <!-- ÁGORA — medallón verde azulado: el frente columnado del foro -->
+        <article class="folio-card reveal" data-fam="pub" data-brand="agora">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile round">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M3 9.2L12 4l9 5.2"/>
+                  <path class="g" d="M6.2 12.2v7.2M10.1 12.2v7.2M13.9 12.2v7.2M17.8 12.2v7.2"/>
+                  <path class="g" d="M3.6 20.6h16.8"/>
+                </svg>
+              </span>
+              <span class="folio-word caps">Ágora</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="agora" aria-label="View project: Ágora">View project</button>
+        </article>
+
+        <!-- VENTANILLA — pastilla rosa: el mostrador de atención -->
+        <article class="folio-card reveal" data-fam="pub" data-brand="ventanilla">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M4 3.8h16v13.4H4z"/>
+                  <path class="g" d="M1.8 20.2h20.4M4 17.2h16"/>
+                  <path class="g" d="M8.4 8h7.2M8.4 12.2h4.6"/>
+                </svg>
+              </span>
+              <span class="folio-word">Ventanilla</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="ventanilla" aria-label="View project: Ventanilla">View project</button>
+        </article>
+
+        <!-- SURCO — los surcos del lote bajo el sol, en verde campo -->
+        <article class="folio-card reveal" data-fam="pub" data-brand="surco">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <svg class="folio-free" viewBox="0 0 48 48">
+                <path class="mf" d="M3 40.5c10.5-9.5 31.5-9.5 42 0V45H3z"/>
+                <path class="mf" d="M7 31c9.5-7.5 24.5-7.5 34 0v4.5c-9.5-7.5-24.5-7.5-34 0z" opacity=".7"/>
+                <path class="mf" d="M11.5 22c7-5.5 18-5.5 25 0v4.5c-7-5.5-18-5.5-25 0z" opacity=".45"/>
+                <circle class="mf" cx="24" cy="9" r="5.5"/>
+              </svg>
+              <span class="folio-word low">Surco</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="surco" aria-label="View project: Surco">View project</button>
+        </article>
+
+        <!-- ══════════ PERSONAS ══════════ -->
+
+        <!-- CANTERA — los estratos de piedra y la persona que emerge -->
+        <article class="folio-card reveal" data-fam="per" data-brand="cantera">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <svg class="folio-free" viewBox="0 0 48 48">
+                <path class="mf" d="M3 38h42v7H3z"/>
+                <path class="mf" d="M8.5 28h31v7h-31z" opacity=".72"/>
+                <path class="mf" d="M14.5 18h19v7h-19z" opacity=".48"/>
+                <circle class="mf" cx="24" cy="8.5" r="5.5"/>
+              </svg>
+              <span class="folio-word">Cantera</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="cantera" aria-label="View project: Cantera">View project</button>
+        </article>
+
+        <!-- PRECEPTOR — pastilla rosa fuerte: el libro abierto -->
+        <article class="folio-card reveal" data-fam="per" data-brand="preceptor">
+          <div class="folio-viz" aria-hidden="true">
+            <div class="folio-logo">
+              <span class="folio-tile">
+                <svg class="folio-glyph" viewBox="0 0 24 24">
+                  <path class="g" d="M2.8 5.2c3.4-1.3 5.9-1.3 9.2 1 3.3-2.3 5.8-2.3 9.2-1v13.7c-3.4-1.3-5.9-1.3-9.2 1-3.3-2.3-5.8-2.3-9.2-1z"/>
+                  <path class="g" d="M12 6.2v13.7"/>
+                </svg>
+              </span>
+              <span class="folio-word thin">Preceptor</span>
+            </div>
+          </div>
+          <button class="folio-open" type="button" data-proj="preceptor" aria-label="View project: Preceptor">View project</button>
+        </article>
+
+      </div>
+
+      <p class="folio-empty" id="folioEmpty" hidden>No projects in that family.</p>
+    </div>
+  </section>
+
+  <!-- ============ CIERRE ============ -->
+  <section class="section" id="cierre">
+    <div class="wrap">
+      <div class="contact solo reveal">
+        <div class="contact-copy">
+          <p class="eyebrow">Does your problem look like one of these?</p>
+          <h2>We build products, not demos.</h2>
+          <p class="muted">None of these projects started from a software idea. Each one started from a decision someone made by hand every day that could be made better with data. If your operation has one of those, tell us about it.</p>
+          <div class="hero-actions">
+            <a class="btn" href="./#contacto">Let's talk about your project</a>
+            <a class="btn btn-ghost" href="proyectos.html">See CollectIQ in detail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ FICHA DE PROYECTO ============
+       El diálogo se llena al vuelo con la ficha del proyecto que se tocó.
+       Vive vacío en el HTML y se completa clonando el contenido de
+       #projData, para que todo el texto siga estando en la página
+       aunque el visitante no toque ninguna tarjeta. -->
+  <dialog class="pdlg" id="projDialog" aria-label="Project profile">
+    <button class="pdlg-close" type="button" id="projClose" aria-label="Close the profile">&#215;</button>
+    <div class="pdlg-body" id="projBody"></div>
+  </dialog>
+
+  <!-- ============ FICHAS DETALLADAS ============
+       Ocultas hasta que se abren. Cada una lleva data-proj con el mismo
+       identificador que data-brand de su tarjeta. -->
+  <div id="projData" hidden>
+
+    <article class="pd" data-proj="kognia">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🤖</span> Enterprise AI</p>
+      <h2>Kognia</h2>
+      <p class="pd-lede">An agent operating system for inside the company: capabilities registered in one place, a router that decides who handles each request, and permissions inherited from the corporate directory.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Internal cross-department platform</dd></div>
+        <div><dt>Domain</dt><dd>Operations and corporate knowledge</dd></div>
+        <div><dt>Deployment</dt><dd>Private cloud or on-premise</dd></div>
+        <div><dt>Technical core</dt><dd>Capability registry and hierarchical orchestrator</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Kognia with sample data: request, area, capabilities, status, approval.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Kognia</span></span>
+            <span class="mock-crumb">Orchestrator / Open requests</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Requests</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 10 L18 10 L34 11 L50 12 L66 8 L82 9 L98 5"/></svg></div><div class="kpi"><span>Active agents</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="14" width="14" height="12"/><rect class="bar" x="22" y="11" width="14" height="15"/><rect class="bar" x="42" y="12" width="14" height="14"/><rect class="bar" x="62" y="16" width="14" height="10"/><rect class="bar on" x="82" y="9" width="14" height="17"/></svg></div><div class="kpi"><span>Approvals</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 10 L18 12 L34 8 L50 5 L66 4 L82 5 L98 6"/></svg></div><div class="kpi"><span>Cost per task</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 22 L18 22 L34 22 L50 22 L66 22 L82 22 L98 20"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Request</span><span>Area</span><span>Capabilities</span><span>Status</span><span>Approval</span></div><div class="mrow c5"><span class="case-id">Q-5120</span><span class="dim">Finance</span><span>Balances · ERP</span><span><i class="pill low">Resolved</i></span><span class="dim">—</span></div><div class="mrow c5"><span class="case-id">Q-5121</span><span class="dim">Legal</span><span>Legal repository</span><span><i class="pill low">Resolved</i></span><span class="dim">—</span></div><div class="mrow c5"><span class="case-id">Q-5122</span><span class="dim">Procurement</span><span>ERP · Email</span><span><i class="pill mid">In progress</i></span><span class="action">Issue order</span></div><div class="mrow c5"><span class="case-id">Q-5123</span><span class="dim">HR</span><span>Directory</span><span><i class="pill high">On hold</i></span><span class="prio">Human</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Execution trace</span><p class="copilot-q">Issue purchase order · Procurement</p><p class="copilot-a">Irreversible action detected: the plan pauses and requests <b>human approval</b> before executing in the ERP.</p></div>
+              <div class="strategies"><div class="strategy"><b>Capabilities</b><small>registered</small></div><div class="strategy"><b>Permissions</b><small>per identity</small></div><div class="strategy"><b>Audit</b><small>per call</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>At most companies, AI comes in through twenty different doors. One department buys an assistant, another builds its own bot, a third wires model calls into a spreadsheet. Six months later there are ten tools that don't talk to each other, none of them knows who is asking, and nobody can say what data each one saw.</p>
+        <p>The underlying problem isn't the model: it's governance. Who can ask what, which data answers it, which actions an agent can take without a person approving them, and how to reconstruct afterwards what happened. Kognia exists so that this gets solved once, in one place, instead of twenty times badly.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Capability registry</h4><p>Each department publishes what its system can do: check balances, issue a delivery note, open a ticket, search the legal repository. Each capability declares which data it touches, which permissions it requires and whether its effect can be undone.</p></div>
+          <div class="pd-cap"><h4>Request router</h4><p>When someone asks something, the orchestrator breaks down the request, chooses which agents take part and in what order, and assigns them a compute budget. If the plan includes an irreversible action, it pauses and asks for human approval.</p></div>
+          <div class="pd-cap"><h4>Permission-aware memory</h4><p>The knowledge index stores, alongside each fragment, who is allowed to read it. Search filters by the identity of the person asking before retrieval, not after: data you aren't entitled to never enters the context.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>Orchestration is separate from the agents, and the agents are separate from the tools. An agent doesn't know how to connect to the ERP: it requests a capability by name and the registry handles the connection, the permission and the retry. That makes it possible to switch model providers, or replace an entire system's integration, without touching any agent's logic. Every execution is stored as a call tree with its inputs, outputs and cost, so an answer from three months ago can be reconstructed exactly as it was produced.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Orchestration</h4><ul><li>In-house capability registry</li><li>Hierarchical planner</li><li>Compute budget per task</li><li>Human approval queue</li></ul></div>
+          <div><h4>Models</h4><ul><li>Claude for reasoning and planning</li><li>Embeddings for retrieval</li><li>Routing by cost and complexity</li></ul></div>
+          <div><h4>Data</h4><ul><li>PostgreSQL with pgvector</li><li>Identity filtering at retrieval</li><li>Connectors to ERP, CRM and repositories</li></ul></div>
+          <div><h4>Governance</h4><ul><li>Federated identity (SSO)</li><li>Per-call audit trail</li><li>Usage limits per department</li><li>Continuous answer evaluation</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="arbitrium">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🧠</span> Decision systems</p>
+      <h2>Arbitrium</h2>
+      <p class="pd-lede">An engine that takes in a customer's state and returns a single recommended action, with its rationale and expected impact.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Embeddable decision engine</dd></div>
+        <div><dt>Domain</dt><dd>Customer contact and treatment</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud API or inside the client's network</dd></div>
+        <div><dt>Technical core</dt><dd>Versioned policies on contextual bandits</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Arbitrium with sample data: customer, segment, recommended action, confidence, policy.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Arbitrium</span></span>
+            <span class="mock-crumb">Decisions / Served today</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Decisions</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 8 L18 6 L34 8 L50 7 L66 10 L82 7 L98 11"/></svg></div><div class="kpi"><span>Policy v12 · v13</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 20 L18 22 L34 22 L50 18 L66 22 L82 19 L98 20"/><path class="spark" d="M2 8 L18 8 L34 10 L50 10 L66 12 L82 12 L98 11"/></svg></div><div class="kpi"><span>Exploration</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="14" width="14" height="12"/><rect class="bar" x="22" y="9" width="14" height="17"/><rect class="bar" x="42" y="11" width="14" height="15"/><rect class="bar on" x="62" y="8" width="14" height="18"/><rect class="bar" x="82" y="17" width="14" height="9"/></svg></div><div class="kpi"><span>Impact</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 16 L18 21 L34 22 L50 22 L66 21 L82 19 L98 18 L98 26 L2 26Z"/><path class="spark" d="M2 16 L18 21 L34 22 L50 22 L66 21 L82 19 L98 18"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Customer</span><span>Segment</span><span>Recommended action</span><span>Confidence</span><span>Policy</span></div><div class="mrow c5"><span class="case-id">C-8812</span><span class="dim">High value</span><span class="action">Plan B offer</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="78" height="4" rx="2"/></svg><b>78%</b></span><span class="prio">v13</span></div><div class="mrow c5"><span class="case-id">C-8813</span><span class="dim">Churn risk</span><span class="action">Tuesday call</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="64" height="4" rx="2"/></svg><b>64%</b></span><span class="prio">v13</span></div><div class="mrow c5"><span class="case-id">C-8814</span><span class="dim">New</span><span class="action">No contact</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="55" height="4" rx="2"/></svg><b>55%</b></span><span class="prio">v12</span></div><div class="mrow c5"><span class="case-id">C-8815</span><span class="dim">Early delinquency</span><span class="action">Reminder</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="71" height="4" rx="2"/></svg><b>71%</b></span><span class="prio">v13</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Explanation</span><p class="copilot-q">Why “Plan B offer”?</p><p class="copilot-a">Key factors: <b>declining usage</b> and <b>tenure</b>. Constraint met: at most one contact per month.</p></div>
+              <div class="strategies"><div class="strategy"><b>Policy v13</b><small>A/B</small></div><div class="strategy"><b>Business rules</b><small>editable</small></div><div class="strategy"><b>Rollback</b><small>instant</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>Companies accumulate models that predict: likelihood to buy, to churn, to default. But a number isn't a decision. Between “this customer has a 62% chance of churning” and “call them Tuesday and offer plan B” there's a leap that almost always ends up being settled by a monthly meeting and a spreadsheet of rules nobody dares to touch.</p>
+        <p>That's where the value gets lost. Rules go stale, nobody measures whether the action worked, and when someone proposes changing the criteria there's no way to know what will happen short of testing it on real customers. Arbitrium turns that leap into a piece of software: an explicit policy that is versioned, measured and reversible.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Action catalog</h4><p>Every possible action is declared with its cost, its available capacity (how many calls fit in a day) and its constraints: who it can't be offered to, how many times per month, what requires approval.</p></div>
+          <div class="pd-cap"><h4>Learned policy</h4><p>From historical data, the engine learns which action works best for each type of case, and keeps learning in production by reserving a fraction of traffic to explore alternatives. It doesn't optimize the prediction: it optimizes the outcome.</p></div>
+          <div class="pd-cap"><h4>Explanation and control</h4><p>Every recommendation comes with the signals that weighed most and the expected outcome. Hard business rules live outside the model, in a file the business team can read and change without asking IT for anything.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The policy is a versioned artifact, like code: it gets deployed, measured and rolled back. Each version records what data it was trained on and what results it achieved, and two versions can run side by side, splitting traffic while they're compared. When one performs worse, going back is a pointer change rather than a redeploy, because the previous one is still loaded.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Decision</h4><ul><li>Contextual bandits</li><li>Declarative constraints</li><li>Versioned action catalog</li></ul></div>
+          <div><h4>Models</h4><ul><li>Gradient boosting for estimation</li><li>Per-segment calibration</li><li>Scheduled retraining</li></ul></div>
+          <div><h4>Serving</h4><ul><li>API with sub-100 ms response</li><li>Feature cache</li><li>Log of every decision served</li></ul></div>
+          <div><h4>Measurement</h4><ul><li>Continuous A/B experiments</li><li>Backtesting against history</li><li>Impact dashboard per policy</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="replica">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🧪</span> Simulators</p>
+      <h2>Réplica</h2>
+      <p class="pd-lede">A digital twin of the operation where scenarios are tested before they're executed, and each run returns a range of outcomes instead of a single number.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Operations simulator</dd></div>
+        <div><dt>Domain</dt><dd>Planning and risk analysis</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud</dd></div>
+        <div><dt>Technical core</dt><dd>Discrete events and calibrated Monte Carlo</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Réplica with sample data: scenario, change, typical fill rate, bad-case fill rate, status.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Réplica</span></span>
+            <span class="mock-crumb">Scenarios / Comparison</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Demand</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 19 L18 22 L34 22 L50 20 L66 22 L82 22 L98 22"/></svg></div><div class="kpi"><span>Capacity</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="11" width="14" height="15"/><rect class="bar" x="22" y="15" width="14" height="11"/><rect class="bar" x="42" y="12" width="14" height="14"/><rect class="bar on" x="62" y="8" width="14" height="18"/><rect class="bar" x="82" y="17" width="14" height="9"/></svg></div><div class="kpi"><span>Wait time</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 7 L18 4 L34 4 L50 8 L66 11 L82 13 L98 13"/></svg></div><div class="kpi"><span>Stock</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 22 L18 22 L34 19 L50 17 L66 22 L82 22 L98 22"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Scenario</span><span>Change</span><span>Typical fill</span><span>Bad-case fill</span><span>Status</span></div><div class="mrow c5"><span class="case-id">E-01</span><span class="dim">Baseline scenario</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="88" height="4" rx="2"/></svg><b>88%</b></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="71" height="4" rx="2"/></svg><b>71%</b></span><span><i class="pill low">Calibrated</i></span></div><div class="mrow c5"><span class="case-id">E-02</span><span class="dim">New warehouse</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="93" height="4" rx="2"/></svg><b>93%</b></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="80" height="4" rx="2"/></svg><b>80%</b></span><span><i class="pill low">Improves</i></span></div><div class="mrow c5"><span class="case-id">E-03</span><span class="dim">Supplier delay</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="74" height="4" rx="2"/></svg><b>74%</b></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="38" height="4" rx="2"/></svg><b>38%</b></span><span><i class="pill high">Risk</i></span></div><div class="mrow c5"><span class="case-id">E-04</span><span class="dim">Demand spike</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="81" height="4" rx="2"/></svg><b>81%</b></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="52" height="4" rx="2"/></svg><b>52%</b></span><span><i class="pill mid">Review</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Sensitivity</span><p class="copilot-q">Which variable explains most of the difference?</p><p class="copilot-a"><b>Replenishment time</b> explains most of the deviation in the bad case, followed by <b>fulfillment capacity</b>.</p></div>
+              <div class="strategies"><div class="strategy"><b>Monte Carlo</b><small>thousands of runs</small></div><div class="strategy"><b>Revalidation</b><small>weekly</small></div><div class="strategy"><b>Drift</b><small>no alerts</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>Big decisions (opening a warehouse, changing the inventory policy, taking out a loan to fund the season) are made with a spreadsheet that projects a single line. The spreadsheet knows nothing about queues, variability, or what happens when two things go wrong in the same week.</p>
+        <p>The result is a plan that works on paper and fails in reality for reasons nobody modeled: the supplier who runs late, the spike that saturates capacity, the correlation between two variables that were looked at separately. Réplica puts that variability inside the model, which is where it belongs.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Calibrated twin</h4><p>The operation is modeled as a system of resources, queues and events: orders arriving, capacity being used, times that vary. The parameters aren't made up: they're estimated from the company's real historical data.</p></div>
+          <div class="pd-cap"><h4>Scenarios</h4><p>Thousands of runs are executed on that twin, changing whatever you want to test. The output isn't a number but a distribution: the typical case, the bad one and the very bad one, each with its probability.</p></div>
+          <div class="pd-cap"><h4>What moved the needle</h4><p>A sensitivity analysis ranks variables by how much of the difference between scenarios they explain, so you know where it pays to invest in reducing uncertainty and where it isn't worth it.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The twin revalidates itself. Every week it compares what it simulated against what actually happened and, if the deviation exceeds the margin, it raises a flag instead of continuing to deliver results that look good and are wrong. That's the difference between a simulator that gets used for years and one that's abandoned after three months.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Simulation</h4><ul><li>Discrete events</li><li>Monte Carlo</li><li>Importance sampling for long tails</li></ul></div>
+          <div><h4>Compute</h4><ul><li>Parallel runs</li><li>Results cached per scenario</li><li>Fixed seed for reproducibility</li></ul></div>
+          <div><h4>Calibration</h4><ul><li>Distribution fitting on historical data</li><li>Weekly backtesting</li><li>Drift alerts</li></ul></div>
+          <div><h4>Interface</h4><ul><li>Scenario editor</li><li>Side-by-side comparison</li><li>Spreadsheet export</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="indicio">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🕵️</span> Investigations</p>
+      <h2>Indicio</h2>
+      <p class="pd-lede">Ingests an entire corpus of documents, extracts entities and links, and drafts the report with every claim linked to its exact source.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Document analysis platform</dd></div>
+        <div><dt>Domain</dt><dd>Investigations, compliance and due diligence</dd></div>
+        <div><dt>Deployment</dt><dd>Private cloud or on-premise</dd></div>
+        <div><dt>Technical core</dt><dd>Knowledge graph with entity resolution</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Indicio with sample data: entity, type, mentions, merge confidence, status.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Indicio</span></span>
+            <span class="mock-crumb">Investigation / Entities</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Documents</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 16 L18 18 L34 21 L50 19 L66 16 L82 21 L98 16 L98 26 L2 26Z"/><path class="spark" d="M2 16 L18 18 L34 21 L50 19 L66 16 L82 21 L98 16"/></svg></div><div class="kpi"><span>Entities</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="17" width="14" height="9"/><rect class="bar" x="22" y="12" width="14" height="14"/><rect class="bar" x="42" y="12" width="14" height="14"/><rect class="bar on" x="62" y="5" width="14" height="21"/><rect class="bar" x="82" y="7" width="14" height="19"/></svg></div><div class="kpi"><span>Links</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 12 L18 8 L34 11 L50 11 L66 14 L82 15 L98 9"/></svg></div><div class="kpi"><span>Merges to review</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 20 L18 22 L34 22 L50 17 L66 16 L82 16 L98 19"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Entity</span><span>Type</span><span>Mentions</span><span>Merge confidence</span><span>Status</span></div><div class="mrow c5"><span class="case-id">Gómez, Juan P.</span><span class="dim">Person</span><span class="dim">38 documents</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="94" height="4" rx="2"/></svg><b>94%</b></span><span><i class="pill low">Merged</i></span></div><div class="mrow c5"><span class="case-id">Distribuidora Sur</span><span class="dim">Company</span><span class="dim">21 documents</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="88" height="4" rx="2"/></svg><b>88%</b></span><span><i class="pill low">Merged</i></span></div><div class="mrow c5"><span class="case-id">JP Gómez</span><span class="dim">Person</span><span class="dim">6 documents</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="57" height="4" rx="2"/></svg><b>57%</b></span><span><i class="pill mid">Review</i></span></div><div class="mrow c5"><span class="case-id">Account ···4471</span><span class="dim">Account</span><span class="dim">9 documents</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="72" height="4" rx="2"/></svg><b>72%</b></span><span><i class="pill low">Linked</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Cited report</span><p class="copilot-q">What links Gómez to Distribuidora Sur?</p><p class="copilot-a">He appears as legal representative in <b>minutes 14, p. 3</b> and signs two payment orders <b>(statement B, p. 12)</b>.</p></div>
+              <div class="strategies"><div class="strategy"><b>Sources</b><small>cited</small></div><div class="strategy"><b>Merges</b><small>reversible</small></div><div class="strategy"><b>Graph</b><small>of links</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>A serious investigation starts with a box of material: case files, emails, meeting minutes, bank statements, spreadsheets. Reading all of it takes weeks and, even after reading everything, the connection that matters usually sits between two documents nobody looked at together.</p>
+        <p>Search tools don't help, because they search for words, not people. “Juan P. Gómez”, “Gómez, J.”, “JP Gómez” and a stray tax ID are the same person, and no text search knows it. Indicio first resolves who is who, and only then lets you ask questions.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Ingestion and normalization</h4><p>Any format goes in: scanned PDFs, emails, spreadsheets, transcribed audio. Everything is stored with its text, its origin and its page, so it can be cited later.</p></div>
+          <div class="pd-cap"><h4>Entities and links</h4><p>People, companies, accounts, addresses, dates and amounts are extracted, and spelling variants are merged into a single entity. The graph is built on top of that: who appears with whom, in which document and in what role.</p></div>
+          <div class="pd-cap"><h4>Cited report</h4><p>Questions are answered over the graph and the corpus, and every claim in the report links to the document and the page. If there's no verifiable source, the claim isn't made.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>Entity resolution is the heart of the system, and it's probabilistic: every merge of two names into a single entity stores its score and its reason, and the analyst can undo it. A system that merges silently is dangerous in an investigation; one that shows why it merged is a tool.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Ingestion</h4><ul><li>Layout-aware OCR</li><li>Format normalization</li><li>Document deduplication</li></ul></div>
+          <div><h4>Extraction</h4><ul><li>Named entity recognition</li><li>Scored fuzzy resolution</li><li>Relationship extraction</li></ul></div>
+          <div><h4>Graph</h4><ul><li>Graph database</li><li>Path and neighborhood queries</li><li>Community detection</li></ul></div>
+          <div><h4>Report</h4><ul><li>Generation with mandatory citations</li><li>Source appendix</li><li>Report version control</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="telar">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">⚙️</span> Automation</p>
+      <h2>Telar</h2>
+      <p class="pd-lede">Orchestrates processes that span multiple systems with real guarantees: it retries without duplicating and undoes completed work when a step fails.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Process engine</dd></div>
+        <div><dt>Domain</dt><dd>Cross-system integration</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud or inside the client's network</dd></div>
+        <div><dt>Technical core</dt><dd>Durable execution with compensation</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Telar with sample data: process, current step, systems, status, action.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Telar</span></span>
+            <span class="mock-crumb">Processes / Runs</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Runs</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 7 L18 4 L34 4 L50 5 L66 4 L82 9 L98 4"/></svg></div><div class="kpi"><span>Time per stage</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="18" width="14" height="8"/><rect class="bar on" x="22" y="13" width="14" height="13"/><rect class="bar" x="42" y="13" width="14" height="13"/><rect class="bar" x="62" y="15" width="14" height="11"/><rect class="bar" x="82" y="13" width="14" height="13"/></svg></div><div class="kpi"><span>Retries</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 15 L18 18 L34 16 L50 11 L66 7 L82 6 L98 10"/></svg></div><div class="kpi"><span>Stuck cases</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 11 L18 9 L34 13 L50 14 L66 18 L82 16 L98 11"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Process</span><span>Current step</span><span>Systems</span><span>Status</span><span>Action</span></div><div class="mrow c5"><span class="case-id">Supplier onboarding</span><span class="dim">Approval</span><span>ERP · Email</span><span><i class="pill low">Complete</i></span><span class="dim">—</span></div><div class="mrow c5"><span class="case-id">Purchase order</span><span class="dim">Update CRM</span><span>ERP · CRM</span><span><i class="pill mid">Retrying</i></span><span class="action">Backoff</span></div><div class="mrow c5"><span class="case-id">Credit note</span><span class="dim">Issue in ERP</span><span>ERP</span><span><i class="pill high">Failed</i></span><span class="action">Compensating</span></div><div class="mrow c5"><span class="case-id">Customer onboarding</span><span class="dim">Email notice</span><span>CRM · Email</span><span><i class="pill low">Complete</i></span><span class="dim">—</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Step-by-step trace</span><p class="copilot-q">Credit note · step 3</p><p class="copilot-a">The step failed. The engine runs the <b>compensations in reverse order</b> and leaves the systems as they were.</p></div>
+              <div class="strategies"><div class="strategy"><b>Idempotency</b><small>by key</small></div><div class="strategy"><b>State</b><small>persisted</small></div><div class="strategy"><b>Queue</b><small>for stuck cases</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>A typical back-office process touches four systems: it's entered in the ERP, an email goes out, the CRM gets updated and someone approves. When it's automated with loose scripts, it works until the day the third step fails. Then two systems are updated and two aren't, and someone has to fix it by hand without really knowing what got through.</p>
+        <p>That's the hard problem in automation: not connecting systems, but keeping them consistent when something breaks midway. None of those systems shares a transaction with the others, so consistency has to be built.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Declared workflows</h4><p>The process is defined as a sequence of steps with their conditions, waits and human approvals. It reads like the procedure that already existed on paper, not like code.</p></div>
+          <div class="pd-cap"><h4>Durable execution</h4><p>State is saved after every step. If the process goes down, it resumes where it left off; if a step is retried, the operation key keeps it from running twice.</p></div>
+          <div class="pd-cap"><h4>Compensation</h4><p>Each step can declare how it's undone. When the process fails further along, the engine runs the compensations in reverse order until everything is back to how it was before it started.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The engine doesn't trust integrations to be reliable: it assumes they'll fail. Every external call is idempotent by key, has a timeout and a retry policy with exponential backoff, and every effect has a declared reversal. That turns “the process broke” from an emergency into an expected event.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Engine</h4><ul><li>State persisted per step</li><li>Idempotency by operation key</li><li>Sagas with compensation</li></ul></div>
+          <div><h4>Integrations</h4><ul><li>REST and SOAP connectors</li><li>Mailbox reading</li><li>Message queues and SFTP file drops</li></ul></div>
+          <div><h4>Operations</h4><ul><li>Retry with exponential backoff</li><li>Stuck-case queue</li><li>Per-process alerts</li></ul></div>
+          <div><h4>Visibility</h4><ul><li>Step-by-step trace</li><li>Time per stage</li><li>Bottleneck dashboard</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="solvenz">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">💰</span> Finance</p>
+      <h2>Solvenz</h2>
+      <p class="pd-lede">Projects cash flow with confidence bands, estimates when each account will become delinquent, and propagates shocks from the individual customer all the way to the income statement.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Financial risk engine</dd></div>
+        <div><dt>Domain</dt><dd>Loan portfolio and treasury</dd></div>
+        <div><dt>Deployment</dt><dd>Private cloud</dd></div>
+        <div><dt>Technical core</dt><dd>Time-to-event models and stress simulator</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Solvenz with sample data: segment, exposure, default prob., days to event, scenario.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Solvenz</span></span>
+            <span class="mock-crumb">Treasury / Projected cash flow</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Cash flow</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 6 L18 4 L34 8 L50 6 L66 5 L82 4 L98 5 L98 26 L2 26Z"/><path class="spark" d="M2 6 L18 4 L34 8 L50 6 L66 5 L82 4 L98 5"/></svg></div><div class="kpi"><span>Confidence band</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 15 L18 18 L34 22 L50 22 L66 20 L82 22 L98 18"/><path class="spark" d="M2 15 L18 9 L34 7 L50 10 L66 6 L82 8 L98 11"/></svg></div><div class="kpi"><span>Expected delinquency</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 13 L18 11 L34 6 L50 5 L66 5 L82 4 L98 4"/></svg></div><div class="kpi"><span>Stress</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="10" width="14" height="16"/><rect class="bar" x="22" y="17" width="14" height="9"/><rect class="bar on" x="42" y="6" width="14" height="20"/><rect class="bar" x="62" y="10" width="14" height="16"/><rect class="bar" x="82" y="17" width="14" height="9"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Segment</span><span>Exposure</span><span>Default prob.</span><span>Days to event</span><span>Scenario</span></div><div class="mrow c5"><span class="case-id">Consumer</span><span class="dim">Medium</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="12" height="4" rx="2"/></svg><b>12%</b></span><span class="dim">180+</span><span><i class="pill low">Stable</i></span></div><div class="mrow c5"><span class="case-id">SMB</span><span class="dim">High</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="27" height="4" rx="2"/></svg><b>27%</b></span><span class="dim">120</span><span><i class="pill mid">Watch</i></span></div><div class="mrow c5"><span class="case-id">Agro</span><span class="dim">Medium</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="34" height="4" rx="2"/></svg><b>34%</b></span><span class="dim">95</span><span><i class="pill mid">Weather shock</i></span></div><div class="mrow c5"><span class="case-id">Cards</span><span class="dim">High</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="41" height="4" rx="2"/></svg><b>41%</b></span><span class="dim">60</span><span><i class="pill high">Stress</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Shock simulation</span><p class="copilot-q">What if SMB delinquency rises?</p><p class="copilot-a">The shock propagates from the customer to the quarter's <b>income statement</b> and <b>cash position</b>, with its confidence band.</p></div>
+              <div class="strategies"><div class="strategy"><b>Scenarios</b><small>saved</small></div><div class="strategy"><b>Report</b><small>for committee</small></div><div class="strategy"><b>API</b><small>core banking</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>Most companies' cash projection is a single line: what they expect to collect, month by month, assuming everything goes the way it always does. It doesn't say how far it could deviate or what happens if it does, which is exactly what you need to know to make a decision.</p>
+        <p>And delinquency is viewed as a traffic light: current, 30, 60, 90. That light says where an account is today, not where it's heading. Two customers with the same days past due can end up in completely different places, and treating them the same costs money either way.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Scoring with a horizon</h4><p>Instead of “will they default?”, the model answers “when?”. Survival curves give the probability of defaulting at 30, 60 and 90 days, which is what lets you anticipate instead of react.</p></div>
+          <div class="pd-cap"><h4>Cash with bands</h4><p>The projection combines what's committed, what's estimated and the historical variability of each segment. It returns a range with its probability, not a promise of a single number.</p></div>
+          <div class="pd-cap"><h4>Stress testing</h4><p>You define the shock (delinquency rises three points, a sector collapses, the rate changes) and the engine propagates it from each customer to the consolidated result.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>Every estimate is explainable by variable: a score isn't enough if the credit committee can't see why. The models return each factor's contribution to each case, and that contribution travels alongside the number to every screen and every report, so the discussion is about the criteria and not about whether to trust the machine.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Models</h4><ul><li>Survival (Cox and trees on time-to-event)</li><li>Per-segment calibration</li><li>Per-variable explainability</li></ul></div>
+          <div><h4>Simulation</h4><ul><li>Shock propagation</li><li>Saved scenarios</li><li>Comparison against plan</li></ul></div>
+          <div><h4>Data</h4><ul><li>Portfolio from the core system</li><li>Payment history</li><li>External behavioral data</li></ul></div>
+          <div><h4>Delivery</h4><ul><li>Treasury dashboard</li><li>Committee reports</li><li>API for core banking</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="collectiq">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📞</span> Collections</p>
+      <h2>CollectIQ</h2>
+      <p class="pd-lede">Prioritizes the day-to-day work on the portfolio by expected recovery instead of by debt age.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Multi-organization SaaS platform</dd></div>
+        <div><dt>Domain</dt><dd>Collections and portfolio recovery</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud, white-labeled per organization</dd></div>
+        <div><dt>Technical core</dt><dd>React · Supabase · In-house decision engine</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of CollectIQ with sample data: case, days past due, payment prob., AI action, best channel.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Collect<em>IQ</em></span></span>
+            <span class="mock-crumb">Portfolio / Prioritization</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Delinquency</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 11 L18 6 L34 8 L50 4 L66 4 L82 4 L98 7"/></svg></div><div class="kpi"><span>Risk</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="17" width="14" height="9"/><rect class="bar" x="22" y="11" width="14" height="15"/><rect class="bar" x="42" y="17" width="14" height="9"/><rect class="bar" x="62" y="18" width="14" height="8"/><rect class="bar on" x="82" y="9" width="14" height="17"/></svg></div><div class="kpi"><span>Recovery</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 8 L18 13 L34 17 L50 15 L66 12 L82 10 L98 12 L98 26 L2 26Z"/><path class="spark" d="M2 8 L18 13 L34 17 L50 15 L66 12 L82 10 L98 12"/></svg></div><div class="kpi"><span>Strategies</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 16 L18 20 L34 22 L50 22 L66 22 L82 21 L98 22"/><path class="spark" d="M2 15 L18 15 L34 9 L50 11 L66 7 L82 4 L98 4"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Case</span><span>Past due</span><span>Payment prob.</span><span>AI action</span><span>Best channel</span></div><div class="mrow c5"><span class="case-id">A-2041</span><span class="dim">12 days</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="82" height="4" rx="2"/></svg><b>82%</b></span><span class="action">Reminder</span><span class="dim">WhatsApp</span></div><div class="mrow c5"><span class="case-id">B-1187</span><span class="dim">27 days</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="64" height="4" rx="2"/></svg><b>64%</b></span><span class="action">Call</span><span class="dim">Phone</span></div><div class="mrow c5"><span class="case-id">C-0932</span><span class="dim">45 days</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="47" height="4" rx="2"/></svg><b>47%</b></span><span class="action">Refinance</span><span class="dim">Email</span></div><div class="mrow c5"><span class="case-id">D-3310</span><span class="dim">90 days</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="18" height="4" rx="2"/></svg><b>18%</b></span><span class="action">Review</span><span class="dim">Agent</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">AI Copilot</span><p class="copilot-q">Which cases should we work today?</p><p class="copilot-a">Prioritize <b>early delinquency</b> cases with a high payment probability and reach them through the <b>best channel</b>. See evidence →</p></div>
+              <div class="strategies"><div class="strategy"><b>Prioritization</b><small>active</small></div><div class="strategy"><b>Expected recovery</b><small>per case</small></div><div class="strategy"><b>Strategies</b><small>simulation</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>In most operations the portfolio is sorted by amount or by days past due, and who to contact is left to each agent's experience. The same effort goes into cases that were going to pay on their own and into unrecoverable ones, while the ones that depended on timely follow-up go cold.</p>
+        <p>The everyday question isn't who owes the most, but who is worth calling today. Answering it well means estimating three things at once: whether they'll pay, when, and what it costs to get there.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Decision engine</h4><p>Payment probability by time bucket, expected recovery net of collection cost, risk score, probability of effective contact and priority. Seven interfaces that every screen queries and none computes on its own.</p></div>
+          <div class="pd-cap"><h4>Strategy simulation</h4><p>A twin of the portfolio lets you test changes before applying them: a different contact criterion, refinancing by segment, a different target for the month. Includes forecasting and backtesting.</p></div>
+          <div class="pd-cap"><h4>Evidence-backed copilot</h4><p>Natural-language questions about the real portfolio, answered with a panel that shows where each number came from, so the recommendation can be audited instead of taken on faith.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>All the calculation logic lives in a layer decoupled from the interface, behind a stable contract. No component has formulas inside it: when a screen needs a probability, it asks the engine. Today the estimates are documented, tested reference formulas; the day there's enough volume to train on, the implementation gets swapped and the platform never notices.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Interface</h4><ul><li>React 19 with Vite</li><li>Recharts for visualization</li><li>In-house component system</li><li>Vitest for testing</li></ul></div>
+          <div><h4>Data</h4><ul><li>Supabase on PostgreSQL</li><li>Edge Functions on Deno</li><li>Scheduled jobs with pg-cron</li><li>Excel and CSV ingestion</li></ul></div>
+          <div><h4>Intelligence</h4><ul><li>Claude for the copilot</li><li>In-house decision engine</li><li>Model registry and interface</li><li>Backtesting on historical data</li></ul></div>
+          <div><h4>Operations</h4><ul><li>Continuous deployment</li><li>API keys per organization</li><li>Data-level access control</li></ul></div>
+        </div>
+      </section>
+      <div class="pd-foot"><a class="btn" href="proyectos.html">See the full CollectIQ page</a></div>
+    </article>
+
+    <article class="pd" data-proj="umbral">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🏦</span> Fintech</p>
+      <h2>Umbral</h2>
+      <p class="pd-lede">The full journey from the moment someone wants to open an account until they're transacting, with a risk decision in under a second.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Onboarding infrastructure</dd></div>
+        <div><dt>Domain</dt><dd>Regulated financial services</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud with configurable data residency</dd></div>
+        <div><dt>Technical core</dt><dd>Rules engine with shadow mode</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Umbral with sample data: application, identity, risk signals, decision, rule.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Umbral</span></span>
+            <span class="mock-crumb">Onboarding / Applications</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Applications</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 22 L18 19 L34 22 L50 22 L66 22 L82 22 L98 21"/></svg></div><div class="kpi"><span>Drop-off by step</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="10" width="14" height="16"/><rect class="bar" x="22" y="9" width="14" height="17"/><rect class="bar" x="42" y="14" width="14" height="12"/><rect class="bar on" x="62" y="6" width="14" height="20"/><rect class="bar" x="82" y="18" width="14" height="8"/></svg></div><div class="kpi"><span>Fraud alerts</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 15 L18 16 L34 15 L50 19 L66 15 L82 20 L98 22"/></svg></div><div class="kpi"><span>Decision time</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 17 L18 17 L34 15 L50 18 L66 20 L82 22 L98 22"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Application</span><span>Identity</span><span>Risk signals</span><span>Decision</span><span>Rule</span></div><div class="mrow c5"><span class="case-id">S-20931</span><span><i class="pill low">Verified</i></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="8" height="4" rx="2"/></svg><b>8%</b></span><span><i class="pill low">Approve</i></span><span class="prio">R-12</span></div><div class="mrow c5"><span class="case-id">S-20932</span><span><i class="pill low">Verified</i></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="46" height="4" rx="2"/></svg><b>46%</b></span><span><i class="pill mid">Review</i></span><span class="prio">R-07</span></div><div class="mrow c5"><span class="case-id">S-20933</span><span><i class="pill high">Mismatch</i></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="83" height="4" rx="2"/></svg><b>83%</b></span><span><i class="pill high">Reject</i></span><span class="prio">R-03</span></div><div class="mrow c5"><span class="case-id">S-20934</span><span><i class="pill low">Verified</i></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="15" height="4" rx="2"/></svg><b>15%</b></span><span><i class="pill low">Approve</i></span><span class="prio">R-12</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Shadow mode</span><p class="copilot-q">Rule R-07 v2 in shadow</p><p class="copilot-a">It compares its decisions against the active version <b>without affecting customers</b> before going live.</p></div>
+              <div class="strategies"><div class="strategy"><b>Liveness check</b><small>biometrics</small></div><div class="strategy"><b>Watchlists</b><small>registries</small></div><div class="strategy"><b>Trace</b><small>per case</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>Onboarding is where a fintech loses half the people who wanted to become customers. Every step added to reduce fraud adds drop-off, and every step removed to reduce drop-off adds fraud. It's a balance you have to measure, not guess.</p>
+        <p>The problem is that risk rules are usually written into the code, and changing them takes a deployment and a leap of faith. Nobody knows what will happen until it already has, so in practice nobody touches them and they stay frozen for years.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Identity verification</h4><p>ID document, liveness check, biometric matching and validation against government registries and watchlists. Whatever can be resolved automatically, is resolved automatically.</p></div>
+          <div class="pd-cap"><h4>Risk decision</h4><p>A rules engine, composable per product, evaluates device, behavioral and history signals, and decides to approve, reject or send to review in under a second.</p></div>
+          <div class="pd-cap"><h4>Review inbox</h4><p>A borderline case reaches an analyst with everything ready: the documents, the signals that flagged it and the similar cases that were already resolved.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>Shadow mode is what makes the system improvable. A new rule is turned on “in shadow”: it runs against real traffic and logs what it would have decided, but doesn't decide. After a few days it's compared against what actually happened, and only then is it truly activated. Changing the risk policy stops being a gamble.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Identity</h4><ul><li>Document reading</li><li>Liveness check</li><li>Biometric matching</li><li>Registries and watchlists</li></ul></div>
+          <div><h4>Decision</h4><ul><li>Versioned rules engine</li><li>Shadow mode</li><li>Device and behavioral signals</li></ul></div>
+          <div><h4>Serving</h4><ul><li>Sub-second response</li><li>Queues for async work</li><li>Retries when a provider goes down</li></ul></div>
+          <div><h4>Compliance</h4><ul><li>Full trace per case</li><li>Configurable retention</li><li>Regulator reports</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="veritas">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🔍</span> Auditing</p>
+      <h2>Veritas</h2>
+      <p class="pd-lede">Audits one hundred percent of transactions by learning the normal behavior of each process and flagging whatever breaks the pattern.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Continuous auditing platform</dd></div>
+        <div><dt>Domain</dt><dd>Internal control and fraud prevention</dd></div>
+        <div><dt>Deployment</dt><dd>Inside the client's network</dd></div>
+        <div><dt>Technical core</dt><dd>Unsupervised detection and forensic rules</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Veritas with sample data: finding, type, severity, anomaly score, status.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Veritas</span></span>
+            <span class="mock-crumb">Audit / Findings</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Transactions</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 13 L18 14 L34 8 L50 10 L66 14 L82 12 L98 15 L98 26 L2 26Z"/><path class="spark" d="M2 13 L18 14 L34 8 L50 10 L66 14 L82 12 L98 15"/></svg></div><div class="kpi"><span>Anomalies</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="8" width="14" height="18"/><rect class="bar" x="22" y="16" width="14" height="10"/><rect class="bar" x="42" y="15" width="14" height="11"/><rect class="bar" x="62" y="16" width="14" height="10"/><rect class="bar on" x="82" y="4" width="14" height="22"/></svg></div><div class="kpi"><span>Severity</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 22 L18 22 L34 18 L50 15 L66 17 L82 18 L98 15"/></svg></div><div class="kpi"><span>Closed cases</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 22 L18 22 L34 22 L50 19 L66 22 L82 19 L98 22"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Finding</span><span>Type</span><span>Severity</span><span>Anomaly score</span><span>Status</span></div><div class="mrow c5"><span class="case-id">H-771</span><span class="dim">Duplicate supplier</span><span><i class="pill high">High</i></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="91" height="4" rx="2"/></svg><b>91%</b></span><span><i class="pill mid">Under response</i></span></div><div class="mrow c5"><span class="case-id">H-772</span><span class="dim">Self-approval</span><span><i class="pill high">High</i></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="86" height="4" rx="2"/></svg><b>86%</b></span><span><i class="pill mid">Open</i></span></div><div class="mrow c5"><span class="case-id">H-773</span><span class="dim">Off-hours payment</span><span><i class="pill mid">Medium</i></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="58" height="4" rx="2"/></svg><b>58%</b></span><span><i class="pill low">Closed</i></span></div><div class="mrow c5"><span class="case-id">H-774</span><span class="dim">Split amount</span><span><i class="pill mid">Medium</i></span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="63" height="4" rx="2"/></svg><b>63%</b></span><span><i class="pill mid">Open</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Evidence</span><p class="copilot-q">H-772 · Self-approval</p><p class="copilot-a">The same user <b>created and approved</b> the order. The ERP log and the permission graph are attached.</p></div>
+              <div class="strategies"><div class="strategy"><b>Forensic rules</b><small>configurable</small></div><div class="strategy"><b>Runs</b><small>scheduled</small></div><div class="strategy"><b>Report</b><small>for committee</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>Traditional auditing looks at a sample, and looks at it after the fact. If the fraud is in the 2% nobody reviewed, it gets discovered next year or never.</p>
+        <p>What's more, the fraud that matters is almost never an isolated odd transaction: it's a pattern. Invoices systematically split to stay under the approval limit, a supplier sharing bank details with an employee, approvals that always happen after hours. You only see that by looking at everything together.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Normal-behavior profile</h4><p>The system learns, per process and per user, what normal looks like: amounts, times, frequencies, who approves whom. No thresholds need to be configured by hand.</p></div>
+          <div class="pd-cap"><h4>Forensic rules</h4><p>Alongside the model run hard rules that encode known schemes: purchase splitting, duplicate suppliers, matching bank accounts, self-authorization.</p></div>
+          <div class="pd-cap"><h4>Segregation of duties</h4><p>It analyzes the ERP's actual permission graph, not the stated org chart, to find who can close an entire loop without anyone else being involved.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>Findings are prioritized by financial risk and by confidence, and each one opens up to show exactly which transactions make it up. A detection system that floods people with alerts gets switched off within a week: the fine work is making sure what reaches the auditor is little and good.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Detection</h4><ul><li>Isolation forest and autoencoders</li><li>Configurable forensic rules</li><li>Permission graph analysis</li></ul></div>
+          <div><h4>Data</h4><ul><li>Read-only ERP access</li><li>Supplier and employee master data</li><li>Approval history</li></ul></div>
+          <div><h4>Workflow</h4><ul><li>Prioritized findings queue</li><li>Status and response per case</li><li>Closure with evidence</li></ul></div>
+          <div><h4>Operations</h4><ul><li>Scheduled runs</li><li>Alerts by severity</li><li>Periodic committee report</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="mercurio">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🛒</span> E-commerce</p>
+      <h2>Mercurio</h2>
+      <p class="pd-lede">A commerce layer on top of the store that understands what the shopper is looking for, recommends with stock and margin in mind, and decides how much discount each abandoned cart deserves.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Commerce intelligence layer</dd></div>
+        <div><dt>Domain</dt><dd>E-commerce</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud, on top of the existing store</dd></div>
+        <div><dt>Technical core</dt><dd>Semantic search and elasticity model</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Mercurio with sample data: product, search, relevance, suggested discount, stock.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Mercurio</span></span>
+            <span class="mock-crumb">Store / Search and pricing</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Searches</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 11 L18 15 L34 18 L50 16 L66 17 L82 20 L98 20"/></svg></div><div class="kpi"><span>Conversion</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 7 L18 8 L34 10 L50 13 L66 12 L82 8 L98 11 L98 26 L2 26Z"/><path class="spark" d="M2 7 L18 8 L34 10 L50 13 L66 12 L82 8 L98 11"/></svg></div><div class="kpi"><span>Elasticity</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 21 L18 22 L34 22 L50 22 L66 20 L82 21 L98 22"/></svg></div><div class="kpi"><span>Stock</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="11" width="14" height="15"/><rect class="bar on" x="22" y="5" width="14" height="21"/><rect class="bar" x="42" y="13" width="14" height="13"/><rect class="bar" x="62" y="18" width="14" height="8"/><rect class="bar" x="82" y="17" width="14" height="9"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Product</span><span>Search</span><span>Relevance</span><span>Suggested discount</span><span>Stock</span></div><div class="mrow c5"><span class="case-id">Running shoe</span><span class="dim">“shoes for jogging”</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="92" height="4" rx="2"/></svg><b>92%</b></span><span class="dim">5%</span><span><i class="pill low">High</i></span></div><div class="mrow c5"><span class="case-id">Light jacket</span><span class="dim">“thin coat”</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="81" height="4" rx="2"/></svg><b>81%</b></span><span class="dim">10%</span><span><i class="pill mid">Medium</i></span></div><div class="mrow c5"><span class="case-id">Urban backpack</span><span class="dim">“laptop bag”</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="74" height="4" rx="2"/></svg><b>74%</b></span><span class="dim">0%</span><span><i class="pill low">High</i></span></div><div class="mrow c5"><span class="case-id">Insulated bottle</span><span class="dim">“small thermos”</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="66" height="4" rx="2"/></svg><b>66%</b></span><span class="dim">8%</span><span><i class="pill high">Low</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Shopping agent</span><p class="copilot-q">“I need something for running at night”</p><p class="copilot-a">I recommend the <b>reflective light jacket</b>: it's in stock in your size and the price comes from the catalog.</p></div>
+              <div class="strategies"><div class="strategy"><b>Semantic search</b><small>embeddings</small></div><div class="strategy"><b>Minimum discount</b><small>effective</small></div><div class="strategy"><b>Cap</b><small>commercial policy</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>Most stores' search fails exactly when it matters most: when people type the way they talk instead of the way the catalog was entered. “Shoes for running on dirt” finds nothing if the product says “trail running footwear.”</p>
+        <p>And cart recovery is usually a flat coupon for everyone. Half of them get margin handed over when they were going to buy anyway, and for the other half the coupon isn't enough to tip the decision. It's money lost in both directions at the same time.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Search that understands</h4><p>The catalog is indexed by meaning, not by words. The query is interpreted, filtered by what's in stock and ranked by combining relevance, availability and margin.</p></div>
+          <div class="pd-cap"><h4>Conversational sales assistant</h4><p>An agent answers questions with real product data, puts together combinations and never offers what it can't deliver, because it checks stock before recommending.</p></div>
+          <div class="pd-cap"><h4>Smarter recovery</h4><p>For each abandoned cart it estimates the probability of purchase without intervention and the price sensitivity. That determines whether to reach out, through which channel and with what minimum incentive.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>Re-ranking by margin is the delicate part: overdo it and the store starts recommending what suits it rather than what's useful, and the customer notices right away. That's why the margin weight is capped by policy and measured against conversion, so optimizing the short term can't break the long term.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Search</h4><ul><li>Catalog embeddings</li><li>Stock and attribute filters</li><li>Capped margin re-ranking</li></ul></div>
+          <div><h4>Conversation</h4><ul><li>Agent grounded in catalog data</li><li>Stock and pricing integration</li></ul></div>
+          <div><h4>Pricing</h4><ul><li>Elasticity by segment</li><li>Minimum effective discount</li><li>Cap set by commercial policy</li></ul></div>
+          <div><h4>Integration</h4><ul><li>Shopify, VTEX, WooCommerce or custom API</li><li>Browsing events</li><li>Stock sync</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="brujula">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📈</span> Sales</p>
+      <h2>Brújula</h2>
+      <p class="pd-lede">Ranks the pipeline by real probability of closing, flags which opportunities are going cold and builds the forecast as a range of scenarios.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Intelligence layer on top of the CRM</dd></div>
+        <div><dt>Domain</dt><dd>Long-cycle sales</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud</dd></div>
+        <div><dt>Technical core</dt><dd>Calibrated win model and hierarchical forecast</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Brújula with sample data: opportunity, stage, win prob., next step, days.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Brújula</span></span>
+            <span class="mock-crumb">Pipeline / Opportunities</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Forecast</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 9 L18 4 L34 7 L50 4 L66 4 L82 4 L98 4"/><path class="spark" d="M2 11 L18 14 L34 17 L50 12 L66 8 L82 4 L98 4"/></svg></div><div class="kpi"><span>Pipeline</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="11" width="14" height="15"/><rect class="bar" x="22" y="18" width="14" height="8"/><rect class="bar" x="42" y="6" width="14" height="20"/><rect class="bar on" x="62" y="5" width="14" height="21"/><rect class="bar" x="82" y="11" width="14" height="15"/></svg></div><div class="kpi"><span>Calibrated win rate</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 8 L18 12 L34 9 L50 10 L66 7 L82 10 L98 10"/></svg></div><div class="kpi"><span>Days to close</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 21 L18 22 L34 22 L50 22 L66 22 L82 16 L98 16"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Opportunity</span><span>Stage</span><span>Win prob.</span><span>Next step</span><span>Days</span></div><div class="mrow c5"><span class="case-id">OP-3104</span><span class="dim">Proposal</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="72" height="4" rx="2"/></svg><b>72%</b></span><span class="action">Send proposal</span><span class="prio">18</span></div><div class="mrow c5"><span class="case-id">OP-3105</span><span class="dim">Negotiation</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="58" height="4" rx="2"/></svg><b>58%</b></span><span class="action">Technical meeting</span><span class="prio">34</span></div><div class="mrow c5"><span class="case-id">OP-3106</span><span class="dim">Discovery</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="31" height="4" rx="2"/></svg><b>31%</b></span><span class="action">Qualify need</span><span class="prio">75</span></div><div class="mrow c5"><span class="case-id">OP-3107</span><span class="dim">Closing</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="86" height="4" rx="2"/></svg><b>86%</b></span><span class="action">Legal review</span><span class="prio">9</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Assistant</span><p class="copilot-q">Account summary · OP-3105</p><p class="copilot-a">Email activity is dropping. Suggestion: a <b>technical meeting</b> before the quarter closes.</p></div>
+              <div class="strategies"><div class="strategy"><b>Forecast</b><small>hierarchical</small></div><div class="strategy"><b>CRM</b><small>synced</small></div><div class="strategy"><b>Proposals</b><small>assisted</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>Almost every company's sales forecast is the sum of what each rep believes. That sum has a known, systematic bias: optimistic at the start of the quarter, pessimistic toward the end, and always carrying the same opportunities that have been “closing next month” for five months.</p>
+        <p>The cost isn't just a wrong forecast. It's that the team spends its time on the wrong opportunities, because the only signal available is the stage the rep entered by hand.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Win scoring</h4><p>The model learns from won and lost deals which signals actually predicted the outcome: activity pace, number of stakeholders, time in each stage, relative size.</p></div>
+          <div class="pd-cap"><h4>Cooling detection</h4><p>An opportunity that was promising and has stopped moving gets flagged before it's lost, with the detected reason and a suggested action to revive it.</p></div>
+          <div class="pd-cap"><h4>Forecast as a range</h4><p>The forecast is built by segment and rolled up, so rep, team and company can't contradict each other. It returns conservative, expected and optimistic scenarios.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The model is calibrated per segment and per sales cycle. A thirty-day deal and a nine-month deal have nothing in common, and a single model averages both badly. Calibration is also reviewed every quarter against what actually closed: a score that isn't recalibrated degrades on its own, silently.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Models</h4><ul><li>Win classification</li><li>Per-segment calibration</li><li>Survival analysis for time to close</li></ul></div>
+          <div><h4>Forecasting</h4><ul><li>Coherent hierarchical aggregation</li><li>Intervals per scenario</li><li>Comparison against target</li></ul></div>
+          <div><h4>Integration</h4><ul><li>Salesforce, HubSpot, Pipedrive or custom CRM</li><li>Email and calendar activity</li></ul></div>
+          <div><h4>Assistance</h4><ul><li>Proposal drafting</li><li>Account summary</li><li>Suggested next steps</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="hilo">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📱</span> WhatsApp</p>
+      <h2>Hilo</h2>
+      <p class="pd-lede">An agent that handles WhatsApp conversations end to end, quotes with real data from the system and hands off to a person when a case is beyond it.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Conversational service platform</dd></div>
+        <div><dt>Domain</dt><dd>Messaging support and sales</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud</dd></div>
+        <div><dt>Technical core</dt><dd>State machine on long-term memory</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of hilo with sample data: conversation, status, intent, confidence, action.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>hilo</span></span>
+            <span class="mock-crumb">WhatsApp / Conversations</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Conversations</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 22 L18 16 L34 19 L50 22 L66 22 L82 22 L98 19"/></svg></div><div class="kpi"><span>Resolved</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 17 L18 12 L34 16 L50 15 L66 16 L82 17 L98 18 L98 26 L2 26Z"/><path class="spark" d="M2 17 L18 12 L34 16 L50 15 L66 16 L82 17 L98 18"/></svg></div><div class="kpi"><span>Handed off</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 14 L18 8 L34 5 L50 6 L66 6 L82 4 L98 4"/></svg></div><div class="kpi"><span>Orders</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="18" width="14" height="8"/><rect class="bar" x="22" y="7" width="14" height="19"/><rect class="bar" x="42" y="6" width="14" height="20"/><rect class="bar" x="62" y="16" width="14" height="10"/><rect class="bar on" x="82" y="5" width="14" height="21"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Conversation</span><span>Status</span><span>Intent</span><span>Confidence</span><span>Action</span></div><div class="mrow c5"><span class="case-id">+54 ··· 1207</span><span class="dim">Quoting</span><span>Quote</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="88" height="4" rx="2"/></svg><b>88%</b></span><span class="action">Quote in ERP</span></div><div class="mrow c5"><span class="case-id">+54 ··· 3321</span><span class="dim">Scheduling</span><span>Appointment</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="79" height="4" rx="2"/></svg><b>79%</b></span><span class="action">Book appointment</span></div><div class="mrow c5"><span class="case-id">+54 ··· 0954</span><span class="dim">Inquiring</span><span>Complaint</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="41" height="4" rx="2"/></svg><b>41%</b></span><span class="action">Hand off to agent</span></div><div class="mrow c5"><span class="case-id">+54 ··· 7718</span><span class="dim">Closing</span><span>Purchase</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="92" height="4" rx="2"/></svg><b>92%</b></span><span class="action">Create order</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Conversation</span><p class="copilot-q">“Do you have it in blue, and how much is it?”</p><p class="copilot-a">Yes, it's <b>in stock in blue</b>. Price and delivery time come from the ERP. Want me to reserve it?</p></div>
+              <div class="strategies"><div class="strategy"><b>Templates</b><small>approved</small></div><div class="strategy"><b>24 h window</b><small>managed</small></div><div class="strategy"><b>Handoff</b><small>with summary</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>WhatsApp bots fail for two opposite reasons. Menu-based ones are so rigid that people type “hi, I want to talk to a person” in their second message. Purely generative ones are so free that they promise prices that don't exist and delivery times nobody can meet.</p>
+        <p>What's needed sits in the middle: the freedom to understand anything people write, and the discipline to make every statement about price, stock or delivery time come from the system, not the model.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Stateful conversation</h4><p>The agent knows where each conversation is in the process (inquiring, quoting, closing, scheduling) and can step back when the customer changes the subject, without losing what it has already collected.</p></div>
+          <div class="pd-cap"><h4>Connected tools</h4><p>Quoting, checking stock, booking an appointment or creating the order are calls to the ERP. The model decides when to use them; the data always comes from the system.</p></div>
+          <div class="pd-cap"><h4>Clean handoff</h4><p>When confidence drops, the case is sensitive or the customer asks for it, the conversation passes to a person with the summary already written and the full history in view.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>Long-term memory is what separates a bot from an agent. A WhatsApp conversation can pick up three days later with a “so, what happened?”, and the system has to know what it's about. Each conversation stores its state, the data it has collected and a self-updating summary, so context doesn't depend on rereading a hundred messages every time.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Channel</h4><ul><li>WhatsApp Business API</li><li>Approved templates</li><li>Managed 24-hour window</li></ul></div>
+          <div><h4>Agent</h4><ul><li>Claude with tools</li><li>Conversational state machine</li><li>Confidence threshold for handoff</li></ul></div>
+          <div><h4>Memory</h4><ul><li>State per conversation</li><li>Incremental summary</li><li>Searchable history</li></ul></div>
+          <div><h4>Integration</h4><ul><li>ERP for pricing and stock</li><li>Scheduling and CRM</li><li>Payment gateway</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="timpano">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🎧</span> Call centers</p>
+      <h2>Tímpano</h2>
+      <p class="pd-lede">Assists the agent during the call, logs the interaction when it ends and audits one hundred percent of conversations against the quality scorecard.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Assistance and quality layer</dd></div>
+        <div><dt>Domain</dt><dd>Contact centers</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud or on-network</dd></div>
+        <div><dt>Technical core</dt><dd>Streaming transcription and calibrated evaluator</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Tímpano with sample data: call, team, intent, quality, alert.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Tímpano</span></span>
+            <span class="mock-crumb">Contact center / Calls</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Live calls</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 22 L18 19 L34 18 L50 22 L66 22 L82 22 L98 19"/></svg></div><div class="kpi"><span>Compliance</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 11 L18 11 L34 9 L50 11 L66 13 L82 13 L98 17 L98 26 L2 26Z"/><path class="spark" d="M2 11 L18 11 L34 9 L50 11 L66 13 L82 13 L98 17"/></svg></div><div class="kpi"><span>Quality</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 13 L18 10 L34 6 L50 9 L66 4 L82 9 L98 6"/></svg></div><div class="kpi"><span>Alerts</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 22 L18 20 L34 19 L50 20 L66 19 L82 19 L98 14"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Call</span><span>Team</span><span>Intent</span><span>Quality</span><span>Alert</span></div><div class="mrow c5"><span class="case-id">L-9031</span><span class="dim">Team A</span><span>Cancellation</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="84" height="4" rx="2"/></svg><b>84%</b></span><span><i class="pill low">No alerts</i></span></div><div class="mrow c5"><span class="case-id">L-9032</span><span class="dim">Team B</span><span>Billing complaint</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="62" height="4" rx="2"/></svg><b>62%</b></span><span><i class="pill mid">Missing disclosure</i></span></div><div class="mrow c5"><span class="case-id">L-9033</span><span class="dim">Team A</span><span>Plan change</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="91" height="4" rx="2"/></svg><b>91%</b></span><span><i class="pill low">No alerts</i></span></div><div class="mrow c5"><span class="case-id">L-9034</span><span class="dim">Team C</span><span>Complaint</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="44" height="4" rx="2"/></svg><b>44%</b></span><span><i class="pill high">Escalate</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Live assistance</span><p class="copilot-q">Detected intent: cancellation</p><p class="copilot-a">From the knowledge base: offer the <b>retention plan</b> and read the <b>mandatory disclosure</b>.</p></div>
+              <div class="strategies"><div class="strategy"><b>Transcription</b><small>streaming</small></div><div class="strategy"><b>Evaluator</b><small>calibrated</small></div><div class="strategy"><b>Root causes</b><small>grouped</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>A new agent takes months to get good, and what holds them back isn't attitude but the sheer number of things they need to know at once: where the data is, what they can offer, what they can't say. While they search, the customer waits.</p>
+        <p>On the other side, quality is measured by listening to five calls per agent per month. With that sample, a systematic problem goes undetected until it has already proven costly, and feedback reaches the agent late and without context.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Live copilot</h4><p>The call is transcribed as it happens. The system recognizes what's being discussed and surfaces the data, the suggested script or the compliance warning, without the agent having to look for anything.</p></div>
+          <div class="pd-cap"><h4>Automatic wrap-up</h4><p>When the call ends, the summary, the disposition code and the case notes are already logged. The agent reviews and confirms instead of typing, which is where the time between calls goes.</p></div>
+          <div class="pd-cap"><h4>Quality across every call</h4><p>Each conversation is scored against the team's actual scorecard: greeting, identification, listening, compliance, closing. Deviations are grouped by root cause, not listed call by call.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The evaluator is calibrated against the team's own historical human audits. If it scores by its own criteria, supervisors stop trusting it within two weeks. Agreement with the human auditor is measured and tuned until they match; only then does it scale to every call.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Audio</h4><ul><li>Streaming transcription</li><li>Speaker diarization</li><li>Sub-second latency</li></ul></div>
+          <div><h4>Assistance</h4><ul><li>Retrieval over the knowledge base</li><li>Intent detection</li><li>Compliance alerts</li></ul></div>
+          <div><h4>Quality</h4><ul><li>Evaluator calibrated against human audits</li><li>Root-cause clustering</li><li>Dashboard by agent and team</li></ul></div>
+          <div><h4>Integration</h4><ul><li>Telephony and call recorder</li><li>CRM for case logging</li><li>Knowledge base</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="mirador">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📊</span> Business Intelligence</p>
+      <h2>Mirador</h2>
+      <p class="pd-lede">Detects the variance, breaks it down by dimension until it finds where it originated, and explains it in plain language, showing the query it ran.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Analytics layer on the data warehouse</dd></div>
+        <div><dt>Domain</dt><dd>Reporting and business analysis</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud</dd></div>
+        <div><dt>Technical core</dt><dd>Dimensional root cause on a semantic layer</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Mirador with sample data: metric, dimension, variance vs plan, contribution, status.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Mirador</span></span>
+            <span class="mock-crumb">Analysis / Variances</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Sales vs plan</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 19 L18 14 L34 17 L50 11 L66 9 L82 4 L98 4"/><path class="spark" d="M2 20 L18 14 L34 17 L50 14 L66 15 L82 13 L98 12"/></svg></div><div class="kpi"><span>Margin</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 16 L18 20 L34 19 L50 20 L66 22 L82 22 L98 22 L98 26 L2 26Z"/><path class="spark" d="M2 16 L18 20 L34 19 L50 20 L66 22 L82 22 L98 22"/></svg></div><div class="kpi"><span>Variances</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 11 L18 12 L34 8 L50 5 L66 4 L82 4 L98 4"/></svg></div><div class="kpi"><span>Regions</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar on" x="2" y="5" width="14" height="21"/><rect class="bar" x="22" y="16" width="14" height="10"/><rect class="bar" x="42" y="18" width="14" height="8"/><rect class="bar" x="62" y="14" width="14" height="12"/><rect class="bar" x="82" y="7" width="14" height="19"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Metric</span><span>Dimension</span><span>Variance vs plan</span><span>Contribution</span><span>Status</span></div><div class="mrow c5"><span class="case-id">Sales</span><span class="dim">North region</span><span class="dim">−8%</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="62" height="4" rx="2"/></svg><b>62%</b></span><span><i class="pill mid">Variance</i></span></div><div class="mrow c5"><span class="case-id">Margin</span><span class="dim">Online channel</span><span class="dim">+4%</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="24" height="4" rx="2"/></svg><b>24%</b></span><span><i class="pill low">On plan</i></span></div><div class="mrow c5"><span class="case-id">Avg. ticket</span><span class="dim">Store 12</span><span class="dim">−12%</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="78" height="4" rx="2"/></svg><b>78%</b></span><span><i class="pill high">Critical</i></span></div><div class="mrow c5"><span class="case-id">Returns</span><span class="dim">Home category</span><span class="dim">+3%</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="18" height="4" rx="2"/></svg><b>18%</b></span><span><i class="pill low">On plan</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Natural-language question</span><p class="copilot-q">Why did sales drop in the North?</p><p class="copilot-a">The drop is explained mainly by the <b>average ticket at Store 12</b> and by the <b>appliances</b> category.</p></div>
+              <div class="strategies"><div class="strategy"><b>Metrics</b><small>single definition</small></div><div class="strategy"><b>Lineage</b><small>data</small></div><div class="strategy"><b>Access</b><small>row-level</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>A dashboard shows sales fell 8%. That's where the real work begins, and a person does it: filtering by region, by product, by channel, by week, until they find where the drop came from. It takes half a day, and the same people repeat it every month.</p>
+        <p>The other half of the problem is that the numbers don't reconcile across departments. Sales and finance both say “revenue” and measure different things, because each dashboard has its own definition buried inside a query nobody reviews.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Automatic root cause</h4><p>When a metric deviates, the system breaks it down across all its dimensions and looks for the combination that best explains the difference. It returns “the drop is in the wholesale channel of the central region, week 3,” not one more chart.</p></div>
+          <div class="pd-cap"><h4>Plain-language questions</h4><p>You ask in natural language and the system translates it into a query over the data model. It shows the query it ran, so the result can be verified instead of taken on faith.</p></div>
+          <div class="pd-cap"><h4>Period narrative</h4><p>Every dashboard can generate the text summarizing what happened, what changed from the previous period and what deserves attention this week.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The semantic layer is what keeps the model from making things up. Metrics, their dimensions and their calculation rules are defined in one place, and the natural-language translator can only compose from what exists there. It can't invent a metric that isn't defined, and “revenue” means the same thing across the whole company.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Data</h4><ul><li>BigQuery, Snowflake or PostgreSQL</li><li>Dimensional modeling</li><li>Incremental refresh</li></ul></div>
+          <div><h4>Semantics</h4><ul><li>Single metric definitions</li><li>Data lineage</li><li>Row-level access control</li></ul></div>
+          <div><h4>Analysis</h4><ul><li>Dimensional decomposition</li><li>Variance detection</li><li>Comparison against plan</li></ul></div>
+          <div><h4>Interface</h4><ul><li>Custom dashboards</li><li>Natural-language questions</li><li>Exports and subscriptions</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="codice">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">📄</span> Documents</p>
+      <h2>Códice</h2>
+      <p class="pd-lede">Turns documents into structured data, locating each field on its page and sending only what's unclear to human review.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Document processing platform</dd></div>
+        <div><dt>Domain</dt><dd>Back office, finance, legal and insurance</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud or on-network</dd></div>
+        <div><dt>Technical core</dt><dd>Layout vision with per-field confidence</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Códice with sample data: document, field, extracted value, confidence, destination.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Códice</span></span>
+            <span class="mock-crumb">Documents / Review queue</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Processed</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 15 L18 17 L34 13 L50 17 L66 21 L82 22 L98 22 L98 26 L2 26Z"/><path class="spark" d="M2 15 L18 17 L34 13 L50 17 L66 21 L82 22 L98 22"/></svg></div><div class="kpi"><span>Avg. confidence</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 13 L18 14 L34 9 L50 9 L66 6 L82 4 L98 5"/></svg></div><div class="kpi"><span>In review</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 20 L18 15 L34 10 L50 6 L66 4 L82 4 L98 4"/></svg></div><div class="kpi"><span>Posted to ERP</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="11" width="14" height="15"/><rect class="bar" x="22" y="16" width="14" height="10"/><rect class="bar" x="42" y="11" width="14" height="15"/><rect class="bar on" x="62" y="4" width="14" height="22"/><rect class="bar" x="82" y="14" width="14" height="12"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Document</span><span>Field</span><span>Extracted value</span><span>Confidence</span><span>Destination</span></div><div class="mrow c5"><span class="case-id">Invoice A-0012</span><span class="dim">Tax ID</span><span>30-7•••••-9</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="97" height="4" rx="2"/></svg><b>97%</b></span><span class="action">ERP</span></div><div class="mrow c5"><span class="case-id">Invoice A-0013</span><span class="dim">Total</span><span>$ 184,200</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="93" height="4" rx="2"/></svg><b>93%</b></span><span class="action">ERP</span></div><div class="mrow c5"><span class="case-id">Policy P-221</span><span class="dim">Term</span><span>03/01 – 09/01</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="61" height="4" rx="2"/></svg><b>61%</b></span><span class="action">Review</span></div><div class="mrow c5"><span class="case-id">Delivery note R-88</span><span class="dim">Date</span><span>Stamp over the value</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="34" height="4" rx="2"/></svg><b>34%</b></span><span class="action">Review</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Review</span><p class="copilot-q">Delivery note R-88 · Date field</p><p class="copilot-a">Low confidence due to an <b>overlapping stamp</b>. The image crop is shown next to the proposed value.</p></div>
+              <div class="strategies"><div class="strategy"><b>Coordinates</b><small>per field</small></div><div class="strategy"><b>Validation</b><small>of totals</small></div><div class="strategy"><b>Corrections</b><small>that teach</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>Manual document entry is the silent bottleneck of almost every back-office operation. Someone reads an invoice and types six fields into a system, hundreds of times a day, with the error rate that comes with it.</p>
+        <p>Automatic readers have existed for years, and yet data is still entered by hand, because they fail precisely on real-world documents: crooked scans, a stamp over the number, a supplier who changed the format without telling anyone.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Reading the real document</h4><p>It detects the visual structure (blocks, tables, headers) and reads on top of that, not on flat text. It works with scans, phone photos and native PDFs.</p></div>
+          <div class="pd-cap"><h4>Located extraction</h4><p>Each extracted field stores the coordinates it came from, so any value can be pointed out on the original image. That's what makes data entry auditable.</p></div>
+          <div class="pd-cap"><h4>Review where it's needed</h4><p>Every field comes with its confidence. Those above the threshold go straight through; those below go to a review queue with the image crop next to the proposed value.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The confidence threshold is set per field and per document type, not globally. Getting the invoice number wrong and getting the address wrong don't cost the same, so there's no reason they should require the same certainty. Tuning those thresholds is the lever that decides how much gets automated and how much gets reviewed, and it stays in the client's hands.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Vision</h4><ul><li>Layout segmentation</li><li>Block-level OCR</li><li>Scan deskewing and cleanup</li></ul></div>
+          <div><h4>Extraction</h4><ul><li>Models per document type</li><li>Per-field coordinates</li><li>Cross-validation of totals</li></ul></div>
+          <div><h4>Workflow</h4><ul><li>Review queue</li><li>Keyboard shortcuts for reviewers</li><li>Learning from corrections</li></ul></div>
+          <div><h4>Output</h4><ul><li>API and webhooks</li><li>Direct posting to the ERP</li><li>Spreadsheet export</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="clausula">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">⚖️</span> Legal</p>
+      <h2>Cláusula</h2>
+      <p class="pd-lede">Compares a contract against the company's policy playbook, flags deviations on the text itself and proposes alternative wording.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Contract review assistant</dd></div>
+        <div><dt>Domain</dt><dd>Corporate legal</dd></div>
+        <div><dt>Deployment</dt><dd>Private cloud</dd></div>
+        <div><dt>Technical core</dt><dd>Semantic comparison against a versioned playbook</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Cláusula with sample data: clause, type, playbook deviation, risk, suggestion.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Cláusula</span></span>
+            <span class="mock-crumb">Contracts / Review</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Contracts</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 10 L18 11 L34 10 L50 9 L66 8 L82 13 L98 7"/></svg></div><div class="kpi"><span>Clauses</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar on" x="2" y="13" width="14" height="13"/><rect class="bar" x="22" y="14" width="14" height="12"/><rect class="bar" x="42" y="17" width="14" height="9"/><rect class="bar" x="62" y="17" width="14" height="9"/><rect class="bar" x="82" y="17" width="14" height="9"/></svg></div><div class="kpi"><span>Risk</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 11 L18 13 L34 16 L50 16 L66 21 L82 21 L98 17"/></svg></div><div class="kpi"><span>Approved</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 21 L18 22 L34 16 L50 21 L66 20 L82 18 L98 19"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Clause</span><span>Type</span><span>Playbook deviation</span><span>Risk</span><span>Suggestion</span></div><div class="mrow c5"><span class="case-id">4.2</span><span class="dim">Liability</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="72" height="4" rx="2"/></svg><b>72%</b></span><span><i class="pill high">High</i></span><span class="action">Approved clause</span></div><div class="mrow c5"><span class="case-id">7.1</span><span class="dim">Confidentiality</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="12" height="4" rx="2"/></svg><b>12%</b></span><span><i class="pill low">Low</i></span><span class="dim">No changes</span></div><div class="mrow c5"><span class="case-id">9.3</span><span class="dim">Jurisdiction</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="48" height="4" rx="2"/></svg><b>48%</b></span><span><i class="pill mid">Medium</i></span><span class="action">Propose revision</span></div><div class="mrow c5"><span class="case-id">11</span><span class="dim">Termination</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="22" height="4" rx="2"/></svg><b>22%</b></span><span><i class="pill low">Low</i></span><span class="dim">No changes</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Applied criteria</span><p class="copilot-q">Clause 4.2 · Limitation of liability</p><p class="copilot-a">The proposed cap <b>doesn't comply with the playbook</b>. It's flagged on the text and the <b>approved clause</b> is suggested.</p></div>
+              <div class="strategies"><div class="strategy"><b>Playbook</b><small>versioned</small></div><div class="strategy"><b>Track changes</b><small>exportable</small></div><div class="strategy"><b>Signature</b><small>electronic</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>A small legal team reviews contracts that arrive faster than they can be read. The pressure is always the same: sales wants to sign today, and the risk of letting a clause slip through is discovered two years later, when nothing can be done about it.</p>
+        <p>On top of that, the criteria live in people's heads. When someone leaves the team, the standard for what's acceptable and what isn't leaves with them, and each review starts to depend on who did it.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Clause segmentation</h4><p>The contract is split into clauses, recognizing each one's type: confidentiality, liability, termination, intellectual property, penalties, governing law.</p></div>
+          <div class="pd-cap"><h4>Comparison against policy</h4><p>Each clause is compared with what the company has defined as acceptable. Missing, deviating and adversely worded clauses are flagged, graded by risk level.</p></div>
+          <div class="pd-cap"><h4>Proposed wording</h4><p>For each finding, the alternative from the approved library is offered, ready to paste in or take to the negotiation with the rationale at hand.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The policy playbook is versioned, and each review records which version it used. That matters more than it seems: when someone asks two years from now why that clause was accepted, the answer is “because in March 2026 the policy said this,” and there's the document to prove it.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Understanding</h4><ul><li>Clause segmentation</li><li>Classification by type</li><li>Semantic comparison</li></ul></div>
+          <div><h4>Criteria</h4><ul><li>Versioned playbook</li><li>Risk grading</li><li>Approved clause library</li></ul></div>
+          <div><h4>Work</h4><ul><li>Markup on the original text</li><li>Export with tracked changes</li><li>History per contract</li></ul></div>
+          <div><h4>Integration</h4><ul><li>Document repository</li><li>Electronic signature</li><li>Approval workflow</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="agora">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🏢</span> Municipalities</p>
+      <h2>Ágora</h2>
+      <p class="pd-lede">Takes a resident's complaint from any channel, locates it, classifies it, groups it with duplicates and moves it through the administrative workflow.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Municipal management platform</dd></div>
+        <div><dt>Domain</dt><dd>Local government</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud or municipal infrastructure</dd></div>
+        <div><dt>Technical core</dt><dd>Classification and geocoding on a case-file engine</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Ágora with sample data: case, type, channel, grouped reports, status.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Ágora</span></span>
+            <span class="mock-crumb">Complaints / Case files</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Complaints by channel</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="12" width="14" height="14"/><rect class="bar" x="22" y="15" width="14" height="11"/><rect class="bar" x="42" y="12" width="14" height="14"/><rect class="bar on" x="62" y="8" width="14" height="18"/><rect class="bar" x="82" y="10" width="14" height="16"/></svg></div><div class="kpi"><span>Grouped cases</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 22 L18 21 L34 22 L50 22 L66 17 L82 16 L98 15"/></svg></div><div class="kpi"><span>Deadlines</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 14 L18 14 L34 17 L50 18 L66 13 L82 14 L98 8"/></svg></div><div class="kpi"><span>Time by department</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 6 L18 4 L34 9 L50 6 L66 4 L82 4 L98 4"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Case</span><span>Type</span><span>Channel</span><span>Grouped reports</span><span>Status</span></div><div class="mrow c5"><span class="case-id">R-4410</span><span class="dim">Pothole</span><span>WhatsApp</span><span class="prio">10 reports</span><span><i class="pill mid">With dept.</i></span></div><div class="mrow c5"><span class="case-id">R-4411</span><span class="dim">Streetlight</span><span>Web</span><span class="prio">3 reports</span><span><i class="pill low">Resolved</i></span></div><div class="mrow c5"><span class="case-id">R-4412</span><span class="dim">Tree trimming</span><span>Phone</span><span class="prio">1 report</span><span><i class="pill high">Overdue</i></span></div><div class="mrow c5"><span class="case-id">R-4413</span><span class="dim">Waste</span><span>In person</span><span class="prio">5 reports</span><span><i class="pill mid">Assigned</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Resident notice</span><p class="copilot-q">R-4411 · Streetlight fixed</p><p class="copilot-a">The case was closed and the <b>residents who reported it</b> get notified through the <b>same channel</b>.</p></div>
+              <div class="strategies"><div class="strategy"><b>Geocoding</b><small>fault-tolerant</small></div><div class="strategy"><b>Digital signature</b><small>case files</small></div><div class="strategy"><b>Public map</b><small>of complaints</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>A municipality receives the same complaint through five different channels and logs it five times, or doesn't log it at all. The resident who reported the pothole hears nothing until someone shows up to fix it, if anyone does.</p>
+        <p>Internally, the case file moves on paper or in a system that doesn't track deadlines. Nobody knows how long each department takes or where things get stuck, so nothing can be improved either: there's no number to discuss.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Unified intake</h4><p>WhatsApp, web, phone and in-person requests all land in the same place. Free text is classified by complaint type and geocoded, even when the address is written the way people say it rather than the way it appears in the land registry.</p></div>
+          <div class="pd-cap"><h4>Duplicate grouping</h4><p>Complaints about the same problem, in the same place and time frame, are merged into a single case. Ten residents reporting the same pothole create one case file, not ten.</p></div>
+          <div class="pd-cap"><h4>Case files with deadlines</h4><p>The case moves through the administrative workflow with its transfers, signatures and deadlines. When it's closed, the resident is notified through the same channel they used to report it.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>Deduplication across space and time is what makes the system usable. Without it the inbox fills with duplicates and the team goes back to the spreadsheet within a month. The grouping criteria are configurable per complaint type: a pothole and a power outage don't share the same radius or the same time window.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Intake</h4><ul><li>WhatsApp Business API</li><li>Web form and front desk</li><li>Phone with transcription</li></ul></div>
+          <div><h4>Intelligence</h4><ul><li>Free-text classification</li><li>Fault-tolerant geocoding</li><li>Spatio-temporal clustering</li></ul></div>
+          <div><h4>Case files</h4><ul><li>Configurable workflow</li><li>Digital signature</li><li>Deadline and transfer tracking</li></ul></div>
+          <div><h4>Transparency</h4><ul><li>Public complaints map</li><li>Resident notifications</li><li>Time-by-department dashboard</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="ventanilla">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🏥</span> Administration</p>
+      <h2>Ventanilla</h2>
+      <p class="pd-lede">Books appointments by actual duration, anticipates no-shows to overbook sensibly and chases missing paperwork on its own.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Administrative platform</dd></div>
+        <div><dt>Domain</dt><dd>Healthcare, education and public administration</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud</dd></div>
+        <div><dt>Technical core</dt><dd>Constraint optimization and no-show model</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Ventanilla with sample data: appointment, service, no-show prob., paperwork, action.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Ventanilla</span></span>
+            <span class="mock-crumb">Schedule / Appointments</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Utilization</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 22 L18 22 L34 20 L50 22 L66 22 L82 22 L98 21 L98 26 L2 26Z"/><path class="spark" d="M2 22 L18 22 L34 20 L50 22 L66 22 L82 22 L98 21"/></svg></div><div class="kpi"><span>No-shows</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 13 L18 12 L34 11 L50 10 L66 12 L82 8 L98 12"/></svg></div><div class="kpi"><span>Resources</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="12" width="14" height="14"/><rect class="bar" x="22" y="16" width="14" height="10"/><rect class="bar on" x="42" y="4" width="14" height="22"/><rect class="bar" x="62" y="15" width="14" height="11"/><rect class="bar" x="82" y="17" width="14" height="9"/></svg></div><div class="kpi"><span>Paperwork</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 17 L18 17 L34 13 L50 10 L66 12 L82 8 L98 6"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Slot</span><span>Service</span><span>No-show prob.</span><span>Paperwork</span><span>Action</span></div><div class="mrow c5"><span class="case-id">08:30</span><span class="dim">Consultation</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="12" height="4" rx="2"/></svg><b>12%</b></span><span><i class="pill low">Complete</i></span><span class="dim">—</span></div><div class="mrow c5"><span class="case-id">09:00</span><span class="dim">Test</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="46" height="4" rx="2"/></svg><b>46%</b></span><span><i class="pill mid">1 missing</i></span><span class="action">Remind</span></div><div class="mrow c5"><span class="case-id">09:30</span><span class="dim">Procedure</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="71" height="4" rx="2"/></svg><b>71%</b></span><span><i class="pill high">Pending</i></span><span class="action">Overbook</span></div><div class="mrow c5"><span class="case-id">10:00</span><span class="dim">Consultation</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="18" height="4" rx="2"/></svg><b>18%</b></span><span><i class="pill low">Complete</i></span><span class="dim">—</span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Optimization</span><p class="copilot-q">Can we add an overbooked slot at 9:30?</p><p class="copilot-a">Yes: the <b>no-show probability</b> in that slot is high and the room has <b>equipment available</b>.</p></div>
+              <div class="strategies"><div class="strategy"><b>Constraints</b><small>rooms and equipment</small></div><div class="strategy"><b>Reminders</b><small>WhatsApp and email</small></div><div class="strategy"><b>Checklist</b><small>per procedure</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>The schedule at almost every organization that serves people is built on a fixed grid: twenty-minute slots, all the same. But not every service takes the same time, so half the day runs late and the other half has gaps nobody uses.</p>
+        <p>Then there are no-shows. If you don't overbook, you lose capacity every day; if you overbook evenly, the waiting room fills up. The right decision depends on the time slot, the type of service and the person's profile, and nobody has time to work that out by hand.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Optimized schedule</h4><p>Appointments are assigned within real constraints: which professional, which room, which equipment, and how long that service actually takes based on history.</p></div>
+          <div class="pd-cap"><h4>Smart overbooking</h4><p>A model estimates the no-show probability by time slot and by profile, and adjusts overbooking to fill the schedule without creating waits.</p></div>
+          <div class="pd-cap"><h4>Paperwork up to date</h4><p>The system knows which document is missing for each procedure and requests it automatically, through the channel where the person actually responds. Procedures stop stalling while waiting for an attachment.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The duration of each service isn't declared: it's measured. The system learns from history how long each type of appointment really takes with each professional, and that actual duration is what goes into the optimization. That's the difference between a schedule that works and one that's running late every day by ten in the morning.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Optimization</h4><ul><li>Constraint programming</li><li>Resources, rooms and equipment</li><li>Duration learned from history</li></ul></div>
+          <div><h4>Models</h4><ul><li>No-show probability by time slot</li><li>Personal profile</li><li>Dynamic overbooking adjustment</li></ul></div>
+          <div><h4>Documents</h4><ul><li>Checklist per procedure</li><li>WhatsApp and email reminders</li><li>Uploads from the phone</li></ul></div>
+          <div><h4>Integration</h4><ul><li>Health records or management system</li><li>Billing</li><li>Practitioner calendars</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="surco">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🌾</span> Agro</p>
+      <h2>Surco</h2>
+      <p class="pd-lede">Cross-references the satellite condition of each field with the grower's account history to assess credit and anticipate their ability to pay for the season.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Agri-finance analytics platform</dd></div>
+        <div><dt>Domain</dt><dd>Cooperatives, grain elevators and agricultural finance</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud</dd></div>
+        <div><dt>Technical core</dt><dd>Per-field satellite indices and risk model</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of surco with sample data: field, crop, vegetation index, estimated yield, risk.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>surco</span></span>
+            <span class="mock-crumb">Fields / Satellite monitoring</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Vegetation</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 9 L18 13 L34 11 L50 9 L66 5 L82 7 L98 6 L98 26 L2 26Z"/><path class="spark" d="M2 9 L18 13 L34 11 L50 9 L66 5 L82 7 L98 6"/></svg></div><div class="kpi"><span>Estimated yield</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 15 L18 19 L34 20 L50 22 L66 21 L82 22 L98 22"/><path class="spark" d="M2 8 L18 10 L34 8 L50 10 L66 14 L82 9 L98 9"/></svg></div><div class="kpi"><span>Climate risk</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 14 L18 16 L34 20 L50 22 L66 22 L82 22 L98 22"/></svg></div><div class="kpi"><span>Scoring</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="16" width="14" height="10"/><rect class="bar" x="22" y="9" width="14" height="17"/><rect class="bar" x="42" y="9" width="14" height="17"/><rect class="bar on" x="62" y="5" width="14" height="21"/><rect class="bar" x="82" y="10" width="14" height="16"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Field</span><span>Crop</span><span>Vegetation index</span><span>Estimated yield</span><span>Risk</span></div><div class="mrow c5"><span class="case-id">L-12 North</span><span class="dim">Soybean</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="81" height="4" rx="2"/></svg><b>81%</b></span><span class="dim">Normal to high</span><span><i class="pill low">Low</i></span></div><div class="mrow c5"><span class="case-id">L-07 Lowland</span><span class="dim">Corn</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="58" height="4" rx="2"/></svg><b>58%</b></span><span class="dim">Medium</span><span><i class="pill mid">Medium</i></span></div><div class="mrow c5"><span class="case-id">L-21 Hill</span><span class="dim">Wheat</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="39" height="4" rx="2"/></svg><b>39%</b></span><span class="dim">Low to medium</span><span><i class="pill high">High</i></span></div><div class="mrow c5"><span class="case-id">L-03 East</span><span class="dim">Soybean</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="76" height="4" rx="2"/></svg><b>76%</b></span><span class="dim">Normal</span><span><i class="pill low">Low</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Field analysis</span><p class="copilot-q">Why is L-21 high risk?</p><p class="copilot-a">The index dropped in the <b>latest cloud-free images</b> and matches a water deficit in the <b>area's historical series</b>.</p></div>
+              <div class="strategies"><div class="strategy"><b>Sentinel · Landsat</b><small>imagery</small></div><div class="strategy"><b>Land registry</b><small>cross-checked</small></div><div class="strategy"><b>Scoring</b><small>agro</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>Whoever finances the grower (the cooperative, the grain elevator, the bank) decides based on last year's balance sheet and the personal relationship. Both are stale or subjective information in a business where the outcome is determined by what's happening in the field this season.</p>
+        <p>And climate risk is treated as an imponderable: everyone knows it exists, nobody measures it, and it only comes up once there has already been a drought and the portfolio is in trouble.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Satellite tracking</h4><p>Each field is tracked with periodic imagery. Vegetation indices build the season's curve, which is compared against the field's own history and against the surrounding area's.</p></div>
+          <div class="pd-cap"><h4>Yield estimation</h4><p>From that curve, plus weather and crop type, comes a yield estimate with its range, updated as the season progresses.</p></div>
+          <div class="pd-cap"><h4>Risk and ability to pay</h4><p>Estimated yield, the commodity price and outstanding debt build the projection of what each grower will be able to pay and at what point in the year.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The credit model treats satellite data as one more variable, not as an oracle. A low vegetation index could be drought, late planting or a poorly filtered cloud. That's why the signal comes in alongside the area's weather, the field's history and payment behavior, and the weight of each source is measured, not assumed.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Satellite</h4><ul><li>Sentinel and Landsat imagery</li><li>Per-field vegetation indices</li><li>Cloud filtering</li></ul></div>
+          <div><h4>Geo</h4><ul><li>Georeferenced fields</li><li>Land registry cross-check</li><li>Historical series by area</li></ul></div>
+          <div><h4>Models</h4><ul><li>Yield estimation with range</li><li>Climate risk</li><li>Agricultural credit scoring</li></ul></div>
+          <div><h4>Integration</h4><ul><li>Cooperative or grain elevator system</li><li>Grower's account history</li><li>Market prices</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="cantera">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">👨‍💼</span> HR</p>
+      <h2>Cantera</h2>
+      <p class="pd-lede">Reads résumés by understanding career paths, ranks them against what the role actually needs and explains why each candidate landed where they did.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Recruiting and development platform</dd></div>
+        <div><dt>Domain</dt><dd>Human resources</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud</dd></div>
+        <div><dt>Technical core</dt><dd>Skills-based matching with bias auditing</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Cantera with sample data: candidate, skills, match, evidence, stage.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Cantera</span></span>
+            <span class="mock-crumb">Recruiting / Open search</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Applications</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 14 L18 12 L34 15 L50 15 L66 20 L82 22 L98 22"/></svg></div><div class="kpi"><span>Match</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="17" width="14" height="9"/><rect class="bar on" x="22" y="5" width="14" height="21"/><rect class="bar" x="42" y="18" width="14" height="8"/><rect class="bar" x="62" y="11" width="14" height="15"/><rect class="bar" x="82" y="12" width="14" height="14"/></svg></div><div class="kpi"><span>Bias audit</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 17 L18 14 L34 9 L50 9 L66 13 L82 11 L98 9"/></svg></div><div class="kpi"><span>Stages</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="area" d="M2 20 L18 16 L34 18 L50 17 L66 17 L82 11 L98 14 L98 26 L2 26Z"/><path class="spark" d="M2 20 L18 16 L34 18 L50 17 L66 17 L82 11 L98 14"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Candidate</span><span>Skills</span><span>Match</span><span>Evidence</span><span>Stage</span></div><div class="mrow c5"><span class="case-id">CV-1180</span><span class="dim">Data · SQL · Python</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="86" height="4" rx="2"/></svg><b>86%</b></span><span class="dim">Cited projects</span><span><i class="pill low">Interview</i></span></div><div class="mrow c5"><span class="case-id">CV-1181</span><span class="dim">Management · Sales</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="61" height="4" rx="2"/></svg><b>61%</b></span><span class="dim">Experience</span><span><i class="pill mid">Review</i></span></div><div class="mrow c5"><span class="case-id">CV-1182</span><span class="dim">Python · APIs</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="79" height="4" rx="2"/></svg><b>79%</b></span><span class="dim">Certification</span><span><i class="pill low">Interview</i></span></div><div class="mrow c5"><span class="case-id">CV-1183</span><span class="dim">Support</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="38" height="4" rx="2"/></svg><b>38%</b></span><span class="dim">Partial</span><span><i class="pill high">Not advancing</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Explained score</span><p class="copilot-q">Why does CV-1180 have a high match?</p><p class="copilot-a">Meets <b>4 of 5 requirements</b> with evidence in the résumé. <b>Sensitive fields</b> are kept out of the model.</p></div>
+              <div class="strategies"><div class="strategy"><b>Bias audit</b><small>per search</small></div><div class="strategy"><b>Guide</b><small>for interviews</small></div><div class="strategy"><b>Decisions</b><small>logged</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>A mid-sized search gets two hundred résumés and thirty get reviewed. Keyword filters discard good people because they wrote “data analysis” where the posting said “data analytics,” and let through people who used the right words without ever having done the work.</p>
+        <p>And when screening is automated, a more serious problem appears: the model learns from past hiring, and if that history is biased, it reproduces and scales the bias. Automating without measuring that just makes the problem worse, faster.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Reading the career path</h4><p>The résumé is understood as a story: what the person did, for how long, with how much growing responsibility. It doesn't look for words; it identifies skills along with the evidence that backs them up.</p></div>
+          <div class="pd-cap"><h4>Explained ranking</h4><p>Candidates are ranked against the role's actual requirements, and each position comes with what they meet, what they don't, and where in the résumé that conclusion came from.</p></div>
+          <div class="pd-cap"><h4>Process support</h4><p>An interview guide covering what still needs probing for that specific candidate, a structured evaluation and an onboarding plan for whoever is finally hired.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The system ranks and justifies; it never discards on its own. The decision to drop someone from the list always belongs to a person, and there's a design reason behind it: that's what makes auditing possible. Every search runs an analysis comparing the makeup of the rankings with that of the applicant pool, and flags any skew.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Understanding</h4><ul><li>Résumé parsing in any format</li><li>Evidence-backed skills</li><li>Title and company normalization</li></ul></div>
+          <div><h4>Matching</h4><ul><li>Structured role requirements</li><li>Score explained by skill</li><li>Comparison against the current team</li></ul></div>
+          <div><h4>Fairness</h4><ul><li>Bias audit per search</li><li>Sensitive fields excluded from the model</li><li>Log of human decisions</li></ul></div>
+          <div><h4>Process</h4><ul><li>Interview guide</li><li>Structured evaluation</li><li>Onboarding plan</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="pd" data-proj="preceptor">
+      <p class="pd-rubro"><span class="em" aria-hidden="true">🎓</span> Education</p>
+      <h2>Preceptor</h2>
+      <p class="pd-lede">Detects which prior concept a student is missing when they get stuck and gives them the exercise for that gap, not the next one on the list.</p>
+      <dl class="pd-spec">
+        <div><dt>Type</dt><dd>Adaptive learning platform</dd></div>
+        <div><dt>Domain</dt><dd>Secondary, higher education and corporate training</dd></div>
+        <div><dt>Deployment</dt><dd>Cloud</dd></div>
+        <div><dt>Technical core</dt><dd>Knowledge model on a prerequisite graph</dd></div>
+      </dl>
+      <section class="pd-sec pd-mock"><!-- mock -->
+        <h3>Product view</h3>
+        <div class="mock" role="img" aria-label="Illustrative view of Preceptor with sample data: student, concept, mastery, next activity, alert.">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="mock-brand"><i class="mock-dot"></i><span>Preceptor</span></span>
+            <span class="mock-crumb">Course / Mastery map</span>
+            <span class="mock-tag">Sample data</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="mock-kpis"><div class="kpi"><span>Mastery</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><rect class="bar" x="2" y="13" width="14" height="13"/><rect class="bar" x="22" y="10" width="14" height="16"/><rect class="bar" x="42" y="16" width="14" height="10"/><rect class="bar" x="62" y="11" width="14" height="15"/><rect class="bar on" x="82" y="7" width="14" height="19"/></svg></div><div class="kpi"><span>Activity</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark" d="M2 9 L18 11 L34 14 L50 15 L66 11 L82 13 L98 14"/></svg></div><div class="kpi"><span>Falling behind</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark amber" d="M2 22 L18 19 L34 21 L50 22 L66 19 L82 22 L98 19"/></svg></div><div class="kpi"><span>Grading</span><svg viewBox="0 0 100 26" preserveAspectRatio="none"><path class="spark blue" d="M2 5 L18 10 L34 6 L50 10 L66 7 L82 12 L98 7"/></svg></div></div>
+            <div class="mock-table"><div class="mrow c5 head"><span>Student</span><span>Concept</span><span>Mastery</span><span>Next activity</span><span>Alert</span></div><div class="mrow c5"><span class="case-id">E-204</span><span class="dim">Fractions</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="84" height="4" rx="2"/></svg><b>84%</b></span><span class="action">Capstone exercise</span><span><i class="pill low">On track</i></span></div><div class="mrow c5"><span class="case-id">E-205</span><span class="dim">Equations</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v amber" width="52" height="4" rx="2"/></svg><b>52%</b></span><span class="action">Review prerequisite</span><span><i class="pill mid">Watch</i></span></div><div class="mrow c5"><span class="case-id">E-206</span><span class="dim">Ratios</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v red" width="29" height="4" rx="2"/></svg><b>29%</b></span><span class="action">Back to fractions</span><span><i class="pill high">Behind</i></span></div><div class="mrow c5"><span class="case-id">E-207</span><span class="dim">Equations</span><span class="mbar"><svg viewBox="0 0 100 4" preserveAspectRatio="none"><rect class="t" width="100" height="4" rx="2"/><rect class="v " width="73" height="4" rx="2"/></svg><b>73%</b></span><span class="action">Open problem</span><span><i class="pill low">On track</i></span></div></div>
+            <div class="mock-bottom">
+              <div class="copilot"><span class="copilot-h">Grading</span><p class="copilot-q">Open-ended answer · E-205</p><p class="copilot-a">Correct setup, error when <b>solving for x</b>. Written feedback based on the <b>rubric</b>, pending teacher review.</p></div>
+              <div class="strategies"><div class="strategy"><b>Graph</b><small>of prerequisites</small></div><div class="strategy"><b>Forgetting curve</b><small>modeled</small></div><div class="strategy"><b>Reports</b><small>for leadership</small></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="pd-mock-note">Illustrative view with sample data.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>The problem</h3>
+        <p>When a student gets stuck on a topic, the problem is almost never in that topic. It's three steps back, in something that stayed shaky and nobody caught because the class kept moving forward anyway.</p>
+        <p>A teacher with thirty students can't track that case by case. And platforms that promise “personalized learning” usually just reshuffle the order of exercises, without any real model of what each student knows.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>How it works</h3>
+        <div class="pd-caps">
+          <div class="pd-cap"><h4>Student model</h4><p>For each concept, it estimates the level of mastery and how it fades over time. That model updates with every answer, not with every test.</p></div>
+          <div class="pd-cap"><h4>The right exercise</h4><p>When someone gets it wrong, the prerequisite graph makes it possible to step back to the weak concept that explains it and work there. Then it returns to the original topic.</p></div>
+          <div class="pd-cap"><h4>Grading and feedback</h4><p>Open-ended work is graded against the rubric with written feedback, and the teacher sees the course map: which topics are weak and for how many students.</p></div>
+        </div>
+      </section>
+      <!-- TODO(contenido): resultado real de este proyecto. Si no hay datos
+           que se puedan mostrar, borrar esta sección entera. -->
+      <section class="pd-sec pd-result">
+        <h3>Outcome</h3>
+        <p class="todo">Client: name and industry, or “client under NDA.” One line with the measurable change and its time frame.</p>
+        <dl class="cs-kpis">
+          <div class="todo"><dt>Metric 1</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 2</dt><dd>—</dd><small>value, unit and time frame</small></div>
+          <div class="todo"><dt>Metric 3</dt><dd>—</dd><small>value, unit and time frame</small></div>
+        </dl>
+        <blockquote class="cs-quote todo">
+          <p>Client testimonial, verbatim and with permission.</p>
+          <footer>Full name · Title · Company</footer>
+        </blockquote>
+      </section>
+      <section class="pd-sec">
+        <h3>Architecture decision</h3>
+        <p>The prerequisite graph is content, not code: it's built and maintained by the teaching team, not the technical team. That separation is what lets the same platform serve high school math and regulatory compliance training without rewriting anything.</p>
+      </section>
+      <section class="pd-sec">
+        <h3>Stack</h3>
+        <div class="pd-stack">
+          <div><h4>Model</h4><ul><li>Per-concept knowledge tracing</li><li>Forgetting curve</li><li>Bayesian mastery estimation</li></ul></div>
+          <div><h4>Content</h4><ul><li>Editable prerequisite graph</li><li>Tagged exercise bank</li><li>Rubrics per assignment</li></ul></div>
+          <div><h4>Grading</h4><ul><li>Open-ended answer evaluation</li><li>Written feedback</li><li>Teacher review</li></ul></div>
+          <div><h4>Analytics</h4><ul><li>Mastery map per course</li><li>Falling-behind alerts</li><li>Reports for leadership</li></ul></div>
+        </div>
+      </section>
+    </article>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <small>© <span id="year">2026</span> Moovi Solutions · All rights reserved</small>
+    <nav class="footer-links">
+      <a href="./#servicios">Services</a>
+      <a href="./#casos">Solutions</a>
+      <a href="industrias.html">Industries</a>
+      <a href="modelos.html">Models</a>
+      <a href="video-ia.html">AI Visual Studio</a>
+      <a href="portafolio.html">Case studies</a>
+      <a href="proyectos.html">CollectIQ</a>
+      <a href="./#contacto">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../ar/assets/app.js"></script>
+</body>
+</html>

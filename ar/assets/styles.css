@@ -415,19 +415,67 @@ p{ margin: 0; }
   gap: clamp(2rem, 5vw, 5rem);
   align-items: end;
 }
+/* Dos frases, una por renglón y sin cortes dentro de cada una. El título
+   puede pasar por encima de la columna de la ficha: el tamaño sale del
+   ancho útil del contenedor (cada renglón mide unas 13.6 veces el cuerpo)
+   para que la frase más larga entre siempre entera. */
 .hero h1{
-  font-size: var(--step-4);
+  font-size: clamp(2rem, calc((min(100vw, var(--maxw)) - 2 * var(--gutter)) / 14), 5.5rem);
   font-variation-settings: 'wdth' 116;
   font-weight: 800;
-  margin-block: 1.5rem 1.6rem;
+  line-height: 1.06;
+  margin-block: 1.5rem 1.9rem;
   letter-spacing: -.03em;
+  width: max-content;
+  text-wrap: nowrap;
+}
+/* En escritorio el título ocupa las dos columnas y la ficha baja a la
+   altura del párrafo, para que el renglón largo no la pise. */
+@media (min-width: 1041px){
+  .hero-grid{ row-gap: 0; }
+  .hero-grid > div:first-child{ display: contents; }
+  .hero-grid > div:first-child > *{ grid-column: 1; }
+  .hero-grid > div:first-child > h1{ grid-column: 1 / -1; }
+  .hero-side{ grid-column: 2; grid-row: 3 / 5; align-self: end; }
+}
+.hero h1 .tw-line{
+  display: block;
+  width: max-content;
+  white-space: nowrap;
+}
+/* Escritura: el texto completo siempre ocupa su lugar y lo que falta
+   escribir solo se oculta, así el título no cambia de tamaño ni salta. */
+.hero h1 .tw-rest{ visibility: hidden; }
+.tw-cursor{
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: .82em;
+  vertical-align: -.04em;
+}
+.tw-cursor::after{
+  content: "";
+  position: absolute;
+  left: .04em;
+  top: 0;
+  width: max(2px, .035em);
+  height: 100%;
+  border-radius: 1px;
+  background: linear-gradient(180deg, var(--cyan), var(--pulse));
+  animation: tw-blink 1.05s ease-in-out infinite;
+}
+.tw-cursor.is-typing::after{ animation: none; }
+@keyframes tw-blink{
+  0%, 45%{ opacity: 1; }
+  60%, 85%{ opacity: .15; }
+  100%{ opacity: 1; }
 }
 /* Degradé tecnológico que se desplaza lento sobre las letras */
 .hero h1 em{
   font-style: normal;
   color: var(--signal);
-  font-variation-settings: 'wdth' 90;
-  font-weight: 300;
+  font-variation-settings: 'wdth' 116;
+  font-weight: 800;
   background: linear-gradient(90deg, var(--signal), var(--cyan), var(--azure), var(--pulse), var(--magenta), var(--signal));
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -438,6 +486,12 @@ p{ margin: 0; }
 @keyframes gradient-shift{
   0%, 100%{ background-position: 0% 50%; }
   50%{      background-position: 100% 50%; }
+}
+/* En el teléfono la misma Archivo pasa a su ancho más condensado: es lo
+   que deja cada frase entera en un renglón con un cuerpo de ~44-52px. */
+@media (max-width: 640px){
+  .hero h1, .hero h1 em{ font-variation-settings: 'wdth' 64; }
+  .hero h1{ font-size: min(3.25rem, calc((100vw - 2 * var(--gutter)) / 8.4)); }
 }
 .hero-actions{
   display: flex;
@@ -3125,11 +3179,17 @@ html{ scrollbar-color: #9FB9C4 var(--paper); }
 
 /* ---------- Títulos: tinta con brillo de color ---------- */
 .eyebrow, .folio-band .eyebrow{ color: var(--cyan); text-shadow: 0 0 14px rgba(34,211,238,.35); }
+/* La tinta va en el primer renglón y no en todo el h1: recortado sobre el
+   h1, el degradé también pinta las letras ocultas que faltan escribir. */
 .hero h1{
-  background: linear-gradient(180deg, #0E1530 45%, #0B5E73 125%);
+  background: none;
+  filter: drop-shadow(0 0 30px rgba(34,211,238,.18));
+}
+.hero h1 > span.tw-line{
+  background: linear-gradient(180deg, #0E1530 60%, #0B5E73 190%);
   -webkit-background-clip: text;
           background-clip: text;
-  filter: drop-shadow(0 0 30px rgba(34,211,238,.18));
+  -webkit-text-fill-color: transparent;
 }
 h2, .page-hero h1{
   background: linear-gradient(95deg, #0E1530 0%, #16244A 38%, #0B7F9C 66%, #6A4FD8 86%, #C23C86 100%);
@@ -3765,6 +3825,33 @@ h2, .page-hero h1{
   text-shadow: none;
 }
 
+/* ---------- Menú: selector de idioma ES / EN ---------- */
+.lang-switch{
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.nav .lang-switch a{
+  padding: .28rem .6rem;
+  border-radius: 999px;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  line-height: 1.2;
+  border-bottom: 0;
+}
+.nav .lang-switch a::after{ content: none; }
+.nav .lang-switch a[aria-current="true"]{
+  color: #FFFFFF;
+  text-shadow: none;
+  background: linear-gradient(110deg, var(--signal), var(--azure));
+}
+@media (max-width: 1260px){
+  .nav .lang-switch{ align-self: flex-start; margin-top: 1.1rem; }
+}
+
 /* ---------- Encabezado ---------- */
 .vid-hero{
   display: grid;
@@ -4246,4 +4333,70 @@ h2, .page-hero h1{
   .vs-screen::after{ display: none; }
   .vs-head{ left: 16%; }
   .vid-feat:hover{ transform: none; }
+}
+
+/* ============================================================
+   CASOS DE ÉXITO
+   Bloque "Resultado" de cada ficha de proyecto: métricas y
+   testimonio, y la marca de contenido pendiente (.todo).
+   ============================================================ */
+
+/* ---------- Resultado dentro de cada ficha de proyecto ---------- */
+.cs-kpis{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+  margin: 1rem 0 0;
+}
+.cs-kpis > div{
+  padding: 1rem 1.15rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: .3rem;
+  align-content: start;
+}
+.cs-kpis dt{ order: 2; font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+.cs-kpis dd{
+  order: 1;
+  margin: 0;
+  font-family: var(--display);
+  font-variation-settings: 'wdth' 112;
+  font-weight: 800;
+  font-size: var(--step-2);
+  line-height: 1.05;
+  color: var(--text);
+}
+.cs-kpis small{ order: 3; color: var(--text-3); font-size: .74rem; line-height: 1.45; }
+.cs-kpis > .todo::before{ order: 0; }
+.cs-quote{
+  margin: 1.4rem 0 0;
+  padding: .8rem 1rem .8rem 1.3rem;
+  border-left: 2px solid var(--brand, var(--signal));
+}
+.cs-quote p{ margin: 0; font-family: var(--display); font-weight: 500; font-size: var(--step-0); line-height: 1.4; color: var(--text); }
+.cs-quote footer{ margin-top: .6rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; color: var(--text-3); }
+@media (max-width: 860px){
+  .cs-kpis{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Contenido pendiente ----------
+   Todo lo que lleva .todo es un lugar reservado para un dato real que
+   todavía no está. Se ve a propósito, para que no se publique sin
+   completar: al cargar el dato, se le quita la clase. */
+.todo{
+  outline: 1.5px dashed color-mix(in srgb, var(--amber) 75%, transparent);
+  outline-offset: 3px;
+  background-color: color-mix(in srgb, var(--amber) 7%, rgba(255,255,255,.72));
+}
+.todo::before{
+  content: "TODO";
+  display: block;
+  margin-bottom: .3rem;
+  font-family: var(--mono);
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  color: var(--amber);
 }

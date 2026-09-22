@@ -20,6 +20,8 @@ Es un sitio estático de un solo archivo: no necesita build, ni dependencias, ni
 
 No hay proceso de build. El sitio vive en `ar/` (se publica en `zelira.com.ar/ar/`). Editá `ar/index.html` y recargá el navegador. Los `.html` de la raíz solo redirigen a `/ar/`, para que las direcciones viejas sigan funcionando.
 
+La versión en inglés vive en `en/`, con los mismos nombres de archivo que `ar/`, y usa los estilos, imágenes y el script de `ar/assets/`. El selector ES / EN del menú salta entre las dos versiones de cada página. Cada cambio de texto en `ar/` tiene que repetirse en su gemela de `en/`. Los textos que escribe `app.js` (avisos del formulario, panel de código, contador del portafolio) están en los dos idiomas dentro del script, con `t('español', 'english')`.
+
 Para verlo servido por HTTP (recomendado si vas a probar el formulario o compartirlo en la red local):
 
 ```bash

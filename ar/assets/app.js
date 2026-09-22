@@ -8,6 +8,11 @@
      de actuar: lo que no está, simplemente no se inicializa. */
   function $(id) { return document.getElementById(id); }
 
+  /* Las páginas en inglés (/en/) usan este mismo script: los textos que
+     escribe el JS salen de acá según el idioma del documento. */
+  var EN = document.documentElement.lang === 'en';
+  function t(es, en) { return EN ? en : es; }
+
   /* ---- Capa futurista: aurora de fondo y barra de progreso ----
      Se insertan desde acá para no repetir el marcado en cada página. */
   var aurora = document.createElement('div');
@@ -57,17 +62,24 @@
     toggle.addEventListener('click', function () {
       var open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
-      toggle.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+      toggle.setAttribute('aria-label', open ? t('Abrir menú', 'Open menu') : t('Cerrar menú', 'Close menu'));
       nav.setAttribute('data-open', String(!open));
     });
     nav.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') {
         toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Abrir menú');
+        toggle.setAttribute('aria-label', t('Abrir menú', 'Open menu'));
         nav.setAttribute('data-open', 'false');
       }
     });
   }
+
+  /* ---- Selector de idioma: al cambiar, se queda en la misma sección ---- */
+  Array.prototype.forEach.call(document.querySelectorAll('.lang-switch a'), function (a) {
+    a.addEventListener('click', function () {
+      if (location.hash && a.getAttribute('aria-current') !== 'true') a.href = a.href.split('#')[0] + location.hash;
+    });
+  });
 
   /* ---- Ticker: se duplica para que el bucle sea continuo ---- */
   var track = $('tickerTrack');
@@ -314,8 +326,8 @@
       });
       /* Con "Todos" se muestra la cifra redonda de la marca, no el conteo exacto */
       if (cuenta) {
-        cuenta.textContent = fam === 'all' ? 'Más de 20 proyectos'
-          : (visibles === 1 ? '1 proyecto' : visibles + ' proyectos');
+        cuenta.textContent = fam === 'all' ? t('Más de 20 proyectos', 'Over 20 projects')
+          : (visibles === 1 ? t('1 proyecto', '1 project') : visibles + t(' proyectos', ' projects'));
       }
       if (vacio) vacio.hidden = visibles > 0;
     };
@@ -358,17 +370,17 @@
     if (String(data.get('_honey') || '')) return;   /* bot */
 
     if (!nombre || !email || !mensaje) {
-      aviso('Faltan datos: completá nombre, email y el detalle de la consulta.', true);
+      aviso(t('Faltan datos: completá nombre, email y el detalle de la consulta.', 'Some details are missing: please fill in your name, email and what you need.'), true);
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      aviso('Revisá el email: no parece una dirección válida.', true);
+      aviso(t('Revisá el email: no parece una dirección válida.', 'Please check your email: it does not look like a valid address.'), true);
       return;
     }
 
     boton.disabled = true;
-    boton.textContent = 'Enviando…';
-    aviso('Enviando tu consulta…', false);
+    boton.textContent = t('Enviando…', 'Sending…');
+    aviso(t('Enviando tu consulta…', 'Sending your message…'), false);
 
     var cuerpo = {
       Nombre: nombre,
@@ -376,7 +388,8 @@
       Email: email,
       'Tema de interés': interes,
       Consulta: mensaje,
-      _subject: 'Consulta desde el sitio - ' + interes,
+      Idioma: t('Español', 'Inglés'),
+      _subject: t('Consulta desde el sitio - ', 'Consulta desde el sitio (EN) - ') + interes,
       _template: 'table',
       _captcha: 'false'
     };
@@ -398,7 +411,8 @@
         if (r && (r.success === 'true' || r.success === true)) {
           form.reset();
           note.hidden = true;
-          aviso('Listo, ' + nombre + '. Recibimos tu consulta y te respondemos a ' + email + '.', false);
+          aviso(t('Listo, ' + nombre + '. Recibimos tu consulta y te respondemos a ' + email + '.',
+            'Thanks, ' + nombre + '. We received your message and will reply to ' + email + '.'), false);
           return;
         }
         throw new Error(r && r.message ? r.message : 'respuesta inesperada del servidor');
@@ -407,58 +421,60 @@
         /* El motivo técnico va a la consola, no a la pantalla del visitante */
         if (window.console && console.error) console.error('[moovi] envío fallido:', err);
         aviso(sinRespuesta
-          ? 'No pudimos conectar con el servidor de envíos. Revisá tu conexión, o escribinos a ' + DESTINO + '.'
-          : 'No pudimos procesar el envío. Escribinos a ' + DESTINO + ' y te respondemos igual.',
+          ? t('No pudimos conectar con el servidor de envíos. Revisá tu conexión, o escribinos a ' + DESTINO + '.',
+              'We could not reach the mail server. Check your connection, or write to us at ' + DESTINO + '.')
+          : t('No pudimos procesar el envío. Escribinos a ' + DESTINO + ' y te respondemos igual.',
+              'We could not process your message. Write to us at ' + DESTINO + ' and we will get back to you.'),
         true);
       })
       .then(function () {
         boton.disabled = false;
-        boton.textContent = 'Enviar consulta';
+        boton.textContent = t('Enviar consulta', 'Send message');
       });
   });
 
   /* ---- Panel de código: software escribiéndose ---- */
   var SNIPPETS = [
     {
-      file: 'ingesta.py',
+      file: t('ingesta.py', 'ingest.py'),
       lang: 'Python · FastAPI',
-      task: 'Ingesta de telemetría',
+      task: t('Ingesta de telemetría', 'Telemetry ingestion'),
       lines: [
-        [['@app', 'tk-kw'], ['.post(', 'tk-pun'], ['"/telemetria"', 'tk-str'], [')', 'tk-pun']],
-        [['async def ', 'tk-kw'], ['ingesta', 'tk-fn'], ['(lote: ', 'tk-pun'], ['list', 'tk-var'], ['[Lectura]):', 'tk-pun']],
-        [['    await ', 'tk-kw'], ['bus.publicar', 'tk-fn'], ['(', 'tk-pun'], ['"sensores"', 'tk-str'], [', lote)', 'tk-pun']],
-        [['    alertas', 'tk-var'], [' = ', 'tk-pun'], ['detectar_anomalias', 'tk-fn'], ['(lote)', 'tk-pun']],
-        [['    if ', 'tk-kw'], ['alertas', 'tk-var'], [':', 'tk-pun']],
-        [['        await ', 'tk-kw'], ['notificar', 'tk-fn'], ['(alertas)', 'tk-pun']],
-        [['    return ', 'tk-kw'], ['{', 'tk-pun'], ['"ok"', 'tk-str'], [': ', 'tk-pun'], ['True', 'tk-num'], [', ', 'tk-pun'], ['"n"', 'tk-str'], [': ', 'tk-pun'], ['len', 'tk-fn'], ['(lote)}', 'tk-pun']]
+        [['@app', 'tk-kw'], ['.post(', 'tk-pun'], [t('"/telemetria"', '"/telemetry"'), 'tk-str'], [')', 'tk-pun']],
+        [['async def ', 'tk-kw'], [t('ingesta', 'ingest'), 'tk-fn'], [t('(lote: ', '(batch: '), 'tk-pun'], ['list', 'tk-var'], [t('[Lectura]):', '[Reading]):'), 'tk-pun']],
+        [['    await ', 'tk-kw'], [t('bus.publicar', 'bus.publish'), 'tk-fn'], ['(', 'tk-pun'], [t('"sensores"', '"sensors"'), 'tk-str'], [t(', lote)', ', batch)'), 'tk-pun']],
+        [[t('    alertas', '    alerts'), 'tk-var'], [' = ', 'tk-pun'], [t('detectar_anomalias', 'detect_anomalies'), 'tk-fn'], [t('(lote)', '(batch)'), 'tk-pun']],
+        [['    if ', 'tk-kw'], [t('alertas', 'alerts'), 'tk-var'], [':', 'tk-pun']],
+        [['        await ', 'tk-kw'], [t('notificar', 'notify'), 'tk-fn'], [t('(alertas)', '(alerts)'), 'tk-pun']],
+        [['    return ', 'tk-kw'], ['{', 'tk-pun'], ['"ok"', 'tk-str'], [': ', 'tk-pun'], ['True', 'tk-num'], [', ', 'tk-pun'], ['"n"', 'tk-str'], [': ', 'tk-pun'], ['len', 'tk-fn'], [t('(lote)}', '(batch)}'), 'tk-pun']]
       ]
     },
     {
-      file: 'Carrito.tsx',
+      file: t('Carrito.tsx', 'Cart.tsx'),
       lang: 'TypeScript · React',
-      task: 'Checkout de ecommerce',
+      task: t('Checkout de ecommerce', 'Ecommerce checkout'),
       lines: [
-        [['export function ', 'tk-kw'], ['Carrito', 'tk-fn'], ['({ items }: ', 'tk-pun'], ['Props', 'tk-tag'], [') {', 'tk-pun']],
+        [['export function ', 'tk-kw'], [t('Carrito', 'Cart'), 'tk-fn'], ['({ items }: ', 'tk-pun'], ['Props', 'tk-tag'], [') {', 'tk-pun']],
         [['  const ', 'tk-kw'], ['total', 'tk-var'], [' = items.', 'tk-pun'], ['reduce', 'tk-fn'], ['(', 'tk-pun']],
-        [['    (acc, i) ', 'tk-var'], ['=> ', 'tk-kw'], ['acc + i.precio * i.cantidad,', 'tk-var']],
+        [['    (acc, i) ', 'tk-var'], ['=> ', 'tk-kw'], [t('acc + i.precio * i.cantidad,', 'acc + i.price * i.qty,'), 'tk-var']],
         [['    0', 'tk-num']],
         [['  );', 'tk-pun']],
-        [['  return ', 'tk-kw'], ['<Resumen', 'tk-tag'], [' total', 'tk-var'], ['={total} ', 'tk-pun'], ['/>', 'tk-tag'], [';', 'tk-pun']],
+        [['  return ', 'tk-kw'], [t('<Resumen', '<Summary'), 'tk-tag'], [' total', 'tk-var'], ['={total} ', 'tk-pun'], ['/>', 'tk-tag'], [';', 'tk-pun']],
         [['}', 'tk-pun']]
       ]
     },
     {
-      file: 'asistente.py',
+      file: t('asistente.py', 'assistant.py'),
       lang: 'Python · LLM',
-      task: 'Asistente sobre datos propios',
+      task: t('Asistente sobre datos propios', 'Assistant over your own data'),
       lines: [
-        [['# recupera contexto de tus documentos', 'tk-com']],
-        [['docs', 'tk-var'], [' = indice.', 'tk-pun'], ['buscar', 'tk-fn'], ['(pregunta, k=', 'tk-pun'], ['6', 'tk-num'], [')', 'tk-pun']],
-        [['contexto', 'tk-var'], [' = ', 'tk-pun'], ['unir', 'tk-fn'], ['(d.texto ', 'tk-pun'], ['for', 'tk-kw'], [' d ', 'tk-pun'], ['in', 'tk-kw'], [' docs)', 'tk-pun']],
-        [['respuesta', 'tk-var'], [' = modelo.', 'tk-pun'], ['responder', 'tk-fn'], ['(', 'tk-pun']],
-        [['    pregunta, contexto=contexto', 'tk-var']],
+        [[t('# recupera contexto de tus documentos', '# retrieve context from your documents'), 'tk-com']],
+        [['docs', 'tk-var'], [t(' = indice.', ' = index.'), 'tk-pun'], [t('buscar', 'search'), 'tk-fn'], [t('(pregunta, k=', '(question, k='), 'tk-pun'], ['6', 'tk-num'], [')', 'tk-pun']],
+        [[t('contexto', 'context'), 'tk-var'], [' = ', 'tk-pun'], [t('unir', 'join'), 'tk-fn'], [t('(d.texto ', '(d.text '), 'tk-pun'], ['for', 'tk-kw'], [' d ', 'tk-pun'], ['in', 'tk-kw'], [' docs)', 'tk-pun']],
+        [[t('respuesta', 'answer'), 'tk-var'], [t(' = modelo.', ' = model.'), 'tk-pun'], [t('responder', 'respond'), 'tk-fn'], ['(', 'tk-pun']],
+        [[t('    pregunta, contexto=contexto', '    question, context=context'), 'tk-var']],
         [[')', 'tk-pun']],
-        [['registrar', 'tk-fn'], ['(pregunta, respuesta, docs)', 'tk-pun']]
+        [[t('registrar', 'log'), 'tk-fn'], [t('(pregunta, respuesta, docs)', '(question, answer, docs)'), 'tk-pun']]
       ]
     }
   ];
@@ -518,7 +534,7 @@
     function type(snip, onDone) {
       elLines.innerHTML = '';
       elStatus.removeAttribute('data-state');
-      elState.textContent = 'compilando';
+      elState.textContent = t('compilando', 'compiling');
 
       var li = 0, ti = 0, ci = 0;
       var code = null, span = null, cls = null;
@@ -552,7 +568,7 @@
 
         if (li >= snip.lines.length) {
           elStatus.setAttribute('data-state', 'ok');
-          elState.textContent = 'listo';
+          elState.textContent = t('listo', 'ready');
           timer = window.setTimeout(onDone, 2600);
           return;
         }
@@ -575,10 +591,68 @@
       header(SNIPPETS[0]);
       renderStatic(SNIPPETS[0]);
       elStatus.setAttribute('data-state', 'ok');
-      elState.textContent = 'listo';
+      elState.textContent = t('listo', 'ready');
     } else {
       cycle();
     }
+  })();
+
+  /* ---- Héroe: título que se escribe y se borra ----
+     Cada renglón guarda su texto completo: lo escrito va en .tw-typed y
+     lo que falta en .tw-rest, oculto pero ocupando su lugar. */
+  (function heroTitle() {
+    var title = $('heroTitle');
+    if (!title || reduced) return;
+
+    var lines = Array.prototype.map.call(title.querySelectorAll('.tw-line'), function (el) {
+      var text = el.textContent;
+      el.textContent = '';
+      var typed = document.createElement('span');
+      var rest = document.createElement('span');
+      typed.className = 'tw-typed';
+      rest.className = 'tw-rest';
+      rest.textContent = text;
+      el.appendChild(typed);
+      el.appendChild(rest);
+      return { el: el, text: text, typed: typed, rest: rest };
+    });
+
+    var cursor = document.createElement('span');
+    cursor.className = 'tw-cursor';
+    var total = lines.reduce(function (n, l) { return n + l.text.length; }, 0);
+    var shown = 0;
+
+    function render() {
+      var left = shown;
+      var at = lines[0];
+      lines.forEach(function (l) {
+        var n = Math.max(0, Math.min(l.text.length, left));
+        left -= l.text.length;
+        l.typed.textContent = l.text.slice(0, n);
+        l.rest.textContent = l.text.slice(n);
+        if (n > 0) at = l;
+      });
+      /* El cursor queda al final del último renglón con texto */
+      at.el.insertBefore(cursor, at.rest);
+    }
+
+    function step(dir) {
+      cursor.classList.add('is-typing');
+      shown += dir;
+      render();
+      if (dir > 0 && shown >= total) {
+        cursor.classList.remove('is-typing');
+        return window.setTimeout(function () { step(-1); }, 2000);
+      }
+      if (dir < 0 && shown <= 0) {
+        cursor.classList.remove('is-typing');
+        return window.setTimeout(function () { step(1); }, 700);
+      }
+      window.setTimeout(function () { step(dir); }, dir > 0 ? 70 + Math.random() * 40 : 32);
+    }
+
+    render();
+    window.setTimeout(function () { step(1); }, 500);
   })();
 
   /* ---- Héroe: red de nodos en movimiento ---- */

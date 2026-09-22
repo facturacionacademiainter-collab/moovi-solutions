@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Moovi Solutions</title>
+<meta name="description" content="Moovi Solutions projects. CollectIQ: a collections intelligence platform that estimates payment probability and expected recovery, and prioritizes portfolio management.">
+<link rel="alternate" hreflang="es" href="https://zelira.com.ar/ar/proyectos.html">
+<link rel="alternate" hreflang="en" href="https://zelira.com.ar/en/proyectos.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
+<link rel="icon" href="../ar/assets/img/icono.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../ar/assets/styles.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="./" aria-label="Moovi Solutions, home">
+      <img class="brand-logo" src="../ar/assets/img/logo.svg" width="167" height="22" alt="Moovi Solutions">
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <i></i><i></i><i></i>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="industrias.html">Industries</a>
+      <a href="modelos.html">Models</a>
+      <div class="has-menu">
+        <a href="portafolio.html" aria-current="page">Case studies<span class="chev" aria-hidden="true"></span></a>
+        <div class="submenu">
+          <a class="submenu-card" href="portafolio.html">
+            <span class="submenu-name">See 20+ projects</span>
+            <span class="submenu-desc">Everything we've built, by industry</span>
+          </a>
+          <a class="submenu-card" href="proyectos.html">
+            <span class="submenu-name">CollectIQ</span>
+            <span class="submenu-desc">Collections intelligence</span>
+          </a>
+        </div>
+      </div>
+      <a href="video-ia.html">AI Visual Studio<span class="nav-badge">New</span></a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="../ar/proyectos.html" lang="es" hreflang="es">ES</a>
+        <a href="proyectos.html" lang="en" aria-current="true">EN</a>
+      </div>
+      <a class="btn" href="./#contacto">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Projects</p>
+      <h1>CollectIQ</h1>
+      <p class="lede">A collections intelligence platform. It takes an organization's delinquent portfolio, estimates which accounts will pay and when, and orders daily work by expected recovery instead of by debt age.</p>
+
+      <dl class="spec">
+        <div>
+          <dt>Type</dt>
+          <dd>Multi-tenant SaaS platform</dd>
+        </div>
+        <div>
+          <dt>Domain</dt>
+          <dd>Collections and portfolio recovery</dd>
+        </div>
+        <div>
+          <dt>Role</dt>
+          <dd>Our own product, from architecture to operations</dd>
+        </div>
+        <div>
+          <dt>Technical core</dt>
+          <dd>React · Supabase · In-house decision engine</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ WHAT IT SOLVES ============ -->
+  <section class="section" id="problema">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">The problem</p>
+          <h2>Managing a portfolio on gut feeling costs money.</h2>
+        </div>
+        <p class="muted">The daily question for a collections team isn't who owes the most, but who is worth calling today.</p>
+      </div>
+
+      <div class="prose reveal">
+        <p>In most operations, the portfolio is sorted by amount or days past due, and deciding whom to contact is left to each agent's experience. The outcome is familiar: the same effort goes into accounts that would have paid anyway and accounts that are unrecoverable, while the ones that needed timely follow-up go cold.</p>
+        <p>CollectIQ changes the sorting criterion. For each account it estimates <strong>payment probability by time bucket</strong> —at 5, 10, 15, 20, 30 and 30+ days—, <strong>expected recovery</strong> net of the cost of working it, and a <strong>priority</strong> that combines delinquency, amount and probability. On top of that, it proposes the next best action for each account.</p>
+        <p>The portfolio comes in via Excel, CSV or CRM sync, and the system automatically suggests how to map the file's columns to its data model, which is where half of these projects usually die.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="section" id="capacidades">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Capabilities</p>
+          <h2>What the platform does.</h2>
+        </div>
+        <p class="muted">Every module runs on the same decision engine, so every screen answers with the same logic.</p>
+      </div>
+
+      <div class="cases reveal">
+        <article class="case">
+          <h3>Decision engine</h3>
+          <p>Payment probability, expected recovery, risk score, right-party contact probability, estimated days to payment and work priority. Seven interfaces that any screen can query; none computes anything on its own.</p>
+          <div class="tags">
+            <span class="tag">Scoring</span><span class="tag">Prioritization</span><span class="tag">Next best action</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <h3>Simulation and scenarios</h3>
+          <p>A digital twin of the portfolio lets you test strategies before running them: what happens if you change the contact criteria, refinance a segment or move the monthly target. Includes forecasting against targets and backtesting.</p>
+          <div class="tags">
+            <span class="tag">Digital twin</span><span class="tag">What-if</span><span class="tag">Forecast</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <h3>AI copilot</h3>
+          <p>Natural-language questions about the portfolio, answered with the organization's real data. Every answer comes with an evidence panel showing where each number came from, so the recommendation can be audited rather than taken on faith.</p>
+          <div class="tags">
+            <span class="tag">Claude</span><span class="tag">Evidence</span><span class="tag">Explainability</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="rel-grid band-gap reveal">
+        <article class="rel-card"><h3>Alerts and anomaly detection</h3></article>
+        <article class="rel-card"><h3>Executive and operational dashboards</h3></article>
+        <article class="rel-card"><h3>Portfolio segmentation</h3></article>
+        <article class="rel-card"><h3>Recovery leakage analysis</h3></article>
+        <article class="rel-card"><h3>Multi-tenant with white labeling</h3></article>
+        <article class="rel-card"><h3>Documented public API</h3></article>
+      </div>
+
+      <figure class="shot shot-band shot-mid reveal">
+        <img src="../ar/assets/img/collectiq-capa-inteligencia.png"
+             width="1472" height="606" loading="lazy" decoding="async"
+             alt="CollectIQ intelligence layer: cards for detected risk, best opportunity, next-month forecast and a critical alert with the amount at stake; below, AI-suggested actions ranked by high and medium priority, each linking to its details.">
+        <figcaption>
+          <b>Suggested actions</b>
+          The engine doesn't just report: it recommends. Each action is prioritized by financial impact and model confidence, and opens up to show what it's based on.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ ARCHITECTURE ============ -->
+  <section class="section" id="arquitectura">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Architecture decision</p>
+          <h2>The intelligence lives outside the interface.</h2>
+        </div>
+        <p class="muted">The design decision that most shapes the future of a product like this one.</p>
+      </div>
+
+      <div class="split reveal">
+        <div class="prose">
+        <p>All calculation logic sits in its own layer, decoupled from React. No UI component contains formulas: when a screen needs a probability or a recommendation, it asks the engine. The engine exposes a stable contract —which function is called and what shape its output takes—, and behind that contract the implementation can change completely.</p>
+        <p>That means <strong>a trained model can replace any of the current calculations without touching a single line of UI code</strong>. Today the estimates are reference formulas, documented and tested; once there's enough data to train on, the internals get swapped and the platform never notices.</p>
+        <p>The same layer is shared between the frontend and the server functions, so a calculation never gives two different results depending on where it runs.</p>
+        </div>
+
+        <figure class="shot">
+          <img src="../ar/assets/img/collectiq-navegacion.png"
+               width="352" height="431" loading="lazy" decoding="async"
+               alt="CollectIQ side menu with the Indicators section expanded, showing Executive, Operational, Segmentation, Channels and times, Predictive model and Customer portfolio; below, the AI Intelligence and Platform sections.">
+          <figcaption>
+            <b>Three levels</b>
+            That separation shows in the menu itself: indicators, intelligence and platform are distinct layers, not tabs of the same thing.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ STACK ============ -->
+  <section class="section" id="stack-proyecto">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Stack</p>
+          <h2>What it's built with.</h2>
+        </div>
+        <p class="muted">Managed infrastructure and a lean dependency set, so the team spends its time on the domain, not on keeping servers alive.</p>
+      </div>
+
+      <div class="stack-grid reveal">
+        <div class="stack-col">
+          <h3>Interface</h3>
+          <ul>
+            <li><strong>React 19</strong> with Vite</li>
+            <li>Recharts for visualization</li>
+            <li>In-house component system</li>
+            <li>Vitest for testing</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Data and backend</h3>
+          <ul>
+            <li><strong>Supabase</strong> on PostgreSQL</li>
+            <li>Edge Functions on Deno</li>
+            <li>Scheduled jobs with pg-cron</li>
+            <li><strong>CRM</strong> sync</li>
+            <li>Excel and CSV ingestion</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Intelligence</h3>
+          <ul>
+            <li><strong>Claude</strong> for the copilot</li>
+            <li>In-house decision engine</li>
+            <li>Model registry and interface</li>
+            <li>Backtesting on historical data</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Operations</h3>
+          <ul>
+            <li>Automated continuous deployment</li>
+            <li>Per-organization API keys</li>
+            <li>Data-level access control</li>
+            <li>Per-customer usage limits</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="section" id="cierre">
+    <div class="wrap">
+      <div class="contact solo reveal">
+        <div class="contact-copy">
+          <p class="eyebrow">Have a project like this?</p>
+          <h2>We build products, not demos.</h2>
+          <p class="muted">CollectIQ is our own product, and the same team and the same standards apply to the software we build for clients. If your operation has a data and decision-making problem, tell us about it.</p>
+          <div class="hero-actions">
+            <a class="btn" href="./#contacto">Let's talk about your project</a>
+            <a class="btn btn-ghost" href="./#servicios">See what we do</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <small>© <span id="year">2026</span> Moovi Solutions · All rights reserved</small>
+    <nav class="footer-links">
+      <a href="./#servicios">Services</a>
+      <a href="./#casos">Solutions</a>
+      <a href="industrias.html">Industries</a>
+      <a href="modelos.html">Models</a>
+      <a href="video-ia.html">AI Visual Studio</a>
+      <a href="portafolio.html">Case studies</a>
+      <a href="proyectos.html">CollectIQ</a>
+      <a href="./#contacto">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../ar/assets/app.js"></script>
+</body>
+</html>
