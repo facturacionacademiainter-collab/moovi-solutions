@@ -1,6 +1,6 @@
-# Moovi Solutions
+# Zelira
 
-Sitio web corporativo de **Moovi Solutions** — ingeniería de software e inteligencia artificial para empresas.
+Sitio web corporativo de **Zelira** — ingeniería de software e inteligencia artificial para empresas.
 
 Es un sitio estático de un solo archivo: no necesita build, ni dependencias, ni servidor. Se abre `index.html` en cualquier navegador.
 

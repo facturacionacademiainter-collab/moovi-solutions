@@ -419,7 +419,7 @@
       })
       .catch(function (err) {
         /* El motivo técnico va a la consola, no a la pantalla del visitante */
-        if (window.console && console.error) console.error('[moovi] envío fallido:', err);
+        if (window.console && console.error) console.error('[zelira] envío fallido:', err);
         aviso(sinRespuesta
           ? t('No pudimos conectar con el servidor de envíos. Revisá tu conexión, o escribinos a ' + DESTINO + '.',
               'We could not reach the mail server. Check your connection, or write to us at ' + DESTINO + '.')
@@ -661,10 +661,10 @@
   var ctx = canvas.getContext && canvas.getContext('2d');
   if (!ctx) return;
 
-  /* La mitad de los nodos va en el turquesa de la marca; el resto se
-     reparte entre cian, azul, violeta y magenta. Cada línea toma el
+  /* La mitad de los nodos va en el violeta de la marca; el resto se
+     reparte entre violeta oscuro, índigo, púrpura y fucsia. Cada línea toma el
      color del nodo del que sale. */
-  var PALETA = ['8,147,181', '27,111,224', '124,92,230', '212,63,141'];
+  var PALETA = ['109,40,217', '79,70,229', '147,51,234', '162,28,175'];
   var nodes = [];
   var w = 0, h = 0, dpr = 1, raf = null;
 
@@ -689,7 +689,7 @@
         vx: (Math.random() - 0.5) * 1.1,
         vy: (Math.random() - 0.5) * 1.1,
         r: Math.random() * 1.4 + 0.7,
-        rgb: Math.random() < 0.5 ? '14,159,142' : PALETA[Math.floor(Math.random() * PALETA.length)]
+        rgb: Math.random() < 0.5 ? '124,58,237' : PALETA[Math.floor(Math.random() * PALETA.length)]
       });
     }
   }
