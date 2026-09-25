@@ -128,13 +128,13 @@
   }
 
   /* ---- Reel de AI Visual Studio ----
-     El video arranca solo, sin sonido y en bucle, y aparece con un
-     fundido cuando ya tiene imagen. Si todavía no está el archivo, queda
-     el marco con la marca. Con movimiento reducido no arranca: se ofrecen
-     los controles para que la persona decida. */
-  Array.prototype.forEach.call(document.querySelectorAll('.reel video'), function (video) {
-    var reel = video.parentNode;
-    var listo = function () { reel.classList.add('is-ready'); };
+     El video va en la pantalla del celular de LIRA: arranca solo, sin
+     sonido y en bucle, y aparece con un fundido cuando ya tiene imagen.
+     Si todavía no está el archivo, queda la pantalla de la imagen. Con
+     movimiento reducido no arranca: se ofrecen los controles. */
+  Array.prototype.forEach.call(document.querySelectorAll('.lira-screen video'), function (video) {
+    var pantalla = video.parentNode;
+    var listo = function () { pantalla.classList.add('is-ready'); };
     if (video.readyState >= 2) listo();
     else video.addEventListener('loadeddata', listo);
 
@@ -151,7 +151,7 @@
       new IntersectionObserver(function (entries) {
         if (entries[0].isIntersecting) reproducir();
         else video.pause();
-      }).observe(reel);
+      }).observe(pantalla);
     } else {
       reproducir();
     }

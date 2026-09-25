@@ -59,14 +59,17 @@
           </a>
         </div>
 
-        <!-- Reel del estudio: pieza cinematográfica 16:9. El archivo va en
-             ar/assets/video/. Mientras no carga se ve el marco con la marca;
-             app.js lo muestra con un fundido cuando hay imagen. -->
-        <figure class="reel">
-          <video muted loop playsinline preload="metadata" aria-label="Reel de AI Visual Studio de Zelira">
-            <source src="assets/video/zelira-reel.mp4" type="video/mp4">
-          </video>
-          <span class="reel-mark" aria-hidden="true">Zelira · AI Visual Studio</span>
+        <!-- LIRA, el personaje del estudio, sostiene un celular. El video va
+             encima de la pantalla (.lira-screen), ubicado en porcentajes sobre
+             la imagen; el archivo va en ar/assets/video/. Mientras no carga se
+             ve la pantalla de la imagen; app.js lo muestra con un fundido. -->
+        <figure class="lira">
+          <img src="assets/img/lira.webp" width="826" height="742" alt="LIRA, el personaje de Zelira, muestra un celular hacia la cámara">
+          <div class="lira-screen">
+            <video muted loop playsinline preload="metadata" aria-label="Reel de AI Visual Studio de Zelira">
+              <source src="assets/video/zelira-reel.mp4" type="video/mp4">
+            </video>
+          </div>
         </figure>
       </div>
     </div>

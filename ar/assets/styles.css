@@ -3822,8 +3822,8 @@ h2, .page-hero h1{
    VIDEO CON IA
    Página del servicio (video-ia.html). El acento es violeta y
    magenta, para que el servicio se distinga del resto sin salirse
-   de la paleta. El encabezado muestra el reel (.reel): la pieza
-   cinematográfica del estudio, en un marco oscuro.
+   de la paleta. El encabezado muestra a LIRA (.lira), el personaje
+   del estudio, con el reel en la pantalla del celular.
    ============================================================ */
 
 /* ---------- Menú: marca de servicio nuevo ---------- */
@@ -3913,51 +3913,50 @@ h2, .page-hero h1{
 }
 .vid-powered-ico svg{ width: 13px; height: 13px; fill: #FFFFFF; }
 
-/* ---------- Reel: pieza cinematográfica del estudio ----------
-   Un video 16:9 en un marco oscuro. Mientras el archivo no carga (o si
-   todavía no existe) se ve el marco con un resplandor violeta y la
-   marca; app.js agrega .is-ready cuando hay imagen y el video aparece
-   con un fundido. */
-.reel{
+/* ---------- LIRA: el personaje con el celular ----------
+   PNG/WebP con fondo transparente. La pantalla del celular está en
+   x 58–318 y y 110–615 de una imagen de 826 × 742: .lira-screen se
+   ubica ahí en porcentajes, así acompaña a la imagen en cualquier
+   ancho. El video (vertical, 9:16) entra entero en la pantalla, que es
+   un poco más alta: quedan bandas negras finas arriba y abajo, como en
+   un celular real. Hasta que carga se ve la pantalla de la imagen. */
+/* La sombra va en el contenedor: si estuviera en la imagen, la máscara
+   de abajo la cortaría en el borde de la caja. */
+.lira{
   position: relative;
   margin: 0;
   min-width: 0;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse 60% 70% at 50% 55%, rgba(124,58,237,.28), transparent 70%),
-    radial-gradient(ellipse 90% 60% at 50% 120%, rgba(232,121,249,.12), transparent 70%),
-    #07060D;
-  border: 1px solid rgba(124,92,230,.4);
-  box-shadow: -34px 30px 80px -50px rgba(167,139,250,.8),
-               34px 30px 80px -50px rgba(244,114,182,.6),
-               0 30px 60px -40px rgba(14,21,48,.6);
+  filter: drop-shadow(0 30px 40px rgba(76,29,149,.22));
 }
-.reel video{
+.lira img{
+  display: block;
+  width: 100%;
+  height: auto;
+  /* La imagen termina en un corte recto a la altura del saco: se funde */
+  -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent);
+          mask-image: linear-gradient(to bottom, #000 84%, transparent);
+}
+.lira-screen{
   position: absolute;
-  inset: 0;
+  left: 7.02%;
+  top: 14.82%;
+  width: 31.6%;
+  height: 68.2%;
+  border-radius: 8.4% / 4.35%;
+  overflow: hidden;
+  background: transparent;
+  transition: background-color .6s var(--ease);
+}
+.lira-screen.is-ready{ background: #000000; }
+.lira-screen video{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   opacity: 0;
   transition: opacity 1.2s var(--ease);
 }
-.reel.is-ready video{ opacity: 1; }
-.reel-mark{
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: var(--mono);
-  font-size: .68rem;
-  letter-spacing: .32em;
-  text-transform: uppercase;
-  color: rgba(237,233,254,.55);
-  transition: opacity .6s var(--ease);
-}
-.reel.is-ready .reel-mark{ opacity: 0; }
+.lira-screen.is-ready video{ opacity: 1; }
 
 /* ---------- Qué producimos: seis tarjetas en tercios ---------- */
 .vid-grid .case:nth-child(1){ --acc: var(--pulse);   --acc-2: var(--magenta); }
@@ -4136,7 +4135,7 @@ h2, .page-hero h1{
 
 @media (max-width: 1040px){
   .vid-hero, .vid-tech{ grid-template-columns: 1fr; }
-  .vid-hero .reel{ max-width: 640px; }
+  .vid-hero .lira{ max-width: 560px; margin-inline: auto; }
   .vid-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px){

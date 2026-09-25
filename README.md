@@ -14,7 +14,7 @@ Es un sitio estático de un solo archivo: no necesita build, ni dependencias, ni
 | Proceso | Descubrimiento → Arquitectura → Construcción → Operación |
 | Stack | Tecnologías, con panel de código que se escribe solo |
 | Contacto | Formulario que compone el mail con `mailto:` |
-| Video con IA | Página propia (`ar/video-ia.html`): producción de video generativo con Higgsfield AI. El encabezado muestra el reel del estudio (`ar/assets/video/zelira-reel.mp4`, 16:9); mientras el archivo no está, se ve el marco con la marca. Los enlaces con `?interes=video` preseleccionan el tema en el formulario |
+| Video con IA | Página propia (`ar/video-ia.html`): producción de video generativo con Higgsfield AI. El encabezado muestra a LIRA, el personaje del estudio (`ar/assets/img/lira.webp`), con el reel (`ar/assets/video/zelira-reel.mp4`, vertical) dentro de la pantalla del celular; mientras el video no está, se ve la pantalla de la imagen. Los enlaces con `?interes=video` preseleccionan el tema en el formulario |
 
 ## Desarrollo
 
