@@ -127,35 +127,34 @@
     });
   }
 
-  /* ---- Estudio de video: código de tiempo y plano en curso ----
-     Los planos y el cabezal se mueven solos con CSS. Acá se lee el
-     tiempo de la animación del cabezal para que el código de tiempo y
-     el número de plano digan exactamente lo que se ve en pantalla. */
-  var estudios = document.querySelectorAll('.vs');
-  if (!reduced) Array.prototype.forEach.call(estudios, function (vs) {
-    var cabezal = vs.querySelector('.vs-head');
-    var tc = vs.querySelector('.vs-tc');
-    var plano = vs.querySelector('.vs-n');
-    if (!cabezal || !tc || !plano || !cabezal.getAnimations) return;
+  /* ---- Reel de AI Visual Studio ----
+     El video arranca solo, sin sonido y en bucle, y aparece con un
+     fundido cuando ya tiene imagen. Si todavía no está el archivo, queda
+     el marco con la marca. Con movimiento reducido no arranca: se ofrecen
+     los controles para que la persona decida. */
+  Array.prototype.forEach.call(document.querySelectorAll('.reel video'), function (video) {
+    var reel = video.parentNode;
+    var listo = function () { reel.classList.add('is-ready'); };
+    if (video.readyState >= 2) listo();
+    else video.addEventListener('loadeddata', listo);
 
-    var visible = true;
+    if (reduced) {
+      video.controls = true;
+      return;
+    }
+    video.autoplay = true;
+    var reproducir = function () {
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    };
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
-        visible = entries[0].isIntersecting;
-      }).observe(vs);
+        if (entries[0].isIntersecting) reproducir();
+        else video.pause();
+      }).observe(reel);
+    } else {
+      reproducir();
     }
-
-    var dos = function (n) { return (n < 10 ? '0' : '') + n; };
-
-    window.setInterval(function () {
-      if (!visible || document.hidden) return;
-      var anim = cabezal.getAnimations()[0];
-      if (!anim || anim.currentTime === null) return;
-      var ciclo = anim.effect.getComputedTiming().duration;
-      var ms = anim.currentTime % ciclo;
-      tc.textContent = '00:00:' + dos(Math.floor(ms / 1000)) + ':' + dos(Math.floor((ms % 1000) * 24 / 1000));
-      plano.textContent = Math.min(3, Math.floor(ms / (ciclo / 3)) + 1);
-    }, 80);
   });
 
   /* ---- Formulario: tema elegido desde otra página ----

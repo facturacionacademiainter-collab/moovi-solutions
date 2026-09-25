@@ -59,96 +59,14 @@
           </a>
         </div>
 
-        <!-- Estudio de video: tres planos que se generan en bucle. Es una
-             ilustración: las escenas son SVG y se mueven con CSS; app.js
-             solo escribe el código de tiempo y el número de plano. -->
-        <figure class="vs" aria-hidden="true">
-          <div class="vs-bar">
-            <span class="vs-rec"></span>
-            <span class="vs-file">spot_lanzamiento.mp4</span>
-            <span class="vs-tag">Higgsfield · 4K · 24 fps</span>
-          </div>
-          <div class="vs-screen">
-            <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <radialGradient id="vs-g1" cx="50%" cy="40%" r="75%"><stop offset="0" stop-color="#5B2A86"/><stop offset=".55" stop-color="#241046"/><stop offset="1" stop-color="#0B0618"/></radialGradient>
-                <linearGradient id="vs-ray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5D0FE" stop-opacity=".55"/><stop offset="1" stop-color="#F5D0FE" stop-opacity="0"/></linearGradient>
-                <linearGradient id="vs-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9A8D4"/><stop offset=".5" stop-color="#C084FC"/><stop offset="1" stop-color="#6D28D9"/></linearGradient>
-                <linearGradient id="vs-g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#040A1E"/><stop offset=".62" stop-color="#0B2E55"/><stop offset="1" stop-color="#0E7490"/></linearGradient>
-                <radialGradient id="vs-g3" cx="45%" cy="35%" r="80%"><stop offset="0" stop-color="#0F5E63"/><stop offset=".6" stop-color="#08323A"/><stop offset="1" stop-color="#041419"/></radialGradient>
-              </defs>
-
-              <!-- Plano 1 · producto en estudio, dolly in -->
-              <g class="vs-shot s1">
-                <rect width="320" height="180" fill="url(#vs-g1)"/>
-                <g class="vs-cam cam-dolly">
-                  <path d="M160 0 L112 180 H208 Z" fill="url(#vs-ray)"/>
-                  <path d="M98 140 v14 a62 12 0 0 0 124 0 v-14" fill="#140B2A"/>
-                  <ellipse cx="160" cy="140" rx="62" ry="12" fill="#22123F" stroke="rgba(244,114,182,.65)" stroke-width=".8"/>
-                  <ellipse cx="160" cy="139" rx="30" ry="5" fill="rgba(0,0,0,.35)"/>
-                  <rect x="147" y="52" width="26" height="8" rx="2" fill="#F5D0FE"/>
-                  <rect x="151" y="59" width="18" height="15" rx="3" fill="#E9D5FF"/>
-                  <rect x="138" y="72" width="44" height="66" rx="11" fill="url(#vs-glass)"/>
-                  <rect x="145" y="96" width="30" height="17" rx="2" fill="rgba(255,255,255,.88)"/>
-                  <rect x="150" y="101" width="20" height="2.4" rx="1.2" fill="#6D28D9"/>
-                  <rect x="153" y="106" width="14" height="2" rx="1" fill="#C084FC"/>
-                  <rect x="143" y="78" width="3.5" height="54" rx="1.75" fill="rgba(255,255,255,.5)"/>
-                  <g class="vs-spark"><circle cx="112" cy="70" r="1.4"/><circle cx="214" cy="58" r="1.8"/><circle cx="96" cy="112" r="1"/><circle cx="226" cy="104" r="1.2"/><circle cx="190" cy="40" r="1"/></g>
-                </g>
-                <text class="vs-cue" x="306" y="18" text-anchor="end">DOLLY IN</text>
-              </g>
-
-              <!-- Plano 2 · ciudad de noche, paneo lateral -->
-              <g class="vs-shot s2">
-                <rect width="320" height="180" fill="url(#vs-g2)"/>
-                <g class="vs-cam cam-pan">
-                  <circle cx="250" cy="36" r="11" fill="#E0F2FE" opacity=".9"/>
-                  <circle cx="250" cy="36" r="22" fill="#7DD3FC" opacity=".12"/>
-                  <path d="M-30 120 V86 h22 V62 h18 V92 h16 V48 h26 V96 h14 V70 h20 V40 h24 V88 h16 V58 h22 V100 h14 V66 h20 V44 h18 V92 h16 V74 h22 V120 Z" fill="#061329"/>
-                  <g class="vs-win"><rect x="18" y="56" width="3" height="3"/><rect x="24" y="64" width="3" height="3"/><rect x="42" y="54" width="3" height="3"/><rect x="92" y="48" width="3" height="3"/><rect x="98" y="58" width="3" height="3"/><rect x="92" y="70" width="3" height="3"/><rect x="146" y="66" width="3" height="3"/><rect x="152" y="76" width="3" height="3"/><rect x="200" y="50" width="3" height="3"/><rect x="206" y="60" width="3" height="3"/><rect x="236" y="74" width="3" height="3"/><rect x="262" y="82" width="3" height="3"/><rect x="72" y="80" width="3" height="3"/></g>
-                  <path d="M-30 120 H350 V190 H-30 Z" fill="#050B1A"/>
-                  <path class="vs-trail t1" d="M-30 150 C 80 138, 200 138, 350 128"/>
-                  <path class="vs-trail t2" d="M-30 162 C 90 148, 210 146, 350 136"/>
-                  <path class="vs-trail t3" d="M-30 172 C 100 160, 220 156, 350 146"/>
-                </g>
-                <text class="vs-cue" x="306" y="18" text-anchor="end">PANEO LATERAL</text>
-              </g>
-
-              <!-- Plano 3 · vocera digital con lipsync -->
-              <g class="vs-shot s3">
-                <rect width="320" height="180" fill="url(#vs-g3)"/>
-                <g class="vs-cam cam-push">
-                  <circle cx="148" cy="84" r="58" fill="#34CFBE" opacity=".08"/>
-                  <path d="M92 180 C 92 132, 112 118, 148 118 C 184 118, 204 132, 204 180 Z" fill="#0A252C"/>
-                  <path d="M92 180 C 92 132, 112 118, 148 118 C 184 118, 204 132, 204 180" fill="none" stroke="rgba(52,207,190,.55)" stroke-width="1"/>
-                  <rect x="138" y="100" width="20" height="22" rx="6" fill="#0C2E36"/>
-                  <ellipse cx="148" cy="78" rx="24" ry="28" fill="#0E3A43"/>
-                  <path d="M124 78 a24 28 0 0 1 48 0" fill="none" stroke="rgba(94,234,212,.7)" stroke-width="1.1"/>
-                  <g class="vs-wave"><rect x="222" y="74" width="4" height="22" rx="2"/><rect x="230" y="68" width="4" height="34" rx="2"/><rect x="238" y="78" width="4" height="14" rx="2"/><rect x="246" y="64" width="4" height="42" rx="2"/><rect x="254" y="72" width="4" height="26" rx="2"/><rect x="262" y="80" width="4" height="10" rx="2"/></g>
-                </g>
-                <rect x="96" y="146" width="128" height="16" rx="4" fill="rgba(4,20,25,.72)"/>
-                <text class="vs-sub" x="160" y="157" text-anchor="middle">Hola, te presento lo nuevo</text>
-                <text class="vs-cue" x="306" y="18" text-anchor="end">LIPSYNC · ES</text>
-              </g>
-            </svg>
-
-            <div class="vs-prompts">
-              <p class="vs-prompt s1"><b>Prompt</b><span>Frasco de perfume sobre podio, luz de estudio, dolly in lento</span></p>
-              <p class="vs-prompt s2"><b>Prompt</b><span>Avenida de noche, estelas de luz, paneo lateral cinematográfico</span></p>
-              <p class="vs-prompt s3"><b>Prompt</b><span>Vocera digital presenta el producto, plano medio, en español</span></p>
-            </div>
-          </div>
-          <div class="vs-timeline">
-            <div class="vs-track">
-              <i class="vs-frame f1"></i><i class="vs-frame f1"></i><i class="vs-frame f2"></i><i class="vs-frame f2"></i><i class="vs-frame f3"></i><i class="vs-frame f3"></i>
-              <span class="vs-head"></span>
-            </div>
-          </div>
-          <div class="vs-status">
-            <span class="pip"></span>
-            <span>Generando plano <span class="vs-n">1</span>/3</span>
-            <span class="vs-tc">00:00:00:00</span>
-          </div>
+        <!-- Reel del estudio: pieza cinematográfica 16:9. El archivo va en
+             ar/assets/video/. Mientras no carga se ve el marco con la marca;
+             app.js lo muestra con un fundido cuando hay imagen. -->
+        <figure class="reel">
+          <video muted loop playsinline preload="metadata" aria-label="Reel de AI Visual Studio de Zelira">
+            <source src="assets/video/zelira-reel.mp4" type="video/mp4">
+          </video>
+          <span class="reel-mark" aria-hidden="true">Zelira · AI Visual Studio</span>
         </figure>
       </div>
     </div>
