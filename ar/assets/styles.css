@@ -3878,41 +3878,6 @@ h2, .page-hero h1{
 }
 .vid-hero .hero-actions{ margin-top: 2rem; }
 
-/* Sello "Producido con Higgsfield AI" */
-.vid-powered{
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
-  margin-top: 1.6rem;
-  padding: .42rem .9rem .42rem .45rem;
-  border-radius: 999px;
-  font-family: var(--mono);
-  font-size: .68rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--text-2);
-  background: rgba(255,255,255,.65);
-  border: 1px solid rgba(124,92,230,.32);
-  box-shadow: 0 10px 24px -18px rgba(124,92,230,.9);
-  transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
-}
-.vid-powered b{ color: var(--text); font-weight: 500; }
-.vid-powered:hover{
-  transform: translateY(-2px);
-  border-color: var(--pulse);
-  box-shadow: 0 14px 30px -14px rgba(124,92,230,.8);
-}
-.vid-powered-ico{
-  width: 24px; height: 24px;
-  flex: none;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--neon-pulse), var(--neon-magenta));
-  box-shadow: 0 0 12px -2px rgba(244,114,182,.7);
-}
-.vid-powered-ico svg{ width: 13px; height: 13px; fill: #FFFFFF; }
-
 /* ---------- LIRA: el personaje con el celular ----------
    PNG/WebP con fondo transparente. La pantalla del celular está en
    x 58–318 y y 110–615 de una imagen de 826 × 742: .lira-screen se
