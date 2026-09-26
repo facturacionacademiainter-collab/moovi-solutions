@@ -4178,3 +4178,125 @@ h2, .page-hero h1{
   letter-spacing: .18em;
   color: var(--amber);
 }
+
+/* ============================================================
+   CAPA UNIFICADA — mismo sistema que la home (zelira.css)
+   Las páginas internas conservan su contenido y sus componentes,
+   pero comparten con la home el menú, los botones, los títulos y el
+   pie: papel perlado, degradé violeta y tipografía en caja normal.
+   Va al final a propósito: pisa lo anterior sin tener que tocarlo.
+   ============================================================ */
+:root{
+  --accent: #6D28D9;
+  --grad-violet: linear-gradient(95deg, #5B21B6 0%, #7C3AED 45%, #8B5CF6 70%, #4F46E5 100%);
+}
+body{ background: #F3F1EC; font-weight: 400; }
+.aurora i{ opacity: .55; }
+
+/* ---------- Títulos: el peso y el ancho de la home ---------- */
+h1, h2, h3, .display{ font-variation-settings: 'wdth' 100; font-weight: 600; letter-spacing: -.028em; }
+.page-hero h1, .hero h1{ letter-spacing: -.035em; }
+h2, .page-hero h1{
+  background: linear-gradient(95deg, #0E1530 0%, #2E1065 40%, #6D28D9 75%, #7C3AED 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+.eyebrow, .folio-band .eyebrow{ color: var(--accent); text-shadow: none; }
+.lede{ font-weight: 300; }
+
+/* ---------- Barra superior ---------- */
+.topbar{ background: transparent; }
+.topbar.stuck{
+  background: rgba(248,246,242,.8);
+  border-bottom-color: rgba(24,32,64,.09);
+  box-shadow: 0 10px 30px -24px rgba(76,29,149,.35);
+}
+.topbar-inner{ height: 68px; }
+.brand-logo{ height: 28px; filter: none; }
+.nav a{
+  font-family: var(--body);
+  font-size: .92rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-2);
+  text-shadow: none;
+}
+.nav a::after{ height: 1.5px; border-radius: 1px; background: var(--grad-violet); box-shadow: none; }
+.nav a:hover, .nav a[aria-current="page"]{ color: var(--text); text-shadow: none; }
+.nav .lang-switch{ border-color: rgba(24,32,64,.09); background: rgba(255,255,255,.62); }
+.nav .lang-switch a{ font-family: var(--mono); font-size: .72rem; letter-spacing: 0; padding: .25rem .55rem; color: var(--text-3); }
+.nav .lang-switch a[aria-current="true"]{ color: #fff; background: var(--grad-violet); }
+
+/* ---------- Botones: píldora violeta, como en la home ---------- */
+.btn{
+  font-family: var(--body);
+  font-size: .95rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: .85rem 1.45rem;
+  border-radius: 999px;
+  color: #fff;
+  border: 1px solid rgba(91,33,182,.35);
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 45%, #6D28D9 75%, #4F46E5 100%);
+  background-size: 160% 160%;
+  background-position: 0% 0%;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 12px 28px -12px rgba(109,40,217,.65);
+}
+.btn:hover{
+  transform: translateY(-1px);
+  background-position: 100% 100%;
+  border-color: rgba(91,33,182,.45);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 18px 40px -14px rgba(109,40,217,.75);
+}
+.btn:active{ transform: translateY(0); }
+.nav .btn, .nav .btn:hover{ color: #fff; padding: .55rem 1.05rem; font-size: .88rem; }
+.btn-ghost, .btn.btn-ghost{
+  color: var(--text);
+  background: rgba(255,255,255,.62);
+  border-color: rgba(109,40,217,.28);
+  box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 8px 20px -14px rgba(76,29,149,.35);
+}
+.btn-ghost:hover, .btn.btn-ghost:hover{
+  color: var(--text);
+  background: rgba(255,255,255,.85);
+  border-color: rgba(109,40,217,.5);
+  box-shadow: 0 1px 0 #fff inset, 0 12px 26px -14px rgba(76,29,149,.45);
+}
+
+@media (max-width: 1260px){
+  .nav{ inset: 68px 0 auto 0; background: #F8F6F2; box-shadow: 0 30px 60px -30px rgba(76,29,149,.35); }
+  .nav a{ font-family: var(--display); font-size: 1.35rem; font-weight: 500; letter-spacing: -.02em; color: var(--text); }
+  .nav .lang-switch a{ font-family: var(--mono); font-size: .72rem; }
+  .nav .btn{ font-family: var(--body); font-size: .95rem; }
+}
+
+/* ---------- Pie: el mismo de la home ---------- */
+.footer{
+  margin-top: clamp(3rem, 8vh, 6rem);
+  border-top: 1px solid rgba(24,32,64,.15);
+  padding-block: 4rem 2rem;
+  background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(237,233,254,.5));
+  position: relative;
+  z-index: 1;
+}
+.footer::before{ content: none; }
+.footer small, .footer a{ font-family: var(--body); font-size: .9rem; letter-spacing: 0; text-transform: none; color: var(--text-2); }
+.footer a:hover{ color: var(--accent); }
+.footer-top{ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 3rem; }
+.footer-brand img{ height: 26px; width: auto; }
+.footer-brand p{ margin-top: 1rem; color: var(--text-3); font-size: .9rem; max-width: 30ch; }
+.footer-cols{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
+.footer-cols p{ font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 .9rem; }
+.footer-cols a{ display: block; padding: .25rem 0; word-break: break-word; }
+.footer-bottom{ display: flex; justify-content: space-between; gap: 1rem; margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(24,32,64,.15); }
+.footer-bottom small, .footer-bottom a{ font-size: .85rem; color: var(--text-3); }
+@media (max-width: 1100px){ .footer-top{ grid-template-columns: 1fr; } }
+@media (max-width: 860px){ .footer-cols{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px){ .footer-bottom{ flex-direction: column; } }
+
+/* Titulares de encabezado y cifras grandes: mismo ancho y peso que la home */
+.page-hero h1, .page-hero h1 em, .hero h1, .hero h1 em, .offers-head h2{
+  font-variation-settings: 'wdth' 96;
+  font-weight: 600;
+}
+.ind-big, .ind-mini b, .mdl-3x b, .cs-kpis dd{ font-variation-settings: 'wdth' 100; font-weight: 600; }

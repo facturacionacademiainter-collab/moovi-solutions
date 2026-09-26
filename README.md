@@ -1,20 +1,29 @@
 # Zelira
 
-Sitio web corporativo de **Zelira** — ingeniería de software e inteligencia artificial para empresas.
+Sitio web corporativo de **Zelira** — infraestructura para crear, operar y hacer crecer empresas: puesta en marcha con profesionales especializados, software, inteligencia artificial y adquisición de clientes.
 
 Es un sitio estático de un solo archivo: no necesita build, ni dependencias, ni servidor. Se abre `index.html` en cualquier navegador.
 
 ## Contenido
 
-| Sección | Qué muestra |
-| --- | --- |
-| Héroe | Presentación, con red de nodos animada en canvas |
-| Servicios | Desarrollo de Software · Soluciones de IA |
-| Casos de uso | Ecommerce · Apps Móviles · Smart City e IoT |
-| Proceso | Descubrimiento → Arquitectura → Construcción → Operación |
-| Stack | Tecnologías, con panel de código que se escribe solo |
-| Contacto | Formulario que compone el mail con `mailto:` |
-| Video con IA | Página propia (`ar/video-ia.html`): producción de video generativo con Higgsfield AI. El encabezado muestra a LIRA, el personaje del estudio (`ar/assets/img/lira.webp`), con el reel (`ar/assets/video/zelira-reel.mp4`, vertical) dentro de la pantalla del celular; mientras el video no está, se ve la pantalla de la imagen. Los enlaces con `?interes=video` preseleccionan el tema en el formulario |
+La home (`ar/index.html` y su gemela `en/index.html`) sigue la narrativa CREAR → OPERAR → CRECER:
+
+| Sección | Ancla | Qué muestra |
+| --- | --- | --- |
+| Héroe | — | Titular en tres renglones, pila isométrica de las cinco capas y cifras ya publicadas en el sitio |
+| Crear · Operar · Crecer | `#servicios`, `#crear`, `#operar`, `#crecer` | Los tres capítulos de servicio. Crear aclara que los actos con matrícula los hacen profesionales habilitados |
+| Una empresa. Una infraestructura. | `#ecosistema` | Diagrama de las siete capas alrededor de Zelira |
+| Panel Zelira | `#panel` | Maqueta de producto con pestañas y **datos ficticios** (rotulados como tales) |
+| IA | `#ia` | La IA como capa transversal, con una conversación de ejemplo |
+| Software empresarial | `#tecnologia` | Capacidades, panel de código animado, formas de construir y proceso |
+| Casos | `#casos` | Flux Collect destacado (con las cifras de su ficha) y los 21 proyectos del portafolio por familia |
+| Modelo Zelira | `#etapas` | Las cinco etapas: crear, operar, automatizar, crecer, escalar |
+| Nosotros | `#nosotros` | Posicionamiento y principios de trabajo |
+| Comenzar | `#comenzar`, `#contacto` | Selector de objetivo que elige el tema del formulario |
+
+Las páginas internas (`industrias`, `modelos`, `portafolio`, `proyectos`, `video-ia`) mantienen su diseño y comparten el menú de la home.
+
+Video con IA (`video-ia.html`): producción de video generativo con Higgsfield AI. El encabezado muestra a LIRA, el personaje del estudio (`ar/assets/img/lira.webp`), con el reel (`ar/assets/video/zelira-reel.mp4`, vertical) dentro de la pantalla del celular. Los enlaces con `?interes=video` preseleccionan el tema en el formulario.
 
 ## Desarrollo
 
@@ -29,21 +38,22 @@ python -m http.server 8000
 # luego abrir http://localhost:8000/ar/
 ```
 
-## Estructura del archivo
+## Estructura de archivos
 
-Todo vive en `index.html`, en tres bloques:
+- `ar/assets/zelira.css` — sistema visual de la home: papel perlado con degradados violeta (tokens en `:root`, responsive y `prefers-reduced-motion`).
+- `ar/assets/home.js` — lo que solo existe en la home: contadores, ecosistema, pestañas y gráfico del panel, conversación de IA, selector de objetivo y riel de etapas.
+- `ar/assets/styles.css` — estilos de las páginas internas. Su última capa ("Capa unificada") les da el mismo menú, botones, títulos y pie que la home.
+- `ar/assets/app.js` — compartido por todas las páginas: barra superior, menú móvil, revelado en scroll, formulario, panel de código y fichas del portafolio.
 
-1. `<style>` — tokens de diseño en `:root` (color, tipografía, escala), componentes, responsive y `prefers-reduced-motion`.
-2. El marcado de las secciones.
-3. `<script>` — barra superior, menú móvil, revelado en scroll, formulario, panel de código animado y la red de nodos del héroe.
+Al cambiar `zelira.css`, `home.js` o `styles.css`, subir el `?v=` con que los cargan las páginas para que el navegador no use la copia en caché.
 
 Las tipografías (Archivo, IBM Plex Sans, IBM Plex Mono) se cargan desde Google Fonts. Sin conexión, el sitio cae a la pila de fuentes de respaldo y sigue siendo legible.
 
 ## Formulario de contacto
 
-Las consultas se envían a **contacto@moovisolutions.com** a través de [FormSubmit](https://formsubmit.co), que recibe el POST y reenvía el contenido por correo. Hace falta un intermediario porque GitHub Pages solo sirve archivos estáticos: no puede procesar un formulario ni enviar mails.
+Las consultas se envían a **contacto@zelira.com.ar** a través de [FormSubmit](https://formsubmit.co), que recibe el POST y reenvía el contenido por correo. Hace falta un intermediario porque GitHub Pages solo sirve archivos estáticos: no puede procesar un formulario ni enviar mails.
 
-El envío es por `fetch` contra `https://formsubmit.co/ajax/contacto@moovisolutions.com`, así que el visitante nunca sale de la página. Incluye un campo trampa (`_honey`) que los bots completan y las personas no, lo que descarta el spam automático.
+El envío es por `fetch` contra `https://formsubmit.co/ajax/contacto@zelira.com.ar`, así que el visitante nunca sale de la página. Incluye un campo trampa (`_honey`) que los bots completan y las personas no, lo que descarta el spam automático.
 
 **Activación (una sola vez):** el primer envío dispara un correo de FormSubmit a la casilla de destino con un enlace de confirmación. Hasta que se haga clic ahí, los mensajes no se reenvían. Después de activarlo, FormSubmit ofrece un alias con forma de token que conviene usar en lugar de la dirección en claro, para que la casilla no quede expuesta en el HTML a los rastreadores de spam.
 

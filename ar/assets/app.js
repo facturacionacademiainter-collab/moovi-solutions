@@ -337,11 +337,11 @@
     });
   }
 
-  /* ---- Formulario: envía la consulta a contacto@moovisolutions.com ----
+  /* ---- Formulario: envía la consulta a contacto@zelira.com.ar ----
      El envío pasa por FormSubmit, que reenvía el contenido por correo.
      Es necesario porque GitHub Pages solo sirve archivos: no puede
      procesar un POST ni mandar mails por sí mismo. */
-  var DESTINO = 'contacto@moovisolutions.com';
+  var DESTINO = 'contacto@zelira.com.ar';
   var ENDPOINT = 'https://formsubmit.co/ajax/' + DESTINO;
 
   var form = $('contactForm');
