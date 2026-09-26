@@ -225,10 +225,19 @@ h3{ font-size: var(--step-1); letter-spacing: -.012em; line-height: 1.2; }
   border-bottom: 1px solid transparent;
   transition: background .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
-.topbar.stuck{
+/* El vidrio va en una capa aparte: un backdrop-filter en la propia barra
+   la vuelve el contenedor del menú móvil (position: fixed), que quedaba
+   recortado a 68 px de alto apenas se scrolleaba. */
+.topbar::before{
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background: rgba(248,246,242,.78);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
+  opacity: 0;
+  transition: opacity .4s var(--ease);
+}
+.topbar.stuck::before{ opacity: 1; }
+.topbar.stuck{
   border-bottom-color: var(--line);
   box-shadow: 0 10px 30px -24px rgba(76,29,149,.35);
 }
@@ -285,6 +294,7 @@ h3{ font-size: var(--step-1); letter-spacing: -.012em; line-height: 1.2; }
     transition: opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;
     overflow-y: auto;
   }
+  .nav > *{ flex-shrink: 0; }
   .nav[data-open="true"]{ opacity: 1; visibility: visible; transform: none; }
   .nav-links{ flex-direction: column; gap: 0; margin: 0; }
   .nav-links a{
