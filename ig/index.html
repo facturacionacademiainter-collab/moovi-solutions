@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zelira · Links</title>
+<!-- Página de bio link para Instagram. Fuera del menú, del pie y de los
+     buscadores: solo se llega con la dirección zelira.com.ar/ig/ -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://zelira.com.ar/ig/">
+<meta name="description" content="Software, IA y soluciones digitales para empresas.">
+<meta name="theme-color" content="#F3F1EC">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zelira">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://zelira.com.ar/ig/">
+<meta property="og:title" content="Zelira — Construimos soluciones. Impulsamos empresas.">
+<meta property="og:description" content="Software, IA y soluciones digitales para empresas.">
+<meta property="og:image" content="https://zelira.com.ar/ar/assets/img/logo-zelira.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap">
+<link rel="icon" href="/ar/assets/img/icono-zelira.png" type="image/png">
+<link rel="preload" href="/ar/assets/img/logo-zelira.png" as="image">
+<style>
+/* Mismos tokens que ar/assets/zelira.css (papel perlado, violeta,
+   Archivo + IBM Plex). Van en línea para que la página cargue en un
+   solo pedido y no arrastre los 60 KB de estilos de la home. */
+:root{
+  color-scheme: light;
+  --bg: #F3F1EC;
+  --glass: rgba(255,255,255,.62);
+  --glass-2: rgba(255,255,255,.86);
+  --line: rgba(24,32,64,.09);
+  --line-2: rgba(24,32,64,.15);
+  --text: #0E1530;
+  --text-2: #3B4562;
+  --text-3: #5D6782;
+  --brand: #7C3AED;
+  --brand-mist: #EDE9FE;
+  --accent: #6D28D9;
+  --ok-dot: #22C55E;
+  --grad-violet: linear-gradient(95deg, #5B21B6 0%, #7C3AED 45%, #8B5CF6 70%, #4F46E5 100%);
+  --display: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --body: 'IBM Plex Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  --radius: 16px;
+  --ease: cubic-bezier(.22,.68,.28,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+}
+*, *::before, *::after{ box-sizing: border-box; }
+html{ -webkit-text-size-adjust: 100%; }
+body{
+  margin: 0; min-height: 100vh; min-height: 100dvh;
+  background: var(--bg); color: var(--text);
+  font-family: var(--body); font-size: 1rem; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+img, svg{ display: block; max-width: 100%; }
+a{ color: inherit; text-decoration: none; }
+p, h1, h2{ margin: 0; }
+ul{ margin: 0; padding: 0; list-style: none; }
+[hidden]{ display: none !important; }
+::selection{ background: #DDD6FE; color: #0E1530; }
+:focus-visible{ outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
+
+/* Aurora: los mismos halos violeta del sitio, en versión liviana */
+.aurora{ position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.aurora i{ position: absolute; border-radius: 50%; width: 80vmax; height: 80vmax; opacity: .6; animation: drift 34s ease-in-out infinite alternate; }
+.aurora i:nth-child(1){ left: -38vmax; top: -40vmax; background: radial-gradient(circle, rgba(139,92,246,.30), transparent 62%); }
+.aurora i:nth-child(2){ right: -44vmax; top: 18vh; background: radial-gradient(circle, rgba(167,139,250,.30), transparent 62%); animation-duration: 40s; animation-delay: -12s; }
+.aurora i:nth-child(3){ left: -20vmax; bottom: -52vmax; background: radial-gradient(circle, rgba(99,102,241,.20), transparent 62%); animation-duration: 46s; animation-delay: -20s; }
+@keyframes drift{ to{ transform: translate3d(6vw, 5vh, 0) scale(1.1); } }
+
+.page{
+  position: relative; z-index: 1;
+  width: 100%; max-width: 32rem; margin-inline: auto;
+  padding: max(2.4rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1.6rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+}
+
+/* Entrada: fade-in del encabezado y aparición escalonada de las tarjetas */
+.in{ opacity: 0; transform: translateY(12px); animation: rise .7s var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 55ms + 60ms); }
+@keyframes rise{ to{ opacity: 1; transform: none; } }
+
+/* ---------- Encabezado ---------- */
+.head{ text-align: center; padding-inline: .5rem; }
+.logo{ height: 40px; width: auto; margin-inline: auto; }
+.status{
+  display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.15rem;
+  font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+}
+.status::before{ content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ok-dot); box-shadow: 0 0 0 3px rgba(34,197,94,.16); }
+h1{
+  margin-top: .7rem;
+  font-family: var(--display); font-weight: 600; font-variation-settings: 'wdth' 96;
+  font-size: clamp(1.55rem, 1.2rem + 1.6vw, 1.9rem); line-height: 1.1; letter-spacing: -.028em;
+  text-wrap: balance;
+}
+h1 em{
+  font-style: normal; background: var(--grad-violet);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}
+.sub{ margin-top: .6rem; color: var(--text-2); font-weight: 300; font-size: 1rem; text-wrap: balance; }
+
+/* ---------- Grupos de enlaces ---------- */
+.group{ margin-top: 1.9rem; }
+.group-t{
+  display: flex; align-items: center; gap: .7rem; margin: 0 .25rem .7rem;
+  font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3);
+}
+.group-t::after{ content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--line-2), transparent); }
+.links{ display: grid; gap: .6rem; }
+
+.card{
+  position: relative; display: flex; align-items: center; gap: .8rem;
+  min-height: 4.25rem; padding: .8rem .9rem .8rem .8rem;
+  border-radius: var(--radius); border: 1px solid var(--line-2);
+  background: var(--glass);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 14px 30px -26px rgba(76,29,149,.55);
+  transition: transform .25s var(--ease), border-color .3s var(--ease), background .3s var(--ease), box-shadow .3s var(--ease);
+  touch-action: manipulation;
+}
+.ico{
+  flex: none; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px;
+  color: var(--accent); background: linear-gradient(135deg, rgba(237,233,254,.95), rgba(255,255,255,.8));
+  border: 1px solid rgba(109,40,217,.16);
+}
+.ico svg{ width: 1.3rem; height: 1.3rem; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ico svg .f{ fill: currentColor; stroke: none; }
+.txt{ flex: 1; min-width: 0; display: grid; gap: .1rem; }
+.txt b{ font-weight: 500; font-size: 1rem; line-height: 1.3; letter-spacing: -.01em; }
+.txt span{ font-size: .84rem; color: var(--text-3); line-height: 1.4; }
+.go{ flex: none; width: 1.1rem; height: 1.1rem; color: var(--text-3); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s var(--ease), color .3s var(--ease); }
+
+/* Tarjeta principal: la puerta a la home */
+.card.main{
+  min-height: 4.9rem;
+  border-color: rgba(109,40,217,.34);
+  background: linear-gradient(135deg, rgba(237,233,254,.96), rgba(255,255,255,.88) 70%);
+  box-shadow: 0 1px 0 #fff inset, 0 20px 40px -26px rgba(109,40,217,.7);
+}
+.card.main .ico{ color: #fff; border-color: rgba(91,33,182,.35); background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 45%, #6D28D9 75%, #4F46E5 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.3); }
+.card.main .txt b{ font-size: 1.06rem; font-weight: 600; }
+.card.main .go{ color: var(--accent); }
+
+/* Tap en celular: se hunde apenas. Hover solo donde hay puntero */
+.card:active{ transform: scale(.985); background: var(--glass-2); }
+@media (hover: hover){
+  .card:hover{ transform: translateY(-2px); border-color: rgba(109,40,217,.42); background: var(--glass-2); box-shadow: 0 1px 0 #fff inset, 0 18px 36px -24px rgba(109,40,217,.6); }
+  .card:hover .go{ transform: translateX(3px); color: var(--accent); }
+  .card:active{ transform: translateY(0) scale(.99); }
+}
+
+/* ---------- CTA ---------- */
+.cta{
+  position: relative; overflow: hidden; margin-top: 2rem;
+  padding: 1.6rem 1.35rem 1.4rem; border-radius: 20px; text-align: center;
+  color: #fff; background: linear-gradient(150deg, #0E1530 0%, #1E1B4B 55%, #2E1065 100%);
+  box-shadow: 0 30px 60px -30px rgba(46,16,101,.75), 0 1px 0 rgba(255,255,255,.08) inset;
+}
+.cta::before{ content: ""; position: absolute; width: 22rem; height: 22rem; right: -9rem; top: -12rem; border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,.55), transparent 65%); pointer-events: none; }
+.cta::after{ content: ""; position: absolute; width: 16rem; height: 16rem; left: -8rem; bottom: -10rem; border-radius: 50%; background: radial-gradient(circle, rgba(79,70,229,.4), transparent 65%); pointer-events: none; }
+.cta > *{ position: relative; z-index: 1; }
+.cta h2{ font-family: var(--display); font-weight: 600; font-variation-settings: 'wdth' 96; font-size: 1.45rem; letter-spacing: -.025em; line-height: 1.15; }
+.cta p{ margin: .5rem auto 0; max-width: 30ch; color: rgba(255,255,255,.74); font-size: .95rem; font-weight: 300; }
+.btn{
+  display: flex; align-items: center; justify-content: center; gap: .55rem;
+  width: 100%; margin-top: 1.25rem; padding: .95rem 1.4rem; min-height: 3.2rem;
+  font-family: var(--body); font-size: 1rem; font-weight: 500; color: #fff;
+  border-radius: 999px; border: 1px solid rgba(167,139,250,.45);
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 45%, #6D28D9 75%, #4F46E5 100%);
+  background-size: 160% 160%; background-position: 0% 0%;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 12px 28px -12px rgba(124,58,237,.9);
+  transition: transform .25s var(--ease), box-shadow .3s var(--ease), background-position .5s var(--ease);
+  touch-action: manipulation;
+}
+.btn::after{ content: "\2192"; transition: transform .3s var(--ease); }
+.btn:active{ transform: scale(.98); }
+@media (hover: hover){
+  .btn:hover{ transform: translateY(-1px); background-position: 100% 100%; box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 18px 40px -14px rgba(139,92,246,.95); }
+  .btn:hover::after{ transform: translateX(3px); }
+}
+.cta small{ display: block; margin-top: .8rem; font-family: var(--mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+
+/* ---------- Redes y pie ---------- */
+.social{ display: flex; justify-content: center; gap: .6rem; margin-top: 1.8rem; }
+.social a{
+  display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  color: var(--text-2); background: var(--glass); border: 1px solid var(--line-2);
+  transition: color .3s var(--ease), border-color .3s var(--ease), transform .25s var(--ease), background .3s var(--ease);
+  touch-action: manipulation;
+}
+.social svg{ width: 1.15rem; height: 1.15rem; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.social svg .f{ fill: currentColor; stroke: none; }
+.social a:active{ transform: scale(.94); }
+@media (hover: hover){ .social a:hover{ color: var(--accent); border-color: rgba(109,40,217,.42); background: var(--glass-2); transform: translateY(-2px); } }
+.foot{ margin-top: 1.4rem; text-align: center; font-size: .78rem; color: var(--text-3); }
+.foot a{ border-bottom: 1px solid var(--line-2); padding-bottom: 1px; }
+.foot a:hover{ color: var(--accent); border-color: var(--brand); }
+
+/* Celulares angostos (360 px y menos): todo en una línea sin achicar el toque */
+@media (max-width: 380px){
+  .card{ gap: .7rem; padding: .75rem .75rem .75rem .7rem; }
+  .ico{ width: 2.35rem; height: 2.35rem; border-radius: 11px; }
+  .txt b{ font-size: .95rem; }
+  .card.main .txt b{ font-size: 1rem; }
+  .txt span{ font-size: .8rem; }
+}
+/* Tablet y escritorio: más aire, mismo ancho de lectura */
+@media (min-width: 640px){
+  .page{ padding-top: 4rem; padding-bottom: 2.5rem; }
+  .logo{ height: 44px; }
+  .card{ padding: .95rem 1.15rem .95rem .95rem; }
+}
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .in{ opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<main class="page">
+
+  <header class="head">
+    <img class="logo in" src="/ar/assets/img/logo-zelira.png" width="399" height="120" alt="Zelira" style="--i:0">
+    <p class="status in" style="--i:1">Software · IA · Fintech</p>
+    <h1 class="in" style="--i:2">Construimos soluciones. <em>Impulsamos empresas.</em></h1>
+    <p class="sub in" style="--i:3">Software, IA y soluciones digitales para empresas.</p>
+  </header>
+
+  <!-- Enlaces. El href escrito acá es el destino por defecto (funciona sin
+       JavaScript). Para cambiar un destino, editá LINKS en el script del
+       final: data-link dice qué clave de LINKS usa cada enlace y
+       data-track es el nombre con el que se mide el clic. -->
+  <section class="group" aria-labelledby="g-servicios">
+    <h2 class="group-t in" id="g-servicios" style="--i:4">Servicios</h2>
+    <ul class="links">
+      <li class="in" style="--i:5">
+        <a class="card main" href="/ar/" data-link="soluciones" data-track="soluciones" data-group="servicio">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 3 7.5l9 4.5 9-4.5L12 3z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></svg></span>
+          <span class="txt"><b>Soluciones para empresas</b><span>Infraestructura para crear y crecer</span></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="in" style="--i:6">
+        <a class="card" href="/ar/industrias.html" data-link="fintech" data-track="fintech" data-group="servicio">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9.5 12 4l9 5.5"/><path d="M5.5 10.5v7M10 10.5v7M14 10.5v7M18.5 10.5v7"/><path d="M3 20h18"/></svg></span>
+          <span class="txt"><b>Fintech · Banking · Insurance</b><span>Finanzas, banca y seguros</span></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="in" style="--i:7">
+        <a class="card" href="/ar/#ia" data-link="ia" data-track="ia" data-group="servicio">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9L11 3.5z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2z"/></svg></span>
+          <span class="txt"><b>Inteligencia Artificial</b><span>Agentes, automatización y datos</span></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="in" style="--i:8">
+        <a class="card" href="/ar/#tecnologia" data-link="software" data-track="software" data-group="servicio">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span>
+          <span class="txt"><b>Desarrollo de Software</b><span>Software a medida e integraciones</span></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="in" style="--i:9">
+        <a class="card" href="/ar/video-ia.html" data-link="video" data-track="video_ia" data-group="servicio">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="m16 10.5 5-3v9l-5-3"/></svg></span>
+          <span class="txt"><b>Videos con IA</b><span>Reels y piezas generativas</span></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      </li>
+      <li class="in" style="--i:10">
+        <a class="card" href="/ar/portafolio.html#p-collectiq" data-link="collection" data-track="collection_intelligence" data-group="servicio">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="m8 15 3.5-4 3 2.5L20 7"/></svg></span>
+          <span class="txt"><b>Collection Intelligence</b><span>Inteligencia de cobranza con IA</span></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group" aria-labelledby="g-contacto">
+    <h2 class="group-t in" id="g-contacto" style="--i:11">Conectá con Zelira</h2>
+    <ul class="links">
+      <!-- LinkedIn y WhatsApp quedan ocultos hasta cargar su dirección en LINKS -->
+      <li class="in" style="--i:12" hidden>
+        <a class="card" href="#" data-link="linkedin" data-track="linkedin" data-group="linkedin">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="f" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
+          <span class="txt"><b>LinkedIn</b><span>Novedades, casos y equipo</span></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.5 8H16v6.5"/></svg>
+        </a>
+      </li>
+      <li class="in" style="--i:13" hidden>
+        <a class="card" href="#" data-link="whatsapp" data-track="whatsapp" data-group="whatsapp">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.4-4A8 8 0 1 1 20 11.5z"/><path class="f" d="M9.3 8.4c.2-.3.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.6 1.5c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3 0 .5.6 1 1.4 1.7 2.4 2.2.2.1.4.1.5-.1l.5-.6c.1-.2.3-.2.5-.1l1.4.7c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3-2.3-.7-4.1-2.5-4.9-4.8-.2-.9 0-1.7.5-2.2z"/></svg></span>
+          <span class="txt"><b>WhatsApp</b><span>Hablá directo con el equipo</span></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8M9.5 8H16v6.5"/></svg>
+        </a>
+      </li>
+      <li class="in" style="--i:14">
+        <a class="card" href="/ar/#comenzar" data-link="contacto" data-track="contacto" data-group="contacto">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span>
+          <span class="txt"><b>Contacto</b><span>Contanos tu proyecto</span></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="cta in" style="--i:15" aria-labelledby="cta-t">
+    <h2 id="cta-t">¿Tenés un proyecto?</h2>
+    <p>Contanos qué necesitás y vemos cómo podemos ayudarte.</p>
+    <!-- Va al WhatsApp comercial cuando esté cargado en LINKS; mientras
+         tanto, al formulario de contacto de la home -->
+    <a class="btn" href="/ar/#comenzar" data-link="whatsapp" data-track="cta_hablar" data-group="whatsapp">Hablar con Zelira</a>
+    <small>Respuesta al instante · Sin costo</small>
+  </section>
+
+  <nav class="social in" style="--i:16" aria-label="Redes">
+    <a href="#" data-link="linkedin" data-track="social_linkedin" data-group="linkedin" aria-label="LinkedIn" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+    <a href="#" data-link="instagram" data-track="social_instagram" data-group="social" aria-label="Instagram" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle class="f" cx="17.2" cy="6.8" r="1.1"/></svg></a>
+    <a href="#" data-link="whatsapp" data-track="social_whatsapp" data-group="whatsapp" aria-label="WhatsApp" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.4-4A8 8 0 1 1 20 11.5z"/><path class="f" d="M9.3 8.4c.2-.3.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.6 1.5c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3 0 .5.6 1 1.4 1.7 2.4 2.2.2.1.4.1.5-.1l.5-.6c.1-.2.3-.2.5-.1l1.4.7c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3-2.3-.7-4.1-2.5-4.9-4.8-.2-.9 0-1.7.5-2.2z"/></svg></a>
+    <a href="mailto:contacto@zelira.com.ar" data-link="email" data-track="social_email" data-group="email" aria-label="Email: contacto@zelira.com.ar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></a>
+  </nav>
+
+  <p class="foot in" style="--i:17">© <span id="year">2026</span> Zelira · <a href="/ar/" data-track="footer_sitio" data-group="servicio">zelira.com.ar</a></p>
+</main>
+
+<script>
+/* ============================================================
+   ENLACES — el único lugar que hay que tocar para cambiar destinos.
+   Una clave vacía ('') deja el destino por defecto escrito en el HTML;
+   LinkedIn, WhatsApp e Instagram no tienen destino por defecto, así que
+   sus botones aparecen recién cuando se completa la dirección.
+   ============================================================ */
+var LINKS = {
+  soluciones: '',  // por defecto /ar/
+  fintech:    '',  // PENDIENTE: /ar/fintech.html no existe. Hoy va a /ar/industrias.html
+  ia:         '',  // PENDIENTE: /ar/ia.html no existe. Hoy va a la sección IA de la home (/ar/#ia)
+  software:   '',  // PENDIENTE: /ar/software.html no existe. Hoy va a /ar/#tecnologia
+  video:      '',  // por defecto /ar/video-ia.html
+  collection: '',  // CONFIRMAR: hoy va a la ficha de Flux Collect (/ar/portafolio.html#p-collectiq)
+  contacto:   '',  // PENDIENTE: /contacto.html no existe. Hoy va al formulario de la home (/ar/#comenzar)
+  linkedin:   '',  // COMPLETAR: p. ej. 'https://www.linkedin.com/company/zelira/'
+  whatsapp:   '',  // COMPLETAR: p. ej. 'https://wa.me/5491100000000?text=Hola%20Zelira'
+  instagram:  '',  // COMPLETAR: p. ej. 'https://www.instagram.com/zelira/'
+  email:      ''   // por defecto mailto:contacto@zelira.com.ar
+};
+
+/* Marca de origen para los enlaces al propio sitio, así la visita se
+   puede atribuir a Instagram cuando el sitio tenga analytics. */
+var UTM = 'utm_source=instagram&utm_medium=social&utm_campaign=bio_link';
+
+(function () {
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var propio = /(^|\.)zelira\.com\.ar$/;
+
+  function conUtm(a) {
+    var url = new URL(a.href, location.href);
+    if (url.protocol.indexOf('http') !== 0) return;
+    if (url.host !== location.host && !propio.test(url.hostname)) {
+      a.target = '_blank';
+      a.rel = 'noopener';
+      return;
+    }
+    if (!url.search) url.search = UTM;
+    a.href = url.href;
+  }
+
+  document.querySelectorAll('a[data-link]').forEach(function (a) {
+    var destino = LINKS[a.getAttribute('data-link')];
+    if (destino) {
+      a.href = destino;
+      a.hidden = false;
+      var li = a.closest('li');
+      if (li) li.hidden = false;
+    }
+    if (a.getAttribute('href') !== '#') conUtm(a);
+  });
+  conUtm(document.querySelector('.foot a'));
+
+  /* ============================================================
+     MEDICIÓN — no hay analytics cargado todavía. Cada visita y cada clic
+     se empujan a window.dataLayer (lo que lee Google Tag Manager) y, si
+     existe gtag (GA4), se envían también como evento. Al sumar GTM o GA4
+     a esta página no hay que tocar nada de acá.
+       bio_view   → visita
+       bio_click  → clic: link_id (data-track), link_group (servicio,
+                    whatsapp, linkedin, contacto, social, email), link_url
+     ============================================================ */
+  window.dataLayer = window.dataLayer || [];
+  function medir(evento, datos) {
+    datos = datos || {};
+    datos.page = 'ig_bio';
+    window.dataLayer.push(Object.assign({ event: evento }, datos));
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', evento, Object.assign({ transport_type: 'beacon' }, datos));
+    }
+  }
+  medir('bio_view', { referrer: document.referrer || '(directo)' });
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[data-track]');
+    if (!a) return;
+    medir('bio_click', {
+      link_id: a.getAttribute('data-track'),
+      link_group: a.getAttribute('data-group') || 'otro',
+      link_url: a.href
+    });
+  });
+})();
+</script>
+</body>
+</html>
